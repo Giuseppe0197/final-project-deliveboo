@@ -12,6 +12,6 @@ class Client extends Model
         'address',
         'email',
         'phone',
-        'order_id'
+        // 'order_id'
     ];
 }

@@ -15,6 +15,6 @@ class Restaurant extends Model
         'address',
         'image',
         'p_iva',
-        'owner_id'
+        // 'owner_id'
     ];
 }

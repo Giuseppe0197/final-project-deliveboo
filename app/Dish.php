@@ -13,6 +13,6 @@ class Dish extends Model
         'type',
         'image',
         'avilability',
-        'restaurant_id'
+        // 'restaurant_id'
     ];
 }

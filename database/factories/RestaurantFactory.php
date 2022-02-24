@@ -14,6 +14,6 @@ $factory->define(Restaurant::class, function (Faker $faker) {
         'password'=>$faker->password(),
         'address'=>$faker->address(),
         'image'=>$faker->imageUrl(360, 360, 'food', true, 'pizza'),
-        'p_iva'=>$faker->unique()->vat()
+        'p_iva'=>$faker->unique()->vatId()
     ];
 }); 

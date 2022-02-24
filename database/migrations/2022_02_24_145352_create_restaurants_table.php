@@ -24,8 +24,6 @@ class CreateRestaurantsTable extends Migration
             $table -> string('address');
             $table -> string('image');
             $table -> string('p_iva', 20) -> unique();
-            $table -> bigInteger('owner_id') -> unsigned();
-
 
             $table->timestamps();
         });
