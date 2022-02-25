@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,10 +15,10 @@ class DatabaseSeeder extends Seeder
 
             CategorySeeder::class,
             RestaurantSeeder::class,
-            DishSeeder::class,
-            OrderSeeder::class,
-            ClientSeeder::class,
-    
+            // DishSeeder::class,
+            // OrderSeeder::class,
+            // ClientSeeder::class,
+
         ]);
     }
 }

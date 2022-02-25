@@ -14,12 +14,12 @@ class ClientSeeder extends Seeder
      */
     public function run()
     {
-        factory(Client::class, 30)->make()->each(function ($client) {
+        // factory(Client::class, 30)->create()->each(function ($client) {
 
-            $order = Order::inRandomOrder()->limit(1)->first();
-            $client->order()->associate($order);
+        //     $order = Order::inRandomOrder()->limit(1)->first();
+        //     $client->order()->associate($order);
 
-            $client->save();
-        });
+        //     $client->save();
+        // });
     }
 }

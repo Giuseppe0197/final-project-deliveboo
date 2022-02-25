@@ -12,12 +12,5 @@ class Client extends Model
         'address',
         'email',
         'phone',
-        'order_id'
     ];
-
-    public function order()
-    {
-
-        return $this->hasOne(Order::class);
-    }
 }

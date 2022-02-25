@@ -21,7 +21,6 @@ class CreateClientsTable extends Migration
             $table->string('address');
             $table->string('email')->unique();
             $table->string('phone', 20)->unique();
-            $table->bigInteger('order_id')->unsigned();
 
             $table->timestamps();
         });

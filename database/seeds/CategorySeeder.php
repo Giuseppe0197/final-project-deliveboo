@@ -1,6 +1,7 @@
 <?php
 
 use App\Category;
+use App\Restaurant;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class,10) -> create();
+        factory(Category::class, 10)->create();
     }
 }

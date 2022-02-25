@@ -13,12 +13,12 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 30)->make()->each(function ($order) {
+        // factory(Order::class, 30)->make()->each(function ($order) {
 
-            $client = Client::inRandomOrder()->limit(1)->first();
-            $order->client()->associate($client);
+        //     $client = Client::inRandomOrder()->limit(1)->first();
+        //     $order->client()->associate($client);
 
-            $order->save();
-        });
+        //     $order->save();
+        // });
     }
 }

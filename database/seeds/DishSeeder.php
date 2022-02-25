@@ -1,6 +1,7 @@
 <?php
 
 use App\Dish;
+use App\Restaurant;
 use Illuminate\Database\Seeder;
 
 class DishSeeder extends Seeder
@@ -12,6 +13,12 @@ class DishSeeder extends Seeder
      */
     public function run()
     {
-        factory(Dish::class,50) -> create();
+        factory(Dish::class, 50)->create()->each(function ($dish) {
+
+            $category = Restaurant::inRandomOrder()->limit(rand(1, 5))->get();
+            $dish->categories()->attach($category);
+
+            $dish->save();
+        });
     }
 }

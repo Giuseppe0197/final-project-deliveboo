@@ -10,7 +10,7 @@ class Order extends Model
         'total_price',
         'payment_status',
         'date',
-        'client_id'
+        // 'client_id'
     ];
 
     // relazione 1 a 1 clienti

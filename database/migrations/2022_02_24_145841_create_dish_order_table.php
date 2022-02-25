@@ -17,8 +17,8 @@ class CreateDishOrderTable extends Migration
             $table->id();
 
             $table->tinyInteger('dish_quantity')->unsiged()->defult(0);
-            $table->bigInteger('dish_id')->unsigned();
-            $table->bigInteger('order_id')->unsigned();
+            // $table->bigInteger('dish_id')->unsigned();
+            // $table->bigInteger('order_id')->unsigned();
 
             /* $table->timestamps(); */
         });
