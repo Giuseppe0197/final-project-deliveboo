@@ -25,9 +25,9 @@ class AddForeignKeys extends Migration
         // });
 
         // relazione dishes 
-        // Schema::table('dishes', function (Blueprint $table) {
-        //     $table->foreign('restaurant_id', 'dishes_restaurant')->references('id')->on('restaurants');
-        // });
+        Schema::table('dishes', function (Blueprint $table) {
+            $table->foreign('restaurant_id', 'dishes_restaurant')->references('id')->on('restaurants');
+        });
 
         // relazione ristoranti categorie
         Schema::table('category_restaurant', function (Blueprint $table) {
@@ -57,9 +57,9 @@ class AddForeignKeys extends Migration
         //         $table->dropForeign('dishes_restaurant');
         //     });
 
-        //     Schema::table('category_restaurant', function (Blueprint $table) {
-        //         $table->dropForeign('categories_restaurants');
-        //         $table->dropForeign('restaurants_categories');
-        //     });
+        Schema::table('category_restaurant', function (Blueprint $table) {
+            $table->dropForeign('categories_restaurants');
+            $table->dropForeign('restaurants_categories');
+        });
     }
 }
