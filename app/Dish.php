@@ -13,6 +13,20 @@ class Dish extends Model
         'type',
         'image',
         'avilability',
-        // 'restaurant_id'
+        'restaurant_id'
     ];
+
+    // relazione molti a molti Ordini
+    public function orders()
+    {
+
+        return $this->belongsToMany(Order::class);
+    }
+
+    // relazione 1 a molti ristoranti
+    public function restaurant()
+    {
+
+        return $this->belongsTo(Restaurant::class);
+    }
 }

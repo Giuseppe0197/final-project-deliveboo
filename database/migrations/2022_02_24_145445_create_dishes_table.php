@@ -16,13 +16,13 @@ class CreateDishesTable extends Migration
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
 
-            $table -> string('name', 60);
-            $table -> string('description');
-            $table -> decimal('price', 4, 2) -> unsigned() -> default(0);
-            $table -> string('type', 20);
-            $table -> string('image');
-            $table -> boolean('avilability');
-            // $table -> bigInteger('restaurant_id') -> unsigned();
+            $table->string('name', 60);
+            $table->string('description');
+            $table->decimal('price', 4, 2)->unsigned()->default(0);
+            $table->string('type', 20);
+            $table->string('image');
+            $table->boolean('avilability');
+            $table->bigInteger('restaurant_id')->unsigned();
 
             $table->timestamps();
         });

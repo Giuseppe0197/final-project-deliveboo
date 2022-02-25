@@ -7,11 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     protected $fillable = [
-        'name', 
+        'name',
         'lastname',
         'address',
         'email',
         'phone',
-        // 'order_id'
+        'order_id'
     ];
+
+    public function order()
+    {
+
+        return $this->hasOne(Order::class);
+    }
 }

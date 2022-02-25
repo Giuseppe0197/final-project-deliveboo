@@ -16,10 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
 
-            $table -> decimal('total_price', 5, 2) -> unsigned() -> default(0);
-            $table -> boolean('payment_status');
-            $table -> dateTime('date');
-            // $table -> bigInteger('client_id') -> unsigned();
+            $table->decimal('total_price', 5, 2)->unsigned()->default(0);
+            $table->boolean('payment_status');
+            $table->dateTime('date');
+            $table->bigInteger('client_id')->unsigned();
 
             $table->timestamps();
         });

@@ -15,6 +15,20 @@ class Restaurant extends Model
         'address',
         'image',
         'p_iva',
-        // 'owner_id'
+        'owner_id'
     ];
+
+    // relazione 1 a molti piatti
+    public function dishes()
+    {
+
+        return $this->hasMany(Dish::class);
+    }
+
+    // relazioni categorie
+    public function categories()
+    {
+
+        return $this->belongsToMany(Category::class);
+    }
 }
