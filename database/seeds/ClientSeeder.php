@@ -14,12 +14,6 @@ class ClientSeeder extends Seeder
      */
     public function run()
     {
-        factory(Client::class, 30)->make()->each(function ($client) {
-
-            $order = Order::inRandomOrder()->limit(1)->get();    
-
-            $client->order()->associate($order);
-            $client->save();
-        });
+        factory(Client::class, 30)->create();
     }
 }

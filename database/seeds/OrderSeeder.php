@@ -17,11 +17,11 @@ class OrderSeeder extends Seeder
         factory(Order::class, 30)->create()->each(function ($order) {
 
             $dishes = Dish::inRandomOrder()->limit(rand(1, 5))->get();
-            $client = Client::inRandomOrder()->limit(1)->first();
-
-            $order->client()->associate($client);
-            
             $order->dishes()->attach($dishes);
+
+            $client = Client::inRandomOrder()->limit(1)->first();
+            $order->client()->associate($client);
+
             $order->save();
         });
     }

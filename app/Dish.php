@@ -12,7 +12,7 @@ class Dish extends Model
         'price',
         'type',
         'image',
-        'avilability',
+        'availability',
         'restaurant_id'
     ];
 
