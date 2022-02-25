@@ -15,7 +15,7 @@ class Restaurant extends Model
         'address',
         'image',
         'p_iva',
-        'owner_id'
+
     ];
 
     // relazione 1 a molti piatti
