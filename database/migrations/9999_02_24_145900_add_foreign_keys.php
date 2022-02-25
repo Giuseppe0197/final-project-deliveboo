@@ -19,10 +19,10 @@ class AddForeignKeys extends Migration
         // });
 
         // relazione ordini piatti
-        // Schema::table('dish_order', function (Blueprint $table) {
-        //     $table->foreign('dish_id', 'dishes_orders')->references('id')->on('dishes');
-        //     $table->foreign('order_id', 'orders_dishes')->references('id')->on('orders');
-        // });
+        Schema::table('dish_order', function (Blueprint $table) {
+            $table->foreign('dish_id', 'dishes_orders')->references('id')->on('dishes');
+            $table->foreign('order_id', 'orders_dishes')->references('id')->on('orders');
+        });
 
         // relazione dishes 
         Schema::table('dishes', function (Blueprint $table) {
@@ -48,14 +48,14 @@ class AddForeignKeys extends Migration
         //         $table->dropForeign('order_client');
         //     });
 
-        //     Schema::table('dish_order', function (Blueprint $table) {
-        //         $table->dropForeign('dishes_orders');
-        //         $table->dropForeign('orders_dishes');
-        //     });
+        Schema::table('dish_order', function (Blueprint $table) {
+            $table->dropForeign('dishes_orders');
+            $table->dropForeign('orders_dishes');
+        });
 
-        //     Schema::table('dishes', function (Blueprint $table) {
-        //         $table->dropForeign('dishes_restaurant');
-        //     });
+        Schema::table('dishes', function (Blueprint $table) {
+            $table->dropForeign('dishes_restaurant');
+        });
 
         Schema::table('category_restaurant', function (Blueprint $table) {
             $table->dropForeign('categories_restaurants');

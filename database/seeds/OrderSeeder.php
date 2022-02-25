@@ -1,6 +1,6 @@
 <?php
 
-use App\Client;
+use App\Dish;
 use App\Order;
 use Illuminate\Database\Seeder;
 
@@ -13,12 +13,12 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        // factory(Order::class, 30)->make()->each(function ($order) {
+        factory(Order::class, 30)->create()->each(function ($order) {
 
-        //     $client = Client::inRandomOrder()->limit(1)->first();
-        //     $order->client()->associate($client);
+            $dishes = Dish::inRandomOrder()->limit(rand(1, 5))->get();
+            $order->dishes()->attach($dishes);
 
-        //     $order->save();
-        // });
+            $order->save();
+        });
     }
 }
