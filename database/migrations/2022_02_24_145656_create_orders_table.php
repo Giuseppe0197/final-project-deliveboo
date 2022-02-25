@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('total_price', 5, 2)->unsigned()->default(0);
             $table->boolean('payment_status');
             $table->dateTime('date');
-            // $table->bigInteger('client_id')->unsigned();
+            $table->bigInteger('client_id')->unsigned();
 
             $table->timestamps();
         });

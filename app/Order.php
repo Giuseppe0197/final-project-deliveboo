@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -10,7 +9,7 @@ class Order extends Model
         'total_price',
         'payment_status',
         'date',
-        // 'client_id'
+        'client_id'
     ];
 
     // relazione 1 a 1 clienti
@@ -19,11 +18,11 @@ class Order extends Model
 
         return $this->belongsTo(Client::class);
     }
-
     // relazione molti a molti piatti
     public function dishes()
     {
 
         return $this->belongsToMany(Dish::class);
-    }
+    }   
+
 }

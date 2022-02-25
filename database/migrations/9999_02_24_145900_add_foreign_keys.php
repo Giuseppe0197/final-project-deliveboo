@@ -13,10 +13,10 @@ class AddForeignKeys extends Migration
      */
     public function up()
     {
-
-        // Schema::table('orders', function (Blueprint $table) {
-        //     $table->foreign('client_id', 'order_client')->references('id')->on('clients');
-        // });
+        //relazione ordini clienti
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreign('client_id', 'order_client')->references('id')->on('clients');
+        });    
 
         // relazione ordini piatti
         Schema::table('dish_order', function (Blueprint $table) {
@@ -44,9 +44,9 @@ class AddForeignKeys extends Migration
     public function down()
     {
 
-        //     Schema::table('orders', function (Blueprint $table) {
-        //         $table->dropForeign('order_client');
-        //     });
+       Schema::table('orders', function (Blueprint $table) {
+            $table->dropForeign('order_client');
+        });   
 
         Schema::table('dish_order', function (Blueprint $table) {
             $table->dropForeign('dishes_orders');
@@ -60,6 +60,6 @@ class AddForeignKeys extends Migration
         Schema::table('category_restaurant', function (Blueprint $table) {
             $table->dropForeign('categories_restaurants');
             $table->dropForeign('restaurants_categories');
-        });
+        }); 
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use App\Client;
-use Illuminate\Database\Seeder;
 
+use Illuminate\Database\Seeder;
+use App\Client;
 use App\Order;
 
 class ClientSeeder extends Seeder
@@ -14,12 +14,12 @@ class ClientSeeder extends Seeder
      */
     public function run()
     {
-        // factory(Client::class, 30)->create()->each(function ($client) {
+        factory(Client::class, 30)->make()->each(function ($client) {
 
-        //     $order = Order::inRandomOrder()->limit(1)->first();
-        //     $client->order()->associate($order);
+            $order = Order::inRandomOrder()->limit(1)->get();    
 
-        //     $client->save();
-        // });
+            $client->order()->associate($order);
+            $client->save();
+        });
     }
 }
