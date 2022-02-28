@@ -20,7 +20,7 @@ class CreateDishesTable extends Migration
             $table->string('description', 255);
             $table->decimal('price', 4, 2)->unsigned()->default(0);
             $table->string('type', 20);
-            $table->string('image');
+            $table->text('image');
             $table->boolean('avilability');
             $table->bigInteger('restaurant_id')->unsigned();
 
