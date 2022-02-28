@@ -1,18 +1,5 @@
 <header>
 
-    <nav>
-        <div class="container-logo">
-            <img src="{{ asset('images/margherita-scaloni.jpg') }}" alt="LOGO">
-        </div>
-        <ul>
-            <li>
-                <a class="btn btn-primary" href="#">LOGIN</a>
-            </li>
-            <li>
-                <a class="btn btn-secondary" href="#">REGISTRATI</a>
-            </li>
-        </ul>        
-    </nav>
-
+    {{-- qui andranno i link per la registrazione o login e ci sarà la parte di @auth, else, @endauth --}}
     
 </header>
