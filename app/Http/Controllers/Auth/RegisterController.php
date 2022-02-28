@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Restaurant;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,10 +49,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'owner_name' => ['required', 'string', 'max:60'],
+            'restaurant_name' => ['required', 'string', 'max:60'],
+            'restaurant_phone' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['required', 'string', 'max:255'],
+            'image' => ['required', 'image'],
+            'p_iva' => ['required', 'string', 'max:20'],
         ]);
     }
 
@@ -60,14 +66,20 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Retsuarant
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Restaurant::create([
+            'owner_name' => $data['owner_name'],
+            'restaurant_name' => $data['restaurant_name'],
+            'restaurant_phone' => $data['restaurant_phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'address' => $data['address'],
+            'image' => $data['image'],
+            'p_iva' => $data['p_iva'],
         ]);
     }
+
 }

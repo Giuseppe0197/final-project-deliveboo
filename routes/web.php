@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'GuestController@home') -> name('home');
 
+Route::get('/register/form', 'RestaurantController@registerForm') -> name('register.form');
+
 Route::post('/register', 'Auth\RegisterController@register') -> name('register');
 
 Route::post('/login', 'Auth\LoginController@login') -> name('login');
