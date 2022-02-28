@@ -6,3 +6,75 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// General rules
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// body {
+//     width: 100%;
+//     // debug
+//     height: calc(100vh - 200px);
+//     background-color: blue;
+// }
+
+// Homepage
+div.container-home {
+    text-align: center;
+    font-size: 25px;
+    padding: 100px 0;
+}
+
+// Header
+header {
+    width: auto;
+    display: flex;
+    // debug |-------------------------------------------------------------------------------|
+    height: 100px;
+    background-color: lightcoral;
+
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        
+        div.container-logo {
+            width: auto;
+
+            img {
+                height: 100px;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: right;
+            width: 90%;
+
+            li {
+                list-style: none;
+                margin: 0 10px;
+
+                a {
+
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    width: auto;
+    // debug
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: lightseagreen;
+    text-align: center;
+}
