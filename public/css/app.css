@@ -11020,3 +11020,39 @@ footer {
   text-align: center;
 }
 
+div.container-dish {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+div.container-dish .card {
+  margin: 20px;
+}
+
+div.container-dish .card div.card-body h4 {
+  font-weight: 600;
+}
+
+div.container-dish .card div.card-body p {
+  font-size: 15px;
+}
+
+div.container-dish .card li {
+  font-size: 15px;
+}
+
+div.container-dish .card li span {
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+div.container-dish .card li.container-action-dish {
+  display: flex;
+  justify-content: space-evenly;
+}
+
