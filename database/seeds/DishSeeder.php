@@ -13,7 +13,7 @@ class DishSeeder extends Seeder
      */
     public function run()
     {
-        factory(Dish::class, 50)->make()->each(function ($dish) {
+        factory(Dish::class, 100)->make()->each(function ($dish) {
 
             $restaurant = Restaurant::inRandomOrder()->limit(1)->first();
             $dish->restaurant()->associate($restaurant);
