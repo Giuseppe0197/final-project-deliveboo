@@ -8,11 +8,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 // General rules
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 // body {
 //     width: 100%;
@@ -30,13 +30,13 @@ div.container-home {
 
 // Header
 header {
-    width: auto;
-    display: flex;
+    /* width: auto;
+    display: flex; */
     // debug |-------------------------------------------------------------------------------|
-    height: 100px;
-    background-color: lightcoral;
+    /* height: 100px;
+    background-color: lightcoral; */
 
-    nav {
+    /* nav {
         width: 100%;
         display: flex;
         align-items: center;
@@ -65,7 +65,7 @@ header {
                 }
             }
         }
-    }
+    } */
 }
 
 // Footer
