@@ -1,11 +1,11 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // General rules
 * {
@@ -40,7 +40,7 @@ header {
         width: 100%;
         display: flex;
         align-items: center;
-        
+
         div.container-logo {
             width: auto;
 
@@ -59,13 +59,33 @@ header {
                 margin: 0 10px;
 
                 a {
-
                     text-decoration: none;
                     color: #fff;
                 }
             }
         }
     }
+}
+
+// edit page
+
+#edit-title {
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.edit-form {
+    width: 80%;
+    margin-left: 10%;
+
+    label {
+        margin: 20px 0;
+        margin-right: 10px;
+    }
+}
+
+.update-btn {
+    margin: 50px 0;
 }
 
 // Footer

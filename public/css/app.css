@@ -11011,6 +11011,25 @@ header nav ul li a {
   color: #fff;
 }
 
+#edit-title {
+  margin-left: 10%;
+  margin-top: 50px;
+}
+
+.edit-form {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.edit-form label {
+  margin: 20px 0;
+  margin-right: 10px;
+}
+
+.update-btn {
+  margin: 50px 0;
+}
+
 footer {
   width: auto;
   display: flex;
