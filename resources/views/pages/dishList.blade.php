@@ -28,7 +28,7 @@
                     {{-- Disponibilità (Aggiungere l'icona X e V successivamente) --}}
                     <li class="list-group-item">
                         <span>Disponibilità:</span>
-                        @if ($dish->avilability)
+                        @if ($dish->availability)
                             Disponibile
                         @else 
                             Non Disponibile
@@ -36,12 +36,11 @@
                     </li>
                     <li class="container-action-dish list-group-item">
                         <a class="btn btn-primary" href="#">MODIFICA</a> {{-- Inserire la rotta per MODIFICARE IL PIATTO --}}
-                        <a class="btn btn-danger" href="#">ELIMINA</a> {{-- Inserire la rotta per ELIMINARE/HIDE IL PIATTO --}}
+                        <a class="btn btn-danger" href="{{ route('dish.hide', $dish->id) }}">ELIMINA</a> {{-- Inserire la rotta per ELIMINARE/HIDE IL PIATTO --}}
                     </li>
                 </ul>
             </div>
         @endforeach
-
     </div>
 
-@endsection
+@endsection 
