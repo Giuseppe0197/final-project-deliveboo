@@ -10974,45 +10974,31 @@ div.container-home {
   padding: 100px 0;
 }
 
-<<<<<<< HEAD
-=======
 header {
   width: auto;
   /* height: 100px;
   background-color: lightcoral; */
-  /* nav {
-      width: 100%;
-      display: flex;
-      align-items: center;
-
-      div.container-logo {
-          width: auto;
-
-          img {
-              height: 100px;
-          }
-      }
-
-      ul {
-          display: flex;
-          justify-content: right;
-          width: 90%;
-
-          li {
-              list-style: none;
-              margin: 0 10px;
-
-              a {
-
-                  text-decoration: none;
-                  color: #fff;
-              }
-          }
-      }
-  } */
 }
 
->>>>>>> f023f98aafd924fc1b327742eb743d8c412e84a9
+#edit-title {
+  margin-left: 10%;
+  margin-top: 50px;
+}
+
+.edit-form {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.edit-form label {
+  margin: 20px 0;
+  margin-right: 10px;
+}
+
+.update-btn {
+  margin: 50px 0;
+}
+
 footer {
   width: auto;
   display: flex;
@@ -11053,29 +11039,6 @@ div.container-dish .card div.card-body h4 {
   font-weight: 600;
 }
 
-<<<<<<< HEAD
-#edit-title {
-  margin-left: 10%;
-  margin-top: 50px;
-}
-
-.edit-form {
-  width: 80%;
-  margin-left: 10%;
-}
-
-.edit-form label {
-  margin: 20px 0;
-  margin-right: 10px;
-}
-
-.update-btn {
-  margin: 50px 0;
-}
-
-footer {
-  width: auto;
-=======
 div.container-dish .card div.card-body p {
   font-size: 15px;
 }
@@ -11091,7 +11054,6 @@ div.container-dish .card li span {
 }
 
 div.container-dish .card li.container-action-dish {
->>>>>>> 000a945c5ff8874c4caf216a07185ec1a1cdb790
   display: flex;
   justify-content: space-evenly;
 }
