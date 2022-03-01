@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Restaurant;
+use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/restaurant';
 
     /**
      * Create a new controller instance.
@@ -60,17 +60,19 @@ class RegisterController extends Controller
             'image' => ['required', 'image'],
             'p_iva' => ['required', 'string', 'max:20'],
         ]);
+
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Retsuarant
+     * @return \App\User
      */
     protected function create(array $data)
     {
-        return Restaurant::create([
+
+        $data = User::create([
             'owner_name' => $data['owner_name'],
             'restaurant_name' => $data['restaurant_name'],
             'restaurant_phone' => $data['restaurant_phone'],
@@ -80,6 +82,15 @@ class RegisterController extends Controller
             'image' => $data['image'],
             'p_iva' => $data['p_iva'],
         ]);
+
+        if(request() -> hasFile('image')){
+            $image = request() ->file('image');
+            $imageName = rand(100000, 999999) . '_' . time() . '.' . $image -> getClientOriginalExtension();
+            request() -> file('image') -> storeAs('/images/', $imageName, 'public');
+            $data -> update(['image' => $imageName]);
+         }
+
+         return $data;
     }
 
 }

@@ -4,8 +4,10 @@
 
     @auth
 
-    <h1>Benvenuto: {{ Auth::user() -> name }}</h1>
+    {{-- <h1>Benvenuto: {{ Auth::user() -> name }}</h1> --}}
     <a class="btn btn-danger" href="{{ route('logout') }}">DISCONNETTITI</a>
+    
+    
         
     @else
 
