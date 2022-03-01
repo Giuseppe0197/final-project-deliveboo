@@ -14,6 +14,7 @@ class DishController extends Controller
 
     public function edit($id)
     {
+
         $dish = Dish::findOrFail($id);
 
         return view('pages.editDish', compact('dish'));
@@ -23,11 +24,12 @@ class DishController extends Controller
 
     public function update(Request $request, $id)
     {
+        $dish = Dish::findOrFail($id);
 
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'price' => 'required|string',
+            'price' => 'required|numeric|min:0|max:100',
             'type' => 'required|string',
             'image' => 'required|image'
         ]);
@@ -38,11 +40,11 @@ class DishController extends Controller
 
         $imageFile->storeAs('/images/', $imageName, 'public');
 
-
-        $dish = Dish::findOrFail($id);
+        $data['image'] = $imageName;
 
         $dish->update($data);
-        return redirect()->route('dishes.list');
+        
+        return redirect()->route('dishes.list', $dish['restaurant_id']);
     }
 
     public function create($id)

@@ -25,7 +25,7 @@
     <label for="description">Descrizione:</label>
     <input type="text" name="description" placeholder="descrizione" value="{{ $dish -> description }}"><br>
     <label for="price">Prezzo:</label>
-    <input type="text" name="price" placeholder="prezzo" value="{{ $dish -> price }}"><br>
+    <input type="text" name="price" placeholder="prezzo" value="{{ $dish -> price }}" step=".01"><br>
     <label for="type">Categoria</label>
 
     <select name="type" value="{{ $dish -> type }}">

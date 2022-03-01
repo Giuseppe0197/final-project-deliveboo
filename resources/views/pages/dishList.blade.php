@@ -15,10 +15,10 @@
         @foreach ($dishes as $dish)
             <div class="card" style="width: 18rem;">
                 {{-- Gesgione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) --}}
-                @if (strlen($dish->image) == 21 )
+                @if (strlen($dish->image) > 18 && strlen($dish->image) < 24 )
                     <img src="/storage/images/{{ $dish->image }}" class="card-img-top" alt="{{ $dish->name }}">
                 @else
-                    <img src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" alt="image default">
+                    <img src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default">
                 @endif
                 
                 <div class="card-body">
@@ -48,7 +48,7 @@
                         @endif
                     </li>
                     <li class="container-action-dish list-group-item">
-                        <a class="btn btn-primary" href="#">MODIFICA</a> {{-- Inserire la rotta per MODIFICARE IL PIATTO --}}
+                        <a class="btn btn-primary" href="{{ route('dish.edit', $dish->id) }}">MODIFICA</a> {{-- Inserire la rotta per MODIFICARE IL PIATTO --}}
                         <a class="btn btn-danger" href="{{ route('dish.hide', $dish->id) }}">ELIMINA</a> {{-- Inserire la rotta per ELIMINARE/HIDE IL PIATTO --}}
                     </li>
                 </ul>
