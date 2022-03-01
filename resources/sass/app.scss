@@ -8,11 +8,11 @@
 @import '~bootstrap/scss/bootstrap';
 
 // General rules
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 // body {
 //     width: 100%;
@@ -30,13 +30,13 @@ div.container-home {
 
 // Header
 header {
-    width: auto;
-    display: flex;
+    /* width: auto;
+    display: flex; */
     // debug |-------------------------------------------------------------------------------|
-    height: 100px;
-    background-color: lightcoral;
+    /* height: 100px;
+    background-color: lightcoral; */
 
-    nav {
+    /* nav {
         width: 100%;
         display: flex;
         align-items: center;
@@ -65,7 +65,7 @@ header {
                 }
             }
         }
-    }
+    } */
 }
 
 // Footer
@@ -77,4 +77,43 @@ footer {
     height: 100px;
     background-color: lightseagreen;
     text-align: center;
+}
+
+// Page -> DishList
+div.container-dish {
+    width: 69%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    .card {
+        margin: 20px;
+
+        div.card-body {
+            
+            h4 {
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        li {
+            font-size: 15px;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                margin-right: 3px;
+            }
+
+            &.container-action-dish {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
 }
