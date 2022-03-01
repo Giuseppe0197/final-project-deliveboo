@@ -8,11 +8,11 @@
 @import "~bootstrap/scss/bootstrap";
 
 // General rules
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 // body {
 //     width: 100%;
@@ -31,11 +31,12 @@ div.container-home {
 // Header
 header {
     width: auto;
-    display: flex;
+    // display: flex;
     // debug |-------------------------------------------------------------------------------|
-    height: 100px;
-    background-color: lightcoral;
+    /* height: 100px;
+    background-color: lightcoral; */
 
+<<<<<<< HEAD
     nav {
         width: 100%;
         display: flex;
@@ -43,28 +44,37 @@ header {
 
         div.container-logo {
             width: auto;
+=======
+//     /* nav {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+        
+//         div.container-logo {
+//             width: auto;
+>>>>>>> 000a945c5ff8874c4caf216a07185ec1a1cdb790
 
-            img {
-                height: 100px;
-            }
-        }
+//             img {
+//                 height: 100px;
+//             }
+//         }
 
-        ul {
-            display: flex;
-            justify-content: right;
-            width: 90%;
+//         ul {
+//             display: flex;
+//             justify-content: right;
+//             width: 90%;
 
-            li {
-                list-style: none;
-                margin: 0 10px;
+//             li {
+//                 list-style: none;
+//                 margin: 0 10px;
 
-                a {
-                    text-decoration: none;
-                    color: #fff;
-                }
-            }
-        }
-    }
+                // a {
+                //     text-decoration: none;
+                //     color: #fff;
+                // }
+        //     }
+        // }
+    // }
 }
 
 // edit page
@@ -98,3 +108,60 @@ footer {
     background-color: lightseagreen;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+// Page -> DishList
+div.container-dish {
+    width: 69%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px 0;
+    
+    div.container-new-dish {
+        text-align: center;
+        font-size: 20px;
+
+        a {
+            color: #6a6a6a;
+            font-weight: 600;
+            
+            &:hover {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+
+    .card {
+        margin: 20px;
+
+        div.card-body {
+            
+            h4 {
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        li {
+            font-size: 15px;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                margin-right: 3px;
+            }
+
+            &.container-action-dish {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
+>>>>>>> 000a945c5ff8874c4caf216a07185ec1a1cdb790

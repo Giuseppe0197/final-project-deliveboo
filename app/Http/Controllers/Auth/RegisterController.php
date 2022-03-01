@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/restaurant';
 
     /**
      * Create a new controller instance.
@@ -49,11 +49,18 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'owner_name' => ['required', 'string', 'max:60'],
+            'restaurant_name' => ['required', 'string', 'max:60'],
+            'restaurant_phone' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'address' => ['required', 'string', 'max:255'],
+            'image' => ['required', 'image'],
+            'p_iva' => ['required', 'string', 'max:20'],
         ]);
+
     }
 
     /**
@@ -64,10 +71,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+
+        $data = User::create([
+            'owner_name' => $data['owner_name'],
+            'restaurant_name' => $data['restaurant_name'],
+            'restaurant_phone' => $data['restaurant_phone'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'address' => $data['address'],
+            'image' => $data['image'],
+            'p_iva' => $data['p_iva'],
         ]);
+
+        if(request() -> hasFile('image')){
+            $image = request() ->file('image');
+            $imageName = rand(100000, 999999) . '_' . time() . '.' . $image -> getClientOriginalExtension();
+            request() -> file('image') -> storeAs('/images/', $imageName, 'public');
+            $data -> update(['image' => $imageName]);
+         }
+
+         return $data;
     }
+
 }

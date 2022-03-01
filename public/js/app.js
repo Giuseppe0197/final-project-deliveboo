@@ -1932,6 +1932,52 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RestaurantComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RestaurantComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      restaurants: []
+    };
+  },
+  props: {
+    restaurant_id: String
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/restaurant/info/' + this.restaurant_id).then(function (r) {
+      return _this.restaurants = r.data;
+    })["catch"](function (e) {
+      return console.error(e);
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37550,6 +37596,48 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RestaurantComponent.vue?vue&type=template&id=78e2f7b6&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RestaurantComponent.vue?vue&type=template&id=78e2f7b6& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "restaurant" }, [
+    _c("div", { staticClass: "rastaurant" }, [
+      _c("p", [_vm._v(_vm._s(_vm.restaurants.owner_name))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_name))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_phone))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.restaurants.email))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.restaurants.address))]),
+      _vm._v(" "),
+      _c("img", {
+        attrs: { src: "/storage/images/" + _vm.restaurants.image, alt: "" },
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.restaurants.p_iva))]),
+    ]),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -49769,7 +49857,8 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./components/EditComponent.vue": "./resources/js/components/EditComponent.vue"
+	"./components/EditComponent.vue": "./resources/js/components/EditComponent.vue",
+	"./components/RestaurantComponent.vue": "./resources/js/components/RestaurantComponent.vue"
 };
 
 
@@ -49809,10 +49898,11 @@ var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
 
 files.keys().map(function (key) {
   return Vue.component(key.split('/').pop().split('.')[0], files(key)["default"]);
-}); // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-var app = new Vue({
-  el: '#app'
+});
+document.addEventListener("DOMContentLoaded", function () {
+  var app = new Vue({
+    el: '#app'
+  });
 });
 
 /***/ }),
@@ -49931,6 +50021,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/RestaurantComponent.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/RestaurantComponent.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RestaurantComponent_vue_vue_type_template_id_78e2f7b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RestaurantComponent.vue?vue&type=template&id=78e2f7b6& */ "./resources/js/components/RestaurantComponent.vue?vue&type=template&id=78e2f7b6&");
+/* harmony import */ var _RestaurantComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RestaurantComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/RestaurantComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RestaurantComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RestaurantComponent_vue_vue_type_template_id_78e2f7b6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RestaurantComponent_vue_vue_type_template_id_78e2f7b6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/RestaurantComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/RestaurantComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/RestaurantComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RestaurantComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RestaurantComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RestaurantComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RestaurantComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/RestaurantComponent.vue?vue&type=template&id=78e2f7b6&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/RestaurantComponent.vue?vue&type=template&id=78e2f7b6& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RestaurantComponent_vue_vue_type_template_id_78e2f7b6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RestaurantComponent.vue?vue&type=template&id=78e2f7b6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RestaurantComponent.vue?vue&type=template&id=78e2f7b6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RestaurantComponent_vue_vue_type_template_id_78e2f7b6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RestaurantComponent_vue_vue_type_template_id_78e2f7b6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49938,7 +50097,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n77 │     // }\r\n   │         ^\n   ╵\n  C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\resources\\sass\\app.scss 77:9  root stylesheet\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:99051:16)\n    at render_closure1.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:84557:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:29579:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28099:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28406:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3909:77)\n    at _Future._completeError$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28252:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27900:12)\n    at Object._asyncRethrow (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3712:17)\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:19793:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3737:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27919:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27913:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:29579:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28099:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28406:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3909:77)\n    at _Future._completeError$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28252:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28336:18)\n    at Object._microtaskLoop (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3965:24)\n    at StaticClosure._startMicrotaskLoop (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3971:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27820:21)\n    at invokeClosure (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:1455:26)\n    at Immediate.<anonymous> (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:1476:18)\n    at processImmediate (node:internal/timers:464:21)");
 
 /***/ }),
 

@@ -12,6 +12,6 @@ $factory->define(Dish::class, function (Faker $faker) {
         'price'=>$faker->randomFloat(2, 1, 99),
         'type'=>$faker->randomElement(['Antipasti', 'Primi', 'Secondi', 'Dolci', 'Pizze', 'Sushi', 'Fritti', 'Specialità', 'Insalate', 'Riso', 'Hamburger', 'Kebab', 'Bibite']),
         'image'=>$faker->imageUrl(360, 360, 'food', true, 'pizza'),
-        'avilability'=>$faker->boolean()
+        'availability'=>$faker->boolean()
     ];
 });
