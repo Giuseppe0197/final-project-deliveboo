@@ -29,12 +29,21 @@ div.container-home {
 }
 
 // Header
+<<<<<<< HEAD
 // header {
 //     /* width: auto;
 //     display: flex; */
 //     // debug |-------------------------------------------------------------------------------|
 //     /* height: 100px;
 //     background-color: lightcoral; */
+=======
+header {
+    width: auto;
+    // display: flex;
+    // debug |-------------------------------------------------------------------------------|
+    /* height: 100px;
+    background-color: lightcoral; */
+>>>>>>> f023f98aafd924fc1b327742eb743d8c412e84a9
 
 //     /* nav {
 //         width: 100%;
@@ -77,4 +86,58 @@ footer {
     height: 100px;
     background-color: lightseagreen;
     text-align: center;
+}
+
+// Page -> DishList
+div.container-dish {
+    width: 69%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px 0;
+    
+    div.container-new-dish {
+        text-align: center;
+        font-size: 20px;
+
+        a {
+            color: #6a6a6a;
+            font-weight: 600;
+            
+            &:hover {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+
+    .card {
+        margin: 20px;
+
+        div.card-body {
+            
+            h4 {
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        li {
+            font-size: 15px;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                margin-right: 3px;
+            }
+
+            &.container-action-dish {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
 }

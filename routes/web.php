@@ -21,13 +21,13 @@ Route::get('/restaurant/info/{id}', 'RestaurantController@getRestaurantInfo') ->
 
 /* rotta con i piatti, e relativo tasto per nasconderlo agli utenti */ /* Mario */
 
-Route::get('/dishes/list/{id}', 'DishController@getRestaurantDishes') -> name('dishes.list');
-Route::get('/dishes/hide/{id}', 'DishController@hide') -> name('dish.hide');
+Route::get('/dishes/list/{id}', 'DishController@getRestaurantDishes') -> name('dishes.list'); /* --DONE-- */ 
+Route::get('/dishes/hide/{id}', 'DishController@hide') -> name('dish.hide'); /* --DONE-- */
 
 /* form di inserimento piatti */ /* Andreea */
 
-Route::get('/dish/create', 'DishController@create') -> name('dish.create');
-Route::post('/dish/store', 'DishController@store') -> name('dish.store');
+Route::get('/dish/create/{id}', 'DishController@create') -> name('dish.create');
+Route::post('/dish/store/{id}', 'DishController@store') -> name('dish.store');
 
 /* rotta con i form di modifica */ /* Pier */
 
