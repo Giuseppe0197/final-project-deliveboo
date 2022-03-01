@@ -24,8 +24,6 @@ class DishController extends Controller
 
     public function update(Request $request, $id)
     {
-        $dish = Dish::findOrFail($id);
-
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
@@ -41,7 +39,8 @@ class DishController extends Controller
         $imageFile->storeAs('/images/', $imageName, 'public');
 
         $data['image'] = $imageName;
-
+        
+        $dish = Dish::findOrFail($id);
         $dish->update($data);
         
         return redirect()->route('dishes.list', $dish['restaurant_id']);
