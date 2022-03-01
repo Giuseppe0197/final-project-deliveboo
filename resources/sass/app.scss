@@ -78,3 +78,42 @@ footer {
     background-color: lightseagreen;
     text-align: center;
 }
+
+// Page -> DishList
+div.container-dish {
+    width: 69%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    .card {
+        margin: 20px;
+
+        div.card-body {
+            
+            h4 {
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        li {
+            font-size: 15px;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                margin-right: 3px;
+            }
+
+            &.container-action-dish {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
