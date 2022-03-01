@@ -13,8 +13,13 @@
 
         @foreach ($dishes as $dish)
             <div class="card" style="width: 18rem;">
-                <img src="https://www.nonsprecare.it/wp-content/uploads/2016/10/ricetta-pizza-con-pasta-madre.jpg" alt="test">
-                {{-- <img src="images/{{ $dish->image }}" class="card-img-top" alt="{{ $dish->name }}"> --}}
+                {{-- Gesgione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) --}}
+                @if (strlen($dish->image) == 21 )
+                    <img src="/storage/images/{{ $dish->image }}" class="card-img-top" alt="{{ $dish->name }}">
+                @else
+                    <img src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" alt="image default">
+                @endif
+                
                 <div class="card-body">
                     {{-- Nome piatto --}}
                     <h4 class="card-title">{{ $dish->name }}</h4>
