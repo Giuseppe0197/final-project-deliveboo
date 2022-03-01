@@ -1,8 +1,15 @@
 @extends('layouts.main-layout')
 @section('content')
     
+    <h2 class="w-100 text-center mb-4"> Dish list </h2>
+
+    <div>
+        <a href="{{ route('dish.create', $restaurant->id) }}">
+            Aggiungi un piatto nel tuo ristorante
+        </a>
+    </div>
+
     <div class="container-dish">
-        <h2 class="w-100 text-center mb-4"> Dish list </h2>
 
         @foreach ($dishes as $dish)
             <div class="card" style="width: 18rem;">

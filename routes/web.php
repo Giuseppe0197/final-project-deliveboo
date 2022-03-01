@@ -25,8 +25,8 @@ Route::get('/dishes/hide/{id}', 'DishController@hide') -> name('dish.hide'); /* 
 
 /* form di inserimento piatti */ /* Andreea */
 
-Route::get('/dish/create', 'DishController@create') -> name('dish.create');
-Route::post('/dish/store', 'DishController@store') -> name('dish.store');
+Route::get('/dish/create/{id}', 'DishController@create') -> name('dish.create');
+Route::post('/dish/store/{id}', 'DishController@store') -> name('dish.store');
 
 /* rotta con i form di modifica */ /* Pier */
 

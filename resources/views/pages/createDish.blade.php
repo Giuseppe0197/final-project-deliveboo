@@ -18,7 +18,7 @@
 
 
         <form
-            action="{{ route('dish.store') }}" 
+            action="{{ route('dish.store', $restaurant->id) }}" 
             method="POST"
             enctype="multipart/form-data">
 

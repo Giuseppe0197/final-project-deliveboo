@@ -8,12 +8,14 @@ use Illuminate\Http\Request;
 
 class DishController extends Controller
 {
-    public function create() {
+    public function create($id) {
 
-        return view('pages.createDish');
+        $restaurant = Restaurant::findOrFail($id);
+
+        return view('pages.createDish', compact('restaurant'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request, $id) {
         // dd($request);
         // validazione dati 
         $data = $request -> validate([
@@ -27,7 +29,7 @@ class DishController extends Controller
         ]);
         // dd($data['image']);
 
-        $data['restaurant_id'] = rand(1,10);
+        $data['restaurant_id'] = $id;
         // dd($data['restaurant_id']);
 
         // salvo nome imagine da store
@@ -50,15 +52,17 @@ class DishController extends Controller
         return redirect() -> route('dishes.list', $data['restaurant_id']);
     }
 
+    // Funzione che ritorna tutti i piatti di un ristorante specifico
     public function getRestaurantDishes($id) {
 
         $restaurant = Restaurant::findOrFail($id);
 
         $dishes = Dish::all()->where('restaurant_id', $id);
 
-        return view('pages.dishList', compact('dishes'));
+        return view('pages.dishList', compact('dishes', 'restaurant'));
     }
 
+    // Funzione per cambiare la disponibilità del piatto
     public function hide($id) {
 
         $dish = Dish::findOrFail($id);

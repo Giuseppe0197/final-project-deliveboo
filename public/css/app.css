@@ -10975,8 +10975,7 @@ div.container-home {
 }
 
 header {
-  /* width: auto;
-  display: flex; */
+  width: auto;
   /* height: 100px;
   background-color: lightcoral; */
   /* nav {
