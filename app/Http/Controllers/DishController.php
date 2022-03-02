@@ -3,22 +3,62 @@
 namespace App\Http\Controllers;
 
 use App\Dish;
+
 use App\Restaurant;
 use Illuminate\Http\Request;
 
 class DishController extends Controller
 {
-    public function create($id) {
+
+    // funzione edit
+
+    public function edit($id)
+    {
+
+        $dish = Dish::findOrFail($id);
+
+        return view('pages.editDish', compact('dish'));
+    }
+
+    // funzione update
+
+    public function update(Request $request, $id)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0|max:100',
+            'type' => 'required|string',
+            'image' => 'required|image'
+        ]);
+
+
+        $imageFile = $data['image'];
+        $imageName = rand(100000, 999999) . '_' . time() . '.' . $imageFile->getClientOriginalExtension();
+
+        $imageFile->storeAs('/images/', $imageName, 'public');
+
+        $data['image'] = $imageName;
+        
+        $dish = Dish::findOrFail($id);
+        $dish->update($data);
+        
+        return redirect()->route('dishes.list', $dish['restaurant_id']);
+    }
+
+    public function create($id)
+    {
 
         $restaurant = Restaurant::findOrFail($id);
 
         return view('pages.createDish', compact('restaurant'));
     }
 
-    public function store(Request $request, $id) {
+    public function store(Request $request, $id)
+    {
         // dd($request);
         // validazione dati 
-        $data = $request -> validate([
+        $data = $request->validate([
 
             'name' => 'required|string|max:60',
             'description' => 'required|string:max255',
@@ -38,10 +78,10 @@ class DishController extends Controller
         // genero nome casuale per l'immagine => rand()
         // aggiungo l'estensione originale getClientOriginalExtension()
         $imageName = rand(100000, 999999) . '_' . time()
-                    . '.' . $imageFile -> getClientOriginalExtension();
+            . '.' . $imageFile->getClientOriginalExtension();
 
         // sposto il nome dell'immagine nella cartella images
-        $imageFile -> storeAs('/images/', $imageName, 'public');
+        $imageFile->storeAs('/images/', $imageName, 'public');
 
         // aggiorno valore image
         $data['image'] = $imageName;
@@ -49,11 +89,12 @@ class DishController extends Controller
         // creo nuovo piatto 
         $dish = Dish::create($data);
 
-        return redirect() -> route('dishes.list', $data['restaurant_id']);
+        return redirect()->route('dishes.list', $data['restaurant_id']);
     }
 
     // Funzione che ritorna tutti i piatti di un ristorante specifico
-    public function getRestaurantDishes($id) {
+    public function getRestaurantDishes($id)
+    {
 
         $restaurant = Restaurant::findOrFail($id);
 
@@ -63,7 +104,8 @@ class DishController extends Controller
     }
 
     // Funzione per cambiare la disponibilità del piatto
-    public function hide($id) {
+    public function hide($id)
+    {
 
         $dish = Dish::findOrFail($id);
 
