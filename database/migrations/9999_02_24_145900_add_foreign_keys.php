@@ -33,7 +33,7 @@ class AddForeignKeys extends Migration
         // relazione ordini clienti
         Schema::table('orders', function (Blueprint $table) {
             $table->foreign('client_id', 'client_order')->references('id')->on('clients');
-        });    
+        });
     }
 
     /**
@@ -55,10 +55,10 @@ class AddForeignKeys extends Migration
         Schema::table('category_user', function (Blueprint $table) {
             $table->dropForeign('categories_users');
             $table->dropForeign('users_categories');
-        }); 
+        });
 
         Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign('client_order');
-        });  
+        });
     }
 }
