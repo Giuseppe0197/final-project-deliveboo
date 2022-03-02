@@ -37828,6 +37828,7 @@ var render = function () {
         _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_phone))]),
         _vm._v(" "),
         _c("p", [_vm._v(_vm._s(_vm.restaurants.email))]),
+        _c("br"),
         _vm._v(" "),
         _c("p", [_vm._v(_vm._s(_vm.restaurants.address))]),
         _vm._v(" "),
