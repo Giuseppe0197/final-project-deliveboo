@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dish;
 
-use App\Restaurant;
+use App\User;
 use Illuminate\Http\Request;
 
 class DishController extends Controller
@@ -43,13 +43,13 @@ class DishController extends Controller
         $dish = Dish::findOrFail($id);
         $dish->update($data);
         
-        return redirect()->route('dishes.list', $dish['restaurant_id']);
+        return redirect()->route('dishes.list', $dish['user_id']);
     }
 
     public function create($id)
     {
 
-        $restaurant = Restaurant::findOrFail($id);
+        $restaurant = User::findOrFail($id);
 
         return view('pages.createDish', compact('restaurant'));
     }
@@ -69,8 +69,8 @@ class DishController extends Controller
         ]);
         // dd($data['image']);
 
-        $data['restaurant_id'] = $id;
-        // dd($data['restaurant_id']);
+        $data['user_id'] = $id;
+        // dd($data['user_id']);
 
         // salvo nome imagine da store
         $imageFile = $data['image'];
@@ -89,16 +89,16 @@ class DishController extends Controller
         // creo nuovo piatto 
         $dish = Dish::create($data);
 
-        return redirect()->route('dishes.list', $data['restaurant_id']);
+        return redirect()->route('dishes.list', $data['user_id']);
     }
 
     // Funzione che ritorna tutti i piatti di un ristorante specifico
     public function getRestaurantDishes($id)
     {
 
-        $restaurant = Restaurant::findOrFail($id);
+        $restaurant = User::findOrFail($id);
 
-        $dishes = Dish::all()->where('restaurant_id', $id);
+        $dishes = Dish::all()->where('user_id', $id);
 
         return view('pages.dishList', compact('dishes', 'restaurant'));
     }
@@ -117,6 +117,6 @@ class DishController extends Controller
 
         $dish->update();
 
-        return redirect()->route('dishes.list', $dish['restaurant_id']);
+        return redirect()->route('dishes.list', $dish['user_id']);
     }
 }
