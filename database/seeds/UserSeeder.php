@@ -1,10 +1,10 @@
 <?php
 
-use App\Category;
-use App\Restaurant;
 use Illuminate\Database\Seeder;
+use App\Category;
+use App\User;
 
-class RestaurantSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,12 +13,12 @@ class RestaurantSeeder extends Seeder
      */
     public function run()
     {
-        factory(Restaurant::class, 15)->create()->each(function ($restaurant) {
+        factory(User::class, 15)->create()->each(function ($user) {
 
             $category = Category::inRandomOrder()->limit(rand(1, 5))->get();
-            $restaurant->categories()->attach($category);
+            $user->categories()->attach($category);
 
-            $restaurant->save();
+            $user->save();
         });
     }
 }

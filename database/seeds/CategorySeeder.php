@@ -1,7 +1,6 @@
 <?php
 
 use App\Category;
-use App\Restaurant;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 

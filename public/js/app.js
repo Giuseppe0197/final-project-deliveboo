@@ -1956,10 +1956,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      restaurants: []
+      restaurants: [],
+      dishes: []
     };
   },
   props: {
@@ -1973,6 +1980,17 @@ __webpack_require__.r(__webpack_exports__);
     })["catch"](function (e) {
       return console.error(e);
     });
+  },
+  methods: {
+    dishesList: function dishesList(id) {
+      var _this2 = this;
+
+      axios.get('/dishes/list/' + id).then(function (r) {
+        return _this2.dishes = r.data;
+      })["catch"](function (e) {
+        return console.error(e);
+      });
+    }
   }
 });
 
@@ -37611,25 +37629,51 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant" }, [
-    _c("div", { staticClass: "rastaurant" }, [
-      _c("p", [_vm._v(_vm._s(_vm.restaurants.owner_name))]),
+  return _c(
+    "div",
+    { staticClass: "restaurant" },
+    [
+      _c("div", { staticClass: "rastaurant" }, [
+        _c("p", [_vm._v(_vm._s(_vm.restaurants.owner_name))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_name))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_phone))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.restaurants.email))]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.restaurants.address))]),
+        _vm._v(" "),
+        _c("img", {
+          attrs: { src: "/storage/images/" + _vm.restaurants.image, alt: "" },
+        }),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.restaurants.p_iva))]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function ($event) {
+                return _vm.dishesList(_vm.restaurant_id)
+              },
+            },
+          },
+          [_vm._v("Vai alla pagina con i tuoi piatti")]
+        ),
+      ]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_name))]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_phone))]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.restaurants.email))]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.restaurants.address))]),
-      _vm._v(" "),
-      _c("img", {
-        attrs: { src: "/storage/images/" + _vm.restaurants.image, alt: "" },
+      _vm._l(_vm.dishes, function (dish) {
+        return _c("div", { key: dish.id, staticClass: "container-dishes" }, [
+          _c("span", [
+            _vm._v("\n           " + _vm._s(dish.name) + "\n        "),
+          ]),
+        ])
       }),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.restaurants.p_iva))]),
-    ]),
-  ])
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50097,7 +50141,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"}\".\n    ╷\n134 │ }\n    │  ^\n    ╵\n  C:\\MAMP\\htdocs\\final-project-deliveboo\\resources\\sass\\app.scss 134:2  root stylesheet\n    at C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:99051:16)\n    at render_closure1.call$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:84557:12)\n    at _RootZone.runBinary$3$3 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:29579:18)\n    at _FutureListener.handleError$1 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28099:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28406:49)\n    at Object._Future__propagateToListeners (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3909:77)\n    at _Future._completeError$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28252:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27900:12)\n    at Object._asyncRethrow (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3712:17)\n    at C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:19793:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3737:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27919:12)\n    at _awaitOnObject_closure0.call$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27913:25)\n    at _RootZone.runBinary$3$3 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:29579:18)\n    at _FutureListener.handleError$1 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28099:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28406:49)\n    at Object._Future__propagateToListeners (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3909:77)\n    at _Future._completeError$2 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28252:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28336:18)\n    at Object._microtaskLoop (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3965:24)\n    at StaticClosure._startMicrotaskLoop (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3971:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27820:21)\n    at invokeClosure (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:1455:26)\n    at Immediate.<anonymous> (C:\\MAMP\\htdocs\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:1476:18)\n    at processImmediate (node:internal/timers:464:21)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

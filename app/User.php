@@ -26,6 +26,20 @@ class User extends Authenticatable
         'p_iva',
     ];
 
+    // relazione 1 a molti piatti
+    public function dishes()
+    {
+
+        return $this->hasMany(Dish::class);
+    }
+
+    // relazioni categorie
+    public function categories()
+    {
+
+        return $this->belongsToMany(Category::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

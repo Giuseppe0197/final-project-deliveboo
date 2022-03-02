@@ -9,6 +9,12 @@
             <p>{{restaurants.address}}</p>
             <img :src="'/storage/images/' + restaurants.image" alt="">
             <p>{{restaurants.p_iva}}</p>
+            <button class="btn btn-primary" @click="dishesList(restaurant_id)">Vai alla pagina con i tuoi piatti</button>
+        </div>
+        <div class="container-dishes" v-for="dish in dishes" :key="dish.id">
+           <span>
+               {{ dish.name }}
+            </span>
         </div>
     </div>
 </template>
@@ -17,7 +23,8 @@
     export default {
         data: function () {
             return {
-                restaurants: []
+                restaurants: [],
+                dishes: []
             }
         },
 
@@ -30,6 +37,14 @@
             axios.get('/restaurant/info/' + this.restaurant_id)
                  .then(r => this.restaurants = r.data)
                  .catch(e => console.error(e));
-        }
+        },
+
+        methods: {
+            dishesList(id){
+                axios.get('/dishes/list/' + id)
+                 .then(r => this.dishes = r.data)
+                 .catch(e => console.error(e));
+            }
+        },
     }
 </script>

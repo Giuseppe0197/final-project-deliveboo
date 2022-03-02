@@ -4,7 +4,4 @@
 
 <restaurant-component restaurant_id = {{Auth::user() -> id}}></restaurant-component>
 
-
-
-    
 @endsection

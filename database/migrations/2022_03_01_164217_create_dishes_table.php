@@ -22,7 +22,7 @@ class CreateDishesTable extends Migration
             $table->string('type', 20);
             $table->text('image');
             $table->boolean('availability');
-            $table->bigInteger('restaurant_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
 
             $table->timestamps();
         });

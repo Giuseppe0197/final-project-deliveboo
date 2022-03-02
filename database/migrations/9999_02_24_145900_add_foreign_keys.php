@@ -21,13 +21,13 @@ class AddForeignKeys extends Migration
 
         // relazione dishes 
         Schema::table('dishes', function (Blueprint $table) {
-            $table->foreign('restaurant_id', 'dishes_restaurant')->references('id')->on('restaurants');
+            $table->foreign('user_id', 'dishes_user')->references('id')->on('users');
         });
 
         // relazione ristoranti categorie
-        Schema::table('category_restaurant', function (Blueprint $table) {
-            $table->foreign('category_id', 'categories_restaurants')->references('id')->on('categories');
-            $table->foreign('restaurant_id', 'restaurants_categories')->references('id')->on('restaurants');
+        Schema::table('category_user', function (Blueprint $table) {
+            $table->foreign('category_id', 'categories_users')->references('id')->on('categories');
+            $table->foreign('user_id', 'users_categories')->references('id')->on('users');
         });
 
         // relazione ordini clienti
@@ -49,12 +49,12 @@ class AddForeignKeys extends Migration
         });
 
         Schema::table('dishes', function (Blueprint $table) {
-            $table->dropForeign('dishes_restaurant');
+            $table->dropForeign('dishes_user');
         });
 
-        Schema::table('category_restaurant', function (Blueprint $table) {
-            $table->dropForeign('categories_restaurants');
-            $table->dropForeign('restaurants_categories');
+        Schema::table('category_user', function (Blueprint $table) {
+            $table->dropForeign('categories_users');
+            $table->dropForeign('users_categories');
         }); 
 
         Schema::table('orders', function (Blueprint $table) {

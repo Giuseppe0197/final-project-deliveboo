@@ -11,9 +11,9 @@ class Category extends Model
     ];
 
     // relazione molti a molti ristoranti
-    public function restaurants()
+    public function users()
     {
 
-        return $this->belongsToMany(Restaurant::class);
+        return $this->belongsToMany(User::class);
     }
 }

@@ -13,7 +13,7 @@ class Dish extends Model
         'type',
         'image',
         'availability',
-        'restaurant_id'
+        'user_id'
     ];
 
     // relazione molti a molti Ordini
@@ -24,9 +24,9 @@ class Dish extends Model
     }
 
     // relazione 1 a molti ristoranti
-    public function restaurant()
+    public function user()
     {
 
-        return $this->belongsTo(Restaurant::class);
+        return $this->belongsTo(User::class);
     }
 }
