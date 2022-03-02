@@ -1,23 +1,35 @@
 <template>
     <div class="restaurant">
 
-        <div class="rastaurant">
-            <p>{{restaurants.owner_name}}</p>
-            <p>{{restaurants.restaurant_name}}</p>
-            <p>{{restaurants.restaurant_phone}}</p>
-            <p>{{restaurants.email}}</p>
-            <p>{{restaurants.address}}</p>
-            <img :src="'/storage/images/' + restaurants.image" alt="">
-            <p>{{restaurants.p_iva}}</p>
-        </div>
-        <div class="container-dishes" v-for="dish in dishes" :key="dish.id">
-           <span>
-               {{ dish.name }}
-            </span>
+        <div class="title">
+
+            <h1>Benvenuto nella tua sezione privata del ristorante: da qui puoi accedere alla lista dei piatti, crearne di nuovi e modificarli!</h1>
+
         </div>
 
-        <div>
-            <button class="btn btn-primary" @click="getDishes(user_id)">
+        <div class="restaurant-info-log container">
+
+            <div class="image-restaurant">
+
+                <img class="restaurant-image" :src="'/storage/images/' + restaurants.image" alt="">
+
+            </div>
+
+            <div class="info">
+
+                <p class="owner">Nome del prorietario: {{restaurants.owner_name}}</p>
+                <p class="restaurant-name">Nome ristorante: {{restaurants.restaurant_name}}</p>
+                <p class="restaurant-phone">Numero di telefono: {{restaurants.restaurant_phone}}</p>
+                <p class="restaurant-email">Indirizzo email: {{restaurants.email}}</p>
+                <p class="restaurant-address">Indirizzo del ristorante: {{restaurants.address}}</p>
+                <p class="restaurant-p-iva">Numero della partita IVA: {{restaurants.p_iva}}</p>
+
+            </div>
+
+        </div>
+
+        <div id="dishes-button">
+            <button class="dishes-list-button" @click="getDishes(user_id)">
                 Lista piatti
             </button>
         </div>
