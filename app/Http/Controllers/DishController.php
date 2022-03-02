@@ -46,6 +46,7 @@ class DishController extends Controller
         return redirect()->route('dishes.list', $dish['user_id']);
     }
 
+    // Funzione create dish
     public function create($id)
     {
 
@@ -54,6 +55,7 @@ class DishController extends Controller
         return view('pages.createDish', compact('restaurant'));
     }
 
+    // Funzione store dish
     public function store(Request $request, $id)
     {
         // dd($request);

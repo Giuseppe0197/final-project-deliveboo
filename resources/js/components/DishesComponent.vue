@@ -4,44 +4,57 @@
         <h1 class="w-100 text-center mb-4"> Dishes list </h1>
         
         <div class="container-new-dish w-100">
-            <a href="">
+            <button class="btn btn-primary" @click.prevent="insertDish(restaurant_id)">
                 Aggiungi un piatto nel tuo ristorante
-            </a>
+            </button>
+        </div>
+
+        <div class="w-100 text-center mt-2">
+            <button class="btn btn-secondary" @click.prevent="homeRestaurant()">
+                Ritorna al ristorante
+            </button>
         </div>
 
         
-            <div class="card" style="width: 18rem;">
-                <!--  Gesgione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
-                    <img src="" class="card-img-top" alt="">
-                    <img src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default">
-                
-                <div class="card-body">
-                     <!-- Nome piatto -->
-                    <h4 class="card-title"></h4>
-                     <!-- Descrizione piatto -->
-                    <p class="card-text"></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                     <!-- Prezzo piatto -->
-                    <li class="list-group-item">
-                        <span>Prezzo:</span>
-                        &euro; 
-                    </li>
-                     <!-- Tipo piatto -->
-                    <li class="list-group-item">
-                        <span class="fw-bold">Tipo:</span>
-                        
-                    </li>
-                     <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
-                    <li class="list-group-item">
-                        <span>Disponibilità:</span>
-                    </li>
-                    <li class="container-action-dish list-group-item">
-                        <a class="btn btn-primary" href="">MODIFICA</a><!-- Inserire la rotta per MODIFICARE IL PIATTO  -->
-                        <a class="btn btn-danger" href="">ELIMINA</a> <!-- Inserire la rotta per ELIMINARE/HIDE IL PIATTO -->
-                    </li>
-                </ul>
+        <div class="card" v-for="dish in dishes" :key="dish.id" style="width: 18rem;">
+             <!-- Gesgione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
+                <img src="" class="card-img-top" alt="">
+                <img src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default">
+            
+            <div class="card-body">
+                    <!-- Nome piatto -->
+                <h4 class="card-title">
+                    {{ dish.name }}
+                </h4>
+                    <!-- Descrizione piatto -->
+                <p class="card-text">
+                    {{ dish.description }}
+                </p>
             </div>
+            <ul class="list-group list-group-flush">
+                    <!-- Prezzo piatto -->
+                <li class="list-group-item">
+                    <span>Prezzo:</span>
+                    &euro;{{ dish.price }} 
+                </li>
+                    <!-- Tipo piatto -->
+                <li class="list-group-item">
+                    <span class="fw-bold">Tipo:</span>
+                    {{ dish.type }}
+                </li>                    
+                <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
+                <li class="list-group-item">
+                    <span>Disponibilità:</span>
+                    {{ dish.availability }}
+                </li>
+                <li class="container-action-dish list-group-item">
+                    <!-- Button per modificare il piatto -->
+                    <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>
+                    <!-- Button per modificare l'availability del piatto -->
+                    <a class="btn btn-danger" href="#">RIMUOVI</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -49,27 +62,33 @@
     export default {
         data: function () {
             return {
-                restaurants: [],
-                dishes: []
+                test: []
             }
         },
 
         props: {
-            restaurant_id: String
+            dishes: Object,
+            restaurant_id: Number
         },
-        
-        mounted() {
 
-            axios.get('/restaurant/info/' + this.restaurant_id)
-                 .then(r => this.restaurants = r.data)
-                 .catch(e => console.error(e));
+        mounted() {
+            console.log(this.restaurant_id);
         },
 
         methods: {
-            dishesList(id){
-                axios.get('/dishes/list/' + id)
-                 .then(r => this.dishes = r.data)
-                 .catch(e => console.error(e));
+            // Metodo per inserire un piatto
+            insertDish(id) {
+                window.location.href = `/dish/create/${id}`;
+            },
+
+            // Metodo per modificare un piatto
+            editDish(id) {
+                window.location.href = `/dish/edit/${id}`;
+            },
+
+            // Metodo per ritornare indietro alla home del ristorante
+            homeRestaurant() {
+                window.location.href = `/restaurant`;
             }
         },
     }

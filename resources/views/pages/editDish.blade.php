@@ -28,7 +28,8 @@
     <input type="text" name="price" placeholder="prezzo" value="{{ $dish -> price }}" step=".01"><br>
     <label for="type">Categoria</label>
 
-    <select name="type" value="{{ $dish -> type }}">
+    <select name="type">
+        <option value="{{ $dish->type }}" selected disabled>{{ $dish->type }}</option>
         <option value="Antipasti">Antipasti</option>
         <option value="Primi">Primi</option>
         <option value="Secondi">Secondi</option>
