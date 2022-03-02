@@ -28,43 +28,50 @@ div.container-home {
     padding: 100px 0;
 }
 
-// Header
+// HEADER --------------------------------------------------
 header {
     width: auto;
-    // display: flex;
-    // debug |-------------------------------------------------------------------------------|
-    /* height: 100px;
-    background-color: lightcoral; */
+    height: 80px;
 
-    //     /* nav {
-    //         width: 100%;
-    //         display: flex;
-    //         align-items: center;
+    .nav-section {
+        width: 70%;
+        margin: 0px 15%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 27px;
+        font-size: 17px;
 
-    //         div.container-logo {
-    //             width: auto;
+        a {
+            margin-left: 30px;
+            color: #000;
+            text-decoration: none;
 
-    //             img {
-    //                 height: 100px;
-    //             }
-    //         }
+            &:hover {
+                color: #00ccbc;
+            }
+        }
 
-    //         ul {
-    //             display: flex;
-    //             justify-content: right;
-    //             width: 90%;
+        .register-btn {
+            color: #fff;
+            background: #00ccbc;
+            padding: 14px 24px;
+            border-radius: 4%;
 
-    //             li {
-    //                 list-style: none;
-    //                 margin: 0 10px;
+            &:hover {
+                color: #fff;
+            }
+        }
 
-    // a {
-    //     text-decoration: none;
-    //     color: #fff;
-    // }
-    //     }
-    // }
-    // }
+        .exit-btn {
+            color: #fff;
+
+            &:hover {
+                color: black;
+                background-color: #fff;
+                border: solid 1px black;
+            }
+        }
+    }
 }
 
 // edit page
@@ -88,15 +95,50 @@ header {
     margin: 50px 0;
 }
 
-// Footer
+// FOOTER ------------------------------------------------
 footer {
     width: auto;
-    // debug
-    display: flex;
-    align-items: center;
-    height: 100px;
-    background-color: lightseagreen;
-    text-align: center;
+    background-color: #f8f8f8;
+    padding-bottom: 125px;
+
+    .nav-footer {
+        width: 70%;
+        margin: 0px 15%;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 70px;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            a {
+                color: #828585;
+
+                &:hover {
+                    color: #00ccbc;
+                    text-decoration: none;
+                }
+            }
+
+            .register-btn {
+                color: #fff;
+                background: #00ccbc;
+                padding: 14px 24px;
+                border-radius: 4%;
+                margin-top: 20px;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            .subscribe {
+                margin-top: 20px;
+            }
+        }
+    }
 }
 
 // Page -> DishList
@@ -244,5 +286,65 @@ div.container-dish {
     input[type=submit] {
         width: 100%;
         float: none;
+// css per pagina utente loggato e dettagli ristorante(account)
+
+.title {
+    width: 60%;
+    margin: 10px auto 0;
+}
+.restaurant-info-log {
+
+    display: flex;
+    justify-content: space-evenly;
+
+    .image-restaurant{
+        width: 50%;
+
+        .restaurant-image {
+            width: 90%;
+        }
+    }
+
+    .info {
+        width: 50%;
+        p {
+            font-size: 25px;
+
+            &:hover {
+                color: #00CCBC;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}
+
+#dishes-button {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .dishes-list-button {
+        border: none;
+        font-size: 25px;
+        border-radius: 10px;
+        background-color: #00CCBC;
+        color: white;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+    
+}
+//da qui form registrazione
+.auth-page {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .checkbox-container{
+        width: 30%;
+    }
+    input {
+        border: none;
     }
 }

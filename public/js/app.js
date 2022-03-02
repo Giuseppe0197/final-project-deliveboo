@@ -1955,34 +1955,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      restaurants: [],
-      dishes: []
+      test: []
     };
   },
   props: {
-    restaurant_id: String
+    dishes: Object,
+    restaurant_id: Number
   },
   mounted: function mounted() {
-    var _this = this;
-
-    axios.get('/restaurant/info/' + this.restaurant_id).then(function (r) {
-      return _this.restaurants = r.data;
-    })["catch"](function (e) {
-      return console.error(e);
-    });
+    console.log(this.restaurant_id);
   },
   methods: {
-    dishesList: function dishesList(id) {
-      var _this2 = this;
-
-      axios.get('/dishes/list/' + id).then(function (r) {
-        return _this2.dishes = r.data;
-      })["catch"](function (e) {
-        return console.error(e);
-      });
+    // Metodo per inserire un piatto
+    insertDish: function insertDish(id) {
+      window.location.href = "/dish/create/".concat(id);
+    },
+    // Metodo per modificare un piatto
+    editDish: function editDish(id) {
+      window.location.href = "/dish/edit/".concat(id);
+    },
+    // Metodo per ritornare indietro alla home del ristorante
+    homeRestaurant: function homeRestaurant() {
+      window.location.href = "/restaurant";
     }
   }
 });
@@ -2060,6 +2070,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2080,15 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    dishesList: function dishesList(id) {
-      var _this2 = this;
-
-      axios.get('/dishes/list/' + id).then(function (r) {
-        return _this2.dishes = r.data;
-      })["catch"](function (e) {
-        return console.error(e);
-      });
-    },
+    // Metodo per ritornare la pagina blade contenente tutti i piatti del ristorante!
     getDishes: function getDishes(id) {
       window.location.href = "/dishes/list/".concat(id);
     }
@@ -37683,71 +37696,146 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-dish" }, [
+  return _c(
+    "div",
+    { staticClass: "container-dish" },
+    [
       _c("h1", { staticClass: "w-100 text-center mb-4" }, [
         _vm._v(" Dishes list "),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "container-new-dish w-100" }, [
-        _c("a", { attrs: { href: "" } }, [
-          _vm._v(
-            "\n            Aggiungi un piatto nel tuo ristorante\n        "
-          ),
-        ]),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            on: {
+              click: function ($event) {
+                $event.preventDefault()
+                return _vm.insertDish(_vm.restaurant_id)
+              },
+            },
+          },
+          [
+            _vm._v(
+              "\n            Aggiungi un piatto nel tuo ristorante\n        "
+            ),
+          ]
+        ),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
-        _c("img", { staticClass: "card-img-top", attrs: { src: "", alt: "" } }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "card-img-top",
-          attrs: {
-            src: "https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg",
-            alt: "image default",
+      _c("div", { staticClass: "w-100 text-center mt-2" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-secondary",
+            on: {
+              click: function ($event) {
+                $event.preventDefault()
+                return _vm.homeRestaurant()
+              },
+            },
           },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("h4", { staticClass: "card-title" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }),
-        ]),
-        _vm._v(" "),
-        _c("ul", { staticClass: "list-group list-group-flush" }, [
-          _c("li", { staticClass: "list-group-item" }, [
-            _c("span", [_vm._v("Prezzo:")]),
-            _vm._v("\n                    € \n                "),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "list-group-item" }, [
-            _c("span", { staticClass: "fw-bold" }, [_vm._v("Tipo:")]),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "list-group-item" }, [
-            _c("span", [_vm._v("Disponibilità:")]),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "container-action-dish list-group-item" }, [
-            _c("a", { staticClass: "btn btn-primary", attrs: { href: "" } }, [
-              _vm._v("MODIFICA"),
+          [_vm._v("\n            Ritorna al ristorante\n        ")]
+        ),
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.dishes, function (dish) {
+        return _c(
+          "div",
+          {
+            key: dish.id,
+            staticClass: "card",
+            staticStyle: { width: "18rem" },
+          },
+          [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "", alt: "" },
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src: "https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg",
+                alt: "image default",
+              },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h4", { staticClass: "card-title" }, [
+                _vm._v(
+                  "\n                " + _vm._s(dish.name) + "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(dish.description) +
+                    "\n            "
+                ),
+              ]),
             ]),
             _vm._v(" "),
-            _c("a", { staticClass: "btn btn-danger", attrs: { href: "" } }, [
-              _vm._v("ELIMINA"),
+            _c("ul", { staticClass: "list-group list-group-flush" }, [
+              _c("li", { staticClass: "list-group-item" }, [
+                _c("span", [_vm._v("Prezzo:")]),
+                _vm._v(
+                  "\n                €" + _vm._s(dish.price) + " \n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "list-group-item" }, [
+                _c("span", { staticClass: "fw-bold" }, [_vm._v("Tipo:")]),
+                _vm._v(
+                  "\n                " + _vm._s(dish.type) + "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "list-group-item" }, [
+                _c("span", [_vm._v("Disponibilità:")]),
+                _vm._v(
+                  "\n                " +
+                    _vm._s(dish.availability) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "container-action-dish list-group-item" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.editDish(dish.id)
+                        },
+                      },
+                    },
+                    [_vm._v("MODIFICA")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "btn btn-danger", attrs: { href: "#" } },
+                    [_vm._v("RIMUOVI")]
+                  ),
+                ]
+              ),
             ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+          ]
+        )
+      }),
+    ],
+    2
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37816,67 +37904,78 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "restaurant" },
-    [
-      _c("div", { staticClass: "rastaurant" }, [
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.owner_name))]),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_name))]),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_phone))]),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.email))]),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.address))]),
-        _vm._v(" "),
+  return _c("div", { staticClass: "restaurant" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "restaurant-info-log container" }, [
+      _c("div", { staticClass: "image-restaurant" }, [
         _c("img", {
+          staticClass: "restaurant-image",
           attrs: { src: "/storage/images/" + _vm.restaurants.image, alt: "" },
         }),
-        _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.p_iva))]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            on: {
-              click: function ($event) {
-                return _vm.dishesList(_vm.user_id)
-              },
-            },
-          },
-          [_vm._v("Vai alla pagina con i tuoi piatti")]
-        ),
       ]),
       _vm._v(" "),
-      _vm._l(_vm.dishes, function (dish) {
-        return _c("div", { key: dish.id, staticClass: "container-dishes" }, [
-          _c("span", [
-            _vm._v("\n           " + _vm._s(dish.name) + "\n        "),
-          ]),
-        ])
-      }),
-      _vm._v(" "),
-      _c("div", [
-        _c(
-          "button",
-          {
-            on: {
-              click: function ($event) {
-                return _vm.getDishes(_vm.user_id)
-              },
+      _c("div", { staticClass: "info" }, [
+        _c("p", { staticClass: "owner" }, [
+          _vm._v("Nome del prorietario: " + _vm._s(_vm.restaurants.owner_name)),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "restaurant-name" }, [
+          _vm._v("Nome ristorante: " + _vm._s(_vm.restaurants.restaurant_name)),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "restaurant-phone" }, [
+          _vm._v(
+            "Numero di telefono: " + _vm._s(_vm.restaurants.restaurant_phone)
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "restaurant-email" }, [
+          _vm._v("Indirizzo email: " + _vm._s(_vm.restaurants.email)),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "restaurant-address" }, [
+          _vm._v(
+            "Indirizzo del ristorante: " + _vm._s(_vm.restaurants.address)
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "restaurant-p-iva" }, [
+          _vm._v("Numero della partita IVA: " + _vm._s(_vm.restaurants.p_iva)),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { attrs: { id: "dishes-button" } }, [
+      _c(
+        "button",
+        {
+          staticClass: "dishes-list-button",
+          on: {
+            click: function ($event) {
+              return _vm.getDishes(_vm.user_id)
             },
           },
-          [_vm._v("\n            Lista piatti\n        ")]
-        ),
-      ]),
-    ],
-    2
-  )
+        },
+        [_vm._v("\n            Lista piatti\n        ")]
+      ),
+    ]),
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title" }, [
+      _c("h1", [
+        _vm._v(
+          "Benvenuto nella tua sezione privata del ristorante: da qui puoi accedere alla lista dei piatti, crearne di nuovi e modificarli!"
+        ),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -50423,8 +50522,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 4a0e0b4818ef14772d4819d3e7eb1791ad034620
 
 
 /***/ })
