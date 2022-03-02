@@ -11058,3 +11058,49 @@ div.container-dish .card li.container-action-dish {
   justify-content: space-evenly;
 }
 
+.title {
+  width: 60%;
+  margin: 10px auto 0;
+}
+
+.restaurant-info-log {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.restaurant-info-log .image-restaurant {
+  width: 50%;
+}
+
+.restaurant-info-log .image-restaurant .restaurant-image {
+  width: 90%;
+}
+
+.restaurant-info-log .info {
+  width: 50%;
+}
+
+.restaurant-info-log .info p {
+  font-size: 25px;
+}
+
+.restaurant-info-log .info p:hover {
+  color: #00CCBC;
+  cursor: pointer;
+}
+
+#dishes-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#dishes-button .dishes-list-button {
+  border: none;
+  font-size: 25px;
+  border-radius: 10px;
+  background-color: #00CCBC;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+

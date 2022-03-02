@@ -22,28 +22,28 @@
         @csrf
 
         <label for="email">Inserisci la mail:</label>
-        <input type="text" name="email" placeholder="Inserisci la tua mail" value="pippobf@mail.com"><br>
+        <input type="text" name="email" placeholder="Inserisci la tua mail"><br>
 
         <label for="password">Inserisci una password:</label>
-        <input type="password" name="password" placeholder="Inserisci una password" value="pippopippo"><br>
+        <input type="password" name="password" placeholder="Inserisci una password"><br>
 
         <label for="password_confirmation">Conferma la password:</label>
-        <input type="password" name="password_confirmation" placeholder="Conferma la password" value="pippopippo"><br>
+        <input type="password" name="password_confirmation" placeholder="Conferma la password"><br>
 
         <label for="restaurant_name">Nome attivit&aacute;</label>
-        <input type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività" value="pippobf"><br>
+        <input type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività"><br>
 
         <label for="owner_name">Nome proprietario</label>
-        <input type="text" name="owner_name" placeholder="Inserisci il tuo nome" value="pippobf"><br>
+        <input type="text" name="owner_name" placeholder="Inserisci il tuo nome"><br>
 
         <label for="restaurant_phone">Telefono dell'attivit&aacute;</label>
-        <input type="text" name="restaurant_phone" placeholder="Inserisci il numero di telefono" value="26425"><br>
+        <input type="text" name="restaurant_phone" placeholder="Inserisci il numero di telefono"><br>
 
         <label for="address">Inserisci l'indirizzo</label>
-        <input type="text" name="address" placeholder="Inserisci l'indirizzo" value="pippo n°20"><br>
+        <input type="text" name="address" placeholder="Inserisci l'indirizzo"><br>
 
         <label for="p_iva">Inserisci la partita Iva</label>
-        <input type="text" name="p_iva" placeholder="Inserisci la partita Iva" value="2353472"><br>
+        <input type="text" name="p_iva" placeholder="Inserisci la partita Iva"><br>
  
         <label for="image">Inserisci l'immagine</label>
         <input type="file" name="image"><br>
