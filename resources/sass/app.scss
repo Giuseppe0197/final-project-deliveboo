@@ -151,3 +151,17 @@ div.container-dish {
         }
     }
 }
+
+//da qui form registrazione
+.auth-page {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .checkbox-container{
+        width: 30%;
+    }
+    input {
+        border: none;
+    }
+}

@@ -5,7 +5,7 @@
             <p>{{restaurants.owner_name}}</p>
             <p>{{restaurants.restaurant_name}}</p>
             <p>{{restaurants.restaurant_phone}}</p>
-            <p>{{restaurants.email}}</p>
+            <p>{{restaurants.email}}</p><br>
             <p>{{restaurants.address}}</p>
             <img :src="'/storage/images/' + restaurants.image" alt="">
             <p>{{restaurants.p_iva}}</p>

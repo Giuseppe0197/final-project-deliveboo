@@ -59,6 +59,6 @@ class AddForeignKeys extends Migration
 
         Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign('client_order');
-        });  
-    }
+        }); 
+    } 
 }

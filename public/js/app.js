@@ -37828,6 +37828,7 @@ var render = function () {
         _c("p", [_vm._v(_vm._s(_vm.restaurants.restaurant_phone))]),
         _vm._v(" "),
         _c("p", [_vm._v(_vm._s(_vm.restaurants.email))]),
+        _c("br"),
         _vm._v(" "),
         _c("p", [_vm._v(_vm._s(_vm.restaurants.address))]),
         _vm._v(" "),
@@ -50423,8 +50424,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

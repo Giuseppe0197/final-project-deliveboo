@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="auth-page">
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -13,63 +13,69 @@
             </ul>
         </div>
     @endif
+            {{-- FORM REGISTRAZIONE --}}
+        <form action="{{route('register')}}" method="post" enctype="multipart/form-data"
+        >
 
+            @method('post')
+            @csrf
+                
+            <h3>Registrati</h3>
+            <label class="my-2" for="email">Inserisci la mail:</label><br>
+            <input type="text" name="email" placeholder="Inserisci la tua mail"><br>
 
-    <form action="{{route('register')}}" method="post" enctype="multipart/form-data"
-    >
+            <label class="my-2" for="password">Inserisci una password:</label><br>
+            <input type="password" name="password" placeholder="Inserisci una password"><br>
 
-        @method('post')
-        @csrf
+            <label class="my-2" for="password_confirmation">Conferma la password:</label><br>
+            <input type="password" name="password_confirmation" placeholder="Conferma la password"><br>
 
-        <label for="email">Inserisci la mail:</label>
-        <input type="text" name="email" placeholder="Inserisci la tua mail" value="pippobf@mail.com"><br>
+            <label class="my-2" for="restaurant_name">Nome attivit&aacute;</label><br>
+            <input type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività"><br>
 
-        <label for="password">Inserisci una password:</label>
-        <input type="password" name="password" placeholder="Inserisci una password" value="pippopippo"><br>
+            <label class="my-2" for="owner_name">Nome proprietario</label><br>
+            <input type="text" name="owner_name" placeholder="Inserisci il tuo nome"><br>
 
-        <label for="password_confirmation">Conferma la password:</label>
-        <input type="password" name="password_confirmation" placeholder="Conferma la password" value="pippopippo"><br>
+            <label class="my-2" for="restaurant_phone">Telefono dell'attivit&aacute;</label><br>
+            <input type="text" name="restaurant_phone" placeholder="Inserisci il numero di telefono"><br>
 
-        <label for="restaurant_name">Nome attivit&aacute;</label>
-        <input type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività" value="pippobf"><br>
+            <label class="my-2" for="address">Inserisci l'indirizzo</label><br>
+            <input type="text" name="address" placeholder="Inserisci l'indirizzo"><br>
 
-        <label for="owner_name">Nome proprietario</label>
-        <input type="text" name="owner_name" placeholder="Inserisci il tuo nome" value="pippobf"><br>
+            <label class="my-2" for="p_iva">Inserisci la partita Iva</label><br>
+            <input type="text" name="p_iva" placeholder="Inserisci la partita Iva"><br>
 
-        <label for="restaurant_phone">Telefono dell'attivit&aacute;</label>
-        <input type="text" name="restaurant_phone" placeholder="Inserisci il numero di telefono" value="26425"><br>
+            <label class="my-2" for="image">Inserisci l'immagine</label><br>
+            <input type="file" name="image"><br>
 
-        <label for="address">Inserisci l'indirizzo</label>
-        <input type="text" name="address" placeholder="Inserisci l'indirizzo" value="pippo n°20"><br>
+                {{-- CHECKBOX --}}
+            <div class="my-2 checkbox-container">
+                @foreach ($categories as $category)
+                    <input type="checkbox" name="categories[]" value="{{$category -> id}}">
+                    {{$category-> name}} 
+                @endforeach<br>
+            </div> 
 
-        <label for="p_iva">Inserisci la partita Iva</label>
-        <input type="text" name="p_iva" placeholder="Inserisci la partita Iva" value="2353472"><br>
- 
-        <label for="image">Inserisci l'immagine</label>
-        <input type="file" name="image"><br>
+            <input class="btn btn-success my-2" type="submit" value="REGISTER">
+            
+        </form>
 
-        @foreach ($categories as $category)
-            <input type="checkbox" name="categories[]" value="{{$category -> id}}">
-            {{$category-> name}} 
-        @endforeach<br>
+            {{-- FORM LOGIN --}}
+        <form action="{{route('login')}}" method="post">
 
-        <input class="btn btn-success" type="submit" value="REGISTER">
+            @method('post')
+            @csrf
 
-    </form>
+            <h3>Login</h3>
+            <label class="my-2" for="email">Inserisci la tua mail:</label><br>
+            <input type="text" name="email" placeholder="Inserisci la tua mail"><br>
 
-    <form action="{{route('login')}}" method="post">
+            <label class="my-2" for="password">Inserisci la tua password:</label><br>
+            <input type="password" name="password" placeholder="Inserisci la tua password"><br>
+            <input class="btn btn-success my-2" type="submit" value="LOGIN">
+        </form>
 
-        @method('post')
-        @csrf
-
-        <label for="email">Inserisci la tua mail:</label>
-        <input type="text" name="email" placeholder="Inserisci la tua mail"><br>
-
-        <label for="password">Inserisci la tua password:</label>
-        <input type="password" name="password" placeholder="Inserisci la tua password"><br>
-        <input class="btn btn-success" type="submit" value="LOGIN">
-    </form>
-
-</div>
+    
+    </div>
     
 @endsection
