@@ -9,14 +9,22 @@
             <p>{{restaurants.address}}</p>
             <img :src="'/storage/images/' + restaurants.image" alt="">
             <p>{{restaurants.p_iva}}</p>
-            <button class="btn btn-primary" @click="dishesList(restaurant_id)">Vai alla pagina con i tuoi piatti</button>
+            <button class="btn btn-primary" @click="dishesList(user_id)">Vai alla pagina con i tuoi piatti</button>
         </div>
         <div class="container-dishes" v-for="dish in dishes" :key="dish.id">
            <span>
                {{ dish.name }}
             </span>
         </div>
+
+        <div>
+            <button @click="getDishes(user_id)">
+                Lista piatti
+            </button>
+        </div>
+
     </div>
+
 </template>
 
 <script>
@@ -29,12 +37,12 @@
         },
 
         props: {
-            restaurant_id: String
+            user_id: String
         },
         
         mounted() {
 
-            axios.get('/restaurant/info/' + this.restaurant_id)
+            axios.get('/restaurant/info/' + this.user_id)
                  .then(r => this.restaurants = r.data)
                  .catch(e => console.error(e));
         },
@@ -44,6 +52,10 @@
                 axios.get('/dishes/list/' + id)
                  .then(r => this.dishes = r.data)
                  .catch(e => console.error(e));
+            },
+
+            getDishes(id) {
+                window.location.href = `/dishes/list/${id}`;
             }
         },
     }

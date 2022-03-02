@@ -2052,6 +2052,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2060,12 +2068,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    restaurant_id: String
+    user_id: String
   },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('/restaurant/info/' + this.restaurant_id).then(function (r) {
+    axios.get('/restaurant/info/' + this.user_id).then(function (r) {
       return _this.restaurants = r.data;
     })["catch"](function (e) {
       return console.error(e);
@@ -2080,6 +2088,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         return console.error(e);
       });
+    },
+    getDishes: function getDishes(id) {
+      window.location.href = "/dishes/list/".concat(id);
     }
   }
 });
@@ -37832,7 +37843,7 @@ var render = function () {
             staticClass: "btn btn-primary",
             on: {
               click: function ($event) {
-                return _vm.dishesList(_vm.restaurant_id)
+                return _vm.dishesList(_vm.user_id)
               },
             },
           },
@@ -37847,6 +37858,20 @@ var render = function () {
           ]),
         ])
       }),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "button",
+          {
+            on: {
+              click: function ($event) {
+                return _vm.getDishes(_vm.user_id)
+              },
+            },
+          },
+          [_vm._v("\n            Lista piatti\n        ")]
+        ),
+      ]),
     ],
     2
   )

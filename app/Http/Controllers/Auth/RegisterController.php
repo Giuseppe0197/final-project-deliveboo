@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Category;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -58,10 +59,9 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:255'],
             'image' => ['required', 'image'],
-            'p_iva' => ['required', 'string', 'max:20'],
+            'p_iva' => ['required', 'string', 'max:20']
         ]);
-
-    }
+    } 
 
     /**
      * Create a new user instance after a valid registration.
@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'address' => $data['address'],
             'image' => $data['image'],
-            'p_iva' => $data['p_iva'],
+            'p_iva' => $data['p_iva']
         ]);
 
         if(request() -> hasFile('image')){
@@ -88,9 +88,18 @@ class RegisterController extends Controller
             $imageName = rand(100000, 999999) . '_' . time() . '.' . $image -> getClientOriginalExtension();
             request() -> file('image') -> storeAs('/images/', $imageName, 'public');
             $data -> update(['image' => $imageName]);
-         }
+        }
 
-         return $data;
+        // dd($data);
+
+        // $user = $data['id'];
+
+        // $categories = Category::findOrFail(request() -> get('category_id'));
+        // $user -> categories() -> attach($categories);
+
+        // $user -> save();
+
+        return $data;
     }
 
 }
