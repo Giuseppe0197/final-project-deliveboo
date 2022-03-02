@@ -10976,8 +10976,47 @@ div.container-home {
 
 header {
   width: auto;
-  /* height: 100px;
-  background-color: lightcoral; */
+  height: 80px;
+}
+
+header .nav-section {
+  width: 70%;
+  margin: 0px 15%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 27px;
+  font-size: 17px;
+}
+
+header .nav-section a {
+  margin-left: 30px;
+  color: #000;
+  text-decoration: none;
+}
+
+header .nav-section a:hover {
+  color: #00ccbc;
+}
+
+header .nav-section .register-btn {
+  color: #fff;
+  background: #00ccbc;
+  padding: 14px 24px;
+  border-radius: 4%;
+}
+
+header .nav-section .register-btn:hover {
+  color: #fff;
+}
+
+header .nav-section .exit-btn {
+  color: #fff;
+}
+
+header .nav-section .exit-btn:hover {
+  color: black;
+  background-color: #fff;
+  border: solid 1px black;
 }
 
 #edit-title {
@@ -11001,11 +11040,47 @@ header {
 
 footer {
   width: auto;
+  background-color: #f8f8f8;
+  padding-bottom: 125px;
+}
+
+footer .nav-footer {
+  width: 70%;
+  margin: 0px 15%;
   display: flex;
-  align-items: center;
-  height: 100px;
-  background-color: lightseagreen;
-  text-align: center;
+  justify-content: space-around;
+  padding-top: 70px;
+}
+
+footer .nav-footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .nav-footer ul a {
+  color: #828585;
+}
+
+footer .nav-footer ul a:hover {
+  color: #00ccbc;
+  text-decoration: none;
+}
+
+footer .nav-footer ul .register-btn {
+  color: #fff;
+  background: #00ccbc;
+  padding: 14px 24px;
+  border-radius: 4%;
+  margin-top: 20px;
+}
+
+footer .nav-footer ul .register-btn:hover {
+  color: #fff;
+}
+
+footer .nav-footer ul .subscribe {
+  margin-top: 20px;
 }
 
 div.container-dish {
