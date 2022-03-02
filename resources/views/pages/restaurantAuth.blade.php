@@ -2,6 +2,6 @@
 
 @section('content')
 
-<restaurant-component restaurant_id = {{Auth::user() -> id}}></restaurant-component>
+<restaurant-component user_id = {{Auth::user() -> id}}></restaurant-component>
 
 @endsection

@@ -1,22 +1,41 @@
 <template>
     <div class="restaurant">
 
-        <div class="rastaurant">
-            <p>{{restaurants.owner_name}}</p>
-            <p>{{restaurants.restaurant_name}}</p>
-            <p>{{restaurants.restaurant_phone}}</p>
-            <p>{{restaurants.email}}</p>
-            <p>{{restaurants.address}}</p>
-            <img :src="'/storage/images/' + restaurants.image" alt="">
-            <p>{{restaurants.p_iva}}</p>
-            <button class="btn btn-primary" @click="dishesList(restaurant_id)">Vai alla pagina con i tuoi piatti</button>
+        <div class="title">
+
+            <h1>Benvenuto nella tua sezione privata del ristorante: da qui puoi accedere alla lista dei piatti, crearne di nuovi e modificarli!</h1>
+
         </div>
-        <div class="container-dishes" v-for="dish in dishes" :key="dish.id">
-           <span>
-               {{ dish.name }}
-            </span>
+
+        <div class="restaurant-info-log container">
+
+            <div class="image-restaurant">
+
+                <img class="restaurant-image" :src="'/storage/images/' + restaurants.image" alt="">
+
+            </div>
+
+            <div class="info">
+
+                <p class="owner">Nome del prorietario: {{restaurants.owner_name}}</p>
+                <p class="restaurant-name">Nome ristorante: {{restaurants.restaurant_name}}</p>
+                <p class="restaurant-phone">Numero di telefono: {{restaurants.restaurant_phone}}</p>
+                <p class="restaurant-email">Indirizzo email: {{restaurants.email}}</p>
+                <p class="restaurant-address">Indirizzo del ristorante: {{restaurants.address}}</p>
+                <p class="restaurant-p-iva">Numero della partita IVA: {{restaurants.p_iva}}</p>
+
+            </div>
+
         </div>
+
+        <div id="dishes-button">
+            <button class="dishes-list-button" @click="getDishes(user_id)">
+                Lista piatti
+            </button>
+        </div>
+
     </div>
+
 </template>
 
 <script>
@@ -29,21 +48,20 @@
         },
 
         props: {
-            restaurant_id: String
+            user_id: String
         },
         
         mounted() {
 
-            axios.get('/restaurant/info/' + this.restaurant_id)
+            axios.get('/restaurant/info/' + this.user_id)
                  .then(r => this.restaurants = r.data)
                  .catch(e => console.error(e));
         },
 
         methods: {
-            dishesList(id){
-                axios.get('/dishes/list/' + id)
-                 .then(r => this.dishes = r.data)
-                 .catch(e => console.error(e));
+            // Metodo per ritornare la pagina blade contenente tutti i piatti del ristorante!
+            getDishes(id) {
+                window.location.href = `/dishes/list/${id}`;
             }
         },
     }

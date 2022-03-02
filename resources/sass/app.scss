@@ -193,3 +193,66 @@ div.container-dish {
         }
     }
 }
+
+// css per pagina utente loggato e dettagli ristorante(account)
+
+.title {
+    width: 60%;
+    margin: 10px auto 0;
+}
+.restaurant-info-log {
+
+    display: flex;
+    justify-content: space-evenly;
+
+    .image-restaurant{
+        width: 50%;
+
+        .restaurant-image {
+            width: 90%;
+        }
+    }
+
+    .info {
+        width: 50%;
+        p {
+            font-size: 25px;
+
+            &:hover {
+                color: #00CCBC;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+}
+
+#dishes-button {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .dishes-list-button {
+        border: none;
+        font-size: 25px;
+        border-radius: 10px;
+        background-color: #00CCBC;
+        color: white;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+    
+}
+//da qui form registrazione
+.auth-page {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .checkbox-container{
+        width: 30%;
+    }
+    input {
+        border: none;
+    }
+}

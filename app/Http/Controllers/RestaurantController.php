@@ -15,7 +15,7 @@ class RestaurantController extends Controller
 
         return view('pages.register', compact( 'categories'));
     }
-
+ 
     public function showRestaurant() {
 
         return view('pages.restaurantAuth');
