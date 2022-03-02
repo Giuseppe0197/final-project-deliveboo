@@ -5,6 +5,15 @@
 
             <h1>Benvenuto nella tua sezione privata del ristorante: da qui puoi accedere alla lista dei piatti, crearne di nuovi e modificarli!</h1>
 
+        <div class="rastaurant">
+            <p>{{restaurants.owner_name}}</p>
+            <p>{{restaurants.restaurant_name}}</p>
+            <p>{{restaurants.restaurant_phone}}</p>
+            <p>{{restaurants.email}}</p><br>
+            <p>{{restaurants.address}}</p>
+            <img :src="'/storage/images/' + restaurants.image" alt="">
+            <p>{{restaurants.p_iva}}</p>
+            <button class="btn btn-primary" @click="dishesList(user_id)">Vai alla pagina con i tuoi piatti</button>
         </div>
 
 

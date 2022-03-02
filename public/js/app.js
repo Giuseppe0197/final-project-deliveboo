@@ -2072,6 +2072,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37824,83 +37833,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "restaurant-info-log container" }, [
-      _c("div", { staticClass: "image-restaurant" }, [
-        _c("img", {
-          staticClass: "restaurant-image",
-          attrs: { src: "/storage/images/" + _vm.restaurants.image, alt: "" },
-        }),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "info" }, [
-        _c("p", { staticClass: "owner" }, [
-          _vm._v("Nome del prorietario: " + _vm._s(_vm.restaurants.owner_name)),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "restaurant-name" }, [
-          _vm._v("Nome ristorante: " + _vm._s(_vm.restaurants.restaurant_name)),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "restaurant-phone" }, [
-          _vm._v(
-            "Numero di telefono: " + _vm._s(_vm.restaurants.restaurant_phone)
-          ),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "restaurant-email" }, [
-          _vm._v("Indirizzo email: " + _vm._s(_vm.restaurants.email)),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "restaurant-address" }, [
-          _vm._v(
-            "Indirizzo del ristorante: " + _vm._s(_vm.restaurants.address)
-          ),
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "restaurant-p-iva" }, [
-          _vm._v("Numero della partita IVA: " + _vm._s(_vm.restaurants.p_iva)),
-        ]),
-      ]),
-    ]),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "dishes-button" } }, [
-      _c(
-        "button",
-        {
-          staticClass: "dishes-list-button",
-          on: {
-            click: function ($event) {
-              return _vm.getDishes(_vm.user_id)
-            },
-          },
-        },
-        [_vm._v("\n            Lista piatti\n        ")]
-      ),
-    ]),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title" }, [
-      _c("h1", [
-        _vm._v(
-          "Benvenuto nella tua sezione privata del ristorante: da qui puoi accedere alla lista dei piatti, crearne di nuovi e modificarli!"
-        ),
-      ]),
-    ])
-  },
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 

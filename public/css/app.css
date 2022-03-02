@@ -11104,3 +11104,18 @@ div.container-dish .card li.container-action-dish {
   padding: 10px 15px;
 }
 
+.auth-page {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.auth-page .checkbox-container {
+  width: 30%;
+}
+
+.auth-page input {
+  border: none;
+}
+
