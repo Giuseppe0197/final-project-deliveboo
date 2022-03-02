@@ -9,7 +9,6 @@
             <p>{{restaurants.address}}</p>
             <img :src="'/storage/images/' + restaurants.image" alt="">
             <p>{{restaurants.p_iva}}</p>
-            <button class="btn btn-primary" @click="dishesList(user_id)">Vai alla pagina con i tuoi piatti</button>
         </div>
         <div class="container-dishes" v-for="dish in dishes" :key="dish.id">
            <span>
@@ -18,7 +17,7 @@
         </div>
 
         <div>
-            <button @click="getDishes(user_id)">
+            <button class="btn btn-primary" @click="getDishes(user_id)">
                 Lista piatti
             </button>
         </div>
@@ -48,12 +47,7 @@
         },
 
         methods: {
-            dishesList(id){
-                axios.get('/dishes/list/' + id)
-                 .then(r => this.dishes = r.data)
-                 .catch(e => console.error(e));
-            },
-
+            // Metodo per ritornare la pagina blade contenente tutti i piatti del ristorante!
             getDishes(id) {
                 window.location.href = `/dishes/list/${id}`;
             }
