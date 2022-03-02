@@ -1,74 +1,97 @@
 @extends('layouts.main-layout')
 @section('content')
 
-    <section class="container py-4">
-        <h1>
-            Inserisci nuovo piatto
-        </h1>
+    <section id="container-form" class="container py-4">
+        <div class="content-wrapper">
+            <div class="img-container"></div>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+            <h1>Nuovo piatto</h1>
+    
+            <form
+                action="{{ route('dish.store', $restaurant->id) }}" 
+                method="POST"
+                enctype="multipart/form-data"
+                class="form">
+    
+                @method("POST")
+                @csrf
+    
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-2 col-form-label offset-2">Nome</label>
 
+                    <div class="form-input">
+                        <input type="text" name="name" class="form-control" placeholder="Inserisci nome">
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <label for="description" class="col-sm-2 col-form-label offset-2">Descrizione</label>
 
-        <form
-            action="{{ route('dish.store', $restaurant->id) }}" 
-            method="POST"
-            enctype="multipart/form-data">
+                    <div class="form-input">
+                        <textarea name="description" class="form-control" rows="6" placeholder="Descrizione piatto..."></textarea>
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <label for="type" class="col-sm-2 col-form-label offset-2">Categoria</label>
 
-            @method("POST")
-            @csrf
+                    <div class="form-input">
+                        <select name="type" class="form-control">
+                            <option value="">--Scegli una tipologia di piatto--</option>
+                            <option value="Antipasti">Antipasto</option>
+                            <option value="Primi">Primo</option>
+                            <option value="Secondi">Secondo</option>
+                            <option value="Dolci">Dolce</option>
+                            <option value="Pizze">Pizza</option>
+                            <option value="Sushi">Sushi</option>
+                            <option value="Fritti">Fritti</option>
+                            <option value="Specialità">Specialità</option>
+                            <option value="Insalate">Insalata</option>
+                            <option value="Riso">Riso</option>
+                            <option value="Hamburger">Hamburger</option>
+                            <option value="Kebab">Kebab</option>
+                            <option value="Bibite">Bibite</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <label for="price" class="col-sm-2 col-form-label offset-2">Prezzo</label>
 
-            <label for="name">Nome</label><br>
-            <input type="text" name="name" placeholder="Inserisci nome"><br>
-            <br>
+                    <div class="form-input">
+                        <input type="number" name="price" class="form-control" step=".01" placeholder="Inserisci prezzo">
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <label for="image" class="col-sm-2 col-form-label offset-2">Immagine</label>
 
-            <label for="description">Descrizione</label><br>
-            <textarea name="description" cols="50" rows="10"></textarea><br>
-            <br>
+                    <div class="form-input">
+                        <input type="file" name="image">
+                    </div>
+                </div>
+    
+                <div class="row mb-3">
+                    <label for="availability" class="col-sm-2 col-form-label offset-2">Visibile</label>
 
-            <label for="type">Tipo di piatto</label><br>
-            <select name="type" id="type-select"><br>
-                <option value="">--Scegli una tipologia di piatto--</option>
-                <option value="Antipasti">Antipasto</option>
-                <option value="Primi">Primo</option>
-                <option value="Secondi">Secondo</option>
-                <option value="Dolci">Dolce</option>
-                <option value="Pizze">Pizza</option>
-                <option value="Sushi">Sushi</option>
-                <option value="Fritti">Fritti</option>
-                <option value="Specialità">Specialità</option>
-                <option value="Insalate">Insalata</option>
-                <option value="Riso">Riso</option>
-                <option value="Hamburger">Hamburger</option>
-                <option value="Kebab">Kebab</option>
-                <option value="Bibite">Bibite</option>
-            </select><br>
-            <br>
+                    <div class="col-sm-8 form-input availability">
+                        <div class="input-radio">
+                            <input type="radio" name="availability" value="1" checked>
+                            <label for="sì" class="mr-3">Sì</label>
+                        </div>
 
-            <label for="price">Prezzo</label><br>
-            <input type="number" name="price" step=".01" placeholder="Inserisci prezzo"><br>
-            <br>
-
-            <label for="image">Immagine</label><br>
-            <input type="file" name="image"><br>
-            <br>
-
-            <label for="availability">Visibile</label><br>
-            <input type="radio" name="availability" value="1" checked>
-            <label for="sì">Sì</label>
-            <input type="radio" name="availability" value="0">
-            <label for="no">No</label><br>
-            <br>
-
-            <input class="btn btn-primary p-2 m-1"  type="submit" value="AGGIUNGI">
-        </form>
+                        <div class="input-radio">
+                            <input type="radio" name="availability" value="0">
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="button">
+                    <input class="btn btn-primary" type="submit" value="AGGIUNGI">
+                </div>
+            </form>
+        </div>
     </section>
     
 @endsection
