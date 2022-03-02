@@ -90,14 +90,12 @@ class RegisterController extends Controller
             $data -> update(['image' => $imageName]);
         }
 
-        // dd($data);
+        $user = User::findOrFail($data['id']);
 
-        // $user = $data['id'];
+        $categories = Category::findOrFail(request() -> get('categories'));
+        $user -> categories() -> sync($categories);
 
-        // $categories = Category::findOrFail(request() -> get('category_id'));
-        // $user -> categories() -> attach($categories);
-
-        // $user -> save();
+        $user -> save();
 
         return $data;
     }
