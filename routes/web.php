@@ -42,7 +42,8 @@ Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('f
 
 /* Route::get('/dishes/list/forUser/{id}', 'DishController@getSingleMenu') -> name('single.menu'); */
 
-
+// rotta per la visualizzazione del ristorante per il client 
+Route::get('/show/restaurant/{id}', 'ClientController@showRestaurant') -> name('show.restaurant');
 /* ----------------------------------- */
 
 // Auth::routes();
