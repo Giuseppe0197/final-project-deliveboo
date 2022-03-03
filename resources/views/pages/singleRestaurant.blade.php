@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <menu-component ></menu-component>
+    <menu-component :restaurant= "{{ json_encode($restaurant)}}"></menu-component>
 
 @endsection

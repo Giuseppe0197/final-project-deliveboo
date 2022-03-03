@@ -1,36 +1,25 @@
 <template>
     <section class="restaurant">
         <div class="info-restaurant">
-            <img src="" alt="">
+            <img :src="restaurant.image" :alt="restaurant.restaurant_name">
 
             <div class="info-container">
-                <h1>Restaurant name</h1>
+                <h1>{{restaurant.restaurant_name}}</h1>
 
                 <div class="info">
                     <span class="restaurant-category">
-
+                        
                     </span>
 
                     <span class="restaurant-address">
-
+                        Indirizzo: {{restaurant.address}}
                     </span>
 
                     <span class="restaurant-p-iva">
-
+                       Partita Iva: {{restaurant.p_iva}}
                     </span>
                 </div>
             </div>
-
-            <ul>
-                <li>
-                    <!-- v-for per stampare le tipologie di piatti del ristorante -->
-                </li>
-            </ul>
-
-            <div class="restaurant-menu">
-
-            </div>
-
         </div>
     </section>
 
@@ -45,7 +34,11 @@
         },
 
         props: {
-            restaurant: Number,
+            restaurant: Object,
+        },
+
+        mounted() {
+            console.log(this.restaurant);
         },
 
         methods: {
@@ -53,3 +46,24 @@
         }
     }
 </script>
+
+<style scoped lang="scss">
+.info-restaurant {
+    // debug
+    height: 100px;
+    background-color: bisque;
+
+    .info-container {
+        display: inline-block;
+        
+
+        span {
+            display: block;
+        }
+    }
+}
+
+</style>
+
+
+
