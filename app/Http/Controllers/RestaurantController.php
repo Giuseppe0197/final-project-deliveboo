@@ -38,4 +38,11 @@ class RestaurantController extends Controller
 
         return json_encode($foundRestaurant);
     }
+
+    public function getCategoriesId($id) {
+
+        $foundCategories = Category::findOrFail($id);
+
+        return json_encode($foundCategories);
+    }
 }
