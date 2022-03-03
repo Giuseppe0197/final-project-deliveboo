@@ -2,6 +2,6 @@
 @section('content')
     
 
-    <search-component></search-component>
+    <search-component :categories = '{{json_encode($categories)}}'></search-component>
 
 @endsection

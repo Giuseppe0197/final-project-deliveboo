@@ -38,6 +38,10 @@ Route::post('/dish/update/{id}', 'DishController@update') -> name('dish.update')
 
 Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('find.restaurant');
 
+/* rotta per filtro delle categorie */
+
+Route::get('/find/categories/{id}', 'RestaurantController@getCategoriesId') -> name('find.categories');
+
 /* rotta per la visualizzazione del menu del singolo ristprante */
 
 /* Route::get('/dishes/list/forUser/{id}', 'DishController@getSingleMenu') -> name('single.menu'); */
