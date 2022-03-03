@@ -46,8 +46,10 @@
                 <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
                 <li class="list-group-item">
                     <span>Disponibilità:</span>
-                    {{ dish.availability }}
+                    <p v-if="dish.availability" class="d-inline-block">Disponibile</p>
+                    <p v-else class="d-inline-block">Non Disponibile</p>
                 </li>
+
                 <li class="container-action-dish list-group-item">
                     <!-- Button per modificare il piatto -->
                     <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>

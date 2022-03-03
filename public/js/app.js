@@ -1969,6 +1969,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37797,11 +37799,14 @@ var render = function () {
               _vm._v(" "),
               _c("li", { staticClass: "list-group-item" }, [
                 _c("span", [_vm._v("Disponibilità:")]),
-                _vm._v(
-                  "\n                " +
-                    _vm._s(dish.availability) +
-                    "\n            "
-                ),
+                _vm._v(" "),
+                dish.availability
+                  ? _c("p", { staticClass: "d-inline-block" }, [
+                      _vm._v("Disponibile"),
+                    ])
+                  : _c("p", { staticClass: "d-inline-block" }, [
+                      _vm._v("Non Disponibile"),
+                    ]),
               ]),
               _vm._v(" "),
               _c(
