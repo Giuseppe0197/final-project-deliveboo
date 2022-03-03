@@ -11298,11 +11298,14 @@ div.container-dish .card li.container-action-dish {
   position: -webkit-sticky;
   position: sticky;
   top: 10px;
+  z-index: 3;
   margin-top: 50px;
-  padding: 0 8px 10px 8px;
-  border-radius: 10px 10px 0 0;
-  border: 1px solid #e5e5e5;
+  padding: 32px 16px 0;
+  margin: 50px 0 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
   background-color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .container-cart .card-product span {
@@ -11314,14 +11317,58 @@ div.container-dish .card li.container-action-dish {
   padding: 8px 10px;
 }
 
-.container-cart h2 {
-  font-weight: 600;
-}
-
 .container-cart .btn-pagamento {
   color: #fff;
   font-weight: 600;
   font-size: 17px;
   background-color: #00ccbc;
+}
+
+.container-cart .text-cart-empty img {
+  width: 48px;
+  height: 48px;
+}
+
+.container-cart .text-cart-empty span {
+  display: block;
+  font-size: 16px;
+  padding-top: 4px;
+  color: #ababad;
+}
+
+.container-cart .text-cart-empty ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.container-cart .text-cart-empty ul li {
+  max-width: 32%;
+  margin: 0 0 20px;
+}
+
+.container-cart .text-cart-empty div.container-btn-pagamento {
+  padding: 40px 0 16px;
+}
+
+.container-cart .text-cart-empty div.container-btn-pagamento .btn-pagamento-disabled {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
+  cursor: not-allowed;
+  border: none;
+  color: #ababad;
+  background-color: #e2e5e5;
+}
+
+.container-cart .text-cart-empty div.container-btn-pagamento .btn-pagamento-disabled span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #abadad;
+  font-size: 16px;
+  font-weight: 600;
 }
 
