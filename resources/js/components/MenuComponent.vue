@@ -45,7 +45,7 @@
         },
 
         props: {
-            restaurant: Array,
+            restaurant: Number,
         },
 
         methods: {
