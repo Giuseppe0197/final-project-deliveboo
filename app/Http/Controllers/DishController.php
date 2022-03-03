@@ -121,4 +121,12 @@ class DishController extends Controller
 
         return redirect()->route('dishes.list', $dish['user_id']);
     }
+
+    /* public function getSingleMenu($id) {
+        $singleMenu = User::findOrFail($id);
+
+        $totalDishes = Dish::all()->where('user_id', $id);
+
+        return json_encode($singleMenu, $totalDishes);
+    } */
 }
