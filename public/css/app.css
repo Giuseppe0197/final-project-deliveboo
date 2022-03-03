@@ -11084,10 +11084,9 @@ footer .nav-footer ul .subscribe {
 }
 
 div.container-dish {
-  width: 69%;
+  width: 70%;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
   padding: 50px 0;
 }
 
@@ -11107,6 +11106,7 @@ div.container-dish div.container-new-dish a:hover {
 }
 
 div.container-dish .card {
+  max-width: calc(25% - 40px);
   margin: 20px;
 }
 
@@ -11284,5 +11284,44 @@ div.container-dish .card li.container-action-dish {
 
 .auth-page input {
   border: none;
+}
+
+.ms-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.container-cart {
+  width: 30%;
+  height: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  margin-top: 50px;
+  padding: 0 8px 10px 8px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+}
+
+.container-cart .card-product span {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  font-size: 16px;
+  border-bottom: 1px solid lavender;
+  padding: 8px 10px;
+}
+
+.container-cart h2 {
+  font-weight: 600;
+}
+
+.container-cart .btn-pagamento {
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: #00ccbc;
 }
 

@@ -143,10 +143,10 @@ footer {
 
 // Page -> DishList
 div.container-dish {
-    width: 69%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    // margin: 0 auto;
     padding: 50px 0;
 
     div.container-new-dish {
@@ -165,6 +165,7 @@ div.container-dish {
     }
 
     .card {
+        max-width: calc(25% - 40px);
         margin: 20px;
 
         div.card-body {
@@ -348,5 +349,52 @@ div.container-dish {
     }
     input {
         border: none;
+    }
+}
+
+
+
+
+//  TESTTTTTT TESTTTTTTTTTT
+
+.ms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.container-cart {
+    width: 30%;
+    height: 100%;
+    position: sticky;
+    top: 10px;
+    margin-top: 50px;
+    padding: 0 8px 10px 8px;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+
+    .card-product {
+    
+        span {
+            display: flex;
+            align-items: center;
+            width: 25%;
+            font-size: 16px;
+            border-bottom: 1px solid lavender;
+            padding: 8px 10px;
+    
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
+    .btn-pagamento {
+        color: #fff;
+        font-weight: 600;
+        font-size: 17px;
+        background-color: #00ccbc;
     }
 }
