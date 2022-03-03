@@ -29,7 +29,7 @@
 
                     <div class="form-input">
                         {{-- <input type="text" name="description" class="form-control" placeholder="descrizione" value="{{ $dish -> description }}"> --}}
-                        <textarea name="description" value="{{ $dish -> description }}" class="form-control" rows="6"></textarea>
+                        <textarea name="description" class="form-control" rows="6">{{ $dish -> description }}</textarea>
                     </div>
                 </div>
 

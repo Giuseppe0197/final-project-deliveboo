@@ -11133,7 +11133,6 @@ div.container-dish .card li.container-action-dish {
   justify-content: space-evenly;
 }
 
-<<<<<<< HEAD
 #container-form {
   margin: 40px auto;
 }
@@ -11224,7 +11223,8 @@ div.container-dish .card li.container-action-dish {
     width: 100%;
     float: none;
   }
-=======
+}
+
 .title {
   width: 60%;
   margin: 10px auto 0;
@@ -11284,6 +11284,5 @@ div.container-dish .card li.container-action-dish {
 
 .auth-page input {
   border: none;
->>>>>>> 4a0e0b4818ef14772d4819d3e7eb1791ad034620
 }
 

@@ -18,8 +18,9 @@
         
         <div class="card" v-for="dish in dishes" :key="dish.id" style="width: 18rem;">
              <!-- Gesgione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
-                <img src="" class="card-img-top" alt="">
-                <img src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default">
+            <img :src="showImage(dish.image)" :alt="dish.name">
+
+            <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
             
             <div class="card-body">
                     <!-- Nome piatto -->
@@ -89,6 +90,18 @@
             // Metodo per ritornare indietro alla home del ristorante
             homeRestaurant() {
                 window.location.href = `/restaurant`;
+            },
+
+            showImage(img) {
+
+                let defaultImage = "https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg";
+                let path = `/storage/images/` + img
+
+                if (img.length > 18 && img.length < 24) {
+                    return path
+                } else {
+                    return defaultImage
+                }
             }
         },
     }

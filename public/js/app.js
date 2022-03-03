@@ -1968,6 +1968,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1993,6 +1994,16 @@ __webpack_require__.r(__webpack_exports__);
     // Metodo per ritornare indietro alla home del ristorante
     homeRestaurant: function homeRestaurant() {
       window.location.href = "/restaurant";
+    },
+    showImage: function showImage(img) {
+      var defaultImage = "https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg";
+      var path = "/storage/images/" + img;
+
+      if (img.length > 18 && img.length < 24) {
+        return path;
+      } else {
+        return defaultImage;
+      }
     }
   }
 });
@@ -37750,16 +37761,7 @@ var render = function () {
           },
           [
             _c("img", {
-              staticClass: "card-img-top",
-              attrs: { src: "", alt: "" },
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "card-img-top",
-              attrs: {
-                src: "https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg",
-                alt: "image default",
-              },
+              attrs: { src: _vm.showImage(dish.image), alt: dish.name },
             }),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
@@ -50522,13 +50524,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> 4a0e0b4818ef14772d4819d3e7eb1791ad034620
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
