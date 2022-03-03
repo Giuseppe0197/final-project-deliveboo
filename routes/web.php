@@ -34,7 +34,13 @@ Route::post('/dish/store/{id}', 'DishController@store') -> name('dish.store');
 Route::get('/dish/edit/{id}', 'DishController@edit') -> name('dish.edit');
 Route::post('/dish/update/{id}', 'DishController@update') -> name('dish.update');
 
-/* rotta per l'axios di vue del singolo ristorante */
+/* rotta per la ricerca dei ristoranti */
+
+Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('find.restaurant');
+
+/* rotta per la visualizzazione del menu del singolo ristprante */
+
+/* Route::get('/dishes/list/forUser/{id}', 'DishController@getSingleMenu') -> name('single.menu'); */
 
 
 /* ----------------------------------- */

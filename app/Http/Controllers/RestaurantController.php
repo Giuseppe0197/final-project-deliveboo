@@ -26,4 +26,16 @@ class RestaurantController extends Controller
         
         return json_encode($restaurants);
     }
+
+    /* public function findRestaurant() {
+        $foundRestaurant = User::all();
+
+        if($search = \Request::get('q')) {
+            $foundRestaurant = User::where(function($query) use ($search) {
+                $query -> where('restaurant_name', 'LIKE', "%$search%");
+            }) -> paginate(20);
+        }
+
+        return json_encode($foundRestaurant);
+    } */
 }
