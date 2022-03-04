@@ -69,38 +69,6 @@
             </ul>
         </div>
     </div>
-        <div class="container-cart">
-            <h2 class="w-100 text-center my-3">CARRELLO</h2>
-
-            <div v-for="product, i in cart" class="card-product d-flex" :key="i">
-                <span>
-                    {{ product.name }}
-                </span>
-                <span>
-                    {{ product.description }}
-                </span>    
-                <span>
-                    &euro;{{ product.price }}
-                </span>
-                <span>
-                    <!-- Remove to cart -->
-                    <button class="btn btn-danger" @click.prevent="removeToCart(i)">
-                        Rimuovi
-                    </button>
-                </span>
-                
-            </div>
-
-            <div v-if="cart.length > 0" class="text-center mt-3">
-                <button class="btn btn-pagamento">
-                    Vai al pagamento
-                </button>
-            </div>
-
-            <div v-else class="text-center mt-3">
-                Carrello vuoto
-            </div>
-        </div>
 </div>
 
 </template>
@@ -109,24 +77,13 @@
     export default {
         data: function () {
             return {
-                cart: [],
+                test: [],
             }
         },
 
         props: {
             dishes: Object,
             restaurant_id: Number
-        },
-
-        mounted() {
-
-            if (localStorage.getItem('cart')) {
-                try {
-                    this.cart = JSON.parse(localStorage.getItem('cart'));
-                } catch(e) {
-                    localStorage.removeItem('cart');
-                }
-            }
         },
 
         methods: {
@@ -156,36 +113,6 @@
                     return defaultImage
                 }
             },
-
-            addToCart(product) {
-
-                this.cart.push(product);
-
-                this.saveCart();
-
-                // for(let i = 0; i < this.cart.length; i++) {
-
-                //     if(this.cart.indexOf(product.id) == -1) {
-                        
-                //         console.log(this.cart);
-                //         return this.cart.push(product)
-                //     }
-
-                // }
-            },
-
-            removeToCart(ind) {
-
-                this.cart.splice(ind, 1);
-
-                this.saveCart();
-            },
-
-            saveCart() {
-
-                const parsed = JSON.stringify(this.cart);
-                localStorage.setItem('cart', parsed);
-            }
         },
     }
 </script>

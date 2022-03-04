@@ -1983,56 +1983,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      cart: []
+      test: []
     };
   },
   props: {
     dishes: Object,
     restaurant_id: Number
-  },
-  mounted: function mounted() {
-    if (localStorage.getItem('cart')) {
-      try {
-        this.cart = JSON.parse(localStorage.getItem('cart'));
-      } catch (e) {
-        localStorage.removeItem('cart');
-      }
-    }
   },
   methods: {
     // Metodo per inserire un piatto
@@ -2056,23 +2015,6 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return defaultImage;
       }
-    },
-    addToCart: function addToCart(product) {
-      this.cart.push(product);
-      this.saveCart(); // for(let i = 0; i < this.cart.length; i++) {
-      //     if(this.cart.indexOf(product.id) == -1) {
-      //         console.log(this.cart);
-      //         return this.cart.push(product)
-      //     }
-      // }
-    },
-    removeToCart: function removeToCart(ind) {
-      this.cart.splice(ind, 1);
-      this.saveCart();
-    },
-    saveCart: function saveCart() {
-      var parsed = JSON.stringify(this.cart);
-      localStorage.setItem('cart', parsed);
     }
   }
 });
@@ -2169,19 +2111,92 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {// restaurant: [],
-      // categories: [],
+    return {
+      cart: []
     };
   },
   props: {
     restaurant: Object,
+    dishes: Object,
     categories_restaurant: Array
   },
   mounted: function mounted() {
-    console.log(this.restaurant);
-    console.log(this.categories_restaurant);
+    // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
+    if (localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.getItem('cart'));
+      } catch (e) {
+        localStorage.removeItem('cart');
+      }
+    }
+  },
+  methods: {
+    // metodo per aggiungere un prodotto/piatto nel carrello
+    addToCart: function addToCart(product) {
+      this.cart.push(product);
+      this.saveCart(); // for(let i = 0; i < this.cart.length; i++) {
+      //     if(this.cart.indexOf(product.id) == -1) {
+      //         console.log(this.cart);
+      //         return this.cart.push(product)
+      //     }
+      // }
+    },
+    // metodo per eliminare un elemnto dal carrello
+    removeToCart: function removeToCart(ind) {
+      this.cart.splice(ind, 1);
+      this.saveCart();
+    },
+    // metodo per gestire il salvataggio dei dati in locale
+    saveCart: function saveCart() {
+      var parsed = JSON.stringify(this.cart);
+      localStorage.setItem('cart', parsed);
+    }
   }
 });
 
@@ -38734,77 +38749,6 @@ var render = function () {
       ],
       2
     ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container-cart" },
-      [
-        _c("h2", { staticClass: "w-100 text-center my-3" }, [
-          _vm._v("CARRELLO"),
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.cart, function (product, i) {
-          return _c("div", { key: i, staticClass: "card-product d-flex" }, [
-            _c("span", [
-              _vm._v(
-                "\r\n                    " +
-                  _vm._s(product.name) +
-                  "\r\n                "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", [
-              _vm._v(
-                "\r\n                    " +
-                  _vm._s(product.description) +
-                  "\r\n                "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", [
-              _vm._v(
-                "\r\n                    €" +
-                  _vm._s(product.price) +
-                  "\r\n                "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function ($event) {
-                      $event.preventDefault()
-                      return _vm.removeToCart(i)
-                    },
-                  },
-                },
-                [
-                  _vm._v(
-                    "\r\n                        Rimuovi\r\n                    "
-                  ),
-                ]
-              ),
-            ]),
-          ])
-        }),
-        _vm._v(" "),
-        _vm.cart.length > 0
-          ? _c("div", { staticClass: "text-center mt-3" }, [
-              _c("button", { staticClass: "btn btn-pagamento" }, [
-                _vm._v(
-                  "\r\n                    Vai al pagamento\r\n                "
-                ),
-              ]),
-            ])
-          : _c("div", { staticClass: "text-center mt-3" }, [
-              _vm._v("\r\n                Carrello vuoto\r\n            "),
-            ]),
-      ],
-      2
-    ),
   ])
 }
 var staticRenderFns = []
@@ -38936,6 +38880,74 @@ var render = function () {
         _vm._m(0),
       ]),
     ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container-cart" },
+      [
+        _vm._l(_vm.cart, function (product, i) {
+          return _c("div", { key: i, staticClass: "card-product d-flex" }, [
+            _c("span", [
+              _vm._v(
+                "\n                " + _vm._s(product.name) + "\n            "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", [
+              _vm._v(
+                "\n                " +
+                  _vm._s(product.description) +
+                  "\n            "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", [
+              _vm._v(
+                "\n                €" + _vm._s(product.price) + "\n            "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.removeToCart(i)
+                    },
+                  },
+                },
+                [_vm._v("\n                    Rimuovi\n                ")]
+              ),
+            ]),
+          ])
+        }),
+        _vm._v(" "),
+        _vm.cart.length > 0
+          ? _c("div", { staticClass: "text-center" }, [
+              _c("button", { staticClass: "btn btn-pagamento" }, [
+                _vm._v("\n                Vai al pagamento\n            "),
+              ]),
+            ])
+          : _c("div", { staticClass: "text-cart-empty text-center" }, [
+              _c("img", {
+                attrs: {
+                  src: "/storage/images/svgexport-15.svg",
+                  alt: "shopping_cart_image",
+                },
+              }),
+              _vm._v(" "),
+              _c("span", [
+                _vm._v("\n                il carrello è vuoto\n            "),
+              ]),
+              _vm._v(" "),
+              _vm._m(1),
+            ]),
+      ],
+      2
+    ),
   ])
 }
 var staticRenderFns = [
@@ -38958,6 +38970,24 @@ var staticRenderFns = [
       _c("div", { staticClass: "text" }, [
         _c("span", [_vm._v("Il tuo ordine sarà consegnato in 20 - 30 minuti")]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-btn-pagamento" }, [
+      _c(
+        "button",
+        { staticClass: "btn-pagamento-disabled", attrs: { disabled: "" } },
+        [
+          _c("span", [
+            _vm._v(
+              "\n                        Vai al pagamento\n                    "
+            ),
+          ]),
+        ]
+      ),
     ])
   },
 ]
