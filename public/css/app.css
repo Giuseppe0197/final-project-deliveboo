@@ -11286,6 +11286,10 @@ div.container-dish .card li.container-action-dish {
   border: none;
 }
 
+div.container-dishes-shopping-cart {
+  display: flex;
+}
+
 .ms-container {
   display: flex;
   flex-wrap: wrap;
@@ -11293,14 +11297,17 @@ div.container-dish .card li.container-action-dish {
 }
 
 .container-cart {
-  width: 30%;
+  display: inline-block;
+  width: 28%;
   height: 100%;
+  max-height: 520px;
   position: -webkit-sticky;
   position: sticky;
   top: 10px;
+  overflow: auto;
   z-index: 3;
   margin-top: 50px;
-  padding: 32px 16px 0;
+  padding: 32px 25px 0;
   margin: 50px 0 24px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -11308,20 +11315,99 @@ div.container-dish .card li.container-action-dish {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-.container-cart .card-product span {
-  display: flex;
-  align-items: center;
-  width: 25%;
-  font-size: 16px;
-  border-bottom: 1px solid lavender;
-  padding: 8px 10px;
+.container-cart::-webkit-scrollbar {
+  width: 7px;
 }
 
-.container-cart .btn-pagamento {
+.container-cart::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #00ccbc;
+}
+
+.container-cart h3 {
+  color: #2e3333;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 0 0 10px 0;
+}
+
+.container-cart .card-product {
+  border-bottom: 1px solid lavender;
+  padding: 10px 0;
+}
+
+.container-cart .card-product span {
+  font-size: 16px;
+}
+
+.container-cart .card-product div.button-shoppingcart {
+  width: 28%;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
+
+.container-cart .card-product div.button-shoppingcart .btn-add,
+.container-cart .card-product div.button-shoppingcart .btn-remove {
+  cursor: pointer;
+}
+
+.container-cart .card-product div.container-remove-product {
+  display: block;
+}
+
+.container-cart .card-product div.container-remove-product span {
+  text-decoration: underline;
+  color: #970303;
+}
+
+.container-cart .card-product div.container-remove-product span:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.container-cart .card-product .name-dish {
+  font-size: 18px;
+}
+
+.container-cart .card-product .description-dish {
+  display: -webkit-box;
+  max-width: 60%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 15px;
+  padding: 2px 0 10px;
+}
+
+.container-cart div.container-totalprice {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 10px;
+}
+
+.container-cart div.container-totalprice span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.container-cart div.cont-bord-pag {
+  border-top: 4px solid #6bac26;
+}
+
+.container-cart div.cont-bord-pag .btn-pagamento {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 24px;
   color: #fff;
   font-weight: 600;
   font-size: 17px;
+  margin: 25px 0 10px;
   background-color: #00ccbc;
+  border: 0;
+  border-radius: 4px;
 }
 
 .container-cart .text-cart-empty img {
@@ -11334,18 +11420,6 @@ div.container-dish .card li.container-action-dish {
   font-size: 16px;
   padding-top: 4px;
   color: #ababad;
-}
-
-.container-cart .text-cart-empty ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.container-cart .text-cart-empty ul li {
-  max-width: 32%;
-  margin: 0 0 20px;
 }
 
 .container-cart .text-cart-empty div.container-btn-pagamento {
@@ -11370,5 +11444,82 @@ div.container-dish .card li.container-action-dish {
   color: #abadad;
   font-size: 16px;
   font-weight: 600;
+}
+
+.restaurant {
+  background-color: #f9fafa;
+}
+
+.container-card-dishes {
+  display: inline-block;
+  width: 70%;
+  padding: 50px 0 50px 30px;
+}
+
+.container-card-dishes div.container-dishes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-card-dishes div.container-dishes h2 {
+  font-family: plex-sans, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+
+.container-card-dishes div.container-dishes div.container-dish-img {
+  width: auto;
+}
+
+.container-card-dishes div.container-dishes div.container-dish-img img {
+  width: auto;
+  height: 90px;
+  max-width: 125px;
+  border-radius: 3px;
+}
+
+.container-card-dishes div.card-dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  min-height: 132px;
+  margin-right: 20px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.container-card-dishes div.card-dish:hover {
+  cursor: pointer;
+  box-shadow: 0 22px 24px 0 rgba(0, 0, 0, 0.08);
+}
+
+.container-card-dishes div.card-dish h3 {
+  color: #2e3333;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.container-card-dishes div.card-dish p {
+  color: #585c5c;
+  font-size: 14px;
+  line-height: 22px;
+  display: -webkit-box;
+  max-width: 85%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.container-card-dishes div.card-dish span {
+  color: #abadad;
+  font-size: 16px;
+  line-height: 22px;
 }
 
