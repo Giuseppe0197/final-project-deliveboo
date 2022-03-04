@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Dish;
 use Illuminate\Http\Request;
 
 use App\User;
-use App\Category;
 
 class ClientController extends Controller
 {
@@ -13,10 +14,12 @@ class ClientController extends Controller
 
         $restaurant = User::findOrfail($id);
 
-        // ricerca delle categorie associate al ristorante
-        $categories = Category::all();
-        $categories_restaurant = $restaurant -> categories() -> wherePivot('user_id', $id) -> get();
+        $dishes = Dish::all()->where('user_id', $id)->where('availability', '=', 1);
 
-    return view('pages.singleRestaurant', compact('restaurant', 'categories_restaurant'));
+        $categories = Category::all();
+
+        $categories_restaurant = $restaurant->categories()->wherePivot('user_id', $id)->get();
+
+        return view('pages.singleRestaurant', compact('restaurant', 'dishes', 'categories_restaurant'));
     }
 }
