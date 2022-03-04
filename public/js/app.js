@@ -2148,19 +2148,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
-      restaurant: []
+    return {// restaurant: [],
+      // categories: [],
     };
   },
   props: {
-    restaurant: Object
+    restaurant: Object,
+    categories_restaurant: Array
   },
   mounted: function mounted() {
     console.log(this.restaurant);
-  },
-  methods: {}
+    console.log(this.categories_restaurant);
+  }
 });
 
 /***/ }),
@@ -6701,7 +6723,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".info-restaurant[data-v-98f701fa] {\n  height: 100px;\n  background-color: bisque;\n}\n.info-restaurant .info-container[data-v-98f701fa] {\n  display: inline-block;\n}\n.info-restaurant .info-container span[data-v-98f701fa] {\n  display: block;\n}", ""]);
+exports.push([module.i, ".restaurant[data-v-98f701fa] {\n  min-height: 150px;\n}\n.restaurant .info-restaurant[data-v-98f701fa] {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 30px;\n  border-top: 1px solid #e2e5e5;\n  border-bottom: 1px solid #e2e5e5;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n  width: 20%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa] {\n  width: 100%;\n  border-radius: 4%;\n  box-shadow: 10px 5px 5px grey;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n  width: 80%;\n  padding: 20px;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa] {\n  padding-left: 15px;\n}\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n  text-transform: uppercase;\n  margin-bottom: 20px;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories span[data-v-98f701fa] {\n  font-size: 18px;\n  font-weight: 600;\n  color: #007e8a;\n  margin-right: 5px;\n  display: inline;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  font-size: 15px;\n  display: block;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories[data-v-98f701fa], .restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  margin-bottom: 15px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n  text-align: center;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info img[data-v-98f701fa] {\n  margin-right: 10px;\n}\n@media all and (max-width: 1024px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    align-items: center;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n    width: 40%;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 60%;\n    padding: 0;\n    display: block;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding-left: 25px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}\n@media all and (min-width: 568px) and (max-width: 768px) {\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 8px;\n}\n}\n@media all and (max-width: 568px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    padding: 5px 0;\n    border-top: 0;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa], .restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 100%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa], .restaurant .info-restaurant .details-container img[data-v-98f701fa] {\n    border-radius: 0;\n    box-shadow: none;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding: 10px 0px 10px 30px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}", ""]);
 
 // exports
 
@@ -38856,40 +38878,89 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "restaurant" }, [
     _c("div", { staticClass: "info-restaurant" }, [
-      _c("img", {
-        attrs: {
-          src: _vm.restaurant.image,
-          alt: _vm.restaurant.restaurant_name,
-        },
-      }),
+      _c("div", { staticClass: "restaurant-image" }, [
+        _c("img", {
+          attrs: {
+            src: "/storage/images/" + _vm.restaurant.image,
+            alt: _vm.restaurant.restaurant_name,
+          },
+        }),
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "info-container" }, [
-        _c("h1", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info" }, [
-          _c("span", { staticClass: "restaurant-category" }),
+      _c("div", { staticClass: "details-container" }, [
+        _c("div", { staticClass: "left" }, [
+          _c("h1", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
           _vm._v(" "),
-          _c("span", { staticClass: "restaurant-address" }, [
-            _vm._v(
-              "\n                    Indirizzo: " +
-                _vm._s(_vm.restaurant.address) +
-                "\n                "
+          _c("div", { staticClass: "info" }, [
+            _c(
+              "div",
+              { staticClass: "restaurant-categories" },
+              _vm._l(_vm.categories_restaurant, function (category, i) {
+                return _c("span", { key: i }, [
+                  _vm._v(
+                    "\n                            • " +
+                      _vm._s(category.name) +
+                      " \n                        "
+                  ),
+                ])
+              }),
+              0
             ),
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "restaurant-p-iva" }, [
-            _vm._v(
-              "\n                   Partita Iva: " +
-                _vm._s(_vm.restaurant.p_iva) +
-                "\n                "
-            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "restaurant-phone" }, [
+              _vm._v(
+                "\n                        📞 " +
+                  _vm._s(_vm.restaurant.restaurant_phone) +
+                  "\n                    "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "restaurant-address" }, [
+              _vm._v(
+                "\n                        📍 " +
+                  _vm._s(_vm.restaurant.address) +
+                  "\n                    "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "restaurant-p-iva" }, [
+              _vm._v(
+                "\n                    Partita Iva: " +
+                  _vm._s(_vm.restaurant.p_iva) +
+                  "\n                    "
+              ),
+            ]),
           ]),
         ]),
+        _vm._v(" "),
+        _vm._m(0),
       ]),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "delivery-info" }, [
+        _c("img", {
+          attrs: {
+            src: "/storage/images/svgexport-11.svg",
+            alt: "rider image",
+          },
+        }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Scegli la consegna a domicilio")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text" }, [
+        _c("span", [_vm._v("Il tuo ordine sarà consegnato in 20 - 30 minuti")]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
