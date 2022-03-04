@@ -340,14 +340,14 @@
 
                 <div class="button-shoppingcart">
                     <div>
-                        <span @click="addProduct()" class="btn-add">
-                            <img src="/storage/images/svgexport-13.svg" alt="btn add">
+                        <span @click="removeProduct()" class="btn-remove">
+                            <img src="/storage/images/svgexport-14.svg" alt="btn remove">
                         </span>
                         <span>
                             1
                         </span>
-                        <span @click="removeProduct()" class="btn-remove">
-                            <img src="/storage/images/svgexport-14.svg" alt="btn remove">
+                        <span @click="addProduct()" class="btn-add">
+                            <img src="/storage/images/svgexport-13.svg" alt="btn add">
                         </span>
                     </div>
 
@@ -413,7 +413,7 @@
     export default {
         data: function () {
             return {
-                cart: []
+                cart: [],
             }
         },
 
@@ -453,18 +453,43 @@
             // metodo per aggiungere un prodotto/piatto nel carrello
             addToCart(product) {
 
-                this.cart.push(product);
-                this.saveCart();
+                let find = true;
 
-                // for(let i = 0; i < this.cart.length; i++) {
+                for (const products in this.cart) {
 
-                //     if(this.cart.indexOf(product.id) == -1) {
-                        
-                //         console.log(this.cart);
-                //         return this.cart.push(product)
-                //     }
+                    let id = this.cart[products].id;
 
+                    // Confronto l'id del prodotto con tutti gli id dei prodotti all'interno del carrello
+                    if (product.id !== id) {
+                        find = true;
+                    } else {
+                        find = false; break;  // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
+                    }
+                }
+
+                if(find) {
+
+                    // Push del prodotto/piatto all'interno dell'array del carrello
+                    this.cart.push(product);
+                    this.saveCart();
+
+                    // richiamo del metodo che fa scrollare la parte del carrello al click
+                    this.scrollToEnd();
+
+                } else {
+                    alert('Attenzione, hai già inserito questo piatto!');
+                }
+                
+
+                // const duplicatedProductIndex = this.cart.findIndex(item => item.id === product.id);
+
+                // if (duplicatedProductIndex !== -1) {
+                //     state.cart[duplicatedProductIndex].qty++;
+                //     return;
                 // }
+
+                // product.qty = 1;
+                // state.cart.push(product);
             },
 
             // metodo per eliminare un elemnto dal carrello
@@ -502,12 +527,22 @@
             // metodo per rimuovere un prodotto
             removeProduct() {
 
-            }
+            },
+
+            scrollToEnd() {    	
+                var containerCart = this.$el.querySelector(".container-cart");
+
+                setTimeout(() => {
+                    containerCart.scrollTop = containerCart.scrollHeight;
+                }, 1);
+            },
         }
     }
 </script>
 
 <style scoped lang="scss">
+@import url(//db.onlinewebfonts.com/c/3e0066084d445438ba184bc555c216f5?family=Stratos+LC+Web);
+
 .restaurant {
     min-height: 150px;
 
@@ -517,6 +552,8 @@
         padding: 30px;
         border-top: 1px solid #e2e5e5;
         border-bottom: 1px solid #e2e5e5;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
 
         .restaurant-image {
             width: 20%;
@@ -539,6 +576,10 @@
                 padding-left: 15px;
 
                 h1 {
+                    font-size: 40px;
+                    font-family: Stratos LC Web ,sans-serif;
+                    color: #2e3333;
+                    font-weight: 600;
                     text-transform: uppercase;
                     margin-bottom: 20px;
                 }

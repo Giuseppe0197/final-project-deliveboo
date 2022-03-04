@@ -11306,7 +11306,6 @@ div.container-dishes-shopping-cart {
   top: 10px;
   overflow: auto;
   z-index: 3;
-  margin-top: 50px;
   padding: 32px 25px 0;
   margin: 50px 0 24px;
   border-radius: 4px;
@@ -11378,7 +11377,8 @@ div.container-dishes-shopping-cart {
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 15px;
-  padding: 2px 0 10px;
+  padding: 2px 0;
+  margin-bottom: 10px;
 }
 
 .container-cart div.container-totalprice {
