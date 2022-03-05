@@ -40,9 +40,32 @@ class RestaurantController extends Controller
         return json_encode($foundRestaurant);
     }
 
-    public function getCategoriesId($id) {
+    public function findRestaurantByCategoriesId() {
 
-        $foundCategories = Category::findOrFail($id);
+        $test;
+
+        if($join = \Request::get('ids')) {
+            
+            $test = User::join('category_user', function ($query) use ($join) {
+            $query->on('users.id', '=', 'category_user.user_id')
+                ->where('category_user.category_id', 'LIKE', "$join");
+            })->paginate(20);
+        }
+
+        return json_encode($test);
+    }
+
+
+    public function getCategoriesId($id) { 
+
+        $foundCategories = Category::findOrFail($id); 
+
+        return json_encode($foundCategories); 
+    } 
+
+    public function getCategories() {
+
+        $foundCategories = Category::all();
 
         return json_encode($foundCategories);
     }

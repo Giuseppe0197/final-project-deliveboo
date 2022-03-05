@@ -51,6 +51,29 @@ header {
             }
         }
 
+        .shopping-cart-headear {
+
+            a {
+                width: auto;
+                text-decoration: none;
+                padding: 8px 16px;
+                background-color: #fff;
+                border: 1px solid #e8ebeb;
+                border-radius: 4px;
+                line-height: 24px;
+                cursor: pointer;
+                color: #2e3333;
+
+                span {
+                    color: #2e3333;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: 400;
+                    padding-left: 4px;
+                }
+            }
+        }
+
         .register-btn {
             color: #fff;
             background: #00ccbc;
@@ -59,6 +82,7 @@ header {
 
             &:hover {
                 color: #fff;
+                background-color: #05b7a8;
             }
         }
 
@@ -119,6 +143,7 @@ footer {
                 &:hover {
                     color: #00ccbc;
                     text-decoration: none;
+                    background-color: #05b7a8;
                 }
             }
 
@@ -131,6 +156,7 @@ footer {
 
                 &:hover {
                     color: #fff;
+                    background-color: #05b7a8;
                 }
             }
 
@@ -207,11 +233,11 @@ div.container-dish {
         .img-container {
             width: 100%;
             height: 250px;
-            background-image: url('public/storage/images/image-form.jpg');
+            background-image: url("public/storage/images/image-form.jpg");
             background-size: cover;
             background-position: center;
-            border-top-left-radius:inherit;
-            border-top-right-radius:inherit;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
         }
 
         h1 {
@@ -236,7 +262,6 @@ div.container-dish {
                 }
             }
 
-
             .input-radio {
                 display: flex;
                 width: 5%;
@@ -251,25 +276,24 @@ div.container-dish {
                     display: contents;
                 }
             }
-    
+
             .button {
                 text-align: right;
-    
-                input[type=submit] {
-                    background-color: #04AA6D;
+
+                input[type="submit"] {
+                    background-color: #04aa6d;
                     color: white;
                     padding: 12px 20px;
                     margin-right: 155px;
                     border: none;
                     border-radius: 4px;
                     cursor: pointer;
-    
-                    &:hover{
+
+                    &:hover {
                         background-color: #45a049;
                     }
                 }
             }
-
         }
         .form-control:focus {
             background-color: #e9ecef;
@@ -283,8 +307,8 @@ div.container-dish {
     #container-create {
         width: 90%;
     }
-    
-    input[type=submit] {
+
+    input[type="submit"] {
         width: 100%;
         float: none;
     }
@@ -296,11 +320,10 @@ div.container-dish {
     margin: 10px auto 0;
 }
 .restaurant-info-log {
-
     display: flex;
     justify-content: space-evenly;
 
-    .image-restaurant{
+    .image-restaurant {
         width: 50%;
 
         .restaurant-image {
@@ -314,13 +337,12 @@ div.container-dish {
             font-size: 25px;
 
             &:hover {
-                color: #00CCBC;
+                color: #00ccbc;
                 cursor: pointer;
+                background-color: #05b7a8;
             }
         }
     }
-
-
 }
 
 #dishes-button {
@@ -331,29 +353,253 @@ div.container-dish {
         border: none;
         font-size: 25px;
         border-radius: 10px;
-        background-color: #00CCBC;
+        background-color: #00ccbc;
         color: white;
         font-weight: bold;
         padding: 10px 15px;
     }
-    
 }
-//da qui form registrazione
+//FORM REGISTRAZIONE E LOGIN
+
+// registrazione
+
+.container-register {
+    width: 100%;
+    background-color: #fff;
+}
+
 .auth-page {
-    background-color: lightgray;
+    width: 70%;
+    margin: 0px 15%;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    .checkbox-container{
+    background-color: #fff;
+    justify-content: space-between;
+    padding-top: 100px;
+
+    .checkbox-container {
         width: 30%;
     }
-    input {
-        border: none;
+}
+
+.register-button {
+    color: #fff;
+    background: #00ccbc;
+    padding: 14px 24px;
+    border-radius: 4%;
+    margin-top: 20px;
+
+    &:hover {
+        color: #fff;
+        background-color: #05b7a8;
     }
 }
 
+.register-form {
+    width: 400px;
 
+    .input-text {
+        border: 1px solid #bac3c3;
+        background-color: #fff;
+        font-size: 16px;
+        padding: 9px 10px;
+        border-radius: 3px;
+        max-height: 40px;
+    }
+}
 
+// login
+.login-form {
+    width: 400px;
+
+    .input-text {
+        border: 1px solid #bac3c3;
+        background-color: #fff;
+        font-size: 16px;
+        padding: 9px 10px;
+        border-radius: 3px;
+        max-height: 40px;
+    }
+
+    h2 {
+        margin-bottom: 39px;
+    }
+}
+
+// sezione publicitaria partner deliveroo
+
+.cont-partner {
+    width: 70%;
+    text-align: center;
+    background-color: #fbfbfb;
+    margin: 0px 15%;
+    margin-top: 100px;
+
+    h1 {
+        margin-bottom: 60px;
+    }
+
+    h4 {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        margin: 25px 0;
+    }
+}
+
+.card-partner {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        width: 100px;
+        height: 100px;
+        margin: 20px 0;
+    }
+
+    p {
+        color: #828585;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 20px;
+    }
+
+    .adv-partner-card {
+        -moz-box-shadow: 0 0 3px #ccc;
+        -webkit-box-shadow: 0 0 3px #ccc;
+        box-shadow: 0 0 3px #ccc;
+
+        width: 400px;
+        background-color: white;
+        margin-right: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.line {
+    width: 100%;
+    margin: 100px 0;
+}
+
+// partner section
+
+.partner-section {
+    width: 70%;
+    text-align: center;
+    background-color: #fbfbfb;
+    margin: 0px 15%;
+    margin-top: 100px;
+
+    .partner-restaurant {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 45px;
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .partner-description {
+        width: 50%;
+        text-align: left;
+        padding-top: 30px;
+        margin-left: 7%;
+
+        img {
+            width: 80px;
+        }
+        p {
+            margin-top: 30px;
+        }
+    }
+
+    .partner-image {
+        width: 400px;
+        img {
+            width: 400px;
+            -moz-box-shadow: 0 0 3px #ccc;
+            -webkit-box-shadow: 0 0 3px #ccc;
+            box-shadow: 0 0 3px #ccc;
+        }
+    }
+}
+
+// contenitore prezzi e servizi
+
+.prize-container {
+    width: 70%;
+    margin: 0px 15%;
+
+    h2 {
+        text-align: center;
+        font-size: 29px;
+        line-height: 34px;
+        margin-bottom: 50px;
+    }
+
+    h3 {
+        font-size: 21px;
+        line-height: 22px;
+        font-weight: 400;
+        margin-bottom: 25px;
+    }
+
+    p {
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 22px;
+        color: #585c5c;
+    }
+
+    ul {
+        li {
+            font-size: 18px;
+            line-height: 33px;
+            color: #585c5c;
+        }
+
+        list-style: none;
+
+        li:before {
+            content: "✓";
+            color: #05b7a8;
+            margin-right: 12px;
+        }
+    }
+}
+
+// sezione how to
+.how-to-section {
+    width: 70%;
+    text-align: center;
+    background-color: #fbfbfb;
+    margin: 0px 15%;
+    margin-top: 130px;
+
+    .how-to-card {
+        display: flex;
+        justify-content: space-around;
+        background-color: white;
+        margin: 55px 0;
+        padding: 35px 75px;
+        -moz-box-shadow: 0 0 3px #ccc;
+        -webkit-box-shadow: 0 0 3px #ccc;
+        box-shadow: 0 0 3px #ccc;
+
+        .img-class {
+            width: 100px;
+            height: 100px;
+            margin: 20px 0;
+        }
+
+        .img-calendar {
+            width: 100px;
+            height: 100px;
+            margin: 15px 0;
+        }
+    }
+}
 
 //  Page/component -> MenuComponent
 
@@ -369,7 +615,7 @@ div.container-dishes-shopping-cart {
 
 .container-cart {
     display: inline-block;
-    width: 28%; 
+    width: 28%;
     height: 100%;
     max-height: 520px;
     position: sticky;
@@ -379,14 +625,14 @@ div.container-dishes-shopping-cart {
     padding: 32px 25px 0;
     margin: 50px 0 24px;
     border-radius: 4px;
-    border: 1px solid rgba(0,0,0,.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
     background-color: #fff;
     box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
 
     &::-webkit-scrollbar {
         width: 7px;
     }
-     
+
     &::-webkit-scrollbar-thumb {
         border-radius: 6px;
         background-color: #00ccbc;
@@ -401,27 +647,25 @@ div.container-dishes-shopping-cart {
     }
 
     .card-product {
-        border-bottom: 1px solid lavender;
-        padding: 10px 0;
-    
         span {
             font-size: 16px;
         }
 
         div.button-shoppingcart {
-            width: 28%;
+            width: 30%;
             display: flex;
             justify-content: space-between;
             float: right;
 
-            .btn-add, .btn-remove {
+            .btn-add,
+            .btn-remove {
                 cursor: pointer;
             }
         }
 
         div.container-remove-product {
             display: block;
-            
+
             span {
                 text-decoration: underline;
                 color: rgb(151, 3, 3);
@@ -456,11 +700,12 @@ div.container-dishes-shopping-cart {
 
         span {
             font-size: 16px;
-            font-weight: 600;
+            border-bottom: 1px solid lavender;
+            padding: 8px 10px;
         }
     }
 
-    div.cont-bord-pag{
+    div.cont-bord-pag {
         border-top: 4px solid #6bac26;
 
         .btn-pagamento {
@@ -478,9 +723,7 @@ div.container-dishes-shopping-cart {
         }
     }
 
-
     .text-cart-empty {
-
         img {
             width: 48px;
             height: 48px;
@@ -491,6 +734,18 @@ div.container-dishes-shopping-cart {
             font-size: 16px;
             padding-top: 4px;
             color: #ababad;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            list-style: none;
+
+            li {
+                max-width: 32%;
+                margin: 0 0 20px;
+            }
         }
 
         div.container-btn-pagamento {
@@ -505,7 +760,7 @@ div.container-dishes-shopping-cart {
                 border: none;
                 color: #ababad;
                 background-color: #e2e5e5;
-    
+
                 span {
                     display: flex;
                     align-items: center;
@@ -534,7 +789,7 @@ div.container-dishes-shopping-cart {
         flex-wrap: wrap;
 
         h2 {
-            font-family: plex-sans,sans-serif;
+            font-family: plex-sans, sans-serif;
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 16px;
@@ -553,18 +808,19 @@ div.container-dishes-shopping-cart {
         }
     }
 
-    div.card-dish{
+    div.card-dish {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 30%;
         min-height: 132px;
-        margin-right: 20px;
+        margin: 0 20px 15px 0;
         background-color: #fff;
-        border: 1px solid rgba(0,0,0,.04);
+        border: 1px solid rgba(0, 0, 0, 0.04);
         padding: 16px;
         box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
-        transition: box-shadow .2s ease-in-out,-webkit-box-shadow .2s ease-in-out;
+        transition: box-shadow 0.2s ease-in-out,
+            -webkit-box-shadow 0.2s ease-in-out;
 
         &:hover {
             cursor: pointer;
@@ -593,7 +849,7 @@ div.container-dishes-shopping-cart {
             color: #abadad;
             font-size: 16px;
             line-height: 22px;
-        };
+        }
     }
 }
 
