@@ -48,6 +48,13 @@ Route::get('/find/categories', 'RestaurantController@getCategoriesId') -> name('
 
 // rotta per la visualizzazione del ristorante per il client 
 Route::get('/show/restaurant/{id}', 'ClientController@showRestaurant') -> name('show.restaurant');
+
+
+// API per modificare la visibilità dei piatti
+Route::get('/api/dish/toggle/availability/{id}', 'RestaurantController@dishToggleAvailability') 
+    -> name('api.dish.availability.toggle');
+
+
 /* ----------------------------------- */
 
 // Auth::routes();

@@ -3,11 +3,11 @@
 <div class="ms-container container-fluid">
     <div class="container-dish">
         
-        <h1 class="w-100 text-center mb-4"> Dishes list </h1>
+        <h1 class="w-100 text-center mb-4"> I tuoi piatti </h1>
         
         <div class="container-new-dish w-100">
             <button class="btn btn-primary" @click.prevent="insertDish(restaurant_id)">
-                Aggiungi un piatto nel tuo ristorante
+                Aggiungi un piatto
             </button>
         </div>
 
@@ -18,8 +18,8 @@
         </div>
 
         
-        <div class="card" v-for="dish in dishes" :key="dish.id">
-             <!-- Gesgione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
+        <div class="card" v-for="dish in dishesArr" :key="dish.id">
+             <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
             <img :src="showImage(dish.image)" :alt="dish.name">
 
             <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
@@ -48,8 +48,8 @@
                 <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
                 <li class="list-group-item">
                     <span>Disponibilità:</span>
-                    <p v-if="dish.availability" class="d-inline-block">Disponibile</p>
-                    <p v-else class="d-inline-block">Non Disponibile</p>
+                    <p v-if="dish.availability" class="d-inline-block text-success">&#10004; Disponibile</p>
+                    <p v-else class="d-inline-block text-danger">&#10060; Non Disponibile</p>
                 </li>
 
                 <li class="container-action-dish list-group-item">
@@ -57,14 +57,12 @@
                     <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>
 
                     <!-- Button per modificare l'availability del piatto -->
-                    <a class="btn btn-secondary" href="#">RIMUOVI</a>
-                </li>
-
-                <li class="container-action-dish list-group-item">
-                    <!-- Add to cart -->
-                    <button class="btn btn-success" @click.prevent="addToCart(dish)">
-                        Aggiungi al carrello
-                    </button>
+                    <button 
+                        @click="toggleDishAvailability(dish.id)" 
+                        class="btn" 
+                        :class="dish.availability ? 'btn-danger' : 'btn-success' "> 
+                        {{ dish.availability ? 'RIMUOVI': 'AGGIUNGI'}}
+                        </button>
                 </li>
             </ul>
         </div>
@@ -77,7 +75,7 @@
     export default {
         data: function () {
             return {
-                test: [],
+                dishesArr: {},
             }
         },
 
@@ -85,6 +83,20 @@
             dishes: Object,
             restaurant_id: Number
         },
+
+        created() {
+
+            this.dishesArr = this.dishes;
+            console.log(this.dishesArr);
+        },
+
+        // mounted() {
+        //     console.log(this.dishes);
+
+        //     this.dishesArr = this.dishes;
+
+        //     console.log('DishArr', this.dishesArr);
+        // },
 
         methods: {
             // Metodo per inserire un piatto
@@ -113,6 +125,34 @@
                     return defaultImage
                 }
             },
+
+            // Mtodo per disponibilità del piatto 
+            toggleDishAvailability(id) {
+                // console.log('dish-availability toggle: ' + id);
+
+                axios.get(`/api/dish/toggle/availability/${id}`)
+                     .then(r => {
+                         const index = this.getDishIndexById(id);
+                            this.$set(this.dishesArr, index - 1, r.data);
+                            console.log(this.dishesArr);
+                        //  Vue.set(this.dishesArr, index, r.data);
+                     })
+                     .catch(e => console.error(e));
+            },
+
+            // Metodo per recuperare l'indice del singolo piatto
+            getDishIndexById(id) {
+
+                for (const dish in this.dishesArr) {
+
+                    const ind = this.dishesArr[dish].id;
+                    if (ind == id) {
+                        return ind;
+                    }
+                    
+                }
+                return -1;
+            }
         },
     }
 </script>

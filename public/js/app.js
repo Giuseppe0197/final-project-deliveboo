@@ -1981,18 +1981,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      test: []
+      dishesArr: {}
     };
   },
   props: {
     dishes: Object,
     restaurant_id: Number
   },
+  created: function created() {
+    this.dishesArr = this.dishes;
+    console.log(this.dishesArr);
+  },
+  // mounted() {
+  //     console.log(this.dishes);
+  //     this.dishesArr = this.dishes;
+  //     console.log('DishArr', this.dishesArr);
+  // },
   methods: {
     // Metodo per inserire un piatto
     insertDish: function insertDish(id) {
@@ -2015,6 +2022,33 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return defaultImage;
       }
+    },
+    // Mtodo per disponibilità del piatto 
+    toggleDishAvailability: function toggleDishAvailability(id) {
+      var _this = this;
+
+      // console.log('dish-availability toggle: ' + id);
+      axios.get("/api/dish/toggle/availability/".concat(id)).then(function (r) {
+        var index = _this.getDishIndexById(id);
+
+        _this.$set(_this.dishesArr, index - 1, r.data);
+
+        console.log(_this.dishesArr); //  Vue.set(this.dishesArr, index, r.data);
+      })["catch"](function (e) {
+        return console.error(e);
+      });
+    },
+    // Metodo per recuperare l'indice del singolo piatto
+    getDishIndexById: function getDishIndexById(id) {
+      for (var dish in this.dishesArr) {
+        var ind = this.dishesArr[dish].id;
+
+        if (ind == id) {
+          return ind;
+        }
+      }
+
+      return -1;
     }
   }
 });
@@ -38941,7 +38975,7 @@ var render = function () {
       { staticClass: "container-dish" },
       [
         _c("h1", { staticClass: "w-100 text-center mb-4" }, [
-          _vm._v(" Dishes list "),
+          _vm._v(" I tuoi piatti "),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "container-new-dish w-100" }, [
@@ -38956,11 +38990,7 @@ var render = function () {
                 },
               },
             },
-            [
-              _vm._v(
-                "\r\n                Aggiungi un piatto nel tuo ristorante\r\n            "
-              ),
-            ]
+            [_vm._v("\r\n                Aggiungi un piatto\r\n            ")]
           ),
         ]),
         _vm._v(" "),
@@ -38984,7 +39014,7 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _vm._l(_vm.dishes, function (dish) {
+        _vm._l(_vm.dishesArr, function (dish) {
           return _c("div", { key: dish.id, staticClass: "card" }, [
             _c("img", {
               attrs: { src: _vm.showImage(dish.image), alt: dish.name },
@@ -39031,11 +39061,11 @@ var render = function () {
                 _c("span", [_vm._v("Disponibilità:")]),
                 _vm._v(" "),
                 dish.availability
-                  ? _c("p", { staticClass: "d-inline-block" }, [
-                      _vm._v("Disponibile"),
+                  ? _c("p", { staticClass: "d-inline-block text-success" }, [
+                      _vm._v("✔ Disponibile"),
                     ])
-                  : _c("p", { staticClass: "d-inline-block" }, [
-                      _vm._v("Non Disponibile"),
+                  : _c("p", { staticClass: "d-inline-block text-danger" }, [
+                      _vm._v("❌ Non Disponibile"),
                     ]),
               ]),
               _vm._v(" "),
@@ -39058,31 +39088,21 @@ var render = function () {
                   ),
                   _vm._v(" "),
                   _c(
-                    "a",
-                    { staticClass: "btn btn-secondary", attrs: { href: "#" } },
-                    [_vm._v("RIMUOVI")]
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "container-action-dish list-group-item" },
-                [
-                  _c(
                     "button",
                     {
-                      staticClass: "btn btn-success",
+                      staticClass: "btn",
+                      class: dish.availability ? "btn-danger" : "btn-success",
                       on: {
                         click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.addToCart(dish)
+                          return _vm.toggleDishAvailability(dish.id)
                         },
                       },
                     },
                     [
                       _vm._v(
-                        "\r\n                        Aggiungi al carrello\r\n                    "
+                        " \r\n                        " +
+                          _vm._s(dish.availability ? "RIMUOVI" : "AGGIUNGI") +
+                          "\r\n                        "
                       ),
                     ]
                   ),
