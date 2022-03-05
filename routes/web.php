@@ -41,7 +41,8 @@ Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('f
 /* rotta per filtro delle categorie */
 
 Route::get('/find/categories/{id}', 'RestaurantController@getCategoriesId') -> name('find.categories');
-Route::get('/find/categories', 'RestaurantController@getCategories') -> name('find.categories.all');
+// Route::get('/find/categories', 'RestaurantController@getCategories') -> name('find.categories.all');
+Route::get('/find/categories', 'RestaurantController@getCategoriesId') -> name('find.categories');
 
 
 Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('find.restaurant');
@@ -49,6 +50,13 @@ Route::get('/find/restaurant_by_cat', 'RestaurantController@findRestaurantByCate
 
 // rotta per la visualizzazione del ristorante per il client 
 Route::get('/show/restaurant/{id}', 'ClientController@showRestaurant') -> name('show.restaurant');
+
+
+// API per modificare la visibilità dei piatti
+Route::get('/api/dish/toggle/availability/{id}', 'RestaurantController@dishToggleAvailability') 
+    -> name('api.dish.availability.toggle');
+
+
 /* ----------------------------------- */
 
 // Auth::routes();

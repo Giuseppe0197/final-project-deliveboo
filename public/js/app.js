@@ -1981,18 +1981,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      test: []
+      dishesArr: {}
     };
   },
   props: {
     dishes: Object,
     restaurant_id: Number
   },
+  created: function created() {
+    this.dishesArr = this.dishes;
+    console.log(this.dishesArr);
+  },
+  // mounted() {
+  //     console.log(this.dishes);
+  //     this.dishesArr = this.dishes;
+  //     console.log('DishArr', this.dishesArr);
+  // },
   methods: {
     // Metodo per inserire un piatto
     insertDish: function insertDish(id) {
@@ -2015,6 +2022,33 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return defaultImage;
       }
+    },
+    // Mtodo per disponibilità del piatto 
+    toggleDishAvailability: function toggleDishAvailability(id) {
+      var _this = this;
+
+      // console.log('dish-availability toggle: ' + id);
+      axios.get("/api/dish/toggle/availability/".concat(id)).then(function (r) {
+        var index = _this.getDishIndexById(id);
+
+        _this.$set(_this.dishesArr, index - 1, r.data);
+
+        console.log(_this.dishesArr); //  Vue.set(this.dishesArr, index, r.data);
+      })["catch"](function (e) {
+        return console.error(e);
+      });
+    },
+    // Metodo per recuperare l'indice del singolo piatto
+    getDishIndexById: function getDishIndexById(id) {
+      for (var dish in this.dishesArr) {
+        var ind = this.dishesArr[dish].id;
+
+        if (ind == id) {
+          return ind;
+        }
+      }
+
+      return -1;
     }
   }
 });
@@ -2134,6 +2168,346 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2142,7 +2516,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     restaurant: Object,
-    dishes: Object
+    dishes: Object,
+    categories_restaurant: Array
   },
   mounted: function mounted() {
     // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
@@ -2154,16 +2529,50 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
+  computed: {
+    // Prezzo totale carrello
+    totalPrice: function totalPrice() {
+      var total = 0;
+
+      for (var i = 0; i < this.cart.length; i++) {
+        total = parseFloat(total) + parseFloat(this.cart[i].price);
+      }
+
+      return total.toFixed(2);
+    }
+  },
   methods: {
     // metodo per aggiungere un prodotto/piatto nel carrello
     addToCart: function addToCart(product) {
-      this.cart.push(product);
-      this.saveCart(); // for(let i = 0; i < this.cart.length; i++) {
-      //     if(this.cart.indexOf(product.id) == -1) {
-      //         console.log(this.cart);
-      //         return this.cart.push(product)
-      //     }
+      var find = true;
+
+      for (var products in this.cart) {
+        var id = this.cart[products].id; // Confronto l'id del prodotto con tutti gli id dei prodotti all'interno del carrello
+
+        if (product.id !== id) {
+          find = true;
+        } else {
+          find = false;
+          break; // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
+        }
+      }
+
+      if (find) {
+        // Push del prodotto/piatto all'interno dell'array del carrello
+        this.cart.push(product);
+        this.saveCart(); // richiamo del metodo che fa scrollare la parte del carrello al click
+
+        this.scrollToEnd();
+      } else {
+        alert('Attenzione, hai già inserito questo piatto!');
+      } // const duplicatedProductIndex = this.cart.findIndex(item => item.id === product.id);
+      // if (duplicatedProductIndex !== -1) {
+      //     state.cart[duplicatedProductIndex].qty++;
+      //     return;
       // }
+      // product.qty = 1;
+      // state.cart.push(product);
+
     },
     // metodo per eliminare un elemnto dal carrello
     removeToCart: function removeToCart(ind) {
@@ -2174,6 +2583,26 @@ __webpack_require__.r(__webpack_exports__);
     saveCart: function saveCart() {
       var parsed = JSON.stringify(this.cart);
       localStorage.setItem('cart', parsed);
+    },
+    // metodo per controllare la lunghezza dell'array/object, in modo da gestire i titoli delle categorie
+    getTitleDish: function getTitleDish(dishes) {
+      for (var product in this.dishes) {
+        if (this.dishes[product].type == dishes) {
+          return true;
+        }
+      }
+
+      return false;
+    },
+    // metodo per aggiungere un prodotto
+    addProduct: function addProduct() {},
+    // metodo per rimuovere un prodotto
+    removeProduct: function removeProduct() {},
+    scrollToEnd: function scrollToEnd() {
+      var containerCart = this.$el.querySelector(".container-cart");
+      setTimeout(function () {
+        containerCart.scrollTop = containerCart.scrollHeight;
+      }, 1);
     }
   }
 });
@@ -6744,10 +7173,10 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(//db.onlinewebfonts.com/c/3e0066084d445438ba184bc555c216f5?family=Stratos+LC+Web);", ""]);
 
 // module
-exports.push([module.i, ".info-restaurant[data-v-98f701fa] {\n  height: 100px;\n  background-color: bisque;\n}\n.info-restaurant .info-container[data-v-98f701fa] {\n  display: inline-block;\n}\n.info-restaurant .info-container span[data-v-98f701fa] {\n  display: block;\n}", ""]);
+exports.push([module.i, ".restaurant[data-v-98f701fa] {\n  min-height: 150px;\n}\n.restaurant .info-restaurant[data-v-98f701fa] {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 30px;\n  border-top: 1px solid #e2e5e5;\n  border-bottom: 1px solid #e2e5e5;\n  background-color: #fff;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n  width: 20%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa] {\n  width: 100%;\n  border-radius: 4%;\n  box-shadow: 10px 5px 5px grey;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n  width: 80%;\n  padding: 20px;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa] {\n  padding-left: 15px;\n}\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n  font-size: 40px;\n  font-family: Stratos LC Web, sans-serif;\n  color: #2e3333;\n  font-weight: 600;\n  text-transform: uppercase;\n  margin-bottom: 20px;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories span[data-v-98f701fa] {\n  font-size: 18px;\n  font-weight: 600;\n  color: #007e8a;\n  margin-right: 5px;\n  display: inline;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  font-size: 15px;\n  display: block;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories[data-v-98f701fa], .restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  margin-bottom: 15px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n  text-align: center;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info img[data-v-98f701fa] {\n  margin-right: 10px;\n}\n@media all and (max-width: 1024px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    align-items: center;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n    width: 40%;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 60%;\n    padding: 0;\n    display: block;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding-left: 25px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}\n@media all and (min-width: 568px) and (max-width: 768px) {\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 8px;\n}\n}\n@media all and (max-width: 568px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    padding: 5px 0;\n    border-top: 0;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa], .restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 100%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa], .restaurant .info-restaurant .details-container img[data-v-98f701fa] {\n    border-radius: 0;\n    box-shadow: none;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding: 10px 0px 10px 30px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}", ""]);
 
 // exports
 
@@ -38605,7 +39034,7 @@ var render = function () {
       { staticClass: "container-dish" },
       [
         _c("h1", { staticClass: "w-100 text-center mb-4" }, [
-          _vm._v(" Dishes list "),
+          _vm._v(" I tuoi piatti "),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "container-new-dish w-100" }, [
@@ -38620,11 +39049,7 @@ var render = function () {
                 },
               },
             },
-            [
-              _vm._v(
-                "\r\n                Aggiungi un piatto nel tuo ristorante\r\n            "
-              ),
-            ]
+            [_vm._v("\r\n                Aggiungi un piatto\r\n            ")]
           ),
         ]),
         _vm._v(" "),
@@ -38648,7 +39073,7 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _vm._l(_vm.dishes, function (dish) {
+        _vm._l(_vm.dishesArr, function (dish) {
           return _c("div", { key: dish.id, staticClass: "card" }, [
             _c("img", {
               attrs: { src: _vm.showImage(dish.image), alt: dish.name },
@@ -38695,11 +39120,11 @@ var render = function () {
                 _c("span", [_vm._v("Disponibilità:")]),
                 _vm._v(" "),
                 dish.availability
-                  ? _c("p", { staticClass: "d-inline-block" }, [
-                      _vm._v("Disponibile"),
+                  ? _c("p", { staticClass: "d-inline-block text-success" }, [
+                      _vm._v("✔ Disponibile"),
                     ])
-                  : _c("p", { staticClass: "d-inline-block" }, [
-                      _vm._v("Non Disponibile"),
+                  : _c("p", { staticClass: "d-inline-block text-danger" }, [
+                      _vm._v("❌ Non Disponibile"),
                     ]),
               ]),
               _vm._v(" "),
@@ -38722,31 +39147,21 @@ var render = function () {
                   ),
                   _vm._v(" "),
                   _c(
-                    "a",
-                    { staticClass: "btn btn-secondary", attrs: { href: "#" } },
-                    [_vm._v("RIMUOVI")]
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "container-action-dish list-group-item" },
-                [
-                  _c(
                     "button",
                     {
-                      staticClass: "btn btn-success",
+                      staticClass: "btn",
+                      class: dish.availability ? "btn-danger" : "btn-success",
                       on: {
                         click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.addToCart(dish)
+                          return _vm.toggleDishAvailability(dish.id)
                         },
                       },
                     },
                     [
                       _vm._v(
-                        "\r\n                        Aggiungi al carrello\r\n                    "
+                        " \r\n                        " +
+                          _vm._s(dish.availability ? "RIMUOVI" : "AGGIUNGI") +
+                          "\r\n                        "
                       ),
                     ]
                   ),
@@ -38831,108 +39246,1087 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "restaurant" }, [
     _c("div", { staticClass: "info-restaurant" }, [
-      _c("img", {
-        attrs: {
-          src: _vm.restaurant.image,
-          alt: _vm.restaurant.restaurant_name,
-        },
-      }),
+      _c("div", { staticClass: "restaurant-image" }, [
+        _c("img", {
+          attrs: {
+            src: "/storage/images/" + _vm.restaurant.image,
+            alt: _vm.restaurant.restaurant_name,
+          },
+        }),
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "info-container" }, [
-        _c("h1", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info" }, [
-          _c("span", { staticClass: "restaurant-category" }),
+      _c("div", { staticClass: "details-container" }, [
+        _c("div", { staticClass: "left" }, [
+          _c("h1", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
           _vm._v(" "),
-          _c("span", { staticClass: "restaurant-address" }, [
-            _vm._v(
-              "\n                    Indirizzo: " +
-                _vm._s(_vm.restaurant.address) +
-                "\n                "
+          _c("div", { staticClass: "info" }, [
+            _c(
+              "div",
+              { staticClass: "restaurant-categories" },
+              _vm._l(_vm.categories_restaurant, function (category, i) {
+                return _c("span", { key: i }, [
+                  _vm._v(
+                    "\n                            • " +
+                      _vm._s(category.name) +
+                      " \n                        "
+                  ),
+                ])
+              }),
+              0
             ),
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "restaurant-p-iva" }, [
-            _vm._v(
-              "\n                   Partita Iva: " +
-                _vm._s(_vm.restaurant.p_iva) +
-                "\n                "
-            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "restaurant-phone" }, [
+              _vm._v(
+                "\n                        📞 " +
+                  _vm._s(_vm.restaurant.restaurant_phone) +
+                  "\n                    "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "restaurant-address" }, [
+              _vm._v(
+                "\n                        📍 " +
+                  _vm._s(_vm.restaurant.address) +
+                  "\n                    "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "restaurant-p-iva" }, [
+              _vm._v(
+                "\n                    Partita Iva: " +
+                  _vm._s(_vm.restaurant.p_iva) +
+                  "\n                    "
+              ),
+            ]),
           ]),
         ]),
+        _vm._v(" "),
+        _vm._m(0),
       ]),
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container-cart" },
-      [
-        _vm._l(_vm.cart, function (product, i) {
-          return _c("div", { key: i, staticClass: "card-product d-flex" }, [
-            _c("span", [
-              _vm._v(
-                "\n                " + _vm._s(product.name) + "\n            "
-              ),
-            ]),
+    _c("div", { staticClass: "container-dishes-shopping-cart" }, [
+      _c("div", { staticClass: "container-card-dishes" }, [
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Antipasti")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Antipasti")])
+              : _vm._e(),
             _vm._v(" "),
-            _c("span", [
-              _vm._v(
-                "\n                " +
-                  _vm._s(product.description) +
-                  "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", [
-              _vm._v(
-                "\n                €" + _vm._s(product.price) + "\n            "
-              ),
-            ]),
-            _vm._v(" "),
-            _c("span", [
-              _c(
-                "button",
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
                 {
-                  staticClass: "btn btn-danger",
+                  key: "A" + i,
+                  class: dish.type == "Antipasti" ? "card-dish" : "",
                   on: {
                     click: function ($event) {
-                      $event.preventDefault()
-                      return _vm.removeToCart(i)
+                      return _vm.addToCart(dish)
                     },
                   },
                 },
-                [_vm._v("\n                    Rimuovi\n                ")]
-              ),
-            ]),
-          ])
-        }),
+                [
+                  dish.type == "Antipasti"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Antipasti"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
         _vm._v(" "),
-        _vm.cart.length > 0
-          ? _c("div", { staticClass: "text-center" }, [
-              _c("button", { staticClass: "btn btn-pagamento" }, [
-                _vm._v("\n                Vai al pagamento\n            "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Primi")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Primi")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: "A" + i,
+                  class: dish.type == "Primi" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Primi"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Primi"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Secondi")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Secondi")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: "A" + i,
+                  class: dish.type == "Secondi" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Secondi"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Secondi"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Pizze")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Pizze")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: i,
+                  class: dish.type == "Pizze" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Pizze"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Pizze"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Sushi")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Sushi")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: "A" + i,
+                  class: dish.type == "Sushi" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Sushi"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Sushi"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Specialità")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Specialità")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: "A" + i,
+                  class: dish.type == "Specialità" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Specialità"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Specialità"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Riso")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Riso")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: "A" + i,
+                  class: dish.type == "Riso" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Riso"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Riso"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Insalate")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Insalate")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, i) {
+              return _c(
+                "div",
+                {
+                  key: "A" + i,
+                  class: dish.type == "Insalate" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Insalate"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Insalate"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Fritti")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Fritti")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, j) {
+              return _c(
+                "div",
+                {
+                  key: j,
+                  class: dish.type == "Fritti" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Fritti"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Fritti"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Hamburger")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Hamburger")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, j) {
+              return _c(
+                "div",
+                {
+                  key: j,
+                  class: dish.type == "Hamburger" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Hamburger"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Hamburger"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Kebab")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Kebab")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, j) {
+              return _c(
+                "div",
+                {
+                  key: j,
+                  class: dish.type == "Kebab" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Kebab"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Kebab"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Dolci")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Dolci")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, a) {
+              return _c(
+                "div",
+                {
+                  key: a,
+                  class: dish.type == "Dolci" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Dolci"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Dolci"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "container-dishes" },
+          [
+            _vm.getTitleDish("Bibite")
+              ? _c("h2", { staticClass: "w-100" }, [_vm._v("Bibite")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm._l(_vm.dishes, function (dish, j) {
+              return _c(
+                "div",
+                {
+                  key: j,
+                  class: dish.type == "Bibite" ? "card-dish" : "",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addToCart(dish)
+                    },
+                  },
+                },
+                [
+                  dish.type == "Bibite"
+                    ? _c("div", { staticClass: "w-100" }, [
+                        _c("h3", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.name) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.description) +
+                              "\n                    "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(dish.price) +
+                              " €\n                    "
+                          ),
+                        ]),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  dish.type == "Bibite"
+                    ? _c("div", { staticClass: "container-dish-img" }, [
+                        _c("img", {
+                          attrs: {
+                            src: "/storage/images/" + dish.image,
+                            alt: "dish.name",
+                          },
+                        }),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+          ],
+          2
+        ),
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container-cart" },
+        [
+          _vm.cart.length > 0
+            ? _c("h3", [_vm._v("\n            Il tuo ordine\n        ")])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._l(_vm.cart, function (product, i) {
+            return _c("div", { key: i, staticClass: "card-product" }, [
+              _c("span", { staticClass: "name-dish" }, [
+                _vm._v(
+                  "\n                " + _vm._s(product.name) + "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "button-shoppingcart" }, [
+                _c("div", [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn-remove",
+                      on: {
+                        click: function ($event) {
+                          return _vm.removeProduct()
+                        },
+                      },
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/storage/images/svgexport-14.svg",
+                          alt: "btn remove",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v("\n                        1\n                    "),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn-add",
+                      on: {
+                        click: function ($event) {
+                          return _vm.addProduct()
+                        },
+                      },
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/storage/images/svgexport-13.svg",
+                          alt: "btn add",
+                        },
+                      }),
+                    ]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("span", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(product.price) +
+                        " €\n                    "
+                    ),
+                  ]),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "description-dish" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(product.description) +
+                    "\n            "
+                ),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "container-remove-product" }, [
+                _c(
+                  "span",
+                  {
+                    on: {
+                      click: function ($event) {
+                        $event.preventDefault()
+                        return _vm.removeToCart(i)
+                      },
+                    },
+                  },
+                  [_vm._v("\n                    Rimuovi\n                ")]
+                ),
               ]),
             ])
-          : _c("div", { staticClass: "text-cart-empty text-center" }, [
-              _c("img", {
-                attrs: {
-                  src: "/storage/images/svgexport-15.svg",
-                  alt: "shopping_cart_image",
-                },
-              }),
-              _vm._v(" "),
-              _c("span", [
-                _vm._v("\n                il carrello è vuoto\n            "),
+          }),
+          _vm._v(" "),
+          _vm.cart.length > 0
+            ? _c("div", { staticClass: "container-totalprice" }, [
+                _c("span", [_vm._v("\n                Totale\n            ")]),
+                _vm._v(" "),
+                _c("span", [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.totalPrice) +
+                      " €\n            "
+                  ),
+                ]),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.cart.length > 0
+            ? _c("div", { staticClass: "cont-bord-pag text-center" }, [
+                _c("button", { staticClass: "btn-pagamento" }, [
+                  _vm._v("\n                Vai al pagamento\n            "),
+                ]),
+              ])
+            : _c("div", { staticClass: "text-cart-empty text-center" }, [
+                _c("img", {
+                  attrs: {
+                    src: "/storage/images/svgexport-15.svg",
+                    alt: "shopping_cart_image",
+                  },
+                }),
+                _vm._v(" "),
+                _c("span", [
+                  _vm._v("\n                il carrello è vuoto\n            "),
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
               ]),
-              _vm._v(" "),
-              _vm._m(0),
-            ]),
-      ],
-      2
-    ),
+        ],
+        2
+      ),
+    ]),
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right" }, [
+      _c("div", { staticClass: "delivery-info" }, [
+        _c("img", {
+          attrs: {
+            src: "/storage/images/svgexport-11.svg",
+            alt: "rider image",
+          },
+        }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Scegli la consegna a domicilio")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text" }, [
+        _c("span", [_vm._v("Il tuo ordine sarà consegnato in 20 - 30 minuti")]),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
