@@ -11565,6 +11565,12 @@ div.container-dishes-shopping-cart {
   padding: 0 0 10px 0;
 }
 
+.container-cart .card-product {
+  border-bottom: 1px solid lavender;
+  margin: 12px 0;
+  padding: 0 0 10px;
+}
+
 .container-cart .card-product span {
   font-size: 16px;
 }
@@ -11613,13 +11619,13 @@ div.container-dishes-shopping-cart {
 .container-cart div.container-totalprice {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0 10px;
+  padding: 0 0 5px;
 }
 
 .container-cart div.container-totalprice span {
   font-size: 16px;
-  border-bottom: 1px solid lavender;
-  padding: 8px 10px;
+  font-weight: 600;
+  padding: 8px 0;
 }
 
 .container-cart div.cont-bord-pag {

@@ -383,7 +383,7 @@
             </div>
 
             <div v-if="cart.length > 0" class="cont-bord-pag text-center">
-                <button class="btn-pagamento">
+                <button class="btn-pagamento" @click.prevent="viewCart(cart)">
                     Vai al pagamento
                 </button>
             </div>
@@ -563,11 +563,8 @@
                         } else {
                             console.log('ID DIVERSI');
                         }
-
-                    }
-                }
-
-                
+                    };
+                };
             },
 
             scrollToEnd() {    	
@@ -576,6 +573,19 @@
                 setTimeout(() => {
                     containerCart.scrollTop = containerCart.scrollHeight;
                 }, 1);
+            },
+
+            viewCart(cart) {  // passare il carrello nel blade
+
+                // let test = JSON.stringify(cart);
+
+                axios.post('/view/cart/', cart)
+                     .then(function (r) {
+                        console.log(r.data)
+                     })
+                     .catch(e => console.error(e))
+
+                // window.location.href = `/view/cart=?/${x}`;
             },
         }
     }

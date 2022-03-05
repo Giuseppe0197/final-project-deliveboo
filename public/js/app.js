@@ -2629,13 +2629,26 @@ __webpack_require__.r(__webpack_exports__);
             console.log('ID DIVERSI');
           }
         }
+
+        ;
       }
+
+      ;
     },
     scrollToEnd: function scrollToEnd() {
       var containerCart = this.$el.querySelector(".container-cart");
       setTimeout(function () {
         containerCart.scrollTop = containerCart.scrollHeight;
       }, 1);
+    },
+    viewCart: function viewCart(cart) {
+      // passare il carrello nel blade
+      // let test = JSON.stringify(cart);
+      axios.post('/view/cart/', cart).then(function (r) {
+        console.log(r.data);
+      })["catch"](function (e) {
+        return console.error(e);
+      }); // window.location.href = `/view/cart=?/${x}`;
     }
   }
 });
@@ -40324,9 +40337,19 @@ var render = function () {
           _vm._v(" "),
           _vm.cart.length > 0
             ? _c("div", { staticClass: "cont-bord-pag text-center" }, [
-                _c("button", { staticClass: "btn-pagamento" }, [
-                  _vm._v("\n                Vai al pagamento\n            "),
-                ]),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn-pagamento",
+                    on: {
+                      click: function ($event) {
+                        $event.preventDefault()
+                        return _vm.viewCart(_vm.cart)
+                      },
+                    },
+                  },
+                  [_vm._v("\n                Vai al pagamento\n            ")]
+                ),
               ])
             : _c("div", { staticClass: "text-cart-empty text-center" }, [
                 _c("img", {

@@ -122,6 +122,19 @@ class DishController extends Controller
         return redirect()->route('dishes.list', $dish['user_id']);
     }
 
+    
+
+
+    
+    public $test;
+    // Funzione per visualizzare la pagina del carrello con i relativi dati
+    public function getCart(Request $request) {
+
+        $this->test = $request->all();
+
+        return response()->json([$request->all()]);
+    }
+
     /* public function getSingleMenu($id) {
         $singleMenu = User::findOrFail($id);
 
