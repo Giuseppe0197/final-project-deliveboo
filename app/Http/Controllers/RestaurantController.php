@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\User;
 use App\Restaurant;
+use App\Dish;
 
 use Illuminate\Http\Request;
 
@@ -44,5 +45,15 @@ class RestaurantController extends Controller
         $foundCategories = Category::findOrFail($id);
 
         return json_encode($foundCategories);
+    }
+
+    public function dishToggleAvailability($id) {
+
+        $dish = Dish::findOrFail($id);
+
+        $dish -> availability = !$dish -> availability;
+        $dish -> save();
+
+        return json_encode($dish);
     }
 }
