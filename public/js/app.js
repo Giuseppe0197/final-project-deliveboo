@@ -2512,6 +2512,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2649,6 +2650,10 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (e) {
         return console.error(e);
       }); // window.location.href = `/view/cart=?/${x}`;
+    },
+    // Metodo per andare al pagamento
+    goToPayment: function goToPayment() {
+      window.location.href = "/client/checkout";
     }
   }
 });
@@ -40344,7 +40349,7 @@ var render = function () {
                     on: {
                       click: function ($event) {
                         $event.preventDefault()
-                        return _vm.viewCart(_vm.cart)
+                        return _vm.goToPayment.apply(null, arguments)
                       },
                     },
                   },

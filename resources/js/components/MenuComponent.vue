@@ -383,7 +383,8 @@
             </div>
 
             <div v-if="cart.length > 0" class="cont-bord-pag text-center">
-                <button class="btn-pagamento" @click.prevent="viewCart(cart)">
+                
+                <button class="btn-pagamento" @click.prevent="goToPayment"> <!-- viewCart(cart) -->
                     Vai al pagamento
                 </button>
             </div>
@@ -586,6 +587,11 @@
                      .catch(e => console.error(e))
 
                 // window.location.href = `/view/cart=?/${x}`;
+            },
+
+            // Metodo per andare al pagamento
+            goToPayment() {
+                window.location.href = `/client/checkout`;
             },
         }
     }

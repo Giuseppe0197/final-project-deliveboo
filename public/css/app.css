@@ -11831,3 +11831,51 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
+main #checkout {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main #checkout .client-info {
+  width: 45%;
+}
+
+main #checkout .client-info h1 {
+  font-size: 45px;
+  color: #2e3333;
+  padding: 15px 0;
+}
+
+main #checkout .client-info #payment-form input {
+  display: block;
+  width: 90%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  padding: 9px 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #bac3c3;
+  background-color: #fff;
+  outline: none;
+  max-height: 40px;
+}
+
+main #checkout .client-info #payment-form input:focus {
+  border-color: #00ccbc;
+  box-shadow: 0px 0px 0px 1px #00ccbc;
+}
+
+main #checkout .client-info h1,
+main #checkout .client-info input,
+main #checkout .client-info label {
+  margin-left: 5%;
+}
+
+main #checkout .payment-card {
+  width: 55%;
+  min-height: 100px;
+  background-color: darkgoldenrod;
+}
+
