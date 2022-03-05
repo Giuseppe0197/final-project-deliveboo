@@ -2304,27 +2304,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       restaurants: [],
       restaurantsCat: [],
       searchRestaurant: '',
-      checkbox: []
+      checkbox: [],
+      categories: []
     };
   },
-  props: {
-    categories: Array
+  props: {// categories: Array,
+    // categories_restaurant: Array
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/find/categories').then(function (r) {
+      return _this.categories = r.data;
+    })["catch"](function (e) {
+      return console.error(e);
+    });
+  },
+
+  /* watch: {
+      checkbox(newVal, oldVal) {
+          console.log(newVal, oldVal)
+          this.findByResataurantCategoryId(newVal)
+      }
+  },   */
   methods: {
     search: function search() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get('/find/restaurant?q=' + this.searchRestaurant).then(function (r) {
-        return _this.restaurants = r.data.data;
+        return _this2.restaurants = r.data.data;
+      })["catch"](function (e) {
+        return console.error(e);
+      });
+    },
+
+    /* async findByResataurantCategoryId() {
+        console.log("this.checkbox")    
+        console.log(this.checkbox) 
+        let r = await axios.get('/find/restaurant_by_cat?ids=' + this.checkbox)
+        this.restaurants = r.data
+        console.log(r)    
+    }, */
+    findByResataurantCategoryId: function findByResataurantCategoryId() {
+      var _this3 = this;
+
+      axios.get('/find/restaurant_by_cat?ids=' + "".concat(this.checkbox)).then(function (r) {
+        return _this3.restaurants = r.data.data;
       })["catch"](function (e) {
         return console.error(e);
       });
@@ -39075,39 +39106,10 @@ var render = function () {
         [_vm._v("Cerca il nome del ristorante")]
       ),
       _vm._v(" "),
-      _vm._l(_vm.restaurants, function (restaurant, i) {
-        return _c("div", { key: i, staticClass: "restaurant-found" }, [
-          _c("img", {
-            attrs: { src: "/storage/images/" + restaurant.image, alt: "" },
-          }),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(restaurant.restaurant_name))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(restaurant.restaurant_phone))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(restaurant.email))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(restaurant.address))]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-success",
-              on: {
-                click: function ($event) {
-                  return _vm.showMenu(restaurant.id)
-                },
-              },
-            },
-            [_vm._v("Visualizza il menu del ristorante")]
-          ),
-        ])
-      }),
-      _vm._v(" "),
       _vm._l(_vm.categories, function (category) {
         return _c(
           "div",
-          { key: category.id, staticClass: "checkboxesSearch" },
+          { key: category.id, staticClass: "checkboxesSearch d-inline-flex" },
           [
             _c("input", {
               directives: [
@@ -39152,9 +39154,65 @@ var render = function () {
         )
       }),
       _vm._v(" "),
-      _c("button", { staticClass: "btn btn-primary" }, [
-        _vm._v("Cerca la categoria"),
+      _c("button", { on: { click: _vm.findByResataurantCategoryId } }, [
+        _vm._v("cerca la categoria"),
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d-flex" },
+        _vm._l(_vm.restaurants, function (restaurant, i) {
+          return _c(
+            "div",
+            {
+              key: i,
+              staticClass: "my-2 card restaurant-found restaurant-card",
+              staticStyle: { width: "18rem" },
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: "/storage/images/" + restaurant.image,
+                    alt: "",
+                  },
+                }),
+                _vm._v(" "),
+                _c("h5", { staticClass: "card-title text-center my-1" }, [
+                  _vm._v(_vm._s(restaurant.restaurant_name)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text text-center" }, [
+                  _vm._v(_vm._s(restaurant.restaurant_phone)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text text-center" }, [
+                  _vm._v(_vm._s(restaurant.email)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text text-center" }, [
+                  _vm._v(_vm._s(restaurant.address)),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  on: {
+                    click: function ($event) {
+                      return _vm.showMenu(restaurant.id)
+                    },
+                  },
+                },
+                [_vm._v("Visualizza il menu del ristorante")]
+              ),
+            ]
+          )
+        }),
+        0
+      ),
     ],
     2
   )
@@ -51864,8 +51922,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
