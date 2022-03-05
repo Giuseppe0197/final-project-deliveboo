@@ -2817,7 +2817,11 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       axios.get('/find/restaurant_by_cat?ids=' + "".concat(this.checkbox)).then(function (r) {
-        return _this3.restaurants = r.data.data;
+        _this3.restaurants = r.data.data;
+
+        for (var i = 0; i < _this3.restaurants.length; i++) {
+          _this3.restaurants[i].id = _this3.restaurants[i].user_id;
+        }
       })["catch"](function (e) {
         return console.error(e);
       });
@@ -53355,8 +53359,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

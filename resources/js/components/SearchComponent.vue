@@ -84,8 +84,14 @@
 
             findByResataurantCategoryId() {
                 axios.get('/find/restaurant_by_cat?ids=' + `${this.checkbox}`)
-                     .then(r => this.restaurants = r.data.data)
-                     .catch(e => console.error(e))
+                    .then(r => {
+                        this.restaurants = r.data.data;
+
+                        for (let i = 0; i < this.restaurants.length; i++) {
+                            this.restaurants[i].id = this.restaurants[i].user_id;
+                        }
+                    })
+                    .catch(e => console.error(e))
             },
 
 
