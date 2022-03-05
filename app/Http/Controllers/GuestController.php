@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Category;
+use App\User;
 
 class GuestController extends Controller
 {
     public function home() {
 
-        $categories = Category::all();
-
-        return view('pages.homepage', compact('categories'));
+        return view('pages.homepage');
     }
 }
