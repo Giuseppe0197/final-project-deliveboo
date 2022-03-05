@@ -2544,13 +2544,35 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // metodo per aggiungere un prodotto/piatto nel carrello
     addToCart: function addToCart(product) {
-      this.cart.push(product);
-      this.saveCart(); // for(let i = 0; i < this.cart.length; i++) {
-      //     if(this.cart.indexOf(product.id) == -1) {
-      //         console.log(this.cart);
-      //         return this.cart.push(product)
-      //     }
+      var find = true;
+
+      for (var products in this.cart) {
+        var id = this.cart[products].id; // Confronto l'id del prodotto con tutti gli id dei prodotti all'interno del carrello
+
+        if (product.id !== id) {
+          find = true;
+        } else {
+          find = false;
+          break; // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
+        }
+      }
+
+      if (find) {
+        // Push del prodotto/piatto all'interno dell'array del carrello
+        this.cart.push(product);
+        this.saveCart(); // richiamo del metodo che fa scrollare la parte del carrello al click
+
+        this.scrollToEnd();
+      } else {
+        alert('Attenzione, hai già inserito questo piatto!');
+      } // const duplicatedProductIndex = this.cart.findIndex(item => item.id === product.id);
+      // if (duplicatedProductIndex !== -1) {
+      //     state.cart[duplicatedProductIndex].qty++;
+      //     return;
       // }
+      // product.qty = 1;
+      // state.cart.push(product);
+
     },
     // metodo per eliminare un elemnto dal carrello
     removeToCart: function removeToCart(ind) {
@@ -2575,7 +2597,13 @@ __webpack_require__.r(__webpack_exports__);
     // metodo per aggiungere un prodotto
     addProduct: function addProduct() {},
     // metodo per rimuovere un prodotto
-    removeProduct: function removeProduct() {}
+    removeProduct: function removeProduct() {},
+    scrollToEnd: function scrollToEnd() {
+      var containerCart = this.$el.querySelector(".container-cart");
+      setTimeout(function () {
+        containerCart.scrollTop = containerCart.scrollHeight;
+      }, 1);
+    }
   }
 });
 
@@ -7114,10 +7142,10 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(//db.onlinewebfonts.com/c/3e0066084d445438ba184bc555c216f5?family=Stratos+LC+Web);", ""]);
 
 // module
-exports.push([module.i, ".restaurant[data-v-98f701fa] {\n  min-height: 150px;\n}\n.restaurant .info-restaurant[data-v-98f701fa] {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 30px;\n  border-top: 1px solid #e2e5e5;\n  border-bottom: 1px solid #e2e5e5;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n  width: 20%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa] {\n  width: 100%;\n  border-radius: 4%;\n  box-shadow: 10px 5px 5px grey;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n  width: 80%;\n  padding: 20px;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa] {\n  padding-left: 15px;\n}\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n  text-transform: uppercase;\n  margin-bottom: 20px;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories span[data-v-98f701fa] {\n  font-size: 18px;\n  font-weight: 600;\n  color: #007e8a;\n  margin-right: 5px;\n  display: inline;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  font-size: 15px;\n  display: block;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories[data-v-98f701fa], .restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  margin-bottom: 15px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n  text-align: center;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info img[data-v-98f701fa] {\n  margin-right: 10px;\n}\n@media all and (max-width: 1024px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    align-items: center;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n    width: 40%;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 60%;\n    padding: 0;\n    display: block;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding-left: 25px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}\n@media all and (min-width: 568px) and (max-width: 768px) {\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 8px;\n}\n}\n@media all and (max-width: 568px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    padding: 5px 0;\n    border-top: 0;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa], .restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 100%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa], .restaurant .info-restaurant .details-container img[data-v-98f701fa] {\n    border-radius: 0;\n    box-shadow: none;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding: 10px 0px 10px 30px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}", ""]);
+exports.push([module.i, ".restaurant[data-v-98f701fa] {\n  min-height: 150px;\n}\n.restaurant .info-restaurant[data-v-98f701fa] {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 30px;\n  border-top: 1px solid #e2e5e5;\n  border-bottom: 1px solid #e2e5e5;\n  background-color: #fff;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n  width: 20%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa] {\n  width: 100%;\n  border-radius: 4%;\n  box-shadow: 10px 5px 5px grey;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n  width: 80%;\n  padding: 20px;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa] {\n  padding-left: 15px;\n}\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n  font-size: 40px;\n  font-family: Stratos LC Web, sans-serif;\n  color: #2e3333;\n  font-weight: 600;\n  text-transform: uppercase;\n  margin-bottom: 20px;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories span[data-v-98f701fa] {\n  font-size: 18px;\n  font-weight: 600;\n  color: #007e8a;\n  margin-right: 5px;\n  display: inline;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  font-size: 15px;\n  display: block;\n}\n.restaurant .info-restaurant .details-container .left .info .restaurant-categories[data-v-98f701fa], .restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n  margin-bottom: 15px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n  text-align: center;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info img[data-v-98f701fa] {\n  margin-right: 10px;\n}\n@media all and (max-width: 1024px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    align-items: center;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa] {\n    width: 40%;\n}\n.restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 60%;\n    padding: 0;\n    display: block;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding-left: 25px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}\n@media all and (min-width: 568px) and (max-width: 768px) {\n.restaurant .info-restaurant .details-container .left h1[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 8px;\n}\n}\n@media all and (max-width: 568px) {\n.restaurant .info-restaurant[data-v-98f701fa] {\n    padding: 5px 0;\n    border-top: 0;\n}\n.restaurant .info-restaurant .restaurant-image[data-v-98f701fa], .restaurant .info-restaurant .details-container[data-v-98f701fa] {\n    width: 100%;\n}\n.restaurant .info-restaurant .restaurant-image img[data-v-98f701fa], .restaurant .info-restaurant .details-container img[data-v-98f701fa] {\n    border-radius: 0;\n    box-shadow: none;\n}\n.restaurant .info-restaurant .details-container .left[data-v-98f701fa], .restaurant .info-restaurant .details-container .right[data-v-98f701fa] {\n    padding: 10px 0px 10px 30px;\n}\n.restaurant .info-restaurant .details-container .left .info span[data-v-98f701fa] {\n    margin-bottom: 5px;\n}\n.restaurant .info-restaurant .details-container .right .delivery-info[data-v-98f701fa] {\n    text-align: left;\n}\n}", ""]);
 
 // exports
 
@@ -40128,30 +40156,6 @@ var render = function () {
                   _c(
                     "span",
                     {
-                      staticClass: "btn-add",
-                      on: {
-                        click: function ($event) {
-                          return _vm.addProduct()
-                        },
-                      },
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "/storage/images/svgexport-13.svg",
-                          alt: "btn add",
-                        },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("span", [
-                    _vm._v("\n                        1\n                    "),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
                       staticClass: "btn-remove",
                       on: {
                         click: function ($event) {
@@ -40164,6 +40168,30 @@ var render = function () {
                         attrs: {
                           src: "/storage/images/svgexport-14.svg",
                           alt: "btn remove",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v("\n                        1\n                    "),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn-add",
+                      on: {
+                        click: function ($event) {
+                          return _vm.addProduct()
+                        },
+                      },
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "/storage/images/svgexport-13.svg",
+                          alt: "btn add",
                         },
                       }),
                     ]
@@ -53230,8 +53258,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
