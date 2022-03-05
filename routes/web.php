@@ -41,8 +41,8 @@ Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('f
 /* rotta per filtro delle categorie */
 
 Route::get('/find/categories/{id}', 'RestaurantController@getCategoriesId') -> name('find.categories');
-// Route::get('/find/categories', 'RestaurantController@getCategories') -> name('find.categories.all');
-Route::get('/find/categories', 'RestaurantController@getCategoriesId') -> name('find.categories');
+Route::get('/find/categories', 'RestaurantController@getCategories') -> name('find.categories.all');
+// Route::get('/find/categories', 'RestaurantController@getCategoriesId') -> name('find.categories');
 
 
 Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('find.restaurant');
