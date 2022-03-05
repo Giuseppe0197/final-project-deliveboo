@@ -2636,6 +2636,10 @@ __webpack_require__.r(__webpack_exports__);
       setTimeout(function () {
         containerCart.scrollTop = containerCart.scrollHeight;
       }, 1);
+    },
+    // Metodo per andare al pagamento
+    goToPayment: function goToPayment() {
+      window.location.href = "/client/checkout";
     }
   }
 });
@@ -40324,9 +40328,19 @@ var render = function () {
           _vm._v(" "),
           _vm.cart.length > 0
             ? _c("div", { staticClass: "cont-bord-pag text-center" }, [
-                _c("button", { staticClass: "btn-pagamento" }, [
-                  _vm._v("\n                Vai al pagamento\n            "),
-                ]),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn-pagamento",
+                    on: {
+                      click: function ($event) {
+                        $event.preventDefault()
+                        return _vm.goToPayment()
+                      },
+                    },
+                  },
+                  [_vm._v("\n                Vai al pagamento\n            ")]
+                ),
               ])
             : _c("div", { staticClass: "text-cart-empty text-center" }, [
                 _c("img", {
@@ -53359,8 +53373,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
