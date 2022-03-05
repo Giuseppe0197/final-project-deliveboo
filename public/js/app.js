@@ -1981,6 +1981,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38997,150 +39001,152 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "ms-container container-fluid" }, [
+  return _c("main", { staticClass: "content-container" }, [
+    _c("div", { staticClass: "top-container pt-3" }, [
+      _c("h1", [_vm._v(" I tuoi piatti ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "buttons" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn ml-2",
+            on: {
+              click: function ($event) {
+                $event.preventDefault()
+                return _vm.insertDish(_vm.restaurant_id)
+              },
+            },
+          },
+          [_vm._v("\n                Aggiungi un piatto\n            ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn ml-2",
+            on: {
+              click: function ($event) {
+                $event.preventDefault()
+                return _vm.homeRestaurant()
+              },
+            },
+          },
+          [_vm._v("\n                Ritorna al ristorante\n            ")]
+        ),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn ml-2" }, [
+          _vm._v("\n                Riepilogo ordini\n            "),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "container-dish" },
-      [
-        _c("h1", { staticClass: "w-100 text-center mb-4" }, [
-          _vm._v(" I tuoi piatti "),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container-new-dish w-100" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  return _vm.insertDish(_vm.restaurant_id)
-                },
-              },
-            },
-            [_vm._v("\r\n                Aggiungi un piatto\r\n            ")]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "w-100 text-center mt-2" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-secondary",
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  return _vm.homeRestaurant()
-                },
-              },
-            },
-            [
+      _vm._l(_vm.dishesArr, function (dish) {
+        return _c("div", { key: dish.id, staticClass: "card" }, [
+          _c("img", {
+            attrs: { src: _vm.showImage(dish.image), alt: dish.name },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("h4", { staticClass: "card-title" }, [
               _vm._v(
-                "\r\n                Ritorna al ristorante\r\n            "
+                "\n                    " +
+                  _vm._s(dish.name) +
+                  "\n                "
               ),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.dishesArr, function (dish) {
-          return _c("div", { key: dish.id, staticClass: "card" }, [
-            _c("img", {
-              attrs: { src: _vm.showImage(dish.image), alt: dish.name },
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("h4", { staticClass: "card-title" }, [
-                _vm._v(
-                  "\r\n                    " +
-                    _vm._s(dish.name) +
-                    "\r\n                "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "\r\n                    " +
-                    _vm._s(dish.description) +
-                    "\r\n                "
-                ),
-              ]),
             ]),
             _vm._v(" "),
-            _c("ul", { staticClass: "list-group list-group-flush" }, [
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("Prezzo:")]),
-                _vm._v(
-                  "\r\n                    €" +
-                    _vm._s(dish.price) +
-                    " \r\n                "
-                ),
-              ]),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(dish.description) +
+                  "\n                "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "list-group list-group-flush" }, [
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("span", [_vm._v("Prezzo:")]),
+              _vm._v(
+                "\n                    €" +
+                  _vm._s(dish.price) +
+                  " \n                "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("span", { staticClass: "fw-bold" }, [_vm._v("Tipo:")]),
+              _vm._v(
+                "\n                    " +
+                  _vm._s(dish.type) +
+                  "\n                "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("span", [_vm._v("Disponibilità:")]),
               _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", { staticClass: "fw-bold" }, [_vm._v("Tipo:")]),
-                _vm._v(
-                  "\r\n                    " +
-                    _vm._s(dish.type) +
-                    "\r\n                "
-                ),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _c("span", [_vm._v("Disponibilità:")]),
-                _vm._v(" "),
-                dish.availability
-                  ? _c("p", { staticClass: "d-inline-block text-success" }, [
-                      _vm._v("✔ Disponibile"),
-                    ])
-                  : _c("p", { staticClass: "d-inline-block text-danger" }, [
-                      _vm._v("❌ Non Disponibile"),
-                    ]),
-              ]),
+              dish.availability
+                ? _c(
+                    "p",
+                    {
+                      staticClass:
+                        "d-inline-block text-success font-weight-bold",
+                    },
+                    [_vm._v("✔ Disponibile")]
+                  )
+                : _c(
+                    "p",
+                    {
+                      staticClass:
+                        "d-inline-block text-danger font-weight-bold",
+                    },
+                    [_vm._v("❌ Non Disponibile")]
+                  ),
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "container-action-dish list-group-item" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.editDish(dish.id)
+                    },
+                  },
+                },
+                [_vm._v("MODIFICA")]
+              ),
               _vm._v(" "),
               _c(
-                "li",
-                { staticClass: "container-action-dish list-group-item" },
+                "button",
+                {
+                  staticClass: "btn",
+                  class: dish.availability ? "btn-danger" : "btn-success",
+                  on: {
+                    click: function ($event) {
+                      return _vm.toggleDishAvailability(dish.id)
+                    },
+                  },
+                },
                 [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.editDish(dish.id)
-                        },
-                      },
-                    },
-                    [_vm._v("MODIFICA")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn",
-                      class: dish.availability ? "btn-danger" : "btn-success",
-                      on: {
-                        click: function ($event) {
-                          return _vm.toggleDishAvailability(dish.id)
-                        },
-                      },
-                    },
-                    [
-                      _vm._v(
-                        " \r\n                        " +
-                          _vm._s(dish.availability ? "RIMUOVI" : "AGGIUNGI") +
-                          "\r\n                        "
-                      ),
-                    ]
+                  _vm._v(
+                    " \n                        " +
+                      _vm._s(dish.availability ? "RIMUOVI" : "AGGIUNGI") +
+                      "\n                        "
                   ),
                 ]
               ),
             ]),
-          ])
-        }),
-      ],
-      2
+          ]),
+        ])
+      }),
+      0
     ),
   ])
 }
@@ -53258,8 +53264,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

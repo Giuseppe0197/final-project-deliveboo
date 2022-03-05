@@ -1,73 +1,77 @@
 <template>
 
-<div class="ms-container container-fluid">
-    <div class="container-dish">
-        
-        <h1 class="w-100 text-center mb-4"> I tuoi piatti </h1>
-        
-        <div class="container-new-dish w-100">
-            <button class="btn btn-primary" @click.prevent="insertDish(restaurant_id)">
-                Aggiungi un piatto
-            </button>
-        </div>
+    <main class="content-container">
 
-        <div class="w-100 text-center mt-2">
-            <button class="btn btn-secondary" @click.prevent="homeRestaurant()">
-                Ritorna al ristorante
-            </button>
-        </div>
+        <div class="top-container pt-3">
+            <h1> I tuoi piatti </h1>
 
+            <div class="buttons">
+                <button class="btn ml-2" @click.prevent="insertDish(restaurant_id)">
+                    Aggiungi un piatto
+                </button>
         
-        <div class="card" v-for="dish in dishesArr" :key="dish.id">
-             <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
-            <img :src="showImage(dish.image)" :alt="dish.name">
-
-            <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
+                <button class="btn ml-2" @click.prevent="homeRestaurant()">
+                    Ritorna al ristorante
+                </button>
             
-            <div class="card-body">
-                    <!-- Nome piatto -->
-                <h4 class="card-title">
-                    {{ dish.name }}
-                </h4>
-                    <!-- Descrizione piatto -->
-                <p class="card-text">
-                    {{ dish.description }}
-                </p>
+                <button class="btn ml-2">
+                    Riepilogo ordini
+                </button>
             </div>
-            <ul class="list-group list-group-flush">
-                    <!-- Prezzo piatto -->
-                <li class="list-group-item">
-                    <span>Prezzo:</span>
-                    &euro;{{ dish.price }} 
-                </li>
-                    <!-- Tipo piatto -->
-                <li class="list-group-item">
-                    <span class="fw-bold">Tipo:</span>
-                    {{ dish.type }}
-                </li>                    
-                <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
-                <li class="list-group-item">
-                    <span>Disponibilità:</span>
-                    <p v-if="dish.availability" class="d-inline-block text-success">&#10004; Disponibile</p>
-                    <p v-else class="d-inline-block text-danger">&#10060; Non Disponibile</p>
-                </li>
-
-                <li class="container-action-dish list-group-item">
-                    <!-- Button per modificare il piatto -->
-                    <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>
-
-                    <!-- Button per modificare l'availability del piatto -->
-                    <button 
-                        @click="toggleDishAvailability(dish.id)" 
-                        class="btn" 
-                        :class="dish.availability ? 'btn-danger' : 'btn-success' "> 
-                        {{ dish.availability ? 'RIMUOVI': 'AGGIUNGI'}}
-                        </button>
-                </li>
-            </ul>
         </div>
-    </div>
-</div>
+
+        <div class="container-dish">
+            
+            <div class="card" v-for="dish in dishesArr" :key="dish.id">
+                <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
+                <img :src="showImage(dish.image)" :alt="dish.name">
+
+                <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
+                
+                <div class="card-body">
+                        <!-- Nome piatto -->
+                    <h4 class="card-title">
+                        {{ dish.name }}
+                    </h4>
+                        <!-- Descrizione piatto -->
+                    <p class="card-text">
+                        {{ dish.description }}
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                        <!-- Prezzo piatto -->
+                    <li class="list-group-item">
+                        <span>Prezzo:</span>
+                        &euro;{{ dish.price }} 
+                    </li>
+                        <!-- Tipo piatto -->
+                    <li class="list-group-item">
+                        <span class="fw-bold">Tipo:</span>
+                        {{ dish.type }}
+                    </li>                    
+                    <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
+                    <li class="list-group-item">
+                        <span>Disponibilità:</span>
+                        <p v-if="dish.availability" class="d-inline-block text-success font-weight-bold">&#10004; Disponibile</p>
+                        <p v-else class="d-inline-block text-danger font-weight-bold">&#10060; Non Disponibile</p>
+                    </li>
+
+                    <li class="container-action-dish list-group-item">
+                        <!-- Button per modificare il piatto -->
+                        <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>
+
+                        <!-- Button per modificare l'availability del piatto -->
+                        <button 
+                            @click="toggleDishAvailability(dish.id)" 
+                            class="btn" 
+                            :class="dish.availability ? 'btn-danger' : 'btn-success' "> 
+                            {{ dish.availability ? 'RIMUOVI': 'AGGIUNGI'}}
+                            </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
 
 </template>
 

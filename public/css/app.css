@@ -11523,3 +11523,63 @@ div.container-dishes-shopping-cart {
   line-height: 22px;
 }
 
+main.content-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+main.content-container .top-container {
+  background-color: #f8fafc;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid lightgray;
+}
+
+main.content-container .top-container h1 {
+  color: #440063;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  float: left;
+}
+
+main.content-container .top-container .buttons {
+  float: right;
+}
+
+main.content-container .top-container .buttons button {
+  background-color: #00ccbc;
+  color: white;
+  font-weight: 600;
+}
+
+main.content-container .top-container .buttons button:hover {
+  background-color: #007e8a;
+}
+
+main.content-container .top-container .buttons div {
+  display: inline;
+}
+
+main.content-container .top-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main.content-container .container-dish {
+  width: 100%;
+}
+
+main.content-container .container-dish .card {
+  width: calc(25% - 40px);
+  margin: 20px;
+}
+
+main.content-container .container-dish .card img {
+  width: 100%;
+  height: 215px;
+}
+
