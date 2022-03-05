@@ -383,7 +383,7 @@
             </div>
 
             <div v-if="cart.length > 0" class="cont-bord-pag text-center">
-                <button class="btn-pagamento">
+                <button @click.prevent="goToPayment()" class="btn-pagamento">
                     Vai al pagamento
                 </button>
             </div>
@@ -576,6 +576,11 @@
                 setTimeout(() => {
                     containerCart.scrollTop = containerCart.scrollHeight;
                 }, 1);
+            },
+
+            // Metodo per andare al pagamento
+            goToPayment() {
+                window.location.href = `/client/checkout`;
             },
         }
     }

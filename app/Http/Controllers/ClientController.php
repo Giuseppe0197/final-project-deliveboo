@@ -22,4 +22,9 @@ class ClientController extends Controller
 
         return view('pages.singleRestaurant', compact('restaurant', 'dishes', 'categories_restaurant'));
     }
+
+    public function checkout() {
+
+        return view('pages.checkout');
+    }
 }

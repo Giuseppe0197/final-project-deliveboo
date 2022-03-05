@@ -1,0 +1,59 @@
+main {
+    //  debug 
+    // min-height: 500px;
+    // background-color: coral;
+
+    #checkout {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        // debug
+        // min-height: 350px;
+        // background-color: cornsilk;
+
+        .client-info {
+            width: 45%;
+
+            h1 {
+                font-size: 45px;
+                color: #2e3333;
+                padding: 15px 0;
+            }
+
+            #payment-form {
+                input {
+                    display: block;
+                    width: 90%;
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                    padding: 9px 10px;
+                    box-sizing: border-box;
+                    border-radius: 3px;
+                    border: 1px solid #bac3c3;
+                    background-color: #fff;
+                    outline: none;
+                    max-height: 40px;
+                }
+
+                input:focus {
+                    border-color: $lightblue;
+                    box-shadow: 0px 0px 0px 1px $lightblue;
+                }
+            }
+
+            // general rules 
+            h1, input, label {
+                margin-left: 5%;
+            }
+        }
+
+        .payment-card {
+            width: 55%;
+            // debug
+            min-height: 100px;
+            background-color: darkgoldenrod;
+        }
+        
+    }
+}
