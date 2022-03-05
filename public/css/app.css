@@ -11007,6 +11007,7 @@ header .nav-section .register-btn {
 
 header .nav-section .register-btn:hover {
   color: #fff;
+  background-color: #05b7a8;
 }
 
 header .nav-section .exit-btn {
@@ -11065,6 +11066,7 @@ footer .nav-footer ul a {
 footer .nav-footer ul a:hover {
   color: #00ccbc;
   text-decoration: none;
+  background-color: #05b7a8;
 }
 
 footer .nav-footer ul .register-btn {
@@ -11077,6 +11079,7 @@ footer .nav-footer ul .register-btn {
 
 footer .nav-footer ul .register-btn:hover {
   color: #fff;
+  background-color: #05b7a8;
 }
 
 footer .nav-footer ul .subscribe {
@@ -11196,7 +11199,7 @@ div.container-dish .card li.container-action-dish {
 }
 
 #container-form .content-wrapper .form .button input[type=submit] {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 12px 20px;
   margin-right: 155px;
@@ -11252,8 +11255,9 @@ div.container-dish .card li.container-action-dish {
 }
 
 .restaurant-info-log .info p:hover {
-  color: #00CCBC;
+  color: #00ccbc;
   cursor: pointer;
+  background-color: #05b7a8;
 }
 
 #dishes-button {
@@ -11265,25 +11269,235 @@ div.container-dish .card li.container-action-dish {
   border: none;
   font-size: 25px;
   border-radius: 10px;
-  background-color: #00CCBC;
+  background-color: #00ccbc;
   color: white;
   font-weight: bold;
   padding: 10px 15px;
 }
 
+.container-register {
+  width: 100%;
+  background-color: #fff;
+}
+
 .auth-page {
-  background-color: lightgray;
+  width: 70%;
+  margin: 0px 15%;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  background-color: #fff;
+  justify-content: space-between;
+  padding-top: 100px;
 }
 
 .auth-page .checkbox-container {
   width: 30%;
 }
 
-.auth-page input {
-  border: none;
+.register-button {
+  color: #fff;
+  background: #00ccbc;
+  padding: 14px 24px;
+  border-radius: 4%;
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  color: #fff;
+  background-color: #05b7a8;
+}
+
+.register-form {
+  width: 400px;
+}
+
+.register-form .input-text {
+  border: 1px solid #bac3c3;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 9px 10px;
+  border-radius: 3px;
+  max-height: 40px;
+}
+
+.login-form {
+  width: 400px;
+}
+
+.login-form .input-text {
+  border: 1px solid #bac3c3;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 9px 10px;
+  border-radius: 3px;
+  max-height: 40px;
+}
+
+.login-form h2 {
+  margin-bottom: 39px;
+}
+
+.cont-partner {
+  width: 70%;
+  text-align: center;
+  background-color: #fbfbfb;
+  margin: 0px 15%;
+  margin-top: 100px;
+}
+
+.cont-partner h1 {
+  margin-bottom: 60px;
+}
+
+.cont-partner h4 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 25px 0;
+}
+
+.card-partner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-partner img {
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.card-partner p {
+  color: #828585;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.card-partner .adv-partner-card {
+  box-shadow: 0 0 3px #ccc;
+  width: 400px;
+  background-color: white;
+  margin-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.line {
+  width: 100%;
+  margin: 100px 0;
+}
+
+.partner-section {
+  width: 70%;
+  text-align: center;
+  background-color: #fbfbfb;
+  margin: 0px 15%;
+  margin-top: 100px;
+}
+
+.partner-section .partner-restaurant {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+
+.partner-section .partner-restaurant p {
+  font-size: 16px;
+}
+
+.partner-section .partner-description {
+  width: 50%;
+  text-align: left;
+  padding-top: 30px;
+  margin-left: 7%;
+}
+
+.partner-section .partner-description img {
+  width: 80px;
+}
+
+.partner-section .partner-description p {
+  margin-top: 30px;
+}
+
+.partner-section .partner-image {
+  width: 400px;
+}
+
+.partner-section .partner-image img {
+  width: 400px;
+  box-shadow: 0 0 3px #ccc;
+}
+
+.prize-container {
+  width: 70%;
+  margin: 0px 15%;
+}
+
+.prize-container h2 {
+  text-align: center;
+  font-size: 29px;
+  line-height: 34px;
+  margin-bottom: 50px;
+}
+
+.prize-container h3 {
+  font-size: 21px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.prize-container p {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #585c5c;
+}
+
+.prize-container ul {
+  list-style: none;
+}
+
+.prize-container ul li {
+  font-size: 18px;
+  line-height: 33px;
+  color: #585c5c;
+}
+
+.prize-container ul li:before {
+  content: "\2713";
+  color: #05b7a8;
+  margin-right: 12px;
+}
+
+.how-to-section {
+  width: 70%;
+  text-align: center;
+  background-color: #fbfbfb;
+  margin: 0px 15%;
+  margin-top: 130px;
+}
+
+.how-to-section .how-to-card {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  margin: 55px 0;
+  padding: 35px 75px;
+  box-shadow: 0 0 3px #ccc;
+}
+
+.how-to-section .how-to-card .img-class {
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.how-to-section .how-to-card .img-calendar {
+  width: 100px;
+  height: 100px;
+  margin: 15px 0;
 }
 
 .ms-container {
