@@ -11545,11 +11545,6 @@ div.container-dishes-shopping-cart {
   padding: 0 0 10px 0;
 }
 
-.container-cart .card-product {
-  border-bottom: 1px solid lavender;
-  padding: 10px 0;
-}
-
 .container-cart .card-product span {
   font-size: 16px;
 }
@@ -11603,7 +11598,8 @@ div.container-dishes-shopping-cart {
 
 .container-cart div.container-totalprice span {
   font-size: 16px;
-  font-weight: 600;
+  border-bottom: 1px solid lavender;
+  padding: 8px 10px;
 }
 
 .container-cart div.cont-bord-pag {
@@ -11634,6 +11630,18 @@ div.container-dishes-shopping-cart {
   font-size: 16px;
   padding-top: 4px;
   color: #ababad;
+}
+
+.container-cart .text-cart-empty ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.container-cart .text-cart-empty ul li {
+  max-width: 32%;
+  margin: 0 0 20px;
 }
 
 .container-cart .text-cart-empty div.container-btn-pagamento {
