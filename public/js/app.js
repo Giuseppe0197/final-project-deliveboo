@@ -2477,7 +2477,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      cart: []
+      cart: [],
+      quantity: 1
     };
   },
   props: {
@@ -2496,6 +2497,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
+    test: function test() {
+      console.log(this.cart);
+    },
     // Prezzo totale carrello
     totalPrice: function totalPrice() {
       var total = 0;
@@ -2510,6 +2514,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // metodo per aggiungere un prodotto/piatto nel carrello
     addToCart: function addToCart(product) {
+      // this.cart['quantity'] = 1;
+      product['quantity'] = 1;
       var find = true;
 
       for (var products in this.cart) {
@@ -2531,14 +2537,7 @@ __webpack_require__.r(__webpack_exports__);
         this.scrollToEnd();
       } else {
         alert('Attenzione, hai già inserito questo piatto!');
-      } // const duplicatedProductIndex = this.cart.findIndex(item => item.id === product.id);
-      // if (duplicatedProductIndex !== -1) {
-      //     state.cart[duplicatedProductIndex].qty++;
-      //     return;
-      // }
-      // product.qty = 1;
-      // state.cart.push(product);
-
+      }
     },
     // metodo per eliminare un elemnto dal carrello
     removeToCart: function removeToCart(ind) {
@@ -2561,9 +2560,39 @@ __webpack_require__.r(__webpack_exports__);
       return false;
     },
     // metodo per aggiungere un prodotto
-    addProduct: function addProduct() {},
+    addProduct: function addProduct(prod) {
+      console.log(prod.price);
+
+      for (var products in this.dishes) {
+        if (prod.id === this.dishes[products].id) {
+          var dishPrice = this.dishes[products].price;
+          console.log('prezzo piatto originale OLD', dishPrice);
+          console.log('prezzo piatto carrello OLD', prod.price);
+          prod['quantity'] += 1; // console.log('sono dentro, prezzo piatto originale:', this.dishes[products].price);
+
+          prod.price = parseFloat(prod.price) + parseFloat(this.dishes[products].price);
+          console.log('prezzo piatto originale NEW', dishPrice);
+          console.log('prezzo piatto carrello NEW', prod.price);
+        } else {
+          console.log('ID DIVERSI');
+        }
+      }
+    },
     // metodo per rimuovere un prodotto
-    removeProduct: function removeProduct() {},
+    removeProduct: function removeProduct(prod) {
+      console.log(prod);
+
+      if (prod.quantity > 1) {
+        for (var products in this.dishes) {
+          if (prod.id === this.dishes[products].id) {
+            prod['quantity'] -= 1;
+            prod.price = parseFloat(prod.price) - parseFloat(this.dishes[products].price);
+          } else {
+            console.log('ID DIVERSI');
+          }
+        }
+      }
+    },
     scrollToEnd: function scrollToEnd() {
       var containerCart = this.$el.querySelector(".container-cart");
       setTimeout(function () {
@@ -40139,7 +40168,7 @@ var render = function () {
                       staticClass: "btn-remove",
                       on: {
                         click: function ($event) {
-                          return _vm.removeProduct()
+                          return _vm.removeProduct(product)
                         },
                       },
                     },
@@ -40154,7 +40183,11 @@ var render = function () {
                   ),
                   _vm._v(" "),
                   _c("span", [
-                    _vm._v("\n                        1\n                    "),
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(product.quantity) +
+                        "\n                    "
+                    ),
                   ]),
                   _vm._v(" "),
                   _c(
@@ -40163,7 +40196,7 @@ var render = function () {
                       staticClass: "btn-add",
                       on: {
                         click: function ($event) {
-                          return _vm.addProduct()
+                          return _vm.addProduct(product)
                         },
                       },
                     },
@@ -40182,7 +40215,7 @@ var render = function () {
                   _c("span", [
                     _vm._v(
                       "\n                        " +
-                        _vm._s(product.price) +
+                        _vm._s(parseFloat(product.price).toFixed(2)) +
                         " €\n                    "
                     ),
                   ]),

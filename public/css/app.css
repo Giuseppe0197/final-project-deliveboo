@@ -10998,6 +10998,26 @@ header .nav-section a:hover {
   color: #00ccbc;
 }
 
+header .nav-section .shopping-cart-headear a {
+  width: auto;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #e8ebeb;
+  border-radius: 4px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #2e3333;
+}
+
+header .nav-section .shopping-cart-headear a span {
+  color: #2e3333;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
 header .nav-section .register-btn {
   color: #fff;
   background: #00ccbc;
@@ -11341,7 +11361,7 @@ div.container-dishes-shopping-cart {
 }
 
 .container-cart .card-product div.button-shoppingcart {
-  width: 28%;
+  width: 30%;
   display: flex;
   justify-content: space-between;
   float: right;
@@ -11486,7 +11506,7 @@ div.container-dishes-shopping-cart {
   align-items: center;
   width: 30%;
   min-height: 132px;
-  margin-right: 20px;
+  margin: 0 20px 15px 0;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.04);
   padding: 16px;

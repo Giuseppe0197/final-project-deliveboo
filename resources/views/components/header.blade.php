@@ -49,6 +49,14 @@
             <a href="">Inizia</a>
             <a href="">I nostri prodotti e servizi</a>
             <a href="">Assistenza</a>
+            <span class="shopping-cart-headear">
+                <a href="">
+                    <img src="/storage/images/svgexport-2.svg" alt="shopping cart">
+                    <span>
+                        {{-- 3.00 &euro; --> da gestire --}}
+                    </span>
+                </a>
+            </span>
             <a class="register-btn" href="{{route('register.form')}}">Diventa nostro partner</a>
 
         </div>

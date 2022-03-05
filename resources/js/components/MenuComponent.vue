@@ -47,7 +47,7 @@
         <div class="container-dishes-shopping-cart">
 
             <div class="container-card-dishes">
-
+        
             <!-- Cat. Antipasti -->
             <div class="container-dishes">
                 <h2 v-if="getTitleDish('Antipasti')" class="w-100">Antipasti</h2>
@@ -340,13 +340,13 @@
 
                 <div class="button-shoppingcart">
                     <div>
-                        <span @click="removeProduct()" class="btn-remove">
+                        <span @click="removeProduct(product)" class="btn-remove">
                             <img src="/storage/images/svgexport-14.svg" alt="btn remove">
                         </span>
                         <span>
-                            1
+                            {{ product.quantity }}
                         </span>
-                        <span @click="addProduct()" class="btn-add">
+                        <span @click="addProduct(product)" class="btn-add">
                             <img src="/storage/images/svgexport-13.svg" alt="btn add">
                         </span>
                     </div>
@@ -354,7 +354,7 @@
                     <!-- Prezzo piatto -->
                     <div>
                         <span>
-                            {{ product.price }} &euro;
+                            {{ parseFloat(product.price).toFixed(2) }} &euro;
                         </span>
                     </div>
                 </div>
@@ -414,6 +414,7 @@
         data: function () {
             return {
                 cart: [],
+                quantity: 1,
             }
         },
 
@@ -436,6 +437,9 @@
         },
 
         computed: {
+            test() {
+                console.log(this.cart);
+            },
             // Prezzo totale carrello
             totalPrice() {
                 
@@ -444,7 +448,7 @@
                 for (let i = 0; i < this.cart.length; i++) {
                     total = parseFloat(total) + parseFloat(this.cart[i].price);
                 }
-
+                
                 return total.toFixed(2);
             }
         },
@@ -452,6 +456,9 @@
         methods: {
             // metodo per aggiungere un prodotto/piatto nel carrello
             addToCart(product) {
+
+                // this.cart['quantity'] = 1;
+                product['quantity'] = 1;
 
                 let find = true;
 
@@ -468,7 +475,6 @@
                 }
 
                 if(find) {
-
                     // Push del prodotto/piatto all'interno dell'array del carrello
                     this.cart.push(product);
                     this.saveCart();
@@ -479,17 +485,6 @@
                 } else {
                     alert('Attenzione, hai già inserito questo piatto!');
                 }
-                
-
-                // const duplicatedProductIndex = this.cart.findIndex(item => item.id === product.id);
-
-                // if (duplicatedProductIndex !== -1) {
-                //     state.cart[duplicatedProductIndex].qty++;
-                //     return;
-                // }
-
-                // product.qty = 1;
-                // state.cart.push(product);
             },
 
             // metodo per eliminare un elemnto dal carrello
@@ -520,13 +515,59 @@
             },
 
             // metodo per aggiungere un prodotto
-            addProduct() {
+            addProduct(prod) {
 
+                console.log(prod.price);
+
+                for (const products in this.dishes) {
+
+                    if (prod.id === this.dishes[products].id) {
+
+                        let dishPrice = this.dishes[products].price;
+                        console.log('prezzo piatto originale OLD', dishPrice);
+
+                        console.log('prezzo piatto carrello OLD', prod.price);
+
+
+                        prod['quantity'] += 1;
+
+                        // console.log('sono dentro, prezzo piatto originale:', this.dishes[products].price);
+                        prod.price = parseFloat(prod.price) + parseFloat(this.dishes[products].price);
+
+
+                        console.log('prezzo piatto originale NEW', dishPrice);
+
+                        console.log('prezzo piatto carrello NEW', prod.price);
+
+                    } else {
+                        console.log('ID DIVERSI');
+                    }
+                }
             },
 
             // metodo per rimuovere un prodotto
-            removeProduct() {
+            removeProduct(prod) {
 
+                console.log(prod);
+
+                if (prod.quantity > 1) {
+
+                    for (const products in this.dishes) {
+
+                        if (prod.id === this.dishes[products].id) {
+
+                            prod['quantity'] -= 1;
+
+                            prod.price = parseFloat(prod.price) - parseFloat(this.dishes[products].price);
+
+                        } else {
+                            console.log('ID DIVERSI');
+                        }
+
+                    }
+                }
+
+                
             },
 
             scrollToEnd() {    	
@@ -693,6 +734,3 @@
     }
 }
 </style>
-
-
-
