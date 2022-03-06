@@ -10998,7 +10998,7 @@ header .nav-section a:hover {
   color: #00ccbc;
 }
 
-header .nav-section .shopping-cart-headear a {
+header .nav-section .shopping-cart-header a {
   width: auto;
   text-decoration: none;
   padding: 8px 16px;
@@ -11010,7 +11010,7 @@ header .nav-section .shopping-cart-headear a {
   color: #2e3333;
 }
 
-header .nav-section .shopping-cart-headear a span {
+header .nav-section .shopping-cart-header a span {
   color: #2e3333;
   font-size: 16px;
   line-height: 22px;

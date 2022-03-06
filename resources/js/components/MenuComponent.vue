@@ -384,7 +384,7 @@
 
             <div v-if="cart.length > 0" class="cont-bord-pag text-center">
                 
-                <button class="btn-pagamento" @click.prevent="goToPayment"> <!-- viewCart(cart) -->
+                <button class="btn-pagamento" @click.prevent="viewCart(cart)"> <!-- viewCart(cart) -->
                     Vai al pagamento
                 </button>
             </div>
@@ -435,21 +435,26 @@
                     localStorage.removeItem('cart');
                 }
             }
+
+            // Se il carrello è vuoto, il prezzo totale nell'header viene settato a 0
+            if (this.cart.length == 0) {
+                document.querySelector('.shopping-cart-header a span').innerHTML = 0 + ' &euro;';
+            }
         },
 
         computed: {
-            test() {
-                console.log(this.cart);
-            },
             // Prezzo totale carrello
             totalPrice() {
                 
                 let total = 0;
 
                 for (let i = 0; i < this.cart.length; i++) {
+                    
                     total = parseFloat(total) + parseFloat(this.cart[i].price);
+                    
+                    // Modifica del DOM per inserire il totale anche nel carrello presente nell'header
+                    document.querySelector('.shopping-cart-header a span').innerHTML = total.toFixed(2) + ' &euro;';
                 }
-                
                 return total.toFixed(2);
             }
         },
@@ -482,6 +487,7 @@
 
                     // richiamo del metodo che fa scrollare la parte del carrello al click
                     this.scrollToEnd();
+                    // window.location.reload()  // in caso non riuscissimo a gestire il prezzo con la quantità
 
                 } else {
                     alert('Attenzione, hai già inserito questo piatto!');
@@ -492,6 +498,12 @@
             removeToCart(ind) {
 
                 this.cart.splice(ind, 1);
+                
+                // Se il carrello è vuoto, il prezzo totale nell'header viene settato a 0
+                if (this.cart.length == 0) {
+                    document.querySelector('.shopping-cart-header a span').innerHTML = 0 + ' &euro;';
+                }
+
                 this.saveCart();
             },
             
@@ -518,27 +530,27 @@
             // metodo per aggiungere un prodotto
             addProduct(prod) {
 
-                console.log(prod.price);
+                console.log(prod);
 
                 for (const products in this.dishes) {
 
                     if (prod.id === this.dishes[products].id) {
 
-                        let dishPrice = this.dishes[products].price;
-                        console.log('prezzo piatto originale OLD', dishPrice);
-
+                        console.log('ARRAY ORIGINALE OLD', this.dishes[products]);
+                        console.log('prezzo piatto originale OLD', this.dishes[products].price);
                         console.log('prezzo piatto carrello OLD', prod.price);
 
 
                         prod['quantity'] += 1;
 
                         // console.log('sono dentro, prezzo piatto originale:', this.dishes[products].price);
-                        prod.price = parseFloat(prod.price) + parseFloat(this.dishes[products].price);
+                        prod.price = this.dishes[products].price * prod['quantity'];
 
-
-                        console.log('prezzo piatto originale NEW', dishPrice);
-
+                        console.log('ARRAY ORIGINALE NEW', this.dishes[products]);
+                        console.log('prezzo piatto originale NEW', this.dishes[products].price);
                         console.log('prezzo piatto carrello NEW', prod.price);
+
+                        this.saveCart();
 
                     } else {
                         console.log('ID DIVERSI');
@@ -561,6 +573,8 @@
 
                             prod.price = parseFloat(prod.price) - parseFloat(this.dishes[products].price);
 
+                            this.saveCart();
+
                         } else {
                             console.log('ID DIVERSI');
                         }
@@ -576,22 +590,21 @@
                 }, 1);
             },
 
-            viewCart(cart) {  // passare il carrello nel blade
+            async viewCart(cart) {  // passare il carrello nel blade
 
-                // let test = JSON.stringify(cart);
-
-                axios.post('/view/cart/', cart)
+                await axios.post('/view/cart/', cart)
                      .then(function (r) {
                         console.log(r.data)
                      })
                      .catch(e => console.error(e))
-
-                // window.location.href = `/view/cart=?/${x}`;
+                
+                // Da sistemare
+                window.location.href = `/client/checkout`;
             },
 
             // Metodo per andare al pagamento
             goToPayment() {
-                window.location.href = `/client/checkout`;
+                // window.location.href = `/client/checkout`;
             },
         }
     }
