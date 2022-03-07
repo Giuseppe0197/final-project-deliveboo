@@ -2550,6 +2550,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     if (localStorage.getItem('cart')) {
       try {
         this.cart = JSON.parse(localStorage.getItem('cart'));
+        var find = false;
+
+        for (var prod in this.dishes) {
+          for (var i = 0; i < this.cart.length; i++) {
+            // Confornto l'id dei piatti nel carrello con gli id dei piatti dell'array originale
+            // se gli id combaciano, ritorno il carrello presente nel localStorage e setto la variabile FIND in true ed esco dal ciclo con break;
+            // se invece non combaciano setto la variabile FIND in false
+            if (this.cart[i].id == this.dishes[prod].id) {
+              this.cart = JSON.parse(localStorage.getItem('cart'));
+              find = true;
+              break;
+            } else {
+              find = false;
+            }
+          } // Se find risulta TRUE, allora esco dal ciclo con l'utilizzo del break;
+
+
+          if (find) {
+            break;
+          }
+        } // Se FIND invece risulta false appare un alert con conferma.
+        // Se l'utente clicca "OK" eliminerà il carrello precedente.
+        // Se l'utente clicca "Cancel" ritornerà alla pagina dei ristoranti ma senza eliminare il carrello fatto in precedenza.
+
+
+        if (find == false) {
+          if (confirm("Attenzione! in questo modo cancellerai il carrello precedente, sei sicuro?")) {
+            localStorage.removeItem('cart');
+            this.cart = [];
+          } else {
+            history.back();
+          }
+        }
       } catch (e) {
         localStorage.removeItem('cart');
       }
@@ -2576,17 +2609,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     // metodo per aggiungere un prodotto/piatto nel carrello
-    addToCart: function addToCart(product) {
+    addToCart: function addToCart(dish) {
       // this.cart['quantity'] = 1;
-      product['quantity'] = 1;
+      dish['quantity'] = 1;
       var find = true;
 
       for (var products in this.cart) {
         var id = this.cart[products].id; // Confronto l'id del prodotto con tutti gli id dei prodotti all'interno del carrello
 
-        if (product.id !== id) {
+        if (dish.id !== id) {
           find = true;
         } else {
+          this.addProduct(this.cart[products]); // Se il piatto è già stato inserito, aggiunge una quantità direttamente
+
           find = false;
           break; // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
         }
@@ -2594,12 +2629,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       if (find) {
         // Push del prodotto/piatto all'interno dell'array del carrello
-        this.cart.push(product);
-        this.saveCart(); // richiamo del metodo che fa scrollare la parte del carrello al click
+        this.cart.push(dish);
+        this.saveCart();
+        this.cart = JSON.parse(localStorage.getItem('cart')); // richiamo del metodo che fa scrollare la parte del carrello al click
 
-        this.scrollToEnd(); // window.location.reload()  // in caso non riuscissimo a gestire il prezzo con la quantità
-      } else {
-        alert('Attenzione, hai già inserito questo piatto!');
+        this.scrollToEnd();
       }
     },
     // metodo per eliminare un elemnto dal carrello
@@ -2608,9 +2642,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       if (this.cart.length == 0) {
         document.querySelector('.shopping-cart-header a span').innerHTML = 0 + ' &euro;';
+        localStorage.removeItem('cart');
+      } else {
+        this.saveCart();
       }
-
-      this.saveCart();
     },
     // metodo per gestire il salvataggio dei dati in locale
     saveCart: function saveCart() {
@@ -2629,44 +2664,51 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // metodo per aggiungere un prodotto
     addProduct: function addProduct(prod) {
-      console.log(prod);
+      for (var dish in this.dishes) {
+        if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
+          var dishOriginal = this.dishes[dish];
 
-      for (var products in this.dishes) {
-        if (prod.id === this.dishes[products].id) {
-          console.log('ARRAY ORIGINALE OLD', this.dishes[products]);
-          console.log('prezzo piatto originale OLD', this.dishes[products].price);
-          console.log('prezzo piatto carrello OLD', prod.price);
-          prod['quantity'] += 1; // console.log('sono dentro, prezzo piatto originale:', this.dishes[products].price);
-
-          prod.price = this.dishes[products].price * prod['quantity'];
-          console.log('ARRAY ORIGINALE NEW', this.dishes[products]);
-          console.log('prezzo piatto originale NEW', this.dishes[products].price);
-          console.log('prezzo piatto carrello NEW', prod.price);
-          this.saveCart();
-        } else {
-          console.log('ID DIVERSI');
+          if (prod.id == dishOriginal.id) {
+            prod.quantity += 1;
+            prod.price = dishOriginal.price * prod.quantity;
+            this.saveCart();
+          }
         }
       }
     },
     // metodo per rimuovere un prodotto
     removeProduct: function removeProduct(prod) {
-      console.log(prod);
-
+      // Se la quantità è maggiore di 1, viene scalata di 1. (Esempio: Quantità = 2  -> Dopo: Quantità = 1)
       if (prod.quantity > 1) {
-        for (var products in this.dishes) {
-          if (prod.id === this.dishes[products].id) {
-            prod['quantity'] -= 1;
-            prod.price = parseFloat(prod.price) - parseFloat(this.dishes[products].price);
-            this.saveCart();
-          } else {
-            console.log('ID DIVERSI');
-          }
-        }
+        for (var dish in this.dishes) {
+          if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
+            var dishOriginal = this.dishes[dish];
 
-        ;
+            if (prod.id == dishOriginal.id) {
+              prod.quantity -= 1;
+              prod.price = dishOriginal.price * prod.quantity;
+              this.saveCart();
+            }
+          }
+        } // SE la quantità è minore uguale a 1 rimuoviamo direttamente l'elemento dal carrello (Esempio: Quantità = 1 -> Dopo: Elemento eliminato dal carrello)
+
+      } else {
+        if (confirm("Attenzione! sei sicuro di eliminare questo piatto dal carrello?")) {
+          var ind = this.getIndexById(prod.id);
+          this.removeToCart(ind);
+        }
+      }
+    },
+    getIndexById: function getIndexById(id) {
+      for (var x = 0; x < this.cart.length; x++) {
+        var cart = this.cart[x];
+
+        if (cart.id == id) {
+          return x;
+        }
       }
 
-      ;
+      return -1;
     },
     scrollToEnd: function scrollToEnd() {
       var containerCart = this.$el.querySelector(".container-cart");
