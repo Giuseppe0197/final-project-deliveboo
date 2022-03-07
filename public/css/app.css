@@ -10975,66 +10975,51 @@ div.container-home {
 }
 
 header {
-  width: auto;
-  height: 80px;
-}
-
-header .nav-section {
-  width: 70%;
-  margin: 0px 15%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding-top: 27px;
-  font-size: 17px;
+  background-color: #f8fafc;
+  /* a {
+      width: auto;
+      text-decoration: none;
+      padding: 8px 16px;
+      background-color: #fff;
+      border: 1px solid #e8ebeb;
+      border-radius: 4px;
+      line-height: 24px;
+      cursor: pointer;
+      color: #2e3333;
+      span {
+          color: #2e3333;
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 400;
+          padding-left: 4px;
+      }
+  } */
 }
 
-header .nav-section a {
-  margin-left: 30px;
-  color: #000;
-  text-decoration: none;
-}
-
-header .nav-section a:hover {
+header a:hover {
   color: #00ccbc;
 }
 
-header .nav-section .shopping-cart-header a {
-  width: auto;
-  text-decoration: none;
-  padding: 8px 16px;
-  background-color: #fff;
-  border: 1px solid #e8ebeb;
-  border-radius: 4px;
-  line-height: 24px;
-  cursor: pointer;
-  color: #2e3333;
-}
-
-header .nav-section .shopping-cart-header a span {
-  color: #2e3333;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 400;
-  padding-left: 4px;
-}
-
-header .nav-section .register-btn {
+header .register-btn {
   color: #fff;
   background: #00ccbc;
   padding: 14px 24px;
   border-radius: 4%;
+  margin-left: 8px;
 }
 
-header .nav-section .register-btn:hover {
+header .register-btn:hover {
   color: #fff;
   background-color: #05b7a8;
 }
 
-header .nav-section .exit-btn {
+header .exit-btn {
   color: #fff;
 }
 
-header .nav-section .exit-btn:hover {
+header .exit-btn:hover {
   color: black;
   background-color: #fff;
   border: solid 1px black;

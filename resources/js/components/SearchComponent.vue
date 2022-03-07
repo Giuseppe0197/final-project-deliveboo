@@ -12,12 +12,10 @@
             <input type="checkbox" :value="category.id" v-model="checkbox">{{category.name}}
         </div>
 
-<!--         <button @click="findByResataurantCategoryId">cerca la categoria</button>-->
-
         <!-- ristoranti trovati tramite nome -->
 
         <div class="d-flex flex-wrap justify-content-center my-2">
-            <div v-for="restaurant, i in restaurants" :key="i" class="my-2 card restaurant-found restaurant-card" style="width: 18rem;">
+            <div v-for="restaurant, i in restaurants" :key="i" class="my-2 card restaurant-found " style="width: 18rem;">
                 
                 <div class="card-body">
                     <img class="card-img-top" :src="'/storage/images/' + restaurant.image" alt="">
@@ -30,7 +28,6 @@
                 <button class="btn btn-success" @click="showMenu(restaurant.id)">Visualizza il menu del ristorante</button>
             </div>
         </div>
-
     </div>
 
 </template>
@@ -45,11 +42,6 @@
                 checkbox: [],
                 categories: []
             }
-        },
-
-        props: {
-            // categories: Array,
-            // categories_restaurant: Array
         },
 
         mounted() {
@@ -67,22 +59,10 @@
             }
         },
 
-
         methods: {
             search() {
                 this.findByResataurantCategoryId()
-                // axios.get('/find/restaurant?q=' + this.searchRestaurant)
-                //      .then(r => this.restaurants = r.data.data)
-                //      .catch(e => console.error(e))
             },
-
-            /* async findByResataurantCategoryId() {
-                console.log("this.checkbox")    
-                console.log(this.checkbox) 
-                let r = await axios.get('/find/restaurant_by_cat?ids=' + this.checkbox)
-                this.restaurants = r.data
-                console.log(r)    
-            }, */
 
             findByResataurantCategoryId() {
                 let queryParam = '/find/restaurant_by_cat';
@@ -102,22 +82,18 @@
                 axios.get(queryParam)
                      .then(r => {
                             this.restaurants = r.data.data
-
                             for (let i = 0; i < this.restaurants.length; i++) {
                                 this.restaurants[i].id = this.restaurants[i].user_id;
                             }
                         })
                      
                      .catch(e => console.error(e))
-
             },
-
 
             showMenu(id) {
 
                 window.location.href= `/show/restaurant/${id}`;
             }
-
         }
     }
 </script>

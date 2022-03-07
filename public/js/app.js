@@ -2828,9 +2828,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2840,9 +2837,6 @@ __webpack_require__.r(__webpack_exports__);
       checkbox: [],
       categories: []
     };
-  },
-  props: {// categories: Array,
-    // categories_restaurant: Array
   },
   mounted: function mounted() {
     var _this = this;
@@ -2862,18 +2856,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     search: function search() {
-      this.findByResataurantCategoryId(); // axios.get('/find/restaurant?q=' + this.searchRestaurant)
-      //      .then(r => this.restaurants = r.data.data)
-      //      .catch(e => console.error(e))
+      this.findByResataurantCategoryId();
     },
-
-    /* async findByResataurantCategoryId() {
-        console.log("this.checkbox")    
-        console.log(this.checkbox) 
-        let r = await axios.get('/find/restaurant_by_cat?ids=' + this.checkbox)
-        this.restaurants = r.data
-        console.log(r)    
-    }, */
     findByResataurantCategoryId: function findByResataurantCategoryId() {
       var _this2 = this;
 
@@ -41432,7 +41416,7 @@ var render = function () {
                 },
               },
             }),
-            _vm._v(_vm._s(category.name) + "\n        "),
+            _vm._v(_vm._s(category.name) + "\n    "),
           ]
         )
       }),
@@ -41445,7 +41429,7 @@ var render = function () {
             "div",
             {
               key: i,
-              staticClass: "my-2 card restaurant-found restaurant-card",
+              staticClass: "my-2 card restaurant-found ",
               staticStyle: { width: "18rem" },
             },
             [

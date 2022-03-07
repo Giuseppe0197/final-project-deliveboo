@@ -43,9 +43,11 @@ class RestaurantController extends Controller
     public function findRestaurantByCategoriesId() {
 
         $foundRestaurant= User::all();
-
+        // $messagesUnique = $messages->unique('recipient_id');
+        // $messagesUnique->values()->all();
             $join = \Request::get('ids');
             $search = \Request::get('q');
+             
             //se join é nulla o diversa da null mi ritorna restaurant name
             if ($join == null && $search != null){
                 $foundRestaurant = User::where(function($query) use ($search) {
@@ -56,7 +58,7 @@ class RestaurantController extends Controller
                 $foundRestaurant = User::join('category_user', function ($query) use ($join, $search) {
                     $query->on('users.id', '=', 'category_user.user_id')
                     //explode mi trasforma una stringa in un array, perchè il numero di id viene passato tramite stringa
-                        ->whereIn('category_user.category_id', explode(",",$join));
+                        ->whereIn('category_user.category_id', explode(",",$join));                       
                     });
             }
             else{ //sennò mi ritorna il nome che inserisco con la categoria che inserisco 
@@ -65,7 +67,7 @@ class RestaurantController extends Controller
                 //explode mi trasforma una stringa in un array, perchè il numero di id viene passato tramite stringa
                     ->whereIn('category_user.category_id', explode(",",$join))
                     ->where('users.restaurant_name', 'LIKE', "%$search%")
-                    ->distinct('users');
+                    ->distinct('users'); 
                     //bug to fix, distinct. Se metto il nome e la checkbox del ristorante mi si sdoppia
                 });
 
