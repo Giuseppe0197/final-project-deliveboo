@@ -100,8 +100,16 @@
                 }
                     
                 axios.get(queryParam)
-                     .then(r => this.restaurants = r.data.data)
+                     .then(r => {
+                            this.restaurants = r.data.data
+
+                            for (let i = 0; i < this.restaurants.length; i++) {
+                                this.restaurants[i].id = this.restaurants[i].user_id;
+                            }
+                        })
+                     
                      .catch(e => console.error(e))
+
             },
 
 
