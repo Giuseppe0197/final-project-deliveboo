@@ -11825,26 +11825,41 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
-main #checkout {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+main .content-contaiiner {
+  position: relative;
+  height: calc(100vh - 397px);
 }
 
-main #checkout .client-info {
+main .content-contaiiner #checkout {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+main .content-contaiiner #checkout .client-info {
   width: 45%;
 }
 
-main #checkout .client-info h1 {
+main .content-contaiiner #checkout .client-info h1 {
   font-size: 45px;
-  color: #2e3333;
+  color: white;
   padding: 15px 0;
 }
 
-main #checkout .client-info #payment-form input {
+main .content-contaiiner #checkout .client-info #payment-form {
+  padding: 40px;
+  background-color: white;
+}
+
+main .content-contaiiner #checkout .client-info #payment-form input {
   display: block;
-  width: 90%;
+  width: 100%;
   margin-bottom: 15px;
   font-size: 16px;
   padding: 9px 10px;
@@ -11856,20 +11871,18 @@ main #checkout .client-info #payment-form input {
   max-height: 40px;
 }
 
-main #checkout .client-info #payment-form input:focus {
+main .content-contaiiner #checkout .client-info #payment-form input:focus {
   border-color: #00ccbc;
   box-shadow: 0px 0px 0px 1px #00ccbc;
 }
 
-main #checkout .client-info h1,
-main #checkout .client-info input,
-main #checkout .client-info label {
+main .content-contaiiner #checkout .client-info h1,
+main .content-contaiiner #checkout .client-info label {
   margin-left: 5%;
 }
 
-main #checkout .payment-card {
+main .content-contaiiner #checkout .payment-card {
   width: 55%;
   min-height: 100px;
-  background-color: darkgoldenrod;
 }
 
