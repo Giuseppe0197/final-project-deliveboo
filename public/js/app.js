@@ -2546,12 +2546,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     categories_restaurant: Array
   },
   mounted: function mounted() {
-    console.log(this.restaurant); // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
-
-    if (this.restaurant.id != this.restaurant.id) {
-      console.log('CIAO');
-    }
-
+    // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
     if (localStorage.getItem('cart')) {
       try {
         this.cart = JSON.parse(localStorage.getItem('cart'));
@@ -2799,6 +2794,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -41427,66 +41424,70 @@ var render = function () {
                 },
               },
             }),
-            _vm._v(_vm._s(category.name) + "\n        "),
+            _vm._v(_vm._s(category.name) + "\n    "),
           ]
         )
       }),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "d-flex flex-wrap justify-content-center my-2" },
-        _vm._l(_vm.restaurants, function (restaurant, i) {
-          return _c(
+      _vm.restaurants.length === 0
+        ? _c("div", { staticClass: "text-center" }, [
+            _c("h1", [_vm._v("Cerca i tuoi ristoranti preferiti!")]),
+          ])
+        : _c(
             "div",
-            {
-              key: i,
-              staticClass: "my-2 card restaurant-found restaurant-card",
-              staticStyle: { width: "18rem" },
-            },
-            [
-              _c("div", { staticClass: "card-body" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  attrs: {
-                    src: "/storage/images/" + restaurant.image,
-                    alt: "",
-                  },
-                }),
-                _vm._v(" "),
-                _c("h5", { staticClass: "card-title text-center my-1" }, [
-                  _vm._v(_vm._s(restaurant.restaurant_name)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.restaurant_phone)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.email)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.address)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
+            { staticClass: "d-flex flex-wrap justify-content-center my-2" },
+            _vm._l(_vm.restaurants, function (restaurant, i) {
+              return _c(
+                "div",
                 {
-                  staticClass: "btn btn-success",
-                  on: {
-                    click: function ($event) {
-                      return _vm.showMenu(restaurant.id)
-                    },
-                  },
+                  key: i,
+                  staticClass: "my-2 card restaurant-found restaurant-card",
+                  staticStyle: { width: "18rem" },
                 },
-                [_vm._v("Visualizza il menu del ristorante")]
-              ),
-            ]
-          )
-        }),
-        0
-      ),
+                [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: {
+                        src: "/storage/images/" + restaurant.image,
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("h5", { staticClass: "card-title text-center my-1" }, [
+                      _vm._v(_vm._s(restaurant.restaurant_name)),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text text-center" }, [
+                      _vm._v(_vm._s(restaurant.restaurant_phone)),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text text-center" }, [
+                      _vm._v(_vm._s(restaurant.email)),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text text-center" }, [
+                      _vm._v(_vm._s(restaurant.address)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-success",
+                      on: {
+                        click: function ($event) {
+                          return _vm.showMenu(restaurant.id)
+                        },
+                      },
+                    },
+                    [_vm._v("Visualizza il menu del ristorante")]
+                  ),
+                ]
+              )
+            }),
+            0
+          ),
     ],
     2
   )
@@ -54196,8 +54197,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

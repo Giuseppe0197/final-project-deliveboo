@@ -12,11 +12,13 @@
             <input type="checkbox" :value="category.id" v-model="checkbox">{{category.name}}
         </div>
 
-<!--         <button @click="findByResataurantCategoryId">cerca la categoria</button>-->
-
         <!-- ristoranti trovati tramite nome -->
 
-        <div class="d-flex flex-wrap justify-content-center my-2">
+        <div class="text-center" v-if="restaurants.length === 0">
+            <h1>Cerca i tuoi ristoranti preferiti!</h1>
+        </div>
+
+        <div v-else class="d-flex flex-wrap justify-content-center my-2">
             <div v-for="restaurant, i in restaurants" :key="i" class="my-2 card restaurant-found restaurant-card" style="width: 18rem;">
                 
                 <div class="card-body">

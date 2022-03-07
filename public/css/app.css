@@ -11831,6 +11831,101 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
+.favourite-plates {
+  margin-top: 30px;
+  background-color: #FFEAE4;
+}
+
+.favourite-plates .title-home-section {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.favourite-plates .title-home-section h2 {
+  font-weight: bold;
+}
+
+.favourite-plates .container-restaurants-homepage {
+  margin-top: 40px;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container h2 {
+  margin: 20px 0;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container h2:hover {
+  color: #00ccbc;
+  cursor: pointer;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.download-app-deliveroo {
+  background-color: #434848;
+  color: white;
+}
+
+.deliveroo-image {
+  width: 70%;
+  border-radius: 20px;
+}
+
+.app-download {
+  margin: 30px auto;
+}
+
+.app-download .android,
+.app-download .apple {
+  width: 50%;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+}
+
+.app-download .android img,
+.app-download .apple img {
+  max-width: 10%;
+}
+
+.work-with-us {
+  background-color: white;
+}
+
+.work-with-us h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.work-with-us .work {
+  padding-bottom: 20px;
+}
+
+.work-with-us .work img {
+  width: 100%;
+}
+
+.work-with-us .work p {
+  font-size: 13px;
+  text-align: justify;
+}
+
+.work-with-us .work .work-button {
+  border: none;
+  background-color: #00ccbc;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
 main .content-contaiiner {
   position: relative;
   height: calc(100vh - 397px);
