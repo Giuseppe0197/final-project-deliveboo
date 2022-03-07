@@ -918,6 +918,8 @@ main.content-container {
     }
 }
 
+/* homepage */
+
 .favourite-plates{
     margin-top: 30px;
     background-color: #FFEAE4;
@@ -1008,6 +1010,49 @@ main.content-container {
             font-weight: bold;
             border-radius: 10px;
             padding: 5px 10px;
+        }
+    }
+}
+
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+    width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+    width: 70%;
+    margin: 0 auto;
+
+    .restaurant-found {
+        width: calc(100% / 3);
+        border-bottom: 1px solid #00ccbc;
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+
+        .card-body {
+            width: 100%;
+            padding: 0;
+
+            img {
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+
+        .button-show-restaurant {
+            background-color: #00ccbc;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
         }
     }
 }

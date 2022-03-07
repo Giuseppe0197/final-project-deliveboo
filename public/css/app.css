@@ -11831,6 +11831,8 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
+/* homepage */
+
 .favourite-plates {
   margin-top: 30px;
   background-color: #FFEAE4;
@@ -11924,6 +11926,50 @@ main.content-container .container-dish .card img {
   font-weight: bold;
   border-radius: 10px;
   padding: 5px 10px;
+}
+
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+  width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-restaurants .restaurant-found {
+  width: 33.3333333333%;
+  border-bottom: 1px solid #00ccbc;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.container-restaurants .restaurant-found .card-body {
+  width: 100%;
+  padding: 0;
+}
+
+.container-restaurants .restaurant-found .card-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.container-restaurants .restaurant-found .button-show-restaurant {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 main .content-contaiiner {
