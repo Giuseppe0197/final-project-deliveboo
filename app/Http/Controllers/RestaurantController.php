@@ -42,17 +42,38 @@ class RestaurantController extends Controller
 
     public function findRestaurantByCategoriesId() {
 
-        $test;
+        $foundRestaurant= User::all();
 
-        if($join = \Request::get('ids')) {
-            
-            $test = User::join('category_user', function ($query) use ($join) {
-            $query->on('users.id', '=', 'category_user.user_id')
-                ->where('category_user.category_id', 'LIKE', "$join");
-            })->paginate(20);
-        }
+            $join = \Request::get('ids');
+            $search = \Request::get('q');
+            //se join é nulla o diversa da null mi ritorna restaurant name
+            if ($join == null && $search != null){
+                $foundRestaurant = User::where(function($query) use ($search) {
+                    $query -> where('restaurant_name', 'LIKE', "%$search%");
+                });
+            }//se join é diversa da null e e search é null mi ritorna la categoria
+            else if ($join != null && $search == null){
+                $foundRestaurant = User::join('category_user', function ($query) use ($join, $search) {
+                    $query->on('users.id', '=', 'category_user.user_id')
+                    //explode mi trasforma una stringa in un array, perchè il numero di id viene passato tramite stringa
+                        ->whereIn('category_user.category_id', explode(",",$join));
+                    });
+            }
+            else{ //sennò mi ritorna il nome che inserisco con la categoria che inserisco 
+                $foundRestaurant = User::join('category_user', function ($query) use ($join, $search) {
+                $query->on('users.id', '=', 'category_user.user_id')
+                //explode mi trasforma una stringa in un array, perchè il numero di id viene passato tramite stringa
+                    ->whereIn('category_user.category_id', explode(",",$join))
+                    ->where('users.restaurant_name', 'LIKE', "%$search%")
+                    ->distinct('users');
+                    //bug to fix, distinct. Se metto il nome e la checkbox del ristorante mi si sdoppia
+                });
 
-        return json_encode($test);
+            }
+        
+
+        return json_encode($foundRestaurant ->paginate(20) );
+    
     }
 
 

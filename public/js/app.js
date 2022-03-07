@@ -2788,22 +2788,18 @@ __webpack_require__.r(__webpack_exports__);
       return console.error(e);
     });
   },
-
-  /* watch: {
-      checkbox(newVal, oldVal) {
-          console.log(newVal, oldVal)
-          this.findByResataurantCategoryId(newVal)
-      }
-  },   */
+  //uso il watch perche sfrutta la reattività di Vue
+  watch: {
+    checkbox: function checkbox(newVal, oldVal) {
+      console.log(newVal, oldVal);
+      this.findByResataurantCategoryId(newVal);
+    }
+  },
   methods: {
     search: function search() {
-      var _this2 = this;
-
-      axios.get('/find/restaurant?q=' + this.searchRestaurant).then(function (r) {
-        return _this2.restaurants = r.data.data;
-      })["catch"](function (e) {
-        return console.error(e);
-      });
+      this.findByResataurantCategoryId(); // axios.get('/find/restaurant?q=' + this.searchRestaurant)
+      //      .then(r => this.restaurants = r.data.data)
+      //      .catch(e => console.error(e))
     },
 
     /* async findByResataurantCategoryId() {
@@ -2814,10 +2810,20 @@ __webpack_require__.r(__webpack_exports__);
         console.log(r)    
     }, */
     findByResataurantCategoryId: function findByResataurantCategoryId() {
-      var _this3 = this;
+      var _this2 = this;
 
-      axios.get('/find/restaurant_by_cat?ids=' + "".concat(this.checkbox)).then(function (r) {
-        return _this3.restaurants = r.data.data;
+      var queryParam = '/find/restaurant_by_cat';
+
+      if (this.checkbox.length > 0 && this.searchRestaurant.length > 0) {
+        queryParam += '?ids=' + "".concat(this.checkbox, "&q=") + this.searchRestaurant;
+      } else if (this.checkbox.length == 0 && this.searchRestaurant.length == 0) {} else if (this.checkbox.length > 0) {
+        queryParam += '?ids=' + "".concat(this.checkbox);
+      } else {
+        queryParam += '?q=' + this.searchRestaurant;
+      }
+
+      axios.get(queryParam).then(function (r) {
+        return _this2.restaurants = r.data.data;
       })["catch"](function (e) {
         return console.error(e);
       });
@@ -40582,18 +40588,14 @@ var render = function () {
                 },
               },
             }),
-            _vm._v(_vm._s(category.name) + "\n    "),
+            _vm._v(_vm._s(category.name) + "\n        "),
           ]
         )
       }),
       _vm._v(" "),
-      _c("button", { on: { click: _vm.findByResataurantCategoryId } }, [
-        _vm._v("cerca la categoria"),
-      ]),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "d-flex" },
+        { staticClass: "d-flex flex-wrap justify-content-center my-2" },
         _vm._l(_vm.restaurants, function (restaurant, i) {
           return _c(
             "div",
@@ -53355,8 +53357,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
