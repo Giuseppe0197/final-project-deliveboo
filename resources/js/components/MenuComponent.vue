@@ -516,6 +516,7 @@
                     if (dish.id !== id) {
                         find = true;
                     } else {
+                        this.addProduct(this.cart[products]); // Se il piatto è già stato inserito, aggiunge una quantità direttamente
                         find = false; break;  // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
                     }
                 }
@@ -528,8 +529,6 @@
 
                     // richiamo del metodo che fa scrollare la parte del carrello al click
                     this.scrollToEnd();
-                } else {
-                    alert('Attenzione, hai già inserito questo piatto!');
                 }
             },
 
@@ -541,9 +540,11 @@
                 // Se il carrello è vuoto, il prezzo totale nell'header viene settato a 0
                 if (this.cart.length == 0) {
                     document.querySelector('.shopping-cart-header a span').innerHTML = 0 + ' &euro;';
+                    localStorage.removeItem('cart');
+                } else {
+                    this.saveCart();
                 }
-
-                this.saveCart();
+                
             },
             
             // metodo per gestire il salvataggio dei dati in locale
@@ -569,14 +570,10 @@
             // metodo per aggiungere un prodotto
             addProduct(prod) {
 
-                console.log('ciao sono "PROD CART":', prod);
-                console.log('ciao sono "DISHES"', this.dishes);
-
                 for (const dish in this.dishes) {
                     if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
 
                         const dishOriginal = this.dishes[dish];
-                        console.log('Dish in DISHES: ', dishOriginal);
 
                         if (prod.id == dishOriginal.id) {
                             prod.quantity += 1;
@@ -592,25 +589,32 @@
             // metodo per rimuovere un prodotto
             removeProduct(prod) {
 
-                console.log(prod);
-
+                // Se la quantità è maggiore di 1, viene scalata di 1. (Esempio: Quantità = 2  -> Dopo: Quantità = 1)
                 if (prod.quantity > 1) {
 
                     for (const dish in this.dishes) {
-                    if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
+                        if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
 
-                        const dishOriginal = this.dishes[dish];
+                            const dishOriginal = this.dishes[dish];
 
-                        if (prod.id == dishOriginal.id) {
-                            prod.quantity -= 1;
+                            if (prod.id == dishOriginal.id) {
+                                prod.quantity -= 1;
 
-                            prod.price = dishOriginal.price * prod.quantity;
+                                prod.price = dishOriginal.price * prod.quantity;
 
-                            this.saveCart();
+                                this.saveCart();
+                            }
                         }
                     }
+                // SE la quantità è minore uguale a 1 rimuoviamo direttamente l'elemento dal carrello (Esempio: Quantità = 1 -> Dopo: Elemento eliminato dal carrello)
+                } else {
+
+                    if (confirm("Attenzione! sei sicuro di eliminare questo piatto dal carrello?")) {
+                        let ind = this.getIndexById(prod.id);
+                        this.removeToCart(ind);
+                    } 
+                    
                 }
-                };
             },
 
             getIndexById(id) {

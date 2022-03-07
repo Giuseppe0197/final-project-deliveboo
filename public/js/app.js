@@ -2620,6 +2620,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         if (dish.id !== id) {
           find = true;
         } else {
+          this.addProduct(this.cart[products]); // Se il piatto è già stato inserito, aggiunge una quantità direttamente
+
           find = false;
           break; // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
         }
@@ -2632,8 +2634,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.cart = JSON.parse(localStorage.getItem('cart')); // richiamo del metodo che fa scrollare la parte del carrello al click
 
         this.scrollToEnd();
-      } else {
-        alert('Attenzione, hai già inserito questo piatto!');
       }
     },
     // metodo per eliminare un elemnto dal carrello
@@ -2642,9 +2642,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       if (this.cart.length == 0) {
         document.querySelector('.shopping-cart-header a span').innerHTML = 0 + ' &euro;';
+        localStorage.removeItem('cart');
+      } else {
+        this.saveCart();
       }
-
-      this.saveCart();
     },
     // metodo per gestire il salvataggio dei dati in locale
     saveCart: function saveCart() {
@@ -2663,13 +2664,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // metodo per aggiungere un prodotto
     addProduct: function addProduct(prod) {
-      console.log('ciao sono "PROD CART":', prod);
-      console.log('ciao sono "DISHES"', this.dishes);
-
       for (var dish in this.dishes) {
         if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
           var dishOriginal = this.dishes[dish];
-          console.log('Dish in DISHES: ', dishOriginal);
 
           if (prod.id == dishOriginal.id) {
             prod.quantity += 1;
@@ -2681,8 +2678,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // metodo per rimuovere un prodotto
     removeProduct: function removeProduct(prod) {
-      console.log(prod);
-
+      // Se la quantità è maggiore di 1, viene scalata di 1. (Esempio: Quantità = 2  -> Dopo: Quantità = 1)
       if (prod.quantity > 1) {
         for (var dish in this.dishes) {
           if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
@@ -2694,10 +2690,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               this.saveCart();
             }
           }
+        } // SE la quantità è minore uguale a 1 rimuoviamo direttamente l'elemento dal carrello (Esempio: Quantità = 1 -> Dopo: Elemento eliminato dal carrello)
+
+      } else {
+        if (confirm("Attenzione! sei sicuro di eliminare questo piatto dal carrello?")) {
+          var ind = this.getIndexById(prod.id);
+          this.removeToCart(ind);
         }
       }
-
-      ;
     },
     getIndexById: function getIndexById(id) {
       for (var x = 0; x < this.cart.length; x++) {
