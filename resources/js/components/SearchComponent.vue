@@ -47,11 +47,6 @@
             }
         },
 
-        props: {
-            // categories: Array,
-            // categories_restaurant: Array
-        },
-
         mounted() {
 
             axios.get('/find/categories')
@@ -71,21 +66,11 @@
         methods: {
             search() {
                 this.findByResataurantCategoryId()
-                // axios.get('/find/restaurant?q=' + this.searchRestaurant)
-                //      .then(r => this.restaurants = r.data.data)
-                //      .catch(e => console.error(e))
             },
-
-            /* async findByResataurantCategoryId() {
-                console.log("this.checkbox")    
-                console.log(this.checkbox) 
-                let r = await axios.get('/find/restaurant_by_cat?ids=' + this.checkbox)
-                this.restaurants = r.data
-                console.log(r)    
-            }, */
 
             findByResataurantCategoryId() {
                 let queryParam = '/find/restaurant_by_cat';
+
                 if(this.checkbox.length > 0 && this.searchRestaurant.length > 0){
                     queryParam += '?ids=' + `${this.checkbox}&q=` +this.searchRestaurant;
                 }
@@ -101,11 +86,17 @@
                     
                 axios.get(queryParam)
                      .then(r => {
-                            this.restaurants = r.data.data
 
-                            for (let i = 0; i < this.restaurants.length; i++) {
+                         this.restaurants = r.data.data
+                         console.log(this.restaurants);
+
+                        for (let i = 0; i < this.restaurants.length; i++) {
+
+                            if (this.restaurants[i].user_id) {
                                 this.restaurants[i].id = this.restaurants[i].user_id;
                             }
+
+                        }
                         })
                      
                      .catch(e => console.error(e))

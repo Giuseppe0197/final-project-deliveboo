@@ -2546,7 +2546,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     categories_restaurant: Array
   },
   mounted: function mounted() {
-    // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
+    console.log(this.restaurant); // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
+
+    if (this.restaurant.id != this.restaurant.id) {
+      console.log('CIAO');
+    }
+
     if (localStorage.getItem('cart')) {
       try {
         this.cart = JSON.parse(localStorage.getItem('cart'));
@@ -2841,9 +2846,6 @@ __webpack_require__.r(__webpack_exports__);
       categories: []
     };
   },
-  props: {// categories: Array,
-    // categories_restaurant: Array
-  },
   mounted: function mounted() {
     var _this = this;
 
@@ -2862,18 +2864,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     search: function search() {
-      this.findByResataurantCategoryId(); // axios.get('/find/restaurant?q=' + this.searchRestaurant)
-      //      .then(r => this.restaurants = r.data.data)
-      //      .catch(e => console.error(e))
+      this.findByResataurantCategoryId();
     },
-
-    /* async findByResataurantCategoryId() {
-        console.log("this.checkbox")    
-        console.log(this.checkbox) 
-        let r = await axios.get('/find/restaurant_by_cat?ids=' + this.checkbox)
-        this.restaurants = r.data
-        console.log(r)    
-    }, */
     findByResataurantCategoryId: function findByResataurantCategoryId() {
       var _this2 = this;
 
@@ -2889,9 +2881,12 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get(queryParam).then(function (r) {
         _this2.restaurants = r.data.data;
+        console.log(_this2.restaurants);
 
         for (var i = 0; i < _this2.restaurants.length; i++) {
-          _this2.restaurants[i].id = _this2.restaurants[i].user_id;
+          if (_this2.restaurants[i].user_id) {
+            _this2.restaurants[i].id = _this2.restaurants[i].user_id;
+          }
         }
       })["catch"](function (e) {
         return console.error(e);
@@ -54201,8 +54196,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

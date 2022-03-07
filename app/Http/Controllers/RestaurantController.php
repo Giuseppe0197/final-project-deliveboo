@@ -42,7 +42,7 @@ class RestaurantController extends Controller
 
     public function findRestaurantByCategoriesId() {
 
-        $foundRestaurant= User::all();
+        $foundRestaurant= User::all(); 
 
             $join = \Request::get('ids');
             $search = \Request::get('q');
