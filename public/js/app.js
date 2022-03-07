@@ -2877,6 +2877,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41381,152 +41409,172 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "restaurant-search" },
-    [
-      _c("input", {
-        directives: [
+  return _c("div", { staticClass: "restaurant-search d-flex" }, [
+    _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchRestaurant,
+              expression: "searchRestaurant",
+            },
+          ],
+          staticClass: "col-md-7 col-sm-12 my-2",
+          attrs: { type: "search", placeholder: "Ricerca ristorante" },
+          domProps: { value: _vm.searchRestaurant },
+          on: {
+            keyup: function ($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.search.apply(null, arguments)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchRestaurant = $event.target.value
+            },
+          },
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
           {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.searchRestaurant,
-            expression: "searchRestaurant",
+            staticClass: "btn btn-secondary col-md-7 col-sm-12 my-2",
+            on: { click: _vm.search },
           },
-        ],
-        attrs: { type: "search", placeholder: "Ricerca ristorante" },
-        domProps: { value: _vm.searchRestaurant },
-        on: {
-          keyup: function ($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
-            }
-            return _vm.search.apply(null, arguments)
-          },
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.searchRestaurant = $event.target.value
-          },
-        },
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-secondary", on: { click: _vm.search } },
-        [_vm._v("Cerca il nome del ristorante")]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.categories, function (category) {
-        return _c(
-          "div",
-          { key: category.id, staticClass: "checkboxesSearch d-inline-flex" },
-          [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.checkbox,
-                  expression: "checkbox",
-                },
-              ],
-              attrs: { type: "checkbox" },
-              domProps: {
-                value: category.id,
-                checked: Array.isArray(_vm.checkbox)
-                  ? _vm._i(_vm.checkbox, category.id) > -1
-                  : _vm.checkbox,
-              },
-              on: {
-                change: function ($event) {
-                  var $$a = _vm.checkbox,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = category.id,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        (_vm.checkbox = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
-                    }
-                  } else {
-                    _vm.checkbox = $$c
-                  }
-                },
-              },
-            }),
-            _vm._v(_vm._s(category.name) + "\n        "),
-          ]
-        )
-      }),
+          [_vm._v("Cerca il nome del ristorante")]
+        ),
+      ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "d-flex flex-wrap justify-content-center my-2" },
-        _vm._l(_vm.restaurants, function (restaurant, i) {
+        { staticClass: "checkboxes-container row d-flex flex-column" },
+        _vm._l(_vm.categories, function (category) {
           return _c(
             "div",
-            {
-              key: i,
-              staticClass: "my-2 card restaurant-found restaurant-card",
-              staticStyle: { width: "18rem" },
-            },
+            { key: category.id, staticClass: "checkboxesSearch" },
             [
-              _c("div", { staticClass: "card-body" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  attrs: {
-                    src: "/storage/images/" + restaurant.image,
-                    alt: "",
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.checkbox,
+                    expression: "checkbox",
                   },
-                }),
-                _vm._v(" "),
-                _c("h5", { staticClass: "card-title text-center my-1" }, [
-                  _vm._v(_vm._s(restaurant.restaurant_name)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.restaurant_phone)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.email)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.address)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  on: {
-                    click: function ($event) {
-                      return _vm.showMenu(restaurant.id)
-                    },
+                ],
+                attrs: { type: "checkbox" },
+                domProps: {
+                  value: category.id,
+                  checked: Array.isArray(_vm.checkbox)
+                    ? _vm._i(_vm.checkbox, category.id) > -1
+                    : _vm.checkbox,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.checkbox,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = category.id,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.checkbox = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
+                    } else {
+                      _vm.checkbox = $$c
+                    }
                   },
                 },
-                [_vm._v("Visualizza il menu del ristorante")]
-              ),
+              }),
+              _vm._v(_vm._s(category.name) + "\n            "),
             ]
           )
         }),
         0
       ),
-    ],
-    2
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-restaurants container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _vm.restaurants.length === 0
+          ? _c("div", { staticClass: "text-center col-md-6 col-sm-12" }, [
+              _c("h1", [_vm._v("Cerca i tuoi ristoranti preferiti!")]),
+            ])
+          : _c(
+              "div",
+              { staticClass: "d-flex flex-wrap" },
+              _vm._l(_vm.restaurants, function (restaurant, i) {
+                return _c(
+                  "div",
+                  {
+                    key: i,
+                    staticClass: "restaurant-found restaurant-card",
+                    staticStyle: { width: "18rem" },
+                  },
+                  [
+                    _c("div", { staticClass: "card-body text-center" }, [
+                      _c("div", { staticClass: "container-image" }, [
+                        _c("img", {
+                          staticClass: "card-img-top",
+                          attrs: {
+                            src: "/storage/images/" + restaurant.image,
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title my-1" }, [
+                        _vm._v(_vm._s(restaurant.restaurant_name)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text my-1" }, [
+                        _vm._v(_vm._s(restaurant.restaurant_phone)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text my-1" }, [
+                        _vm._v(_vm._s(restaurant.email)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text my-1" }, [
+                        _vm._v(_vm._s(restaurant.address)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "container-button text-center" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "button-show-restaurant",
+                          on: {
+                            click: function ($event) {
+                              return _vm.showMenu(restaurant.id)
+                            },
+                          },
+                        },
+                        [_vm._v("Ordina subito!")]
+                      ),
+                    ]),
+                  ]
+                )
+              }),
+              0
+            ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
