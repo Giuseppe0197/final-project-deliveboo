@@ -49,11 +49,11 @@
             <a href="">Inizia</a>
             <a href="">I nostri prodotti e servizi</a>
             <a href="">Assistenza</a>
-            <span class="shopping-cart-headear">
+            <span class="shopping-cart-header">
                 <a href="">
                     <img src="/storage/images/svgexport-2.svg" alt="shopping cart">
                     <span>
-                        {{-- 3.00 &euro; --> da gestire --}}
+                        {{-- TotalPrice cart --}}
                     </span>
                 </a>
             </span>

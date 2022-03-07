@@ -12,11 +12,11 @@
             <input type="checkbox" :value="category.id" v-model="checkbox">{{category.name}}
         </div>
 
-        <button @click="findByResataurantCategoryId">cerca la categoria</button>
+<!--         <button @click="findByResataurantCategoryId">cerca la categoria</button>-->
 
         <!-- ristoranti trovati tramite nome -->
 
-        <div class="d-flex">
+        <div class="d-flex flex-wrap justify-content-center my-2">
             <div v-for="restaurant, i in restaurants" :key="i" class="my-2 card restaurant-found restaurant-card" style="width: 18rem;">
                 
                 <div class="card-body">
@@ -47,11 +47,6 @@
             }
         },
 
-        props: {
-            // categories: Array,
-            // categories_restaurant: Array
-        },
-
         mounted() {
 
             axios.get('/find/categories')
@@ -59,39 +54,53 @@
             .catch(e => console.error(e))
         },
 
-        /* watch: {
+        //uso il watch perche sfrutta la reattività di Vue
+        watch: {
             checkbox(newVal, oldVal) {
                 console.log(newVal, oldVal)
                 this.findByResataurantCategoryId(newVal)
             }
-        },   */
+        },
 
 
         methods: {
             search() {
-                axios.get('/find/restaurant?q=' + this.searchRestaurant)
-                     .then(r => this.restaurants = r.data.data)
-                     .catch(e => console.error(e))
+                this.findByResataurantCategoryId()
             },
 
-            /* async findByResataurantCategoryId() {
-                console.log("this.checkbox")    
-                console.log(this.checkbox) 
-                let r = await axios.get('/find/restaurant_by_cat?ids=' + this.checkbox)
-                this.restaurants = r.data
-                console.log(r)    
-            }, */
-
             findByResataurantCategoryId() {
-                axios.get('/find/restaurant_by_cat?ids=' + `${this.checkbox}`)
-                    .then(r => {
-                        this.restaurants = r.data.data;
+                let queryParam = '/find/restaurant_by_cat';
+
+                if(this.checkbox.length > 0 && this.searchRestaurant.length > 0){
+                    queryParam += '?ids=' + `${this.checkbox}&q=` +this.searchRestaurant;
+                }
+                else if(this.checkbox.length ==0 && this.searchRestaurant.length == 0 ){
+                    
+                }
+                else if(this.checkbox.length > 0 ){
+                    queryParam += '?ids=' + `${this.checkbox}`
+                }
+                else{
+                    queryParam += '?q=' +this.searchRestaurant
+                }
+                    
+                axios.get(queryParam)
+                     .then(r => {
+
+                         this.restaurants = r.data.data
+                         console.log(this.restaurants);
 
                         for (let i = 0; i < this.restaurants.length; i++) {
-                            this.restaurants[i].id = this.restaurants[i].user_id;
+
+                            if (this.restaurants[i].user_id) {
+                                this.restaurants[i].id = this.restaurants[i].user_id;
+                            }
+
                         }
-                    })
-                    .catch(e => console.error(e))
+                        })
+                     
+                     .catch(e => console.error(e))
+
             },
 
 
