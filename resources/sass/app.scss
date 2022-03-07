@@ -8,18 +8,10 @@
 @import "~bootstrap/scss/bootstrap";
 
 // General rules
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
 
-// body {
-//     width: 100%;
-//     // debug
-//     height: calc(100vh - 200px);
-//     background-color: blue;
-// }
+html {
+    scroll-behavior: smooth;
+}
 
 // Homepage
 div.container-home {
@@ -48,6 +40,11 @@ header {
 
             &:hover {
                 color: #00ccbc;
+            }
+
+            &.btn-return-restaurant {
+                background-color: #00ccbc;
+                color: #fff;
             }
         }
 
@@ -860,19 +857,21 @@ div.container-dishes-shopping-cart {
 
 // Component -> DishesComponent 
 main.content-container {
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
 
     .top-container {
+        width: 100%;
         background-color: #f8fafc;
+        padding: 0 75px;
         position: sticky;
         top: 0;
-        z-index: 1;
-        border-bottom: 1px solid lightgray;
+        box-shadow: 0px 10px 5px -10px grey;
+        border-bottom: 1px solid #e7e7e7;
+        z-index: 2;
 
         h1 {
-            color: #440063;
-            font-size: 40px;
+            color: #2e3333;
+            font-size: 32px;
             font-weight: 600;
             text-transform: uppercase;
             float: left;
@@ -904,7 +903,8 @@ main.content-container {
     }
 
     .container-dish {
-        width: 100%;
+        width: 70%;
+        margin: 0 auto;
 
         .card {
             width: calc(25% - 40px);

@@ -2025,6 +2025,10 @@ __webpack_require__.r(__webpack_exports__);
     editDish: function editDish(id) {
       window.location.href = "/dish/edit/".concat(id);
     },
+    // Metodo per andare al menù effettivo del ristorante
+    RestaurantMenu: function RestaurantMenu(id) {
+      window.location.href = "/show/restaurant/".concat(id);
+    },
     // Metodo per ritornare indietro alla home del ristorante
     homeRestaurant: function homeRestaurant() {
       window.location.href = "/restaurant";
@@ -2699,6 +2703,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }
     },
+    // metodo/funzione per ritornare l'indice di un piatto nel carrello
     getIndexById: function getIndexById(id) {
       for (var x = 0; x < this.cart.length; x++) {
         var cart = this.cart[x];
@@ -2710,12 +2715,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       return -1;
     },
+    // Metodo/funzione per far scrollare automaticamente il container del carrello
     scrollToEnd: function scrollToEnd() {
       var containerCart = this.$el.querySelector(".container-cart");
       setTimeout(function () {
         containerCart.scrollTop = containerCart.scrollHeight;
       }, 1);
     },
+    // Funzione asincrona per andare al pagamento e passare i dati del carrello. (asincrona, in modo che viene eseguita una volta che ha ricevuto la risposta da axios.)
     viewCart: function viewCart(cart) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
@@ -2740,9 +2747,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
-    },
-    // Metodo per andare al pagamento
-    goToPayment: function goToPayment() {// window.location.href = `/client/checkout`;
     }
   }
 });
@@ -39959,16 +39963,12 @@ var render = function () {
             on: {
               click: function ($event) {
                 $event.preventDefault()
-                return _vm.homeRestaurant()
+                return _vm.RestaurantMenu(_vm.restaurant_id)
               },
             },
           },
-          [_vm._v("\n                Ritorna al ristorante\n            ")]
+          [_vm._v("\n                Vai al tuo menù\n            ")]
         ),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn ml-2" }, [
-          _vm._v("\n                Riepilogo ordini\n            "),
-        ]),
       ]),
     ]),
     _vm._v(" "),

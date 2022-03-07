@@ -617,6 +617,7 @@
                 }
             },
 
+            // metodo/funzione per ritornare l'indice di un piatto nel carrello
             getIndexById(id) {
 
                 for (let x = 0; x < this.cart.length; x++) {
@@ -632,6 +633,7 @@
                 return -1;
             },
 
+            // Metodo/funzione per far scrollare automaticamente il container del carrello
             scrollToEnd() {    	
                 var containerCart = this.$el.querySelector(".container-cart");
 
@@ -640,6 +642,7 @@
                 }, 1);
             },
 
+            // Funzione asincrona per andare al pagamento e passare i dati del carrello. (asincrona, in modo che viene eseguita una volta che ha ricevuto la risposta da axios.)
             async viewCart(cart) {  // passare il carrello nel blade
 
                 await axios.post('/view/cart/', cart)
@@ -650,11 +653,6 @@
                 
                 // Da sistemare
                 window.location.href = `/client/checkout`;
-            },
-
-            // Metodo per andare al pagamento
-            goToPayment() {
-                // window.location.href = `/client/checkout`;
             },
         }
     }
