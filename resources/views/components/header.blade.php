@@ -1,16 +1,18 @@
 <header>
     {{-- qui andranno i link per la registrazione o login e ci sarà la parte di @auth, else, @endauth --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid d-flex">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid d-flex ">
+            <a class="navbar-brand" href="#">
+                <img class="img-logo" src="/storage/images/1.jpg" alt="img logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse btn-hamb-menu" id="navbarNavAltMarkup">
-                <div class="navbar-nav d-flex align-items-center">
-                    <a class="nav-link " aria-current="page" href="#">Inizia</a>
-                    <a class="nav-link " href="#">I nostri prodotti e servizi</a>
-                    <a class="nav-link " href="#">Assistenza</a>
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav d-flex align-items-end ">
+                    <a class="nav-link" aria-current="page" href="#">Inizia</a>
+                    <a class="nav-link" href="#">I nostri prodotti e servizi</a>
+                    <a class="nav-link" href="#">Assistenza</a>
                     <a href="#" class="nav-link">
                         <span class="shopping-cart-header">
                             <a href="">
@@ -22,7 +24,7 @@
                         </span>
                     </a>
                     @auth
-                    
+
                         <a class="btn btn-return-restaurant" href="{{ route('restaurant') }}">Ritorna al tuo ristorante</a>
                         <a class="btn btn-danger exit-btn" href="{{ route('logout') }}">Log out</a>
                         
