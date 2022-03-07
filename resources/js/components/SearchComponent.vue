@@ -1,32 +1,63 @@
 <template>
-    <div class="restaurant-search">
+    <div class="restaurant-search d-flex">
 
-        <!-- searchbar per nome ristorante -->
-        <input type="search" v-model="searchRestaurant" @keyup.enter="search" placeholder="Ricerca ristorante">
+        <!-- container per la ricerca tramite barra e checkbox -->
 
-        <!-- bottone per cercare il ristorante tramite nome -->
+        <div class="search-bar-checkbox container-fluid">
 
-        <button class="btn btn-secondary" @click="search">Cerca il nome del ristorante</button>
+            <div class="row">
 
-        <div v-for="category in categories" :key="category.id" class="checkboxesSearch d-inline-flex">
-            <input type="checkbox" :value="category.id" v-model="checkbox">{{category.name}}
-        </div>
+                <!-- searchbar per nome ristorante -->
+                <input class="col-md-7 col-sm-12 my-2" type="search" v-model="searchRestaurant" @keyup.enter="search" placeholder="Ricerca ristorante">
 
-        <!-- ristoranti trovati tramite nome -->
+                <!-- bottone per cercare il ristorante tramite nome -->
 
-        <div class="d-flex flex-wrap justify-content-center my-2">
-            <div v-for="restaurant, i in restaurants" :key="i" class="my-2 card restaurant-found " style="width: 18rem;">
-                
-                <div class="card-body">
-                    <img class="card-img-top" :src="'/storage/images/' + restaurant.image" alt="">
-                    <h5 class="card-title text-center my-1">{{restaurant.restaurant_name}}</h5>
-                    <p class="card-text text-center">{{restaurant.restaurant_phone}}</p>
-                    <p class="card-text text-center">{{restaurant.email}}</p>
-                    <p class="card-text text-center">{{restaurant.address}}</p>
-                </div>
-                <!-- bottone per accedere al menu del singolo ristorante -->
-                <button class="btn btn-success" @click="showMenu(restaurant.id)">Visualizza il menu del ristorante</button>
+                <button class="btn btn-secondary col-md-7 col-sm-12 my-2" @click="search">Cerca il nome del ristorante</button>
+
             </div>
+
+            <div class="checkboxes-container row d-flex flex-column">
+
+                <div v-for="category in categories" :key="category.id" class="checkboxesSearch">
+                    <input type="checkbox" :value="category.id" v-model="checkbox">{{category.name}}
+                </div>
+
+            </div>
+        </div>
+        <!--container ristoranti trovati tramite nome -->
+
+        <div class="container-restaurants container-fluid">
+
+            <div class="row">
+
+                <div class="text-center col-md-6 col-sm-12" v-if="restaurants.length === 0">
+                    <h1>Cerca i tuoi ristoranti preferiti!</h1>
+                </div>
+
+                <div v-else class="d-flex flex-wrap">
+                    <div v-for="restaurant, i in restaurants" :key="i" class="restaurant-found restaurant-card" style="width: 18rem;">
+                        
+                        <div class="card-body text-center">
+
+                            <!-- contenitore delle informazioni dei ristoranti trovati -->
+
+                            <div class="container-image">
+                                <img class="card-img-top" :src="'/storage/images/' + restaurant.image" alt="">
+                            </div>
+                            <h5 class="card-title my-1">{{restaurant.restaurant_name}}</h5>
+                            <p class="card-text my-1">{{restaurant.restaurant_phone}}</p>
+                            <p class="card-text my-1">{{restaurant.email}}</p>
+                            <p class="card-text my-1">{{restaurant.address}}</p>
+                        </div>
+
+                            <!-- bottone per accedere al menu del singolo ristorante -->
+                        <div class="container-button text-center">
+                            <button class="button-show-restaurant" @click="showMenu(restaurant.id)">Ordina subito!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -66,6 +97,7 @@
 
             findByResataurantCategoryId() {
                 let queryParam = '/find/restaurant_by_cat';
+
                 if(this.checkbox.length > 0 && this.searchRestaurant.length > 0){
                     queryParam += '?ids=' + `${this.checkbox}&q=` +this.searchRestaurant;
                 }
@@ -81,10 +113,17 @@
                     
                 axios.get(queryParam)
                      .then(r => {
-                            this.restaurants = r.data.data
-                            for (let i = 0; i < this.restaurants.length; i++) {
+
+                         this.restaurants = r.data.data
+                         console.log(this.restaurants);
+
+                        for (let i = 0; i < this.restaurants.length; i++) {
+
+                            if (this.restaurants[i].user_id) {
                                 this.restaurants[i].id = this.restaurants[i].user_id;
                             }
+
+                        }
                         })
                      
                      .catch(e => console.error(e))

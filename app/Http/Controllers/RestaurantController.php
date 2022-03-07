@@ -42,9 +42,8 @@ class RestaurantController extends Controller
 
     public function findRestaurantByCategoriesId() {
 
-        $foundRestaurant= User::all();
-        // $messagesUnique = $messages->unique('recipient_id');
-        // $messagesUnique->values()->all();
+        $foundRestaurant= User::all(); 
+
             $join = \Request::get('ids');
             $search = \Request::get('q');
              

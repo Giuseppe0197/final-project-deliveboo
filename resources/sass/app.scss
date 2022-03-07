@@ -41,24 +41,6 @@ header {
             color: #00ccbc;
         }
     }
-    /* a {
-        width: auto;
-        text-decoration: none;
-        padding: 8px 16px;
-        background-color: #fff;
-        border: 1px solid #e8ebeb;
-        border-radius: 4px;
-        line-height: 24px;
-        cursor: pointer;
-        color: #2e3333;
-        span {
-            color: #2e3333;
-            font-size: 16px;
-            line-height: 22px;
-            font-weight: 400;
-            padding-left: 4px;
-        }
-    } */
     .register-btn {
         color: #fff;
         background: #00ccbc;
@@ -904,6 +886,146 @@ main.content-container {
         }
     }
 }
+
+/* homepage */
+
+.favourite-plates{
+    margin-top: 30px;
+    background-color: #FFEAE4;
+
+    .title-home-section {
+        text-align: center;
+        padding-top: 20px;
+
+        h2 {
+            font-weight: bold;
+        }
+    }
+
+    .container-restaurants-homepage {
+        margin-top: 40px;
+
+        .plates-add-container {
+            h2 {
+                margin: 20px 0;
+
+                &:hover {
+                    color: #00ccbc;
+                    cursor: pointer;
+                }
+            }
+
+            .img-home-restaurants {
+                max-width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+.download-app-deliveroo {
+    background-color: #434848;
+    color: white;
+}
+
+.deliveroo-image {
+    width: 70%;
+    border-radius: 20px;
+}
+
+.app-download {
+    margin: 30px auto;
+
+    .android, .apple {
+        width: 50%;
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 10px 5px;
+        margin-bottom: 15px;
+
+        img {
+            max-width: 10%;
+        }
+    }
+}
+
+.work-with-us {
+    background-color: white;
+
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .work {
+        padding-bottom: 20px;
+    
+        img {
+            width: 100%;
+        }
+
+        p {
+            font-size: 13px;
+            text-align: justify;
+        }
+
+        .work-button {
+            border: none;
+            background-color: #00ccbc;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+    }
+}
+
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+    width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+    width: 70%;
+    margin: 0 auto;
+
+    .restaurant-found {
+        width: calc(100% / 3);
+        border-bottom: 1px solid #00ccbc;
+        border-radius: 10px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+
+        .card-body {
+            width: 100%;
+            padding: 0;
+
+            img {
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+
+        .button-show-restaurant {
+            background-color: #00ccbc;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
 
 
 @import 'partials/checkout';

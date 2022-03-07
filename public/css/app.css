@@ -10978,24 +10978,6 @@ header {
   width: 100%;
   display: flex;
   background-color: #f8fafc;
-  /* a {
-      width: auto;
-      text-decoration: none;
-      padding: 8px 16px;
-      background-color: #fff;
-      border: 1px solid #e8ebeb;
-      border-radius: 4px;
-      line-height: 24px;
-      cursor: pointer;
-      color: #2e3333;
-      span {
-          color: #2e3333;
-          font-size: 16px;
-          line-height: 22px;
-          font-weight: 400;
-          padding-left: 4px;
-      }
-  } */
 }
 
 header .navbar {
@@ -11827,26 +11809,182 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
-main #checkout {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+/* homepage */
+
+.favourite-plates {
+  margin-top: 30px;
+  background-color: #FFEAE4;
 }
 
-main #checkout .client-info {
+.favourite-plates .title-home-section {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.favourite-plates .title-home-section h2 {
+  font-weight: bold;
+}
+
+.favourite-plates .container-restaurants-homepage {
+  margin-top: 40px;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container h2 {
+  margin: 20px 0;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container h2:hover {
+  color: #00ccbc;
+  cursor: pointer;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.download-app-deliveroo {
+  background-color: #434848;
+  color: white;
+}
+
+.deliveroo-image {
+  width: 70%;
+  border-radius: 20px;
+}
+
+.app-download {
+  margin: 30px auto;
+}
+
+.app-download .android,
+.app-download .apple {
+  width: 50%;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+}
+
+.app-download .android img,
+.app-download .apple img {
+  max-width: 10%;
+}
+
+.work-with-us {
+  background-color: white;
+}
+
+.work-with-us h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.work-with-us .work {
+  padding-bottom: 20px;
+}
+
+.work-with-us .work img {
+  width: 100%;
+}
+
+.work-with-us .work p {
+  font-size: 13px;
+  text-align: justify;
+}
+
+.work-with-us .work .work-button {
+  border: none;
+  background-color: #00ccbc;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+  width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-restaurants .restaurant-found {
+  width: 33.3333333333%;
+  border-bottom: 1px solid #00ccbc;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.container-restaurants .restaurant-found .card-body {
+  width: 100%;
+  padding: 0;
+}
+
+.container-restaurants .restaurant-found .card-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.container-restaurants .restaurant-found .button-show-restaurant {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+main .content-contaiiner {
+  position: relative;
+  height: calc(100vh - 397px);
+}
+
+main .content-contaiiner #checkout {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+main .content-contaiiner #checkout .client-info {
   width: 45%;
 }
 
-main #checkout .client-info h1 {
+main .content-contaiiner #checkout .client-info h1 {
   font-size: 45px;
-  color: #2e3333;
+  color: white;
   padding: 15px 0;
 }
 
-main #checkout .client-info #payment-form input {
+main .content-contaiiner #checkout .client-info #payment-form {
+  padding: 40px;
+  background-color: white;
+}
+
+main .content-contaiiner #checkout .client-info #payment-form input {
   display: block;
-  width: 90%;
+  width: 100%;
   margin-bottom: 15px;
   font-size: 16px;
   padding: 9px 10px;
@@ -11858,20 +11996,18 @@ main #checkout .client-info #payment-form input {
   max-height: 40px;
 }
 
-main #checkout .client-info #payment-form input:focus {
+main .content-contaiiner #checkout .client-info #payment-form input:focus {
   border-color: #00ccbc;
   box-shadow: 0px 0px 0px 1px #00ccbc;
 }
 
-main #checkout .client-info h1,
-main #checkout .client-info input,
-main #checkout .client-info label {
+main .content-contaiiner #checkout .client-info h1,
+main .content-contaiiner #checkout .client-info label {
   margin-left: 5%;
 }
 
-main #checkout .payment-card {
+main .content-contaiiner #checkout .payment-card {
   width: 55%;
   min-height: 100px;
-  background-color: darkgoldenrod;
 }
 
