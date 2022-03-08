@@ -343,7 +343,7 @@
                         <span @click="removeProduct(product)" class="btn-remove">
                             <img src="/storage/images/svgexport-14.svg" alt="btn remove">
                         </span>
-                        <span>
+                        <span class="text-muted">
                             {{ product.quantity }}
                         </span>
                         <span @click="addProduct(product)" class="btn-add">
