@@ -21,65 +21,66 @@ div.container-home {
 }
 
 // HEADER --------------------------------------------------
-header { 
-    width: 100%;
-    display: flex;
-    background-color: #f8fafc;
-    .navbar {
-        width: 100%;
-        height: auto;
-    }
-    a {
-        a:hover {
-            color: #00ccbc;
-        }
-    }
-    .register-btn {
-        color: #fff;
-        background: #00ccbc;
-        padding: 14px 24px;
-        border-radius: 4%;
-        margin-left: 8px;
-    }
-    .register-btn:hover {
-        color: #fff;
-        background-color: #05b7a8;
-    }
-    .exit-btn {
-        color: #fff;     
-    }
-    .exit-btn:hover {
-        color: black;
-        background-color: #fff;
-        border: solid 1px black;
-    }
-    .img-logo {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-    }
-    .shopping-cart-header {
-        a {
-            width: auto;
-            text-decoration: none;
-            padding: 8px 16px;
-            background-color: #fff;
-            border: 1px solid #e8ebeb;
-            border-radius: 4px;
-            line-height: 24px;
-            cursor: pointer;
-            color: #2e3333;
+@import 'partials/header';
+// header { 
+//     width: 100%;
+//     display: flex;
+//     background-color: #f8fafc;
+//     .navbar {
+//         width: 100%;
+//         height: auto;
+//     }
+//     a {
+//         a:hover {
+//             color: #00ccbc;
+//         }
+//     }
+//     .register-btn {
+//         color: #fff;
+//         background: #00ccbc;
+//         padding: 14px 24px;
+//         border-radius: 4%;
+//         margin-left: 8px;
+//     }
+//     .register-btn:hover {
+//         color: #fff;
+//         background-color: #05b7a8;
+//     }
+//     .exit-btn {
+//         color: #fff;     
+//     }
+//     .exit-btn:hover {
+//         color: black;
+//         background-color: #fff;
+//         border: solid 1px black;
+//     }
+//     .img-logo {
+//         width: 50px;
+//         height: 50px;
+//         object-fit: contain;
+//     }
+//     .shopping-cart-header {
+//         a {
+//             width: auto;
+//             text-decoration: none;
+//             padding: 8px 16px;
+//             background-color: #fff;
+//             border: 1px solid #e8ebeb;
+//             border-radius: 4px;
+//             line-height: 24px;
+//             cursor: pointer;
+//             color: #2e3333;
 
-            span {
-                color: #2e3333;
-                font-size: 16px;
-                line-height: 22px;
-                font-weight: 400;
-                padding-left: 4px;
-            }
-        }
-    } 
-}
+//             span {
+//                 color: #2e3333;
+//                 font-size: 16px;
+//                 line-height: 22px;
+//                 font-weight: 400;
+//                 padding-left: 4px;
+//             }
+//         }
+//     } 
+// }
 // edit page
 
 #edit-title {
