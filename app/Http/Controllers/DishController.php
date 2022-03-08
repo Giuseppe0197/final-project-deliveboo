@@ -123,23 +123,15 @@ class DishController extends Controller
     }
 
     
-
-
     
-    public $test;
+    // public $test;
     // Funzione per visualizzare la pagina del carrello con i relativi dati
     public function getCart(Request $request) {
 
-        $this->test = $request->all();
+        $test = $request->all();
+
+        var_dump($test);
 
         return response()->json([$request->all()]);
     }
-
-    /* public function getSingleMenu($id) {
-        $singleMenu = User::findOrFail($id);
-
-        $totalDishes = Dish::all()->where('user_id', $id);
-
-        return json_encode($singleMenu, $totalDishes);
-    } */
 }
