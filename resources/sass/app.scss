@@ -134,6 +134,7 @@ div.container-home {
 
 header { 
     width: 100%;
+    height: 80px;
     display: flex;
     background-color: #f8fafc;
     .navbar {
@@ -1188,5 +1189,6 @@ main.content-container {
     }
 }
 
-
 @import 'partials/checkout';
+
+@import 'partials/orderstats';

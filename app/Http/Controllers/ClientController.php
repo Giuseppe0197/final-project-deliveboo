@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Dish;
+use App\User;
+use App\Client;
+
 use Illuminate\Http\Request;
 
-use App\User;
 
 class ClientController extends Controller
 {
@@ -35,5 +37,23 @@ class ClientController extends Controller
         $totalPrice = number_format($totalPrice,2);
 
         return view('pages.checkout', compact('cart', 'totalPrice'));
+    }
+
+    public function storeClientInfo(Request $request) {
+
+        $data = $request->validate([
+            'name'=> 'required|string|max:60',
+            'lastname'=> 'required|string|max:60',
+            'address'=> 'required|string',
+            'email'=> 'required|email|unique',
+            'phone'=> 'required|string|max:20|unique',
+        ]);
+
+        $client = Client::create($data);
+    }
+    
+    public function orderStats() {
+
+        return view('pages.orderStatitics');
     }
 }

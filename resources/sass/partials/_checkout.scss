@@ -1,46 +1,40 @@
 main {
-    
-    .content-contaiiner {
-        position: relative;
-        height: calc(100vh - 397px);
+    background-image: url('/storage/images/wave-client.svg');
+    background-repeat: no-repeat;
 
-        #checkout {
-            width: 70%;
-            display: flex;
-            flex-wrap: wrap;
-            position: absolute;
-            top: 5%;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
+    .content-container {
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            color: white;
+            padding: 15px 0;
+        }
+
+        .form-container {
+            // display: flex;
+            // flex-wrap: wrap;
     
             .client-info {
-                width: 45%;
-    
-                h1 {
-                    font-size: 45px;
-                    color: white;
-                    padding: 15px 0;
-                }
+                // width: 45%;
     
                 #payment-form {
                     padding: 40px;
                     background-color: white;
     
-                    input {
-                        display: block;
-                        width: 100%;
-                        margin-bottom: 15px;
-                        font-size: 16px;
-                        padding: 9px 10px;
-                        box-sizing: border-box;
-                        border-radius: 3px;
-                        border: 1px solid #bac3c3;
-                        background-color: #fff;
-                        outline: none;
-                        max-height: 40px;
-                    }
+                    // input {
+                    //     display: block;
+                    //     width: 100%;
+                    //     margin-bottom: 15px;
+                    //     font-size: 16px;
+                    //     padding: 9px 10px;
+                    //     box-sizing: border-box;
+                    //     border-radius: 3px;
+                    //     border: 1px solid #bac3c3;
+                    //     background-color: #fff;
+                    //     outline: none;
+                    //     max-height: 40px;
+                    // }
     
                     input:focus {
                         border-color: $lightblue;
@@ -55,11 +49,54 @@ main {
             }
     
             .payment-card {
-                width: 55%;
-                // debug
-                min-height: 100px;
+                // width: 55%;
+                background-color: white;
+                padding: 40px;
+
+                #dropin-container {
+                    width: 100%;
+                }
+
+                .ms-button {
+                    text-align: center;
+
+                    #submit-button {
+                        padding: 14px 24px;
+                        border-radius: 4%;
+                        color: white;
+                        background-color: $opalgreen;
+                        border: none;
+
+                        &:hover {
+                            background-color: $lightblue;
+                        }
+                    }
+                }
+            }
+
+            // general rules 
+            input, .braintree-form__hosted-field{
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+                font-size: 16px;
+                padding: 9px 10px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                border: 1px solid #bac3c3;
+                background-color: #fff;
+                outline: none;
+                max-height: 40px;
+            }
+
+            input:focus, .braintree-form__hosted-field:focus{
+                border-color: $lightblue;
+                box-shadow: 0px 0px 0px 1px $lightblue;
             }
         }
+
+        
+        
     }
 
     .container-cart {
