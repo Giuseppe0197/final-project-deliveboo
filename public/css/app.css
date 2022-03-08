@@ -10962,11 +10962,9 @@ a.text-dark:focus {
   }
 }
 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+html {
+  scroll-behavior: smooth;
+}
 
 div.container-home {
   text-align: center;
@@ -10975,69 +10973,47 @@ div.container-home {
 }
 
 header {
-  width: auto;
-  height: 80px;
-}
-
-header .nav-section {
-  width: 70%;
-  margin: 0px 15%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding-top: 27px;
-  font-size: 17px;
+  background-color: #f8fafc;
 }
 
-header .nav-section a {
-  margin-left: 30px;
-  color: #000;
-  text-decoration: none;
+header .navbar {
+  width: 100%;
 }
 
-header .nav-section a:hover {
+header a a:hover {
   color: #00ccbc;
 }
 
-header .nav-section .shopping-cart-header a {
-  width: auto;
-  text-decoration: none;
-  padding: 8px 16px;
-  background-color: #fff;
-  border: 1px solid #e8ebeb;
-  border-radius: 4px;
-  line-height: 24px;
-  cursor: pointer;
-  color: #2e3333;
-}
-
-header .nav-section .shopping-cart-header a span {
-  color: #2e3333;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 400;
-  padding-left: 4px;
-}
-
-header .nav-section .register-btn {
+header .register-btn {
   color: #fff;
   background: #00ccbc;
   padding: 14px 24px;
   border-radius: 4%;
+  margin-left: 8px;
 }
 
-header .nav-section .register-btn:hover {
+header .register-btn:hover {
   color: #fff;
   background-color: #05b7a8;
 }
 
-header .nav-section .exit-btn {
+header .exit-btn {
   color: #fff;
 }
 
-header .nav-section .exit-btn:hover {
+header .exit-btn:hover {
   color: black;
   background-color: #fff;
   border: solid 1px black;
+}
+
+header .img-logo {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 #edit-title {
@@ -11809,22 +11785,24 @@ div.container-dishes-shopping-cart {
 }
 
 main.content-container {
-  width: 70%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 main.content-container .top-container {
+  width: 100%;
   background-color: #f8fafc;
+  padding: 0 75px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1;
-  border-bottom: 1px solid lightgray;
+  box-shadow: 0px 10px 5px -10px grey;
+  border-bottom: 1px solid #e7e7e7;
+  z-index: 2;
 }
 
 main.content-container .top-container h1 {
-  color: #440063;
-  font-size: 40px;
+  color: #2e3333;
+  font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
   float: left;
@@ -11855,7 +11833,8 @@ main.content-container .top-container::after {
 }
 
 main.content-container .container-dish {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 
 main.content-container .container-dish .card {
@@ -11866,6 +11845,147 @@ main.content-container .container-dish .card {
 main.content-container .container-dish .card img {
   width: 100%;
   height: 215px;
+}
+
+/* homepage */
+
+.favourite-plates {
+  margin-top: 30px;
+  background-color: #FFEAE4;
+}
+
+.favourite-plates .title-home-section {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.favourite-plates .title-home-section h2 {
+  font-weight: bold;
+}
+
+.favourite-plates .container-restaurants-homepage {
+  margin-top: 40px;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container h2 {
+  margin: 20px 0;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container h2:hover {
+  color: #00ccbc;
+  cursor: pointer;
+}
+
+.favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.download-app-deliveroo {
+  background-color: #434848;
+  color: white;
+}
+
+.deliveroo-image {
+  width: 70%;
+  border-radius: 20px;
+}
+
+.app-download {
+  margin: 30px auto;
+}
+
+.app-download .android,
+.app-download .apple {
+  width: 50%;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+}
+
+.app-download .android img,
+.app-download .apple img {
+  max-width: 10%;
+}
+
+.work-with-us {
+  background-color: white;
+}
+
+.work-with-us h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.work-with-us .work {
+  padding-bottom: 20px;
+}
+
+.work-with-us .work img {
+  width: 100%;
+}
+
+.work-with-us .work p {
+  font-size: 13px;
+  text-align: justify;
+}
+
+.work-with-us .work .work-button {
+  border: none;
+  background-color: #00ccbc;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+  width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-restaurants .restaurant-found {
+  width: 33.3333333333%;
+  border-bottom: 1px solid #00ccbc;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.container-restaurants .restaurant-found .card-body {
+  width: 100%;
+  padding: 0;
+}
+
+.container-restaurants .restaurant-found .card-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.container-restaurants .restaurant-found .button-show-restaurant {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 main .content-contaiiner {

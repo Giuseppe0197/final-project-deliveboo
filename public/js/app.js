@@ -2025,6 +2025,10 @@ __webpack_require__.r(__webpack_exports__);
     editDish: function editDish(id) {
       window.location.href = "/dish/edit/".concat(id);
     },
+    // Metodo per andare al menù effettivo del ristorante
+    RestaurantMenu: function RestaurantMenu(id) {
+      window.location.href = "/show/restaurant/".concat(id);
+    },
     // Metodo per ritornare indietro alla home del ristorante
     homeRestaurant: function homeRestaurant() {
       window.location.href = "/restaurant";
@@ -2550,6 +2554,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     if (localStorage.getItem('cart')) {
       try {
         this.cart = JSON.parse(localStorage.getItem('cart'));
+        var find = false;
+
+        for (var prod in this.dishes) {
+          for (var i = 0; i < this.cart.length; i++) {
+            // Confornto l'id dei piatti nel carrello con gli id dei piatti dell'array originale
+            // se gli id combaciano, ritorno il carrello presente nel localStorage e setto la variabile FIND in true ed esco dal ciclo con break;
+            // se invece non combaciano setto la variabile FIND in false
+            if (this.cart[i].id == this.dishes[prod].id) {
+              this.cart = JSON.parse(localStorage.getItem('cart'));
+              find = true;
+              break;
+            } else {
+              find = false;
+            }
+          } // Se find risulta TRUE, allora esco dal ciclo con l'utilizzo del break;
+
+
+          if (find) {
+            break;
+          }
+        } // Se FIND invece risulta false appare un alert con conferma.
+        // Se l'utente clicca "OK" eliminerà il carrello precedente.
+        // Se l'utente clicca "Cancel" ritornerà alla pagina dei ristoranti ma senza eliminare il carrello fatto in precedenza.
+
+
+        if (find == false) {
+          if (confirm("Attenzione! in questo modo cancellerai il carrello precedente, sei sicuro?")) {
+            localStorage.removeItem('cart');
+            this.cart = [];
+          } else {
+            history.back();
+          }
+        }
       } catch (e) {
         localStorage.removeItem('cart');
       }
@@ -2576,17 +2613,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     // metodo per aggiungere un prodotto/piatto nel carrello
-    addToCart: function addToCart(product) {
+    addToCart: function addToCart(dish) {
       // this.cart['quantity'] = 1;
-      product['quantity'] = 1;
+      dish['quantity'] = 1;
       var find = true;
 
       for (var products in this.cart) {
         var id = this.cart[products].id; // Confronto l'id del prodotto con tutti gli id dei prodotti all'interno del carrello
 
-        if (product.id !== id) {
+        if (dish.id !== id) {
           find = true;
         } else {
+          this.addProduct(this.cart[products]); // Se il piatto è già stato inserito, aggiunge una quantità direttamente
+
           find = false;
           break; // Utilizzo del break per uscire dall'iterazione, visto che gli id combaciano!
         }
@@ -2594,12 +2633,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       if (find) {
         // Push del prodotto/piatto all'interno dell'array del carrello
-        this.cart.push(product);
-        this.saveCart(); // richiamo del metodo che fa scrollare la parte del carrello al click
+        this.cart.push(dish);
+        this.saveCart();
+        this.cart = JSON.parse(localStorage.getItem('cart')); // richiamo del metodo che fa scrollare la parte del carrello al click
 
-        this.scrollToEnd(); // window.location.reload()  // in caso non riuscissimo a gestire il prezzo con la quantità
-      } else {
-        alert('Attenzione, hai già inserito questo piatto!');
+        this.scrollToEnd();
       }
     },
     // metodo per eliminare un elemnto dal carrello
@@ -2608,9 +2646,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       if (this.cart.length == 0) {
         document.querySelector('.shopping-cart-header a span').innerHTML = 0 + ' &euro;';
+        localStorage.removeItem('cart');
+      } else {
+        this.saveCart();
       }
-
-      this.saveCart();
     },
     // metodo per gestire il salvataggio dei dati in locale
     saveCart: function saveCart() {
@@ -2629,51 +2668,61 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     // metodo per aggiungere un prodotto
     addProduct: function addProduct(prod) {
-      console.log(prod);
+      for (var dish in this.dishes) {
+        if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
+          var dishOriginal = this.dishes[dish];
 
-      for (var products in this.dishes) {
-        if (prod.id === this.dishes[products].id) {
-          console.log('ARRAY ORIGINALE OLD', this.dishes[products]);
-          console.log('prezzo piatto originale OLD', this.dishes[products].price);
-          console.log('prezzo piatto carrello OLD', prod.price);
-          prod['quantity'] += 1; // console.log('sono dentro, prezzo piatto originale:', this.dishes[products].price);
-
-          prod.price = this.dishes[products].price * prod['quantity'];
-          console.log('ARRAY ORIGINALE NEW', this.dishes[products]);
-          console.log('prezzo piatto originale NEW', this.dishes[products].price);
-          console.log('prezzo piatto carrello NEW', prod.price);
-          this.saveCart();
-        } else {
-          console.log('ID DIVERSI');
+          if (prod.id == dishOriginal.id) {
+            prod.quantity += 1;
+            prod.price = dishOriginal.price * prod.quantity;
+            this.saveCart();
+          }
         }
       }
     },
     // metodo per rimuovere un prodotto
     removeProduct: function removeProduct(prod) {
-      console.log(prod);
-
+      // Se la quantità è maggiore di 1, viene scalata di 1. (Esempio: Quantità = 2  -> Dopo: Quantità = 1)
       if (prod.quantity > 1) {
-        for (var products in this.dishes) {
-          if (prod.id === this.dishes[products].id) {
-            prod['quantity'] -= 1;
-            prod.price = parseFloat(prod.price) - parseFloat(this.dishes[products].price);
-            this.saveCart();
-          } else {
-            console.log('ID DIVERSI');
-          }
-        }
+        for (var dish in this.dishes) {
+          if (this.dishes.hasOwnProperty.call(this.dishes, dish)) {
+            var dishOriginal = this.dishes[dish];
 
-        ;
+            if (prod.id == dishOriginal.id) {
+              prod.quantity -= 1;
+              prod.price = dishOriginal.price * prod.quantity;
+              this.saveCart();
+            }
+          }
+        } // SE la quantità è minore uguale a 1 rimuoviamo direttamente l'elemento dal carrello (Esempio: Quantità = 1 -> Dopo: Elemento eliminato dal carrello)
+
+      } else {
+        if (confirm("Attenzione! sei sicuro di eliminare questo piatto dal carrello?")) {
+          var ind = this.getIndexById(prod.id);
+          this.removeToCart(ind);
+        }
+      }
+    },
+    // metodo/funzione per ritornare l'indice di un piatto nel carrello
+    getIndexById: function getIndexById(id) {
+      for (var x = 0; x < this.cart.length; x++) {
+        var cart = this.cart[x];
+
+        if (cart.id == id) {
+          return x;
+        }
       }
 
-      ;
+      return -1;
     },
+    // Metodo/funzione per far scrollare automaticamente il container del carrello
     scrollToEnd: function scrollToEnd() {
       var containerCart = this.$el.querySelector(".container-cart");
       setTimeout(function () {
         containerCart.scrollTop = containerCart.scrollHeight;
       }, 1);
     },
+    // Funzione asincrona per andare al pagamento e passare i dati del carrello. (asincrona, in modo che viene eseguita una volta che ha ricevuto la risposta da axios.)
     viewCart: function viewCart(cart) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
@@ -2698,9 +2747,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
-    },
-    // Metodo per andare al pagamento
-    goToPayment: function goToPayment() {// window.location.href = `/client/checkout`;
     }
   }
 });
@@ -2794,6 +2840,34 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39917,16 +39991,12 @@ var render = function () {
             on: {
               click: function ($event) {
                 $event.preventDefault()
-                return _vm.homeRestaurant()
+                return _vm.RestaurantMenu(_vm.restaurant_id)
               },
             },
           },
-          [_vm._v("\n                Ritorna al ristorante\n            ")]
+          [_vm._v("\n                Vai al tuo menù\n            ")]
         ),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn ml-2" }, [
-          _vm._v("\n                Riepilogo ordini\n            "),
-        ]),
       ]),
     ]),
     _vm._v(" "),
@@ -41339,152 +41409,172 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "restaurant-search" },
-    [
-      _c("input", {
-        directives: [
+  return _c("div", { staticClass: "restaurant-search d-flex" }, [
+    _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchRestaurant,
+              expression: "searchRestaurant",
+            },
+          ],
+          staticClass: "col-md-7 col-sm-12 my-2",
+          attrs: { type: "search", placeholder: "Ricerca ristorante" },
+          domProps: { value: _vm.searchRestaurant },
+          on: {
+            keyup: function ($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.search.apply(null, arguments)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchRestaurant = $event.target.value
+            },
+          },
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
           {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.searchRestaurant,
-            expression: "searchRestaurant",
+            staticClass: "btn btn-secondary col-md-7 col-sm-12 my-2",
+            on: { click: _vm.search },
           },
-        ],
-        attrs: { type: "search", placeholder: "Ricerca ristorante" },
-        domProps: { value: _vm.searchRestaurant },
-        on: {
-          keyup: function ($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
-            }
-            return _vm.search.apply(null, arguments)
-          },
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.searchRestaurant = $event.target.value
-          },
-        },
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-secondary", on: { click: _vm.search } },
-        [_vm._v("Cerca il nome del ristorante")]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.categories, function (category) {
-        return _c(
-          "div",
-          { key: category.id, staticClass: "checkboxesSearch d-inline-flex" },
-          [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.checkbox,
-                  expression: "checkbox",
-                },
-              ],
-              attrs: { type: "checkbox" },
-              domProps: {
-                value: category.id,
-                checked: Array.isArray(_vm.checkbox)
-                  ? _vm._i(_vm.checkbox, category.id) > -1
-                  : _vm.checkbox,
-              },
-              on: {
-                change: function ($event) {
-                  var $$a = _vm.checkbox,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = category.id,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        (_vm.checkbox = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
-                    }
-                  } else {
-                    _vm.checkbox = $$c
-                  }
-                },
-              },
-            }),
-            _vm._v(_vm._s(category.name) + "\n        "),
-          ]
-        )
-      }),
+          [_vm._v("Cerca il nome del ristorante")]
+        ),
+      ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "d-flex flex-wrap justify-content-center my-2" },
-        _vm._l(_vm.restaurants, function (restaurant, i) {
+        { staticClass: "checkboxes-container row d-flex flex-column" },
+        _vm._l(_vm.categories, function (category) {
           return _c(
             "div",
-            {
-              key: i,
-              staticClass: "my-2 card restaurant-found restaurant-card",
-              staticStyle: { width: "18rem" },
-            },
+            { key: category.id, staticClass: "checkboxesSearch" },
             [
-              _c("div", { staticClass: "card-body" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  attrs: {
-                    src: "/storage/images/" + restaurant.image,
-                    alt: "",
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.checkbox,
+                    expression: "checkbox",
                   },
-                }),
-                _vm._v(" "),
-                _c("h5", { staticClass: "card-title text-center my-1" }, [
-                  _vm._v(_vm._s(restaurant.restaurant_name)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.restaurant_phone)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.email)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text text-center" }, [
-                  _vm._v(_vm._s(restaurant.address)),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-success",
-                  on: {
-                    click: function ($event) {
-                      return _vm.showMenu(restaurant.id)
-                    },
+                ],
+                attrs: { type: "checkbox" },
+                domProps: {
+                  value: category.id,
+                  checked: Array.isArray(_vm.checkbox)
+                    ? _vm._i(_vm.checkbox, category.id) > -1
+                    : _vm.checkbox,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.checkbox,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = category.id,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.checkbox = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
+                    } else {
+                      _vm.checkbox = $$c
+                    }
                   },
                 },
-                [_vm._v("Visualizza il menu del ristorante")]
-              ),
+              }),
+              _vm._v(_vm._s(category.name) + "\n            "),
             ]
           )
         }),
         0
       ),
-    ],
-    2
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container-restaurants container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _vm.restaurants.length === 0
+          ? _c("div", { staticClass: "text-center col-md-6 col-sm-12" }, [
+              _c("h1", [_vm._v("Cerca i tuoi ristoranti preferiti!")]),
+            ])
+          : _c(
+              "div",
+              { staticClass: "d-flex flex-wrap" },
+              _vm._l(_vm.restaurants, function (restaurant, i) {
+                return _c(
+                  "div",
+                  {
+                    key: i,
+                    staticClass: "restaurant-found restaurant-card",
+                    staticStyle: { width: "18rem" },
+                  },
+                  [
+                    _c("div", { staticClass: "card-body text-center" }, [
+                      _c("div", { staticClass: "container-image" }, [
+                        _c("img", {
+                          staticClass: "card-img-top",
+                          attrs: {
+                            src: "/storage/images/" + restaurant.image,
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title my-1" }, [
+                        _vm._v(_vm._s(restaurant.restaurant_name)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text my-1" }, [
+                        _vm._v(_vm._s(restaurant.restaurant_phone)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text my-1" }, [
+                        _vm._v(_vm._s(restaurant.email)),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text my-1" }, [
+                        _vm._v(_vm._s(restaurant.address)),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "container-button text-center" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "button-show-restaurant",
+                          on: {
+                            click: function ($event) {
+                              return _vm.showMenu(restaurant.id)
+                            },
+                          },
+                        },
+                        [_vm._v("Ordina subito!")]
+                      ),
+                    ]),
+                  ]
+                )
+              }),
+              0
+            ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
