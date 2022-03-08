@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Dish;
+use App\User;
+use App\Client;
+
 use Illuminate\Http\Request;
 
-use App\User;
 
 class ClientController extends Controller
 {
@@ -26,5 +28,18 @@ class ClientController extends Controller
     public function checkout() {
 
         return view('pages.checkout');
+    }
+
+    public function storeClientInfo(Request $request) {
+
+        $data = $request->validate([
+            'name'=> 'required|string|max:60',
+            'lastname'=> 'required|string|max:60',
+            'address'=> 'required|string',
+            'email'=> 'required|email|unique',
+            'phone'=> 'required|string|max:20|unique',
+        ]);
+
+        $client = Client::create($data);
     }
 }
