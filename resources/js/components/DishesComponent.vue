@@ -10,12 +10,12 @@
                     Aggiungi un piatto
                 </button>
         
-                <button class="btn ml-2" @click.prevent="homeRestaurant()">
+                <!-- <button class="btn ml-2" @click.prevent="homeRestaurant()">
                     Ritorna al ristorante
-                </button>
-            
-                <button class="btn ml-2">
-                    Riepilogo ordini
+                </button> -->
+
+                <button class="btn ml-2" @click.prevent="RestaurantMenu(restaurant_id)">
+                    Vai al tuo men&ugrave;
                 </button>
             </div>
         </div>
@@ -111,6 +111,11 @@
             // Metodo per modificare un piatto
             editDish(id) {
                 window.location.href = `/dish/edit/${id}`;
+            },
+
+            // Metodo per andare al menù effettivo del ristorante
+            RestaurantMenu(id) {
+                window.location.href = `/show/restaurant/${id}`;
             },
 
             // Metodo per ritornare indietro alla home del ristorante
