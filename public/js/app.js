@@ -2546,12 +2546,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     categories_restaurant: Array
   },
   mounted: function mounted() {
-    console.log(this.restaurant); // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
-
-    if (this.restaurant.id != this.restaurant.id) {
-      console.log('CIAO');
-    }
-
+    // Gestione carrello (salvataggio dati in locale, quindi al caricamento della pagina o al cambio, i dati rimangono)
     if (localStorage.getItem('cart')) {
       try {
         this.cart = JSON.parse(localStorage.getItem('cart'));
@@ -54196,8 +54191,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

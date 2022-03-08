@@ -11060,36 +11060,46 @@ header .nav-section .exit-btn:hover {
 }
 
 footer {
-  width: auto;
-  background-color: #f8f8f8;
-  padding-bottom: 125px;
+  min-height: 400px;
+  color: white;
+  background-color: #2e3333;
 }
 
 footer .nav-footer {
-  width: 70%;
-  margin: 0px 15%;
   display: flex;
-  justify-content: space-around;
-  padding-top: 70px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 25px;
 }
 
-footer .nav-footer ul {
+footer .nav-footer .footer-card {
+  padding: 25px 20px;
+  background-color: #434848;
+  border-radius: 5px;
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+footer .nav-footer .footer-card h5 {
+  font-weight: 600;
+}
+
+footer .nav-footer .footer-card ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-footer .nav-footer ul a {
-  color: #828585;
+footer .nav-footer .footer-card ul a {
+  color: white;
 }
 
-footer .nav-footer ul a:hover {
+footer .nav-footer .footer-card ul a:hover {
   color: #00ccbc;
   text-decoration: none;
-  background-color: #05b7a8;
 }
 
-footer .nav-footer ul .register-btn {
+footer .nav-footer .footer-card ul .register-btn {
   color: #fff;
   background: #00ccbc;
   padding: 14px 24px;
@@ -11097,13 +11107,40 @@ footer .nav-footer ul .register-btn {
   margin-top: 20px;
 }
 
-footer .nav-footer ul .register-btn:hover {
+footer .nav-footer .footer-card ul .register-btn:hover {
   color: #fff;
   background-color: #05b7a8;
 }
 
-footer .nav-footer ul .subscribe {
+footer .nav-footer .footer-card ul .subscribe {
   margin-top: 20px;
+}
+
+footer .nav-footer .footer-card #app-store {
+  width: 200px;
+}
+
+footer .social-channels {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .social-channels ul {
+  padding-left: 0;
+}
+
+footer .social-channels ul li {
+  display: inline;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+footer .social-channels ul li .fb:hover {
+  color: blue;
+}
+
+footer .social-channels p {
+  color: #434848;
 }
 
 div.container-dish {

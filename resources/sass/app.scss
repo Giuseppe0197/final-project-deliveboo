@@ -121,51 +121,89 @@ header {
 
 // FOOTER ------------------------------------------------
 footer {
-    width: auto;
-    background-color: #f8f8f8;
-    padding-bottom: 125px;
+    min-height: 400px;
+    color: white;
+    background-color: #2e3333;
 
     .nav-footer {
-        width: 70%;
-        margin: 0px 15%;
         display: flex;
-        justify-content: space-around;
-        padding-top: 70px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 25px;
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .footer-card {
+            padding: 25px 20px;
+            background-color: #434848;
+            border-radius: 5px;
+            height: 100%;
+            margin-bottom: 10px;
 
-            a {
-                color: #828585;
-
-                &:hover {
-                    color: #00ccbc;
-                    text-decoration: none;
-                    background-color: #05b7a8;
-                }
+            h5 {
+                font-weight: 600;
             }
 
-            .register-btn {
-                color: #fff;
-                background: #00ccbc;
-                padding: 14px 24px;
-                border-radius: 4%;
-                margin-top: 20px;
-
-                &:hover {
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+    
+                a {
+                    color: white;
+    
+                    &:hover {
+                        color: #00ccbc;
+                        text-decoration: none;
+                    }
+                }
+    
+                .register-btn {
                     color: #fff;
-                    background-color: #05b7a8;
+                    background: #00ccbc;
+                    padding: 14px 24px;
+                    border-radius: 4%;
+                    margin-top: 20px;
+    
+                    &:hover {
+                        color: #fff;
+                        background-color: #05b7a8;
+                    }
+                }
+    
+                .subscribe {
+                    margin-top: 20px;
                 }
             }
-
-            .subscribe {
-                margin-top: 20px;
+            
+            #app-store {
+                width: 200px;
             }
         }
     }
+
+    .social-channels {
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+            padding-left: 0;
+
+            li {
+                display: inline;
+                margin-right: 10px;
+                cursor: pointer;
+
+                .fb:hover {
+                    color: blue;
+                }
+            }
+        }
+        
+        p {
+            color: #434848;
+        }
+    }
 }
+
 
 // Page -> DishList
 div.container-dish {
