@@ -10977,6 +10977,7 @@ div.container-home {
 header {
   width: auto;
   height: 80px;
+  background-color: #f8fafc;
 }
 
 header .nav-section {
@@ -11246,11 +11247,6 @@ div.container-dish .card li.container-action-dish {
     width: 100%;
     float: none;
   }
-}
-
-.title {
-  width: 60%;
-  margin: 10px auto 0;
 }
 
 .restaurant-info-log {
