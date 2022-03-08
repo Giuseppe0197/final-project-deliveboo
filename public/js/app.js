@@ -41292,7 +41292,7 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("span", [
+                  _c("span", { staticClass: "text-muted" }, [
                     _vm._v(
                       "\n                        " +
                         _vm._s(product.quantity) +
