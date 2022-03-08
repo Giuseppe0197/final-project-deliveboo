@@ -12049,3 +12049,33 @@ main .content-contaiiner #checkout .payment-card {
   min-height: 100px;
 }
 
+/* css pagina ordini */
+
+.advertisement {
+  background-color: white;
+  padding: 50px 0;
+}
+
+.advertisement p {
+  font-size: 18px;
+}
+
+.advertisement .sponsor-button {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.advertisement .image-ad img,
+.advertisement .interview-image img {
+  width: 80%;
+}
+
+.advertisement .interview-read img {
+  max-width: 50%;
+}
+

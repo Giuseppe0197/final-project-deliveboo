@@ -65,6 +65,10 @@ Route::get('/api/dish/toggle/availability/{id}', 'RestaurantController@dishToggl
 // TEST API CARRELLO
 Route::post('/view/cart/', 'DishController@getCart')->name('view.cart');
 
+/* pagina per visualizzazione ordini */
+
+Route::get('/order/statistics', 'ClientController@orderStats') -> name('order.statistics');
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

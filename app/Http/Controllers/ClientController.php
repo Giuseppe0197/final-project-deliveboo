@@ -27,4 +27,9 @@ class ClientController extends Controller
 
         return view('pages.checkout');
     }
+
+    public function orderStats() {
+
+        return view('pages.orderStatitics');
+    }
 }
