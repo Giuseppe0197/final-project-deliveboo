@@ -21,65 +21,65 @@ div.container-home {
 }
 
 // HEADER --------------------------------------------------
-header {
-    width: auto;
-    height: 80px;
-    background-color: #f8fafc;
+// header {
+//     width: auto;
+//     height: 80px;
+//     background-color: #f8fafc;
 
-    .nav-section {
-        width: 70%;
-        margin: 0px 15%;
-        display: flex;
-        justify-content: space-between;
-        padding-top: 27px;
-        font-size: 17px;
+//     .nav-section {
+//         width: 70%;
+//         margin: 0px 15%;
+//         display: flex;
+//         justify-content: space-between;
+//         padding-top: 27px;
+//         font-size: 17px;
 
-        a {
-            margin-left: 30px;
-            color: #000;
-            text-decoration: none;
+//         a {
+//             margin-left: 30px;
+//             color: #000;
+//             text-decoration: none;
 
-            &:hover {
-                color: #00ccbc;
-            }
-        }
+//             &:hover {
+//                 color: #00ccbc;
+//             }
+//         }
 
-        .shopping-cart-header {
-            a {
-                width: auto;
-                text-decoration: none;
-                padding: 8px 16px;
-                background-color: #fff;
-                border: 1px solid #e8ebeb;
-                border-radius: 4px;
-                line-height: 24px;
-                cursor: pointer;
-                color: #2e3333;
+//         .shopping-cart-header {
+//             a {
+//                 width: auto;
+//                 text-decoration: none;
+//                 padding: 8px 16px;
+//                 background-color: #fff;
+//                 border: 1px solid #e8ebeb;
+//                 border-radius: 4px;
+//                 line-height: 24px;
+//                 cursor: pointer;
+//                 color: #2e3333;
 
-                span {
-                    color: #2e3333;
-                    font-size: 16px;
-                    line-height: 22px;
-                    font-weight: 400;
-                    padding-left: 4px;
-                }
-            }
-        }
+//                 span {
+//                     color: #2e3333;
+//                     font-size: 16px;
+//                     line-height: 22px;
+//                     font-weight: 400;
+//                     padding-left: 4px;
+//                 }
+//             }
+//         }
 
-        .register-btn {
-            color: #fff;
-            background: #00ccbc;
-            padding: 14px 24px;
-            border-radius: 4%;
+//         .register-btn {
+//             color: #fff;
+//             background: #00ccbc;
+//             padding: 14px 24px;
+//             border-radius: 4%;
 
-            &:hover {
-                color: #fff;
-                background-color: #05b7a8;
-            }
-        }
+//             &:hover {
+//                 color: #fff;
+//                 background-color: #05b7a8;
+//             }
+//         }
 
-        .exit-btn {
-            color: #fff;
+//         .exit-btn {
+//             color: #fff;
 // header {
 //     width: auto;
 //     height: 80px;
@@ -1187,7 +1187,6 @@ main.content-container {
         }
     }
 }
-
 
 
 @import 'partials/checkout';

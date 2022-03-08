@@ -25,6 +25,15 @@ class ClientController extends Controller
 
     public function checkout() {
 
-        return view('pages.checkout');
+        $cart = session("cart");
+        $totalPrice = 0;
+
+        foreach ($cart as $value) {
+            $totalPrice += number_format($value["price"],2);
+        }
+
+        $totalPrice = number_format($totalPrice,2);
+
+        return view('pages.checkout', compact('cart', 'totalPrice'));
     }
 }

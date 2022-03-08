@@ -651,7 +651,7 @@
                      })
                      .catch(e => console.error(e))
                 
-                // window.location.href = `/client/checkout`;
+                window.location.href = `/client/checkout`;
             },
         }
     }
