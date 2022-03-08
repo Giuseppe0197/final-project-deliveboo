@@ -11016,6 +11016,26 @@ header .img-logo {
      object-fit: contain;
 }
 
+header .shopping-cart-header a {
+  width: auto;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #e8ebeb;
+  border-radius: 4px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #2e3333;
+}
+
+header .shopping-cart-header a span {
+  color: #2e3333;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
 #edit-title {
   margin-left: 10%;
   margin-top: 50px;
