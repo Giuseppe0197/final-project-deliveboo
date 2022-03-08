@@ -7,8 +7,10 @@ use Braintree_Transaction;
 
 class PaymentsController extends Controller
 {
-    public function process(Request $request)
-    {
+    public function process(Request $request) {
+
+        var_dump($request->all());
+
         $payload = $request->input('payload', false);
         $nonce = $payload['nonce'];
 

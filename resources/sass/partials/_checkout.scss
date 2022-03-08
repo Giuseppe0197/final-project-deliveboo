@@ -1,6 +1,7 @@
 main {
     background-image: url('/storage/images/wave-client.svg');
     background-repeat: no-repeat;
+    padding-bottom: 50px;
 
     .content-container {
 
@@ -22,20 +23,6 @@ main {
                     padding: 40px;
                     background-color: white;
     
-                    // input {
-                    //     display: block;
-                    //     width: 100%;
-                    //     margin-bottom: 15px;
-                    //     font-size: 16px;
-                    //     padding: 9px 10px;
-                    //     box-sizing: border-box;
-                    //     border-radius: 3px;
-                    //     border: 1px solid #bac3c3;
-                    //     background-color: #fff;
-                    //     outline: none;
-                    //     max-height: 40px;
-                    // }
-    
                     input:focus {
                         border-color: $lightblue;
                         box-shadow: 0px 0px 0px 1px $lightblue;
@@ -51,6 +38,9 @@ main {
             .payment-card {
                 // width: 55%;
                 background-color: white;
+                border-radius: 4px;
+                border: 1px solid rgba(0, 0, 0, 0.04);
+                box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
                 padding: 40px;
 
                 #dropin-container {
@@ -88,11 +78,16 @@ main {
                 outline: none;
                 max-height: 40px;
             }
-
-            input:focus, .braintree-form__hosted-field:focus{
-                border-color: $lightblue;
-                box-shadow: 0px 0px 0px 1px $lightblue;
+            
+            .braintree-form-number braintree-form__hosted-field {
+                border-color: #00ccbc;
+                box-shadow: 0px 0px 0px 1px #00ccbc;
             }
+
+            // input:focus, .braintree-form__hosted-field:focus{
+            //     border-color: $lightblue;
+            //     box-shadow: 0px 0px 0px 1px $lightblue;
+            // }
         }
 
         
@@ -100,7 +95,10 @@ main {
     }
 
     .container-cart {
+        position: relative;
         padding-top: 0;
+        top: 0;
+        margin: 0;
     }
 
     .container-card-cart {
@@ -112,7 +110,7 @@ main {
     #title-shopping-cart-checkout {
         position: sticky;
         top: 0;
-        padding: 15px 0 5px;
+        padding: 15px 0;
         background-color: #fff;
         color: #2e3333;
         font-size: 18px;
@@ -160,4 +158,9 @@ main {
             font-weight: bold;
         }
     }
+}
+
+// Braintree input form
+.braintree-sheet__content--form .braintree-form__field-group .braintree-form__field .braintree-form__hosted-field:hover {
+    border-color: #00ccbc;
 }

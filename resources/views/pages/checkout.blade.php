@@ -6,9 +6,6 @@
                 <h1>Pagamento</h1>
 
                 <div class="form-container row g-5 justify-content-around">
-                    {{-- <div class="client-info col-md-6">
-                        
-                    </div> --}}
         
                     <div class="payment-card col-md-6">
                         <form id="payment-form"
@@ -23,7 +20,6 @@
                             <input type="text" name="address" placeholder="es. Via Veneto 22, Milano" required>
                             <input type="email" name="email" placeholder="Indirizzo email" required>
                             <input type="text" name="phone" placeholder="Cellulare (0039...)" required>
-                            <label for="total-price">Totale</label>
                             {{-- inerire totale ordine  --}}
                         
                             <div>
@@ -33,79 +29,71 @@
                                 </div>
                             </div>
                         </form>
-
-                        
                     </div>
-                </div>
+
+                    {{-- AGGIUNGERE PULSANTE CHE TI RIPORTA INDIETRO, vediamo se si può --}}
+                    {{-- Riepilogo carrello --}}
+
+                    <div class="container-cart col-md-5">
+
+                        <h3 id="title-shopping-cart-checkout">Carrello</h3>
+                        @foreach ($cart as $product)  
     
-                <div class="payment-card"> 
-                    
-                </div>
-
-                {{-- AGGIUNGERE PULSANTE CHE TI RIPORTA INDIETRO, vediamo se si può --}}
-                
-                {{-- Riepilogo carrello --}}
-                <div class="container-cart">
-
-                    <h3 id="title-shopping-cart-checkout">Carrello</h3>
-
-                    @foreach ($cart as $product)  
-
-                    <div class="container-card-cart">
-
-                        <div class="container-quantity">
-                            {{-- Quantità piatto --}}
-                            <span>
-                                {{ $product["quantity"] }}x
-                            </span>
-                        </div>
+                        <div class="container-card-cart">
     
-                        <div class="container-info-dish-cart">
-    
-                            <!-- Nome piatto -->
-                            <span class="container-name-dish">
-                                {{ $product["name"] }}
-                            </span>
-    
-                            <!-- Descrizione piatto -->
-                            <div class="container-description">
-                                {{ $product["description"] }}
+                            <div class="container-quantity">
+                                {{-- Quantità piatto --}}
+                                <span>
+                                    {{ $product["quantity"] }}x
+                                </span>
+                            </div>
+        
+                            <div class="container-info-dish-cart">
+        
+                                <!-- Nome piatto -->
+                                <span class="container-name-dish">
+                                    {{ $product["name"] }}
+                                </span>
+        
+                                <!-- Descrizione piatto -->
+                                <div class="container-description">
+                                    {{ $product["description"] }}
+                                </div>
+                            </div>
+        
+                            <div class="container-price">
+        
+                                {{-- Prezzo piatto --}}
+                                <span>
+                                    {{ number_format($product["price"], 2) }} &euro;
+                                </span>
                             </div>
                         </div>
     
-                        <div class="container-price">
+                        @endforeach
     
-                            {{-- Prezzo piatto --}}
+                        <div class="container-totalPrice d-flex justify-content-between">
+    
                             <span>
-                                {{ number_format($product["price"], 2) }} &euro;
+                                Totale:
+                            </span>
+    
+                            {{-- Prezzo totale carrello --}}
+                            <span>
+                                {{ $totalPrice }} &euro;
                             </span>
                         </div>
                     </div>
-
-                    @endforeach
-
-                    <div class="container-totalPrice d-flex justify-content-between">
-
-                        <span>
-                            Totale:
-                        </span>
-
-                        {{-- Prezzo totale carrello --}}
-                        <span>
-                            {{ $totalPrice }} &euro;
-                        </span>
-                    </div>
                 </div>
-    
             </section>
         </div>
     </main>
     <script type="application/javascript">
         var cartbtn = document.querySelector('.shopping-cart-header a span');
         cartbtn.innerHTML = ({{ $totalPrice }}).toFixed(2) + ' &euro;';
-        
+
         var button = document.querySelector('#submit-button');
-    
+        
         braintree.dropin.create({
           authorization: "{{ Braintree\ClientToken::generate() }}",
           container: '#dropin-container'
