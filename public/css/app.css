@@ -12021,39 +12021,60 @@ main.content-container .container-dish .card img {
   margin-bottom: 10px;
 }
 
-main .content-contaiiner {
-  position: relative;
-  height: calc(100vh - 397px);
+main {
+  background-image: url("/storage/images/wave-client.svg");
+  background-repeat: no-repeat;
 }
 
-main .content-contaiiner #checkout {
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 5%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-main .content-contaiiner #checkout .client-info {
-  width: 45%;
-}
-
-main .content-contaiiner #checkout .client-info h1 {
+main .content-container h1 {
+  text-align: center;
   font-size: 45px;
   color: white;
   padding: 15px 0;
 }
 
-main .content-contaiiner #checkout .client-info #payment-form {
+main .content-container .form-container .client-info #payment-form {
   padding: 40px;
   background-color: white;
 }
 
-main .content-contaiiner #checkout .client-info #payment-form input {
+main .content-container .form-container .client-info #payment-form input:focus {
+  border-color: #00ccbc;
+  box-shadow: 0px 0px 0px 1px #00ccbc;
+}
+
+main .content-container .form-container .client-info h1,
+main .content-container .form-container .client-info label {
+  margin-left: 5%;
+}
+
+main .content-container .form-container .payment-card {
+  background-color: white;
+  padding: 40px;
+}
+
+main .content-container .form-container .payment-card #dropin-container {
+  width: 100%;
+}
+
+main .content-container .form-container .payment-card .ms-button {
+  text-align: center;
+}
+
+main .content-container .form-container .payment-card .ms-button #submit-button {
+  padding: 14px 24px;
+  border-radius: 4%;
+  color: white;
+  background-color: #006d68;
+  border: none;
+}
+
+main .content-container .form-container .payment-card .ms-button #submit-button:hover {
+  background-color: #00ccbc;
+}
+
+main .content-container .form-container input,
+main .content-container .form-container .braintree-form__hosted-field {
   display: block;
   width: 100%;
   margin-bottom: 15px;
@@ -12067,18 +12088,102 @@ main .content-contaiiner #checkout .client-info #payment-form input {
   max-height: 40px;
 }
 
-main .content-contaiiner #checkout .client-info #payment-form input:focus {
+main .content-container .form-container input:focus,
+main .content-container .form-container .braintree-form__hosted-field:focus {
   border-color: #00ccbc;
   box-shadow: 0px 0px 0px 1px #00ccbc;
 }
 
-main .content-contaiiner #checkout .client-info h1,
-main .content-contaiiner #checkout .client-info label {
-  margin-left: 5%;
+main .container-cart {
+  padding-top: 0;
 }
 
-main .content-contaiiner #checkout .payment-card {
-  width: 55%;
-  min-height: 100px;
+main .container-card-cart {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  padding-top: 10px;
+}
+
+main #title-shopping-cart-checkout {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 15px 0 5px;
+  background-color: #fff;
+  color: #2e3333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+main .container-quantity {
+  width: 15%;
+  text-align: left;
+  color: #828585;
+}
+
+main .container-price {
+  width: 20%;
+  text-align: right;
+  color: #2e3333;
+}
+
+main .container-info-dish-cart {
+  width: 65%;
+}
+
+main .container-info-dish-cart .container-name-dish {
+  font-size: 16px;
+  color: #2e3333;
+}
+
+main .container-info-dish-cart .container-description {
+  display: -webkit-box;
+  max-width: 80%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+  padding: 2px 0;
+  margin-bottom: 10px;
+  color: #828585;
+}
+
+main .container-totalPrice {
+  padding: 16px 0;
+}
+
+main .container-totalPrice span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* css pagina ordini */
+
+.advertisement {
+  background-color: white;
+  padding: 50px 0;
+}
+
+.advertisement p {
+  font-size: 18px;
+}
+
+.advertisement .sponsor-button {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.advertisement .image-ad img,
+.advertisement .interview-image img {
+  width: 80%;
+}
+
+.advertisement .interview-read img {
+  max-width: 50%;
 }
 

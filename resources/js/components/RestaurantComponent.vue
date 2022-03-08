@@ -185,7 +185,7 @@ export default {
 
 .profile-container {
   display: flex;
-  justify-content: start;
+  justify-content: left;
   width: 70%;
   margin-left: 15%;
 }

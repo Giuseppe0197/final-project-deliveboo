@@ -78,18 +78,8 @@ header {
                 padding-left: 4px;
             }
         }
-    }
-  /*   @media screen and (max-width: 991px){
-        .hamb-menu-clicked {
-        width: 150px;
-        height:150px;
-        float: right;
-        }
-
-    } */
-    
+    } 
 }
-
 // edit page
 
 #edit-title {
@@ -1093,6 +1083,6 @@ main.content-container {
     }
 }
 
-
-
 @import 'partials/checkout';
+
+@import 'partials/orderstats';

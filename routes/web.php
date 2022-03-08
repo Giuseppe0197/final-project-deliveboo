@@ -59,11 +59,22 @@ Route::get('/client/checkout', 'ClientController@checkout')
 Route::get('/api/dish/toggle/availability/{id}', 'RestaurantController@dishToggleAvailability') 
     -> name('api.dish.availability.toggle');
 
+// ROTTA PAGAMENTO 
+Route::get('/payment/process', 'PaymentsController@process')
+    -> name('payment.process');
+
+
+Route::post('store/client/info' , 'ClientController@storeClientInfo')
+    -> name('store.client.info');
 
 /* ----------------------------------- */
 
 // TEST API CARRELLO
 Route::post('/view/cart/', 'DishController@getCart')->name('view.cart');
+
+/* pagina per visualizzazione ordini */
+
+Route::get('/order/statistics', 'ClientController@orderStats') -> name('order.statistics');
 
 // Auth::routes();
 
