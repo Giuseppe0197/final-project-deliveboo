@@ -9,7 +9,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav d-flex align-items-center ">
+                <div class="navbar-nav d-flex align-items-end hamb-menu-clicked">
                     <a class="nav-link" aria-current="page" href="#">Inizia</a>
                     <a class="nav-link" href="#">I nostri prodotti e servizi</a>
                     <a class="nav-link" href="#">Assistenza</a>
