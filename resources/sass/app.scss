@@ -32,6 +32,7 @@ div.container-home {
 header {
     width: auto;
     height: 80px;
+    background-color: #f8fafc;
 
     .nav-section {
         width: 70%;
@@ -52,7 +53,6 @@ header {
         }
 
         .shopping-cart-header {
-
             a {
                 width: auto;
                 text-decoration: none;
@@ -315,10 +315,6 @@ div.container-dish {
 }
 // css per pagina utente loggato e dettagli ristorante(account)
 
-.title {
-    width: 60%;
-    margin: 10px auto 0;
-}
 .restaurant-info-log {
     display: flex;
     justify-content: space-evenly;
@@ -857,8 +853,7 @@ div.container-dishes-shopping-cart {
     }
 }
 
-
-// Component -> DishesComponent 
+// Component -> DishesComponent
 main.content-container {
     width: 70%;
     margin: 0 auto;
@@ -891,7 +886,7 @@ main.content-container {
                 background-color: #007e8a;
             }
         }
-        
+
         .buttons div {
             display: inline;
         }
@@ -900,7 +895,7 @@ main.content-container {
     .top-container::after {
         content: "";
         display: table;
-        clear:both;
+        clear: both;
     }
 
     .container-dish {
@@ -918,4 +913,4 @@ main.content-container {
     }
 }
 
-@import 'partials/checkout';
+@import "partials/checkout";
