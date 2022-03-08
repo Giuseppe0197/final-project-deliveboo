@@ -21,9 +21,9 @@ div.container-home {
 }
 
 // HEADER --------------------------------------------------
-header {
+/* header {
     width: auto;
-    height: 80px;
+    height: 80px !important;
     background-color: #f8fafc;
 
     .nav-section {
@@ -80,6 +80,9 @@ header {
 
         .exit-btn {
             color: #fff;
+        }
+    }
+} */
 // header {
 //     width: auto;
 //     height: 80px;
@@ -134,6 +137,7 @@ header {
 
 header { 
     width: 100%;
+    height: 80px;
     display: flex;
     background-color: #f8fafc;
     .navbar {
