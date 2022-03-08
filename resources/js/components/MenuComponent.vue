@@ -651,8 +651,7 @@
                      })
                      .catch(e => console.error(e))
                 
-                // Da sistemare
-                window.location.href = `/client/checkout`;
+                // window.location.href = `/client/checkout`;
             },
         }
     }

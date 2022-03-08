@@ -42,4 +42,9 @@ class ClientController extends Controller
 
         $client = Client::create($data);
     }
+    
+    public function orderStats() {
+
+        return view('pages.orderStatitics');
+    }
 }

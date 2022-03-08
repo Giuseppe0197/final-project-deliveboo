@@ -9,11 +9,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav d-flex align-items-end ">
+                <div class="navbar-nav d-flex align-items-center ">
                     <a class="nav-link" aria-current="page" href="#">Inizia</a>
                     <a class="nav-link" href="#">I nostri prodotti e servizi</a>
                     <a class="nav-link" href="#">Assistenza</a>
-                    <a href="#" class="nav-link">
+                    
                         <span class="shopping-cart-header">
                             <a href="">
                                 <img src="/storage/images/svgexport-2.svg" alt="shopping cart">
@@ -22,7 +22,7 @@
                                 </span>
                             </a>
                         </span>
-                    </a>
+                    
                     @auth
 
                         <a class="btn btn-return-restaurant" href="{{ route('restaurant') }}">Ritorna al tuo ristorante</a>
