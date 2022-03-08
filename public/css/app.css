@@ -10974,13 +10974,13 @@ div.container-home {
 
 header {
   width: 100%;
-  height: 80px;
   display: flex;
   background-color: #f8fafc;
 }
 
 header .navbar {
   width: 100%;
+  height: auto;
 }
 
 header a a:hover {
@@ -11347,7 +11347,6 @@ div.container-dish .card li.container-action-dish {
   background: #00ccbc;
   padding: 14px 24px;
   border-radius: 4%;
-  margin-top: 20px;
 }
 
 .register-button:hover {
@@ -11356,7 +11355,7 @@ div.container-dish .card li.container-action-dish {
 }
 
 .register-form {
-  width: 400px;
+  width: 320px;
 }
 
 .register-form .input-text {
@@ -11368,8 +11367,18 @@ div.container-dish .card li.container-action-dish {
   max-height: 40px;
 }
 
+@media screen and (max-width: 990px) {
+  .auth-page {
+    justify-content: center;
+  }
+
+  .register-btn {
+    margin-top: 10px;
+  }
+}
+
 .login-form {
-  width: 400px;
+  width: 320px;
 }
 
 .login-form .input-text {
@@ -11863,6 +11872,50 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+  width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-restaurants .restaurant-found {
+  width: 33.3333333333%;
+  border-bottom: 1px solid #00ccbc;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.container-restaurants .restaurant-found .card-body {
+  width: 100%;
+  padding: 0;
+}
+
+.container-restaurants .restaurant-found .card-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.container-restaurants .restaurant-found .button-show-restaurant {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
 /* homepage */
 
 .favourite-plates {
@@ -11960,48 +12013,49 @@ main.content-container .container-dish .card img {
   padding: 5px 10px;
 }
 
-/* sezione ristoranti ricercati */
+/* media query per responsive smartphone */
 
-.search-bar-checkbox {
-  width: 30%;
-}
+@media screen and (max-width: 576px) {
+  .favourite-plates {
+    margin-top: 30px;
+  }
 
-/* css contenitore ristiranti trovati */
+  .favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
+    width: 70%;
+    border-radius: 10px;
+  }
 
-.container-restaurants {
-  width: 70%;
-  margin: 0 auto;
-}
+  .deliveroo-image {
+    width: 60%;
+  }
 
-.container-restaurants .restaurant-found {
-  width: 33.3333333333%;
-  border-bottom: 1px solid #00ccbc;
-  border-radius: 10px;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
+  .app-download .android,
+  .app-download .apple {
+    width: 40%;
+    font-size: 13px;
+  }
 
-.container-restaurants .restaurant-found .card-body {
-  width: 100%;
-  padding: 0;
-}
+  .app-download .android img,
+  .app-download .apple img {
+    max-width: 15%;
+  }
 
-.container-restaurants .restaurant-found .card-body img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10px;
-}
+  .work-with-us h2 {
+    font-size: 30px;
+  }
 
-.container-restaurants .restaurant-found .button-show-restaurant {
-  background-color: #00ccbc;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  width: 50%;
-  padding: 5px;
-  margin-bottom: 10px;
+  .work-with-us .work img {
+    width: 80%;
+  }
+
+  .work-with-us .work p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .work-with-us .work .work-button {
+    font-size: 25px;
+  }
 }
 
 main {
@@ -12178,5 +12232,25 @@ main .container-totalPrice span {
 
 .advertisement .interview-read img {
   max-width: 50%;
+}
+
+@media screen and (max-width: 576px) {
+  .advertisement p {
+    font-size: 22px;
+  }
+
+  .advertisement .sponsor-button {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .advertisement .image-ad img,
+  .advertisement .interview-image img {
+    width: 100%;
+  }
+
+  .advertisement .interview-read img {
+    max-width: 100%;
+  }
 }
 

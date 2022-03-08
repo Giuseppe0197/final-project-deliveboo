@@ -33,3 +33,32 @@
         }
     }
 }
+
+@media screen and (max-width: 576px) {
+
+    .advertisement {
+
+    p {
+        font-size: 22px;
+    }
+
+    .sponsor-button{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .image-ad, .interview-image{
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    .interview-read {
+
+        img {
+            max-width: 100%;
+        }
+    }
+    }
+}
