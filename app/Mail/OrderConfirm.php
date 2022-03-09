@@ -11,13 +11,17 @@ class OrderConfirm extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct()
-    {
-        //
+    public $data;
+    public $orderNumber;
+
+    public function __construct($datas) {
+    
+        $this->data = $datas;
+        $this->orderNumber = rand(1, 999);
     }
 
-    public function build()
-    {
+    public function build() {
+
         return $this->from('deliveboo@mail.com')
             ->view('mail.orderConfirm  ');
     }

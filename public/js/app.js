@@ -54588,8 +54588,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> bbb460b8d3ccec4ea02222b591d9e658de4dafd3
 
 
 /***/ })
