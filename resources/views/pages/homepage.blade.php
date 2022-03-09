@@ -1,6 +1,30 @@
 @extends('layouts.main-layout')
 @section('content')
 
+    <div class="jumbotron-deliveboo">
+        <div class="container">
+            <div class="d-flex row-cols-2">
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <span class="title-jumbo">
+                            I piatti che ami, a domicilio.
+                        </span>
+                    </div>
+                </div>
+                <div class="col text-center pt-3">
+                    <img src="/storage/images/jumbotron.svg" alt="jumbo-img2">
+                    <div class="container-hashtag">
+                        <div>
+                            <span class="text-center">
+                                #aCasaTuaConDeliveboo
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <search-component></search-component>
 
     <div class="favourite-plates">

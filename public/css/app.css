@@ -11038,6 +11038,77 @@ header .shopping-cart-header a span {
   padding-left: 4px;
 }
 
+header {
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+header .navbar {
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  z-index: 3;
+  border: 0;
+}
+
+header .navbar .navbar-brand {
+  width: 18%;
+}
+
+header .navbar .navbar-brand .img-logo {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header a a:hover {
+  color: #00ccbc;
+}
+
+header .register-btn {
+  color: black;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 4%;
+  margin-left: 8px;
+}
+
+header .register-btn:hover {
+  color: #fff;
+  background-color: #05b7a8;
+  text-decoration: none;
+}
+
+header .exit-btn {
+  color: #fff;
+}
+
+header .exit-btn:hover {
+  color: black;
+  background-color: #fff;
+  border: solid 1px black;
+}
+
+header .shopping-cart-header a {
+  width: auto;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #e8ebeb;
+  border-radius: 4px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #2e3333;
+}
+
+header .shopping-cart-header a span {
+  color: #2e3333;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
 #edit-title {
   margin-left: 10%;
   margin-top: 50px;
@@ -11573,7 +11644,7 @@ div.container-dishes-shopping-cart {
   display: inline-block;
   width: 28%;
   height: 100%;
-  max-height: 520px;
+  max-height: 552px;
   position: -webkit-sticky;
   position: sticky;
   top: 10px;
@@ -11615,7 +11686,8 @@ div.container-dishes-shopping-cart {
 }
 
 .container-cart .card-product div.button-shoppingcart {
-  width: 30%;
+  width: auto;
+  min-width: 27%;
   display: flex;
   justify-content: space-between;
   float: right;
@@ -11659,6 +11731,10 @@ div.container-dishes-shopping-cart {
   display: flex;
   justify-content: space-between;
   padding: 0 0 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 90px;
+  background-color: #fff;
 }
 
 .container-cart div.container-totalprice span {
@@ -11668,7 +11744,12 @@ div.container-dishes-shopping-cart {
 }
 
 .container-cart div.cont-bord-pag {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
   border-top: 4px solid #6bac26;
+  padding-bottom: 10px;
 }
 
 .container-cart div.cont-bord-pag .btn-pagamento {
@@ -11679,7 +11760,7 @@ div.container-dishes-shopping-cart {
   color: #fff;
   font-weight: 600;
   font-size: 17px;
-  margin: 25px 0 10px;
+  margin: 25px 0 0;
   background-color: #00ccbc;
   border: 0;
   border-radius: 4px;
@@ -11918,6 +11999,82 @@ main.content-container .container-dish .card img {
 }
 
 /* homepage */
+
+.jumbotron-deliveboo {
+  position: relative;
+  background: #d0eb99;
+  min-height: 300px;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.jumbotron-deliveboo > div {
+  position: relative;
+  z-index: 15;
+}
+
+.jumbotron-deliveboo img {
+  width: 80%;
+}
+
+.jumbotron-deliveboo span.title-jumbo {
+  font-family: stratos, sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #440063;
+  margin: 140px 0 0;
+}
+
+.jumbotron-deliveboo .ms-form-jumbo {
+  background-color: #fff;
+  border-radius: 4px;
+  position: relative;
+  z-index: 102;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  margin-top: 25px;
+}
+
+.jumbotron-deliveboo div.container-hashtag {
+  position: absolute;
+  bottom: 100px;
+  left: 10%;
+  width: 100%;
+  max-width: 430px;
+  padding: 0 32px;
+  margin-left: -32px;
+}
+
+.jumbotron-deliveboo div.container-hashtag > div {
+  width: 460px;
+  background-color: #007e8a;
+  transform: rotate(3deg);
+  transform-origin: left;
+  padding: 32px;
+  position: relative;
+  bottom: 20px;
+}
+
+.jumbotron-deliveboo div.container-hashtag > div span {
+  font-family: stratos, sans-serif;
+  display: block;
+  transform: rotate(-3deg);
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.jumbotron-deliveboo::before {
+  content: "";
+  width: 100%;
+  height: 260px;
+  position: absolute;
+  right: 0;
+  background-color: #00ccbc;
+  transform: skewY(-4deg);
+  transform-origin: left;
+  z-index: 2;
+}
 
 .favourite-plates {
   margin-top: 30px;
@@ -12193,7 +12350,12 @@ main .container-info-dish-cart .container-description {
 }
 
 main .container-totalPrice {
-  padding: 16px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 3px solid #006d68;
+  padding: 14px 0;
 }
 
 main .container-totalPrice span {

@@ -1,9 +1,9 @@
 <header>
     {{-- qui andranno i link per la registrazione o login e ci sarà la parte di @auth, else, @endauth --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed">
+    <nav class="navbar navbar-expand-lg navbar-light container">
         <div class="container-fluid d-flex ">
-            <a class="navbar-brand" href="{{route('home')}}">
-                <img class="img-logo" src="/storage/images/1.jpg" alt="img logo">
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img class="img-logo" src="/storage/images/logo-deliveboo-fullcolor.png" alt="DeliveBoo logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>

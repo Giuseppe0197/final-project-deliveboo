@@ -1,5 +1,5 @@
 <template>
-    <div class="restaurant-search d-flex">
+    <div class="restaurant-search d-flex container">
 
         <!-- container per la ricerca tramite barra e checkbox -->
 

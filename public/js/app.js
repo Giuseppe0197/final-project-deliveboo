@@ -41292,7 +41292,7 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("span", [
+                  _c("span", { staticClass: "text-muted" }, [
                     _vm._v(
                       "\n                        " +
                         _vm._s(product.quantity) +
@@ -41698,7 +41698,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant-search d-flex" }, [
+  return _c("div", { staticClass: "restaurant-search d-flex container" }, [
     _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
       _c("div", { staticClass: "row" }, [
         _c("input", {
@@ -54577,7 +54577,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"}\".\n     ╷\n1193 │ @import 'partials/checkout';\n     │                             ^\n     ╵\n  C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\resources\\sass\\app.scss 1193:29  root stylesheet\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:99051:16)\n    at render_closure1.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:84557:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:29579:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28099:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28406:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3909:77)\n    at _Future._completeError$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28252:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27900:12)\n    at Object._asyncRethrow (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3712:17)\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:19793:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3737:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27919:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27913:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:29579:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28099:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28406:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3909:77)\n    at _Future._completeError$2 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28252:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:28336:18)\n    at Object._microtaskLoop (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3965:24)\n    at StaticClosure._startMicrotaskLoop (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:3971:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:27820:21)\n    at invokeClosure (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:1455:26)\n    at Immediate.<anonymous> (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\sass\\sass.dart.js:1476:18)\n    at processImmediate (node:internal/timers:464:21)");
+=======
 // removed by extract-text-webpack-plugin
+>>>>>>> b3ec30324952ac37c5fb86053e11c8c6b9f21dcf
 
 /***/ }),
 
@@ -54588,8 +54592,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Gabri\es finale doc\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+<<<<<<< HEAD
+__webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> b3ec30324952ac37c5fb86053e11c8c6b9f21dcf
 
 
 /***/ })
