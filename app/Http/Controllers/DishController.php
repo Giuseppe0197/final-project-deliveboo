@@ -6,6 +6,7 @@ use App\Dish;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class DishController extends Controller
 {
@@ -122,15 +123,10 @@ class DishController extends Controller
         return redirect()->route('dishes.list', $dish['user_id']);
     }
 
-    
-    
-    // public $test;
     // Funzione per visualizzare la pagina del carrello con i relativi dati
     public function getCart(Request $request) {
 
-        $test = $request->all();
-
-        var_dump($test);
+        session(["cart"=>$request->all()]);
 
         return response()->json([$request->all()]);
     }

@@ -1,46 +1,27 @@
 main {
-    
-    .content-contaiiner {
-        position: relative;
-        height: calc(100vh - 397px);
+    background-image: url('/storage/images/wave-client.svg');
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
 
-        #checkout {
-            width: 70%;
-            display: flex;
-            flex-wrap: wrap;
-            position: absolute;
-            top: 5%;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
+    .content-container {
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+            color: white;
+            padding: 15px 0;
+        }
+
+        .form-container {
+            // display: flex;
+            // flex-wrap: wrap;
     
             .client-info {
-                width: 45%;
-    
-                h1 {
-                    font-size: 45px;
-                    color: white;
-                    padding: 15px 0;
-                }
+                // width: 45%;
     
                 #payment-form {
                     padding: 40px;
                     background-color: white;
-    
-                    input {
-                        display: block;
-                        width: 100%;
-                        margin-bottom: 15px;
-                        font-size: 16px;
-                        padding: 9px 10px;
-                        box-sizing: border-box;
-                        border-radius: 3px;
-                        border: 1px solid #bac3c3;
-                        background-color: #fff;
-                        outline: none;
-                        max-height: 40px;
-                    }
     
                     input:focus {
                         border-color: $lightblue;
@@ -55,10 +36,135 @@ main {
             }
     
             .payment-card {
-                width: 55%;
-                // debug
-                min-height: 100px;
+                // width: 55%;
+                background-color: white;
+                border-radius: 4px;
+                border: 1px solid rgba(0, 0, 0, 0.04);
+                box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
+                padding: 40px;
+
+                #dropin-container {
+                    width: 100%;
+                }
+
+                .ms-button {
+                    text-align: center;
+
+                    #submit-button {
+                        padding: 14px 24px;
+                        border-radius: 4%;
+                        color: white;
+                        background-color: $opalgreen;
+                        border: none;
+
+                        &:hover {
+                            background-color: $lightblue;
+                        }
+                    }
+                }
             }
+
+            // general rules 
+            input, .braintree-form__hosted-field{
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+                font-size: 16px;
+                padding: 9px 10px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                border: 1px solid #bac3c3;
+                background-color: #fff;
+                outline: none;
+                max-height: 40px;
+            }
+            
+            .braintree-form-number braintree-form__hosted-field {
+                border-color: #00ccbc;
+                box-shadow: 0px 0px 0px 1px #00ccbc;
+            }
+
+            // input:focus, .braintree-form__hosted-field:focus{
+            //     border-color: $lightblue;
+            //     box-shadow: 0px 0px 0px 1px $lightblue;
+            // }
+        }
+
+        
+        
+    }
+
+    .container-cart {
+        position: relative;
+        padding-top: 0;
+        top: 0;
+        margin: 0;
+    }
+
+    .container-card-cart {
+        display: flex;
+        border-bottom: 1px solid lightgray;
+        padding-top: 10px;
+    }
+
+    #title-shopping-cart-checkout {
+        position: sticky;
+        top: 0;
+        padding: 15px 0;
+        background-color: #fff;
+        color: #2e3333;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .container-quantity {
+        width: 15%;
+        text-align: left;
+        color: #828585;
+    }
+
+    .container-price {
+        width: 20%;
+        text-align: right;
+        color: #2e3333;
+    }
+
+    .container-info-dish-cart {
+        width: 65%;
+        
+        .container-name-dish {
+            font-size: 16px;
+            color: #2e3333;
+        }
+    
+        .container-description {
+            display: -webkit-box;
+            max-width: 80%;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 14px;
+            padding: 2px 0;
+            margin-bottom: 10px;
+            color: #828585;
         }
     }
+
+    .container-totalPrice {
+        position: sticky;
+        bottom: 0;
+        background-color: #fff;
+        border-top: 3px solid #006d68;
+        padding: 14px 0;
+
+        span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}
+
+// Braintree input form
+.braintree-sheet__content--form .braintree-form__field-group .braintree-form__field .braintree-form__hosted-field:hover {
+    border-color: #00ccbc;
 }

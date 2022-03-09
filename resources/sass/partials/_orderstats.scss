@@ -1,0 +1,64 @@
+/* css pagina ordini */
+
+.advertisement {
+    background-color: white;
+    padding: 50px 0;
+
+    p {
+        font-size: 18px;
+    }
+
+    .sponsor-button{
+        background-color: #00ccbc;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+
+
+    .image-ad, .interview-image{
+        
+        img {
+            width: 80%;
+        }
+    }
+
+    .interview-read {
+
+        img {
+            max-width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .advertisement {
+
+    p {
+        font-size: 22px;
+    }
+
+    .sponsor-button{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .image-ad, .interview-image{
+        
+        img {
+            width: 100%;
+        }
+    }
+
+    .interview-read {
+
+        img {
+            max-width: 100%;
+        }
+    }
+    }
+}

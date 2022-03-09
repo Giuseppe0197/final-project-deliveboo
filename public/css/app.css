@@ -10973,13 +10973,26 @@ div.container-home {
 }
 
 header {
-  width: 100%;
-  display: flex;
-  background-color: #f8fafc;
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
 }
 
 header .navbar {
   width: 100%;
+  height: auto;
+  padding: 10px 0;
+  z-index: 3;
+  border: 0;
+}
+
+header .navbar .navbar-brand {
+  width: 18%;
+}
+
+header .navbar .navbar-brand .img-logo {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 header a a:hover {
@@ -10987,9 +11000,9 @@ header a a:hover {
 }
 
 header .register-btn {
-  color: #fff;
-  background: #00ccbc;
-  padding: 14px 24px;
+  color: black;
+  background: white;
+  padding: 8px 16px;
   border-radius: 4%;
   margin-left: 8px;
 }
@@ -10997,6 +11010,7 @@ header .register-btn {
 header .register-btn:hover {
   color: #fff;
   background-color: #05b7a8;
+  text-decoration: none;
 }
 
 header .exit-btn {
@@ -11007,13 +11021,6 @@ header .exit-btn:hover {
   color: black;
   background-color: #fff;
   border: solid 1px black;
-}
-
-header .img-logo {
-  width: 50px;
-  height: 50px;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 header .shopping-cart-header a {
@@ -11281,11 +11288,6 @@ div.container-dish .card li.container-action-dish {
   }
 }
 
-.title {
-  width: 60%;
-  margin: 10px auto 0;
-}
-
 .restaurant-info-log {
   display: flex;
   justify-content: space-evenly;
@@ -11351,7 +11353,6 @@ div.container-dish .card li.container-action-dish {
   background: #00ccbc;
   padding: 14px 24px;
   border-radius: 4%;
-  margin-top: 20px;
 }
 
 .register-button:hover {
@@ -11360,7 +11361,7 @@ div.container-dish .card li.container-action-dish {
 }
 
 .register-form {
-  width: 400px;
+  width: 320px;
 }
 
 .register-form .input-text {
@@ -11372,8 +11373,18 @@ div.container-dish .card li.container-action-dish {
   max-height: 40px;
 }
 
+@media screen and (max-width: 990px) {
+  .auth-page {
+    justify-content: center;
+  }
+
+  .register-btn {
+    margin-top: 10px;
+  }
+}
+
 .login-form {
-  width: 400px;
+  width: 320px;
 }
 
 .login-form .input-text {
@@ -11567,7 +11578,7 @@ div.container-dishes-shopping-cart {
   display: inline-block;
   width: 28%;
   height: 100%;
-  max-height: 520px;
+  max-height: 552px;
   position: -webkit-sticky;
   position: sticky;
   top: 10px;
@@ -11609,7 +11620,8 @@ div.container-dishes-shopping-cart {
 }
 
 .container-cart .card-product div.button-shoppingcart {
-  width: 30%;
+  width: auto;
+  min-width: 27%;
   display: flex;
   justify-content: space-between;
   float: right;
@@ -11653,6 +11665,10 @@ div.container-dishes-shopping-cart {
   display: flex;
   justify-content: space-between;
   padding: 0 0 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 90px;
+  background-color: #fff;
 }
 
 .container-cart div.container-totalprice span {
@@ -11662,7 +11678,12 @@ div.container-dishes-shopping-cart {
 }
 
 .container-cart div.cont-bord-pag {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
   border-top: 4px solid #6bac26;
+  padding-bottom: 10px;
 }
 
 .container-cart div.cont-bord-pag .btn-pagamento {
@@ -11673,7 +11694,7 @@ div.container-dishes-shopping-cart {
   color: #fff;
   font-weight: 600;
   font-size: 17px;
-  margin: 25px 0 10px;
+  margin: 25px 0 0;
   background-color: #00ccbc;
   border: 0;
   border-radius: 4px;
@@ -11867,7 +11888,127 @@ main.content-container .container-dish .card img {
   height: 215px;
 }
 
+/* sezione ristoranti ricercati */
+
+.search-bar-checkbox {
+  width: 30%;
+}
+
+/* css contenitore ristiranti trovati */
+
+.container-restaurants {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-restaurants .restaurant-found {
+  width: 33.3333333333%;
+  border-bottom: 1px solid #00ccbc;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+.container-restaurants .restaurant-found .card-body {
+  width: 100%;
+  padding: 0;
+}
+
+.container-restaurants .restaurant-found .card-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.container-restaurants .restaurant-found .button-show-restaurant {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
 /* homepage */
+
+.jumbotron-deliveboo {
+  position: relative;
+  background: #d0eb99;
+  min-height: 300px;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.jumbotron-deliveboo > div {
+  position: relative;
+  z-index: 15;
+}
+
+.jumbotron-deliveboo img {
+  width: 80%;
+}
+
+.jumbotron-deliveboo span.title-jumbo {
+  font-family: stratos, sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #440063;
+  margin: 140px 0 0;
+}
+
+.jumbotron-deliveboo .ms-form-jumbo {
+  background-color: #fff;
+  border-radius: 4px;
+  position: relative;
+  z-index: 102;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  margin-top: 25px;
+}
+
+.jumbotron-deliveboo div.container-hashtag {
+  position: absolute;
+  bottom: 100px;
+  left: 10%;
+  width: 100%;
+  max-width: 430px;
+  padding: 0 32px;
+  margin-left: -32px;
+}
+
+.jumbotron-deliveboo div.container-hashtag > div {
+  width: 460px;
+  background-color: #007e8a;
+  transform: rotate(3deg);
+  transform-origin: left;
+  padding: 32px;
+  position: relative;
+  bottom: 20px;
+}
+
+.jumbotron-deliveboo div.container-hashtag > div span {
+  font-family: stratos, sans-serif;
+  display: block;
+  transform: rotate(-3deg);
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.jumbotron-deliveboo::before {
+  content: "";
+  width: 100%;
+  height: 260px;
+  position: absolute;
+  right: 0;
+  background-color: #00ccbc;
+  transform: skewY(-4deg);
+  transform-origin: left;
+  z-index: 2;
+}
 
 .favourite-plates {
   margin-top: 30px;
@@ -11964,83 +12105,109 @@ main.content-container .container-dish .card img {
   padding: 5px 10px;
 }
 
-/* sezione ristoranti ricercati */
+/* media query per responsive smartphone */
 
-.search-bar-checkbox {
-  width: 30%;
+@media screen and (max-width: 576px) {
+  .favourite-plates {
+    margin-top: 30px;
+  }
+
+  .favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
+    width: 70%;
+    border-radius: 10px;
+  }
+
+  .deliveroo-image {
+    width: 60%;
+  }
+
+  .app-download .android,
+  .app-download .apple {
+    width: 40%;
+    font-size: 13px;
+  }
+
+  .app-download .android img,
+  .app-download .apple img {
+    max-width: 15%;
+  }
+
+  .work-with-us h2 {
+    font-size: 30px;
+  }
+
+  .work-with-us .work img {
+    width: 80%;
+  }
+
+  .work-with-us .work p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .work-with-us .work .work-button {
+    font-size: 25px;
+  }
 }
 
-/* css contenitore ristiranti trovati */
-
-.container-restaurants {
-  width: 70%;
-  margin: 0 auto;
+main {
+  background-image: url("/storage/images/wave-client.svg");
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
 }
 
-.container-restaurants .restaurant-found {
-  width: 33.3333333333%;
-  border-bottom: 1px solid #00ccbc;
-  border-radius: 10px;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
-
-.container-restaurants .restaurant-found .card-body {
-  width: 100%;
-  padding: 0;
-}
-
-.container-restaurants .restaurant-found .card-body img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10px;
-}
-
-.container-restaurants .restaurant-found .button-show-restaurant {
-  background-color: #00ccbc;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  width: 50%;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-main .content-contaiiner {
-  position: relative;
-  height: calc(100vh - 397px);
-}
-
-main .content-contaiiner #checkout {
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 5%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-main .content-contaiiner #checkout .client-info {
-  width: 45%;
-}
-
-main .content-contaiiner #checkout .client-info h1 {
+main .content-container h1 {
+  text-align: center;
   font-size: 45px;
   color: white;
   padding: 15px 0;
 }
 
-main .content-contaiiner #checkout .client-info #payment-form {
+main .content-container .form-container .client-info #payment-form {
   padding: 40px;
   background-color: white;
 }
 
-main .content-contaiiner #checkout .client-info #payment-form input {
+main .content-container .form-container .client-info #payment-form input:focus {
+  border-color: #00ccbc;
+  box-shadow: 0px 0px 0px 1px #00ccbc;
+}
+
+main .content-container .form-container .client-info h1,
+main .content-container .form-container .client-info label {
+  margin-left: 5%;
+}
+
+main .content-container .form-container .payment-card {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+}
+
+main .content-container .form-container .payment-card #dropin-container {
+  width: 100%;
+}
+
+main .content-container .form-container .payment-card .ms-button {
+  text-align: center;
+}
+
+main .content-container .form-container .payment-card .ms-button #submit-button {
+  padding: 14px 24px;
+  border-radius: 4%;
+  color: white;
+  background-color: #006d68;
+  border: none;
+}
+
+main .content-container .form-container .payment-card .ms-button #submit-button:hover {
+  background-color: #00ccbc;
+}
+
+main .content-container .form-container input,
+main .content-container .form-container .braintree-form__hosted-field {
   display: block;
   width: 100%;
   margin-bottom: 15px;
@@ -12054,18 +12221,133 @@ main .content-contaiiner #checkout .client-info #payment-form input {
   max-height: 40px;
 }
 
-main .content-contaiiner #checkout .client-info #payment-form input:focus {
+main .content-container .form-container .braintree-form-number braintree-form__hosted-field {
   border-color: #00ccbc;
   box-shadow: 0px 0px 0px 1px #00ccbc;
 }
 
-main .content-contaiiner #checkout .client-info h1,
-main .content-contaiiner #checkout .client-info label {
-  margin-left: 5%;
+main .container-cart {
+  position: relative;
+  padding-top: 0;
+  top: 0;
+  margin: 0;
 }
 
-main .content-contaiiner #checkout .payment-card {
-  width: 55%;
-  min-height: 100px;
+main .container-card-cart {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  padding-top: 10px;
+}
+
+main #title-shopping-cart-checkout {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 15px 0;
+  background-color: #fff;
+  color: #2e3333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+main .container-quantity {
+  width: 15%;
+  text-align: left;
+  color: #828585;
+}
+
+main .container-price {
+  width: 20%;
+  text-align: right;
+  color: #2e3333;
+}
+
+main .container-info-dish-cart {
+  width: 65%;
+}
+
+main .container-info-dish-cart .container-name-dish {
+  font-size: 16px;
+  color: #2e3333;
+}
+
+main .container-info-dish-cart .container-description {
+  display: -webkit-box;
+  max-width: 80%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+  padding: 2px 0;
+  margin-bottom: 10px;
+  color: #828585;
+}
+
+main .container-totalPrice {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 3px solid #006d68;
+  padding: 14px 0;
+}
+
+main .container-totalPrice span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.braintree-sheet__content--form .braintree-form__field-group .braintree-form__field .braintree-form__hosted-field:hover {
+  border-color: #00ccbc;
+}
+
+/* css pagina ordini */
+
+.advertisement {
+  background-color: white;
+  padding: 50px 0;
+}
+
+.advertisement p {
+  font-size: 18px;
+}
+
+.advertisement .sponsor-button {
+  background-color: #00ccbc;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.advertisement .image-ad img,
+.advertisement .interview-image img {
+  width: 80%;
+}
+
+.advertisement .interview-read img {
+  max-width: 50%;
+}
+
+@media screen and (max-width: 576px) {
+  .advertisement p {
+    font-size: 22px;
+  }
+
+  .advertisement .sponsor-button {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .advertisement .image-ad img,
+  .advertisement .interview-image img {
+    width: 100%;
+  }
+
+  .advertisement .interview-read img {
+    max-width: 100%;
+  }
 }
 

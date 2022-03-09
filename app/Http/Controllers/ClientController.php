@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Dish;
+use App\User;
+use App\Client;
+
 use Illuminate\Http\Request;
 
-use App\User;
 
 class ClientController extends Controller
 {
@@ -25,6 +27,37 @@ class ClientController extends Controller
 
     public function checkout() {
 
-        return view('pages.checkout');
+        $cart = session("cart");
+        $totalPrice = 0;
+
+        foreach ($cart as $value) {
+            $totalPrice += number_format($value["price"],2);
+        }
+
+        $totalPrice = number_format($totalPrice,2);
+
+        return view('pages.checkout', compact('cart', 'totalPrice'));
+    }
+
+    public function storeClientInfo(Request $request) {
+
+        dd($request->all());
+
+        $data = $request->validate([
+            'name'=> 'required|string|max:60',
+            'lastname'=> 'required|string|max:60',
+            'address'=> 'required|string',
+            'email'=> 'required|email|unique',
+            'phone'=> 'required|string|max:20|unique',
+        ]);
+
+        $client = Client::create($data);
+
+        return;
+    }
+    
+    public function orderStats() {
+
+        return view('pages.orderStatitics');
     }
 }

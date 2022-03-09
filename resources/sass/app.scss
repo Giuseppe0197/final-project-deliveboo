@@ -21,178 +21,66 @@ div.container-home {
 }
 
 // HEADER --------------------------------------------------
-header {
-    width: auto;
-    height: 80px;
-    background-color: #f8fafc;
-
-    .nav-section {
-        width: 70%;
-        margin: 0px 15%;
-        display: flex;
-        justify-content: space-between;
-        padding-top: 27px;
-        font-size: 17px;
-
-        a {
-            margin-left: 30px;
-            color: #000;
-            text-decoration: none;
-
-            &:hover {
-                color: #00ccbc;
-            }
-        }
-
-        .shopping-cart-header {
-            a {
-                width: auto;
-                text-decoration: none;
-                padding: 8px 16px;
-                background-color: #fff;
-                border: 1px solid #e8ebeb;
-                border-radius: 4px;
-                line-height: 24px;
-                cursor: pointer;
-                color: #2e3333;
-
-                span {
-                    color: #2e3333;
-                    font-size: 16px;
-                    line-height: 22px;
-                    font-weight: 400;
-                    padding-left: 4px;
-                }
-            }
-        }
-
-        .register-btn {
-            color: #fff;
-            background: #00ccbc;
-            padding: 14px 24px;
-            border-radius: 4%;
-
-            &:hover {
-                color: #fff;
-                background-color: #05b7a8;
-            }
-        }
-
-        .exit-btn {
-            color: #fff;
-// header {
-//     width: auto;
-//     height: 80px;
-
-//     .nav-section {
-//         width: 70%;
-//         margin: 0px 15%;
-//         display: flex;
-//         justify-content: space-between;
-//         padding-top: 27px;
-//         font-size: 17px;
-
-//         a {
-//             margin-left: 30px;
-//             color: #000;
-//             text-decoration: none;
-
-//             &:hover {
-//                 color: #00ccbc;
-//             }
-
-//             &.btn-return-restaurant {
-//                 background-color: #00ccbc;
-//                 color: #fff;
-//             }
-//         }
-
-//         .register-btn {
-//             color: #fff;
-//             background: #00ccbc;
-//             padding: 14px 24px;
-//             border-radius: 4%;
-
-//             &:hover {
-//                 color: #fff;
-//                 background-color: #05b7a8;
-//             }
-//         }
-
-//         .exit-btn {
-//             color: #fff;
-
-//             &:hover {
-//                 color: black;
-//                 background-color: #fff;
-//                 border: solid 1px black;
-//             }
-
+@import 'partials/header';
+// header { 
+//     width: 100%;
+//     display: flex;
+//     background-color: #f8fafc;
+//     .navbar {
+//         width: 100%;
+//         height: auto;
+//     }
+//     a {
+//         a:hover {
+//             color: #00ccbc;
 //         }
 //     }
+//     .register-btn {
+//         color: #fff;
+//         background: #00ccbc;
+//         padding: 14px 24px;
+//         border-radius: 4%;
+//         margin-left: 8px;
+//     }
+//     .register-btn:hover {
+//         color: #fff;
+//         background-color: #05b7a8;
+//     }
+//     .exit-btn {
+//         color: #fff;     
+//     }
+//     .exit-btn:hover {
+//         color: black;
+//         background-color: #fff;
+//         border: solid 1px black;
+//     }
+//     .img-logo {
+//         width: 50px;
+//         height: 50px;
+//         object-fit: contain;
+//     }
+//     .shopping-cart-header {
+//         a {
+//             width: auto;
+//             text-decoration: none;
+//             padding: 8px 16px;
+//             background-color: #fff;
+//             border: 1px solid #e8ebeb;
+//             border-radius: 4px;
+//             line-height: 24px;
+//             cursor: pointer;
+//             color: #2e3333;
+
+//             span {
+//                 color: #2e3333;
+//                 font-size: 16px;
+//                 line-height: 22px;
+//                 font-weight: 400;
+//                 padding-left: 4px;
+//             }
+//         }
+//     } 
 // }
-
-header { 
-    width: 100%;
-    display: flex;
-    background-color: #f8fafc;
-    .navbar {
-        width: 100%;
-    }
-    a {
-        a:hover {
-            color: #00ccbc;
-        }
-    }
-    .register-btn {
-        color: #fff;
-        background: #00ccbc;
-        padding: 14px 24px;
-        border-radius: 4%;
-        margin-left: 8px;
-    }
-    .register-btn:hover {
-        color: #fff;
-        background-color: #05b7a8;
-    }
-    .exit-btn {
-        color: #fff;     
-    }
-    .exit-btn:hover {
-        color: black;
-        background-color: #fff;
-        border: solid 1px black;
-    }
-    .img-logo {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-    }
-
-    .shopping-cart-header {
-
-        a {
-            width: auto;
-            text-decoration: none;
-            padding: 8px 16px;
-            background-color: #fff;
-            border: 1px solid #e8ebeb;
-            border-radius: 4px;
-            line-height: 24px;
-            cursor: pointer;
-            color: #2e3333;
-
-            span {
-                color: #2e3333;
-                font-size: 16px;
-                line-height: 22px;
-                font-weight: 400;
-                padding-left: 4px;
-            }
-        }
-    }
-}
-
 // edit page
 
 #edit-title {
@@ -495,6 +383,7 @@ div.container-dish {
 .container-register {
     width: 100%;
     background-color: #fff;
+    
 }
 
 .auth-page {
@@ -515,7 +404,6 @@ div.container-dish {
     background: #00ccbc;
     padding: 14px 24px;
     border-radius: 4%;
-    margin-top: 20px;
 
     &:hover {
         color: #fff;
@@ -524,7 +412,7 @@ div.container-dish {
 }
 
 .register-form {
-    width: 400px;
+    width: 320px;
 
     .input-text {
         border: 1px solid #bac3c3;
@@ -535,10 +423,18 @@ div.container-dish {
         max-height: 40px;
     }
 }
+@media screen and (max-width: 990px) {
+    .auth-page {
+        justify-content: center;        
+    }
+    .register-btn {
+        margin-top: 10px;
+    }
 
+}
 // login
 .login-form {
-    width: 400px;
+    width: 320px;
 
     .input-text {
         border: 1px solid #bac3c3;
@@ -746,7 +642,7 @@ div.container-dishes-shopping-cart {
     display: inline-block;
     width: 28%;
     height: 100%;
-    max-height: 520px;
+    max-height: 552px;
     position: sticky;
     top: 10px;
     overflow: auto;
@@ -785,7 +681,8 @@ div.container-dishes-shopping-cart {
         }
 
         div.button-shoppingcart {
-            width: 30%;
+            width: auto;
+            min-width: 27%;
             display: flex;
             justify-content: space-between;
             float: right;
@@ -830,6 +727,9 @@ div.container-dishes-shopping-cart {
         display: flex;
         justify-content: space-between;
         padding: 0 0 5px;
+        position: sticky;
+        bottom: 90px;
+        background-color: #fff;
 
         span {
             font-size: 16px;
@@ -839,7 +739,11 @@ div.container-dishes-shopping-cart {
     }
 
     div.cont-bord-pag {
+        position: sticky;
+        bottom: 0;
+        background-color: #fff;
         border-top: 4px solid #6bac26;
+        padding-bottom: 10px;
 
         .btn-pagamento {
             display: block;
@@ -849,7 +753,7 @@ div.container-dishes-shopping-cart {
             color: #fff;
             font-weight: 600;
             font-size: 17px;
-            margin: 25px 0 10px;
+            margin: 25px 0 0;
             background-color: #00ccbc;
             border: 0;
             border-radius: 4px;
@@ -1049,102 +953,6 @@ main.content-container {
     }
 }
 
-/* homepage */
-
-.favourite-plates{
-    margin-top: 30px;
-    background-color: #FFEAE4;
-
-    .title-home-section {
-        text-align: center;
-        padding-top: 20px;
-
-        h2 {
-            font-weight: bold;
-        }
-    }
-
-    .container-restaurants-homepage {
-        margin-top: 40px;
-
-        .plates-add-container {
-            h2 {
-                margin: 20px 0;
-
-                &:hover {
-                    color: #00ccbc;
-                    cursor: pointer;
-                }
-            }
-
-            .img-home-restaurants {
-                max-width: 100%;
-                border-radius: 10px;
-            }
-        }
-    }
-}
-
-.download-app-deliveroo {
-    background-color: #434848;
-    color: white;
-}
-
-.deliveroo-image {
-    width: 70%;
-    border-radius: 20px;
-}
-
-.app-download {
-    margin: 30px auto;
-
-    .android, .apple {
-        width: 50%;
-        background-color: white;
-        border: none;
-        border-radius: 15px;
-        font-size: 15px;
-        font-weight: bold;
-        padding: 10px 5px;
-        margin-bottom: 15px;
-
-        img {
-            max-width: 10%;
-        }
-    }
-}
-
-.work-with-us {
-    background-color: white;
-
-    h2 {
-        font-size: 40px;
-        font-weight: bold;
-    }
-    .work {
-        padding-bottom: 20px;
-    
-        img {
-            width: 100%;
-        }
-
-        p {
-            font-size: 13px;
-            text-align: justify;
-        }
-
-        .work-button {
-            border: none;
-            background-color: #00ccbc;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 10px;
-            padding: 5px 10px;
-        }
-    }
-}
-
 /* sezione ristoranti ricercati */
 
 .search-bar-checkbox {
@@ -1188,6 +996,8 @@ main.content-container {
     }
 }
 
-
+@import 'partials/homepage';
 
 @import 'partials/checkout';
+
+@import 'partials/orderstats';

@@ -1,85 +1,78 @@
 @extends('layouts.main-layout')
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+<div class="container-register justify-content-around ">
+    <div class="container auth-page d-flex flex-wrap">
 
-<div class="container-register">
-<div class="auth-page">
+        {{-- FORM REGISTRAZIONE --}}
+        <div class="register-form">
+            <form action="{{route('register')}}" method="post" enctype="multipart/form-data"
+            >
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-            {{-- FORM REGISTRAZIONE --}}
-    <div class="register-form">
-        <form action="{{route('register')}}" method="post" enctype="multipart/form-data"
-        >
+                @method('post')
+                @csrf
+                    
+                <h2 class="text-center">Diventa subito partner di Deliveroo</h2>
+                <input class="my-2 w-100 input-text" type="text" name="email" placeholder="Inserisci la tua mail"><br>
 
-            @method('post')
-            @csrf
-                
-            <h2>Diventa subito partner di Deliveroo</h2>
-            <label class="my-2" for="email">Inserisci la mail:</label><br>
-            <input class = "w-100 input-text" type="text" name="email" placeholder="Inserisci la tua mail"><br>
+                <input class="my-2 w-100 input-text" type="password" name="password" placeholder="Inserisci una password"><br>
 
-            <label class="my-2" for="password">Inserisci una password:</label><br>
-            <input class = "w-100 input-text" type="password" name="password" placeholder="Inserisci una password"><br>
+                <input class="my-2 w-100 input-text" type="password" name="password_confirmation" placeholder="Conferma la password"><br>
 
-            <label class="my-2" for="password_confirmation">Conferma la password:</label><br>
-            <input class = "w-100 input-text" type="password" name="password_confirmation" placeholder="Conferma la password"><br>
+                <input class="my-2 w-100 input-text" type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività"><br>
 
-            <label class="my-2" for="restaurant_name">Nome attivit&aacute;</label><br>
-            <input class = "w-100 input-text" type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività"><br>
+                <input class="my-2 w-100 input-text" type="text" name="owner_name" placeholder="Inserisci il tuo nome"><br>
 
-            <label class="my-2" for="owner_name">Nome proprietario</label><br>
-            <input class = "w-100 input-text" type="text" name="owner_name" placeholder="Inserisci il tuo nome"><br>
+                <input class="my-2 w-100 input-text" type="text" name="restaurant_phone" placeholder="Inserisci il numero di telefono"><br>
 
-            <label class="my-2" for="restaurant_phone">Telefono dell'attivit&aacute;</label><br>
-            <input class = "w-100 input-text" type="text" name="restaurant_phone" placeholder="Inserisci il numero di telefono"><br>
+                <input class="my-2 w-100 input-text" type="text" name="address" placeholder="Inserisci l'indirizzo"><br>
 
-            <label class="my-2" for="address">Inserisci l'indirizzo</label><br>
-            <input class = "w-100 input-text" type="text" name="address" placeholder="Inserisci l'indirizzo"><br>
-
-            <label class="my-2" for="p_iva">Inserisci la partita Iva</label><br>
-            <input class = "w-100 input-text" type="text" name="p_iva" placeholder="Inserisci la partita Iva"><br>
+                <input class="w-100 input-text" type="text" name="p_iva" placeholder="Inserisci la partita Iva"><br>
 
 
-            <label class="my-2" for="image">Inserisci l'immagine</label><br>
-            <input type="file" name="image"><br>
+                <label class="my-2" for="image">Inserisci l'immagine</label><br>
+                <input type="file" name="image"><br>
 
                 {{-- CHECKBOX --}}
-            <div class="my-2 checkbox-container w-100 mt-4">
-                @foreach ($categories as $category)
-                    <input type="checkbox" name="categories[]" value="{{$category -> id}}">
-                    <span class="mr-1">{{$category-> name }}</span> 
-                @endforeach<br>
-            </div> 
+                            
+                <div class="my-2 checkbox-container w-100 mt-4">
+                    <p class="text-center">Spunta la tipologia del tuo ristorante</p>
+                    @foreach ($categories as $category)
+                        <input type="checkbox" name="categories[]" value="{{$category -> id}}">
+                        <span class="mr-1">{{$category-> name }}</span> 
+                    @endforeach<br>
+                </div> 
+                <div class="text-center"> 
+                    <input class="btn mb-5 my-2 register-button" type="submit" value="REGISTER">
+                </div>
+            </form>
+        </div>
+        <div class="login-form">
+                {{-- FORM LOGIN --}}
+            <form action="{{route('login')}}" method="post">
 
-            <input class="btn mb-5 my-2 register-button" type="submit" value="REGISTER">
-            
-        </form>
-    </div>
-    <div class="login-form">
-            {{-- FORM LOGIN --}}
-        <form action="{{route('login')}}" method="post">
+                @method('post')
+                @csrf
 
-            @method('post')
-            @csrf
+                <h2 class="text-center">Login</h2>
+                <input class="my-2 input-text w-100" type="text" name="email" placeholder="Inserisci la tua mail"><br>
 
-            <h2>Login</h2>
-            <label class="my-2" for="email">Inserisci la tua mail:</label><br>
-            <input class="input-text w-100" type="text" name="email" placeholder="Inserisci la tua mail"><br>
-
-            <label class="my-2" for="password">Inserisci la tua password:</label><br>
-            <input class="input-text w-100" type="password" name="password" placeholder="Inserisci la tua password"><br>
-            <input class="btn mt-3 my-2 register-button" type="submit" value="LOGIN">
-        </form>
-    </div>    
-    
+                <input class="my-2 input-text w-100" type="password" name="password" placeholder="Inserisci la tua password">
+                <div class="text-center"> 
+                    <input class="btn mt-3 my-2 register-button" type="submit" value="LOGIN">
+                </div>
+                
+            </form>
+        </div>    
     </div>
 </div>
 

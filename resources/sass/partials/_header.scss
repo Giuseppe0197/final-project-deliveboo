@@ -1,0 +1,68 @@
+header { 
+    background: #fff;
+    border-bottom: 1px solid #e3e3e3;
+
+    .navbar {
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        z-index: 3;
+        border: 0;
+
+        .navbar-brand {
+            width: 18%;
+
+            .img-logo {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    a {
+        a:hover {
+            color: #00ccbc;
+        }
+    }
+    .register-btn {
+        color: black;
+        background: white;
+        padding: 8px 16px;
+        border-radius: 4%;
+        margin-left: 8px;
+    }
+    .register-btn:hover {
+        color: #fff;
+        background-color: #05b7a8;
+        text-decoration: none;
+    }
+    .exit-btn {
+        color: #fff;     
+    }
+    .exit-btn:hover {
+        color: black;
+        background-color: #fff;
+        border: solid 1px black;
+    }
+    
+    .shopping-cart-header {
+        a {
+            width: auto;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #fff;
+            border: 1px solid #e8ebeb;
+            border-radius: 4px;
+            line-height: 24px;
+            cursor: pointer;
+            color: #2e3333;
+
+            span {
+                color: #2e3333;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                padding-left: 4px;
+            }
+        }
+    } 
+}
