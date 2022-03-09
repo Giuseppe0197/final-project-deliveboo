@@ -20,57 +20,62 @@
             </div>
         </div>
 
-        <div class="container-dish">
+        <div class="container py-4">
+
+            <div class="container-dish">
             
-            <div class="card" v-for="dish in dishesArr" :key="dish.id">
-                <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
-                <img :src="showImage(dish.image)" :alt="dish.name">
+                <div class="card" v-for="dish in dishesArr" :key="dish.id">
+                    <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
+                    <img :src="showImage(dish.image)" :alt="dish.name">
 
-                <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
-                
-                <div class="card-body">
-                        <!-- Nome piatto -->
-                    <h4 class="card-title">
-                        {{ dish.name }}
-                    </h4>
-                        <!-- Descrizione piatto -->
-                    <p class="card-text">
-                        {{ dish.description }}
-                    </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                        <!-- Prezzo piatto -->
-                    <li class="list-group-item">
-                        <span>Prezzo:</span>
-                        &euro;{{ dish.price }} 
-                    </li>
-                        <!-- Tipo piatto -->
-                    <li class="list-group-item">
-                        <span class="fw-bold">Tipo:</span>
-                        {{ dish.type }}
-                    </li>                    
-                    <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
-                    <li class="list-group-item">
-                        <span>Disponibilità:</span>
-                        <p v-if="dish.availability" class="d-inline-block text-success font-weight-bold">&#10004; Disponibile</p>
-                        <p v-else class="d-inline-block text-danger font-weight-bold">&#10060; Non Disponibile</p>
-                    </li>
+                    <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
+                    
+                    <div class="card-body">
+                            <!-- Nome piatto -->
+                        <h4 class="card-title">
+                            {{ dish.name }}
+                        </h4>
+                            <!-- Descrizione piatto -->
+                        <p class="card-text">
+                            {{ dish.description }}
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                            <!-- Prezzo piatto -->
+                        <li class="list-group-item">
+                            <span>Prezzo:</span>
+                            &euro;{{ dish.price }} 
+                        </li>
+                            <!-- Tipo piatto -->
+                        <li class="list-group-item">
+                            <span class="fw-bold">Tipo:</span>
+                            {{ dish.type }}
+                        </li>                    
+                        <!-- Disponibilità (Aggiungere l'icona X e V successivamente) -->
+                        <li class="list-group-item">
+                            <span>Disponibilità:</span>
+                            <p v-if="dish.availability" class="d-inline-block text-success font-weight-bold">&#10004; Disponibile</p>
+                            <p v-else class="d-inline-block text-danger font-weight-bold">&#10060; Non Disponibile</p>
+                        </li>
 
-                    <li class="container-action-dish list-group-item">
-                        <!-- Button per modificare il piatto -->
-                        <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>
+                        <li class="container-action-dish list-group-item">
+                            <!-- Button per modificare il piatto -->
+                            <button class="btn btn-primary" @click.prevent="editDish(dish.id)">MODIFICA</button>
 
-                        <!-- Button per modificare l'availability del piatto -->
-                        <button 
-                            @click="toggleDishAvailability(dish.id)" 
-                            class="btn" 
-                            :class="dish.availability ? 'btn-danger' : 'btn-success' "> 
-                            {{ dish.availability ? 'RIMUOVI': 'AGGIUNGI'}}
+                            <!-- Button per modificare l'availability del piatto -->
+                            <button 
+                                @click="toggleDishAvailability(dish.id)" 
+                                class="btn" 
+                                :class="dish.availability ? 'btn-danger' : 'btn-success' "> 
+                                {{ dish.availability ? 'RIMUOVI': 'AGGIUNGI'}}
                             </button>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
+
     </main>
 
 </template>
