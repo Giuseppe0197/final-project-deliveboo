@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 @section('content')
-<main>
+<main id="main-checkout">
     <div class="container">
         
         @if ($errors->any())

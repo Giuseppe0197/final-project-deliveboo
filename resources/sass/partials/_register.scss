@@ -1,0 +1,325 @@
+//FORM REGISTRAZIONE E LOGIN
+
+// registrazione
+.container-register {
+    width: 100%;
+    background-image: url('/storage/images/back-reg-deliveboo.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .auth-page {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+    
+        .checkbox-container {
+            width: 30%;
+        }
+
+        // registrazione 
+        .register-form {
+            .input-text {
+                border: 1px solid #bac3c3;
+                background-color: #fff;
+                font-size: 16px;
+                padding: 9px 10px;
+                border-radius: 3px;
+                max-height: 40px;
+            }
+        }
+
+        // login 
+        .login-form {
+            .input-text {
+                border: 1px solid #bac3c3;
+                background-color: #fff;
+                font-size: 16px;
+                padding: 9px 10px;
+                border-radius: 3px;
+                max-height: 40px;
+            }
+        }
+    }
+
+    // regole generali 
+    h2 {
+        color: #2e3333;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .register-button {
+        color: #fff;
+        background: #00ccbc;
+        padding: 10px 50px 10px 50px;
+        border-radius: 4%;
+    
+        &:hover {
+            color: #fff;
+            background-color: #05b7a8;
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .auth-page {
+        justify-content: center;        
+    }
+}
+
+
+// regole generali 
+    // sezione publicitaria
+    // partner section
+    // contenitore prezzi e servizi
+    // sezione how to
+.cont-partner,
+.partner-section,
+.how-to-section {
+    width: 70%;
+    text-align: center;
+    background-color: #fbfbfb;
+    margin: 0px 15%;
+    margin-top: 100px;
+
+    h1 {
+        font-size: 28px;
+        font-weight: 800;
+        color: $darkgray;
+    }
+}
+
+
+// sezione publicitaria partner deliveroo
+.cont-partner {
+    h1 {
+        margin-bottom: 60px;
+    }
+
+    .card-partner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        h4 {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 20px 0;
+        }
+    
+        p {
+            color: #828585;
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+    
+        .adv-partner-card {
+            -moz-box-shadow: 0 0 3px #ccc;
+            -webkit-box-shadow: 0 0 3px #ccc;
+            box-shadow: 0 0 3px #ccc;
+            width: calc(90% / 3);
+            background-color: white;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    
+        @media all and (max-width: 576px) {
+            .adv-partner-card {
+                width: 100%;
+            }
+        }
+    
+        @media all and (min-width: 577px) and (max-width: 1024px) {
+            .adv-partner-card {
+                width: calc(90% / 2);
+            }
+        }
+    }
+}
+
+
+// partner section
+.partner-section {
+    p {
+        font-size: 20px;
+    }
+
+    .partner-restaurant {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 45px;
+
+
+        .partner-description {
+            width: 50%;
+            text-align: left;
+            padding: 30px 30px 0 0;
+    
+            img {
+                width: 80px;
+            }
+            p {
+                margin-top: 30px;
+            }
+        }
+
+        .partner-image {
+            width: 50%;
+
+            img {
+                width: 100%;
+                -moz-box-shadow: 0 0 3px #ccc;
+                -webkit-box-shadow: 0 0 3px #ccc;
+                box-shadow: 0 0 3px #ccc;
+            }
+        }
+
+        @media all and (max-width: 1024px) {
+            .partner-description {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 20px;
+
+                .image {
+                    text-align: center;
+                }
+            }
+
+            .partner-image {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.line {
+    width: 100%;
+    margin: 100px 0;
+}
+@media all and (max-width: 576px) {
+    .line {
+        margin: 60px 0;
+    }
+}
+
+
+// contenitore prezzi e servizi
+.prize-container {
+    width: 70%;
+    padding: 0 55px;
+    margin: 0px 15%;
+
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 34px;
+        margin-bottom: 50px;
+    }
+
+    h3 {
+        font-size: 21px;
+        line-height: 22px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    p {
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 22px;
+        color: #585c5c;
+    }
+
+    ul {
+        li {
+            font-size: 18px;
+            line-height: 33px;
+            color: #585c5c;
+        }
+
+        list-style: none;
+
+        li:before {
+            content: "✓";
+            color: #05b7a8;
+            margin-right: 12px;
+        }
+    }
+
+}
+@media all and (max-width: 768px) {
+    .prize-container {
+        width: 100%;
+        margin: 0;
+        padding: 0 25px;
+    }
+}
+
+
+// sezione how to
+.how-to-section {
+    p {
+        font-size: 20px;
+    }
+    .how-to-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: white;
+        margin: 55px 0;
+        padding: 35px 75px;
+        -moz-box-shadow: 0 0 3px #ccc;
+        -webkit-box-shadow: 0 0 3px #ccc;
+        box-shadow: 0 0 3px #ccc;
+
+        .ms-card {
+            width: calc(100% / 3);
+            padding: 0 45px;
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+
+        @media all and (max-width: 768px) {
+            .ms-card {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 50px;
+            }
+        }
+
+        .img-class {
+            width: 100px;
+            height: 100px;
+            margin: 20px 0;
+        }
+
+        .img-calendar {
+            width: 100px;
+            height: 100px;
+            margin: 15px 0;
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .how-to-section {
+        width: 100%;
+        margin: 0;
+    }
+}
+

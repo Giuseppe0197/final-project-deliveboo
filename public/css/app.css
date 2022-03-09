@@ -11294,75 +11294,68 @@ footer .social-channels p {
 
 .container-register {
   width: 100%;
-  background-color: #fff;
+  background-image: url("/storage/images/back-reg-deliveboo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.auth-page {
-  width: 70%;
-  margin: 0px 15%;
+.container-register .auth-page {
+  position: relative;
   display: flex;
-  background-color: #fff;
   justify-content: space-between;
-  padding-top: 100px;
+  padding: 50px 0;
 }
 
-.auth-page .checkbox-container {
+.container-register .auth-page .checkbox-container {
   width: 30%;
 }
 
-.register-button {
-  color: #fff;
-  background: #00ccbc;
-  padding: 14px 24px;
-  border-radius: 4%;
-}
-
-.register-button:hover {
-  color: #fff;
-  background-color: #05b7a8;
-}
-
-.register-form {
-  width: 320px;
-}
-
-.register-form .input-text {
+.container-register .auth-page .register-form .input-text {
   border: 1px solid #bac3c3;
   background-color: #fff;
   font-size: 16px;
   padding: 9px 10px;
   border-radius: 3px;
   max-height: 40px;
+}
+
+.container-register .auth-page .login-form .input-text {
+  border: 1px solid #bac3c3;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 9px 10px;
+  border-radius: 3px;
+  max-height: 40px;
+}
+
+.container-register h2 {
+  color: #2e3333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.container-register .register-button {
+  color: #fff;
+  background: #00ccbc;
+  padding: 10px 50px 10px 50px;
+  border-radius: 4%;
+}
+
+.container-register .register-button:hover {
+  color: #fff;
+  background-color: #05b7a8;
 }
 
 @media screen and (max-width: 990px) {
   .auth-page {
     justify-content: center;
   }
-
-  .register-btn {
-    margin-top: 10px;
-  }
 }
 
-.login-form {
-  width: 320px;
-}
-
-.login-form .input-text {
-  border: 1px solid #bac3c3;
-  background-color: #fff;
-  font-size: 16px;
-  padding: 9px 10px;
-  border-radius: 3px;
-  max-height: 40px;
-}
-
-.login-form h2 {
-  margin-bottom: 39px;
-}
-
-.cont-partner {
+.cont-partner,
+.partner-section,
+.how-to-section {
   width: 70%;
   text-align: center;
   background-color: #fbfbfb;
@@ -11370,42 +11363,113 @@ footer .social-channels p {
   margin-top: 100px;
 }
 
+.cont-partner h1,
+.partner-section h1,
+.how-to-section h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #2e3333;
+}
+
 .cont-partner h1 {
   margin-bottom: 60px;
 }
 
-.cont-partner h4 {
+.cont-partner .card-partner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cont-partner .card-partner h4 {
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   margin: 25px 0;
 }
 
-.card-partner {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-partner img {
+.cont-partner .card-partner img {
   width: 100px;
   height: 100px;
   margin: 20px 0;
 }
 
-.card-partner p {
+.cont-partner .card-partner p {
   color: #828585;
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 20px;
 }
 
-.card-partner .adv-partner-card {
+.cont-partner .card-partner .adv-partner-card {
   box-shadow: 0 0 3px #ccc;
-  width: 400px;
+  width: 30%;
   background-color: white;
-  margin-right: 25px;
+  margin-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+@media all and (max-width: 576px) {
+  .cont-partner .card-partner .adv-partner-card {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 577px) and (max-width: 1024px) {
+  .cont-partner .card-partner .adv-partner-card {
+    width: 45%;
+  }
+}
+
+.partner-section p {
+  font-size: 20px;
+}
+
+.partner-section .partner-restaurant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+
+.partner-section .partner-restaurant .partner-description {
+  width: 50%;
+  text-align: left;
+  padding: 30px 30px 0 0;
+}
+
+.partner-section .partner-restaurant .partner-description img {
+  width: 80px;
+}
+
+.partner-section .partner-restaurant .partner-description p {
+  margin-top: 30px;
+}
+
+.partner-section .partner-restaurant .partner-image {
+  width: 50%;
+}
+
+.partner-section .partner-restaurant .partner-image img {
+  width: 100%;
+  box-shadow: 0 0 3px #ccc;
+}
+
+@media all and (max-width: 1024px) {
+  .partner-section .partner-restaurant .partner-description {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .partner-section .partner-restaurant .partner-description .image {
+    text-align: center;
+  }
+
+  .partner-section .partner-restaurant .partner-image {
+    width: 100%;
+  }
 }
 
 .line {
@@ -11413,56 +11477,22 @@ footer .social-channels p {
   margin: 100px 0;
 }
 
-.partner-section {
-  width: 70%;
-  text-align: center;
-  background-color: #fbfbfb;
-  margin: 0px 15%;
-  margin-top: 100px;
-}
-
-.partner-section .partner-restaurant {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 45px;
-}
-
-.partner-section .partner-restaurant p {
-  font-size: 16px;
-}
-
-.partner-section .partner-description {
-  width: 50%;
-  text-align: left;
-  padding-top: 30px;
-  margin-left: 7%;
-}
-
-.partner-section .partner-description img {
-  width: 80px;
-}
-
-.partner-section .partner-description p {
-  margin-top: 30px;
-}
-
-.partner-section .partner-image {
-  width: 400px;
-}
-
-.partner-section .partner-image img {
-  width: 400px;
-  box-shadow: 0 0 3px #ccc;
+@media all and (max-width: 576px) {
+  .line {
+    margin: 60px 0;
+  }
 }
 
 .prize-container {
   width: 70%;
+  padding: 0 55px;
   margin: 0px 15%;
 }
 
-.prize-container h2 {
+.prize-container h1 {
   text-align: center;
-  font-size: 29px;
+  font-size: 28px;
+  font-weight: 800;
   line-height: 34px;
   margin-bottom: 50px;
 }
@@ -11470,7 +11500,7 @@ footer .social-channels p {
 .prize-container h3 {
   font-size: 21px;
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 25px;
 }
 
@@ -11497,21 +11527,43 @@ footer .social-channels p {
   margin-right: 12px;
 }
 
-.how-to-section {
-  width: 70%;
-  text-align: center;
-  background-color: #fbfbfb;
-  margin: 0px 15%;
-  margin-top: 130px;
+@media all and (max-width: 768px) {
+  .prize-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 25px;
+  }
+}
+
+.how-to-section p {
+  font-size: 20px;
 }
 
 .how-to-section .how-to-card {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: white;
   margin: 55px 0;
   padding: 35px 75px;
   box-shadow: 0 0 3px #ccc;
+}
+
+.how-to-section .how-to-card .ms-card {
+  width: 33.3333333333%;
+  padding: 0 45px;
+}
+
+.how-to-section .how-to-card .ms-card h3 {
+  font-weight: bold;
+}
+
+@media all and (max-width: 768px) {
+  .how-to-section .how-to-card .ms-card {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 50px;
+  }
 }
 
 .how-to-section .how-to-card .img-class {
@@ -11524,6 +11576,13 @@ footer .social-channels p {
   width: 100px;
   height: 100px;
   margin: 15px 0;
+}
+
+@media all and (max-width: 1024px) {
+  .how-to-section {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 div.container-dishes-shopping-cart {
@@ -12198,35 +12257,35 @@ main.content-container .container-dish .card .card-title {
   }
 }
 
-main {
+main#main-checkout {
   background-image: url("/storage/images/wave-client.svg");
   background-repeat: no-repeat;
   padding-bottom: 50px;
 }
 
-main .content-container h1 {
+main#main-checkout .content-container h1 {
   text-align: center;
   font-size: 45px;
   color: white;
   padding: 15px 0;
 }
 
-main .content-container .form-container .client-info #payment-form {
+main#main-checkout .content-container .form-container .client-info #payment-form {
   padding: 40px;
   background-color: white;
 }
 
-main .content-container .form-container .client-info #payment-form input:focus {
+main#main-checkout .content-container .form-container .client-info #payment-form input:focus {
   border-color: #00ccbc;
   box-shadow: 0px 0px 0px 1px #00ccbc;
 }
 
-main .content-container .form-container .client-info h1,
-main .content-container .form-container .client-info label {
+main#main-checkout .content-container .form-container .client-info h1,
+main#main-checkout .content-container .form-container .client-info label {
   margin-left: 5%;
 }
 
-main .content-container .form-container .payment-card {
+main#main-checkout .content-container .form-container .payment-card {
   background-color: white;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.04);
@@ -12234,15 +12293,15 @@ main .content-container .form-container .payment-card {
   padding: 40px;
 }
 
-main .content-container .form-container .payment-card #dropin-container {
+main#main-checkout .content-container .form-container .payment-card #dropin-container {
   width: 100%;
 }
 
-main .content-container .form-container .payment-card .ms-button {
+main#main-checkout .content-container .form-container .payment-card .ms-button {
   text-align: center;
 }
 
-main .content-container .form-container .payment-card .ms-button #submit-button {
+main#main-checkout .content-container .form-container .payment-card .ms-button #submit-button {
   padding: 14px 24px;
   border-radius: 4%;
   color: white;
@@ -12250,12 +12309,12 @@ main .content-container .form-container .payment-card .ms-button #submit-button 
   border: none;
 }
 
-main .content-container .form-container .payment-card .ms-button #submit-button:hover {
+main#main-checkout .content-container .form-container .payment-card .ms-button #submit-button:hover {
   background-color: #00ccbc;
 }
 
-main .content-container .form-container input,
-main .content-container .form-container .braintree-form__hosted-field {
+main#main-checkout .content-container .form-container input,
+main#main-checkout .content-container .form-container .braintree-form__hosted-field {
   display: block;
   width: 100%;
   margin-bottom: 15px;
@@ -12269,25 +12328,25 @@ main .content-container .form-container .braintree-form__hosted-field {
   max-height: 40px;
 }
 
-main .content-container .form-container .braintree-form-number braintree-form__hosted-field {
+main#main-checkout .content-container .form-container .braintree-form-number braintree-form__hosted-field {
   border-color: #00ccbc;
   box-shadow: 0px 0px 0px 1px #00ccbc;
 }
 
-main .container-cart {
+main#main-checkout .container-cart {
   position: relative;
   padding-top: 0;
   top: 0;
   margin: 0;
 }
 
-main .container-card-cart {
+main#main-checkout .container-card-cart {
   display: flex;
   border-bottom: 1px solid lightgray;
   padding-top: 10px;
 }
 
-main #title-shopping-cart-checkout {
+main#main-checkout #title-shopping-cart-checkout {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -12298,28 +12357,28 @@ main #title-shopping-cart-checkout {
   font-weight: 600;
 }
 
-main .container-quantity {
+main#main-checkout .container-quantity {
   width: 15%;
   text-align: left;
   color: #828585;
 }
 
-main .container-price {
+main#main-checkout .container-price {
   width: 20%;
   text-align: right;
   color: #2e3333;
 }
 
-main .container-info-dish-cart {
+main#main-checkout .container-info-dish-cart {
   width: 65%;
 }
 
-main .container-info-dish-cart .container-name-dish {
+main#main-checkout .container-info-dish-cart .container-name-dish {
   font-size: 16px;
   color: #2e3333;
 }
 
-main .container-info-dish-cart .container-description {
+main#main-checkout .container-info-dish-cart .container-description {
   display: -webkit-box;
   max-width: 80%;
   -webkit-line-clamp: 2;
@@ -12331,7 +12390,7 @@ main .container-info-dish-cart .container-description {
   color: #828585;
 }
 
-main .container-totalPrice {
+main#main-checkout .container-totalPrice {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -12340,7 +12399,7 @@ main .container-totalPrice {
   padding: 14px 0;
 }
 
-main .container-totalPrice span {
+main#main-checkout .container-totalPrice span {
   font-size: 16px;
   font-weight: bold;
 }
