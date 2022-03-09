@@ -43,7 +43,7 @@
       <hr class="line-profile" />
       <h1>Visualizza le tue statistiche</h1>
 
-      <button class="drop-down-btn">
+      <button class="drop-down-btn" @click.prevent="getOrders(user_id)">
         <p>Statistiche del tuo ristorante.</p>
       </button>
     </div>
@@ -168,6 +168,10 @@ export default {
     getDishes(id) {
       window.location.href = `/dishes/list/${id}`;
     },
+
+    getOrders(id) {
+      window.location.href = `/order/statistics/${id}`;
+    }
   },
 };
 </script>
