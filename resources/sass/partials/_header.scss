@@ -1,23 +1,27 @@
 header { 
     background: #fff;
-    border-bottom: 1px solid #e3e3e3;
-
+    width: 100%;
+    display: flex;
     .navbar {
         width: 100%;
-        height: auto;
-        padding: 10px 0;
-        z-index: 3;
-        border: 0;
-
-        .navbar-brand {
-            width: 18%;
-
-            .img-logo {
-                width: 100%;
-                object-fit: cover;
-            }
-        }
+        height: 80px;
+        background: #fff;
+        z-index: 300;
     }
+
+    .navbar-collapse {
+        justify-content: right;
+    }
+
+    .img-logo {
+        width: 100%;
+        object-fit: contain;
+        
+    }
+    .navbar-brand {
+        width: 18%;
+    }
+    
     a {
         a:hover {
             color: #00ccbc;
@@ -43,7 +47,12 @@ header {
         background-color: #fff;
         border: solid 1px black;
     }
-    
+    .hamb-menu-clicked {
+        background-color:#fff;
+        z-index: 100;
+        float: right;
+        padding-right: 10px;
+    }
     .shopping-cart-header {
         a {
             width: auto;
