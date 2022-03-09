@@ -39,23 +39,6 @@ class ClientController extends Controller
 
         return view('pages.checkout', compact('cart', 'totalPrice'));
     }
-
-    public function storeClientInfo(Request $request) {
-
-        dd($request->all());
-
-        $data = $request->validate([
-            'name'=> 'required|string|max:60',
-            'lastname'=> 'required|string|max:60',
-            'address'=> 'required|string',
-            'email'=> 'required|email|unique',
-            'phone'=> 'required|string|max:20|unique',
-        ]);
-
-        $client = Client::create($data);
-
-        return;
-    }
     
     public function orderStats() {
 

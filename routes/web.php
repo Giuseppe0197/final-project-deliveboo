@@ -60,8 +60,8 @@ Route::get('/api/dish/toggle/availability/{id}', 'RestaurantController@dishToggl
     -> name('api.dish.availability.toggle');
 
 // ROTTA PAGAMENTO 
-Route::get('/payment/process', 'PaymentsController@process')
-    -> name('payment.process');
+Route::get('stripe', 'StripeController@stripe');
+Route::post('payment', 'StripeController@payStripe')->name('payment');
 
 
 Route::post('store/client/info' , 'ClientController@storeClientInfo')

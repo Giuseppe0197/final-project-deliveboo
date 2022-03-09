@@ -151,7 +151,11 @@ main {
     }
 
     .container-totalPrice {
-        padding: 16px 0;
+        position: sticky;
+        bottom: 0;
+        background-color: #fff;
+        border-top: 3px solid #006d68;
+        padding: 14px 0;
 
         span {
             font-size: 16px;

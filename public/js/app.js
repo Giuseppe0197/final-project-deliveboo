@@ -41409,7 +41409,7 @@ var render = function () {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("span", [
+                  _c("span", { staticClass: "text-muted" }, [
                     _vm._v(
                       "\n                        " +
                         _vm._s(product.quantity) +
@@ -41930,7 +41930,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant-search d-flex" }, [
+  return _c("div", { staticClass: "restaurant-search d-flex container" }, [
     _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
       _c("div", { staticClass: "row" }, [
         _c("input", {

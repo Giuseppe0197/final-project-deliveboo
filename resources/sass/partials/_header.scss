@@ -1,0 +1,77 @@
+header { 
+    background: #fff;
+    width: 100%;
+    display: flex;
+    .navbar {
+        width: 100%;
+        height: 80px;
+        background: #fff;
+        z-index: 300;
+    }
+
+    .navbar-collapse {
+        justify-content: right;
+    }
+
+    .img-logo {
+        width: 100%;
+        object-fit: contain;
+        
+    }
+    .navbar-brand {
+        width: 18%;
+    }
+    
+    a {
+        a:hover {
+            color: #00ccbc;
+        }
+    }
+    .register-btn {
+        color: black;
+        background: white;
+        padding: 8px 16px;
+        border-radius: 4%;
+        margin-left: 8px;
+    }
+    .register-btn:hover {
+        color: #fff;
+        background-color: #05b7a8;
+        text-decoration: none;
+    }
+    .exit-btn {
+        color: #fff;     
+    }
+    .exit-btn:hover {
+        color: black;
+        background-color: #fff;
+        border: solid 1px black;
+    }
+    .hamb-menu-clicked {
+        background-color:#fff;
+        z-index: 100;
+        float: right;
+        padding-right: 10px;
+    }
+    .shopping-cart-header {
+        a {
+            width: auto;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #fff;
+            border: 1px solid #e8ebeb;
+            border-radius: 4px;
+            line-height: 24px;
+            cursor: pointer;
+            color: #2e3333;
+
+            span {
+                color: #2e3333;
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                padding-left: 4px;
+            }
+        }
+    } 
+}
