@@ -10973,6 +10973,72 @@ div.container-home {
 }
 
 header {
+  width: 100%;
+  display: flex;
+  background-color: #f8fafc;
+}
+
+header .navbar {
+  width: 100%;
+  height: auto;
+  z-index: 100;
+}
+
+header a a:hover {
+  color: #00ccbc;
+}
+
+header .register-btn {
+  color: #fff;
+  background: #00ccbc;
+  padding: 14px 24px;
+  border-radius: 4%;
+  margin-left: 8px;
+}
+
+header .register-btn:hover {
+  color: #fff;
+  background-color: #05b7a8;
+}
+
+header .exit-btn {
+  color: #fff;
+}
+
+header .exit-btn:hover {
+  color: black;
+  background-color: #fff;
+  border: solid 1px black;
+}
+
+header .img-logo {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+header .shopping-cart-header a {
+  width: auto;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #e8ebeb;
+  border-radius: 4px;
+  line-height: 24px;
+  cursor: pointer;
+  color: #2e3333;
+}
+
+header .shopping-cart-header a span {
+  color: #2e3333;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
+header {
   background: #fff;
   border-bottom: 1px solid #e3e3e3;
 }
