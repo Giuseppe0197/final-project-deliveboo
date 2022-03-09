@@ -6,6 +6,7 @@ use App\Category;
 use App\Dish;
 use App\User;
 use App\Client;
+use App\Order;
 
 use Illuminate\Http\Request;
 
@@ -59,5 +60,12 @@ class ClientController extends Controller
     public function orderStats() {
 
         return view('pages.orderStatitics');
+    }
+
+    public function getOrders() {
+
+        $orders = Order::all();
+
+        return json_encode($orders);
     }
 }
