@@ -73,7 +73,7 @@
 
                 {{-- AGGIUNGERE PULSANTE CHE TI RIPORTA INDIETRO, vediamo se si può --}}
                 {{-- Riepilogo carrello --}}
-                <div class="container-cart col-md-5">
+                <div class="container-cart col-md-5 col-sm-12">
 
                     <h3 id="title-shopping-cart-checkout">Carrello</h3>
                     @foreach ($cart as $product)  
