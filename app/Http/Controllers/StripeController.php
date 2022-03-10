@@ -2,6 +2,7 @@
  
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Client;
 use App\Dish;
 use App\Mail\OrderConfirm;
@@ -71,7 +72,7 @@ class StripeController extends Controller
         try {
             $response = \Stripe\Token::create(array(
                 "card" => array(
-                    "number"    => $request->input('card_no'),
+                    "number"    => $request->input('card_no'), 
                     "exp_month" => $request->input('expiry_month'),
                     "exp_year"  => $request->input('expiry_year'),
                     "cvc"       => $request->input('cvv')
@@ -107,7 +108,8 @@ class StripeController extends Controller
  
         }
         catch (Exception $e) {
-            return $e->getMessage();
+
+            return redirect('/')->with('error', $e->getMessage());
         }
  
     }

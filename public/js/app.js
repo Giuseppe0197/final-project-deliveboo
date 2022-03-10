@@ -2844,6 +2844,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2868,7 +2869,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.next = 2;
                 return axios.get("/order/statistics/page/" + _this.restaurant_id).then(function (r) {
-                  return _this.orders = r.data;
+                  return console.log(r.data);
                 })["catch"](function (e) {
                   return console.error(e);
                 });
@@ -55041,8 +55042,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

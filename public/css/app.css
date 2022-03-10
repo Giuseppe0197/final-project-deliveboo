@@ -10966,6 +10966,37 @@ html {
   scroll-behavior: smooth;
 }
 
+.alert-payment-success,
+.alert-payment-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 50%;
+  width: 20%;
+  min-height: 90px;
+  margin: 30px auto;
+  font-size: 17px;
+  top: 48%;
+  z-index: 20;
+  box-shadow: 0px 4px 20px 2px #007e8a;
+  left: 40%;
+  position: absolute;
+}
+
+.alert-payment-success span,
+.alert-payment-danger span {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #686868;
+}
+
+.alert-payment-danger {
+  box-shadow: 0px 2px 20px 0px #ef5858;
+}
+
 div.container-home {
   text-align: center;
   font-size: 25px;
