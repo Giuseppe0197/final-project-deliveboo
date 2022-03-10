@@ -10975,6 +10975,7 @@ div.container-home {
 header {
   background: #fff;
   width: 100%;
+  min-height: 80px;
   display: flex;
 }
 
@@ -10983,6 +10984,7 @@ header .navbar {
   height: 80px;
   background: #fff;
   z-index: 300;
+  border-bottom: 1px solid lightgray;
 }
 
 header .navbar-collapse {
@@ -10996,7 +10998,11 @@ header .img-logo {
 }
 
 header .navbar-brand {
-  width: 18%;
+  width: 9%;
+}
+
+header a {
+  font-size: 17px;
 }
 
 header a a:hover {
@@ -11004,16 +11010,14 @@ header a a:hover {
 }
 
 header .register-btn {
-  color: black;
-  background: white;
+  color: #fff;
+  background: #00ccbc;
   padding: 8px 16px;
   border-radius: 4%;
   margin-left: 8px;
 }
 
 header .register-btn:hover {
-  color: #fff;
-  background-color: #05b7a8;
   text-decoration: none;
 }
 
@@ -11294,7 +11298,8 @@ footer .social-channels p {
 .container-register {
   width: 100%;
   background-image: url("/storage/images/back-reg-deliveboo.svg");
-  background-position: center;
+  background-position-x: 100px;
+  background-position-y: 48%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11344,6 +11349,10 @@ footer .social-channels p {
 .container-register .register-button:hover {
   color: #fff;
   background-color: #05b7a8;
+}
+
+.container-register .container-checkbox {
+  width: calc(33.3333333333% - 5px);
 }
 
 @media screen and (max-width: 990px) {

@@ -25,16 +25,16 @@
                         @method("POST")
                         @csrf
         
-                        <input type="text" name="name" placeholder="Nome" value="test" required>
-                        <input type="text" name="lastname" placeholder="Cognome" value="test" required>
-                        <input type="text" name="address" placeholder="es. Via Veneto 22, Milano" value="test test" required>
-                        <input type="email" name="email" placeholder="Indirizzo email" value="tevw@mail.com" required>
-                        <input type="text" name="phone" placeholder="Cellulare (0039...)" value="3252352335" required>
+                        <input type="text" name="name" placeholder="Nome" required>
+                        <input type="text" name="lastname" placeholder="Cognome" required>
+                        <input type="text" name="address" placeholder="es. Via Veneto 22, Milano" required>
+                        <input type="email" name="email" placeholder="Indirizzo email" required>
+                        <input type="text" name="phone" placeholder="Cellulare (0039...)" required>
 
                         <div class="row">
                             <div class="col-lg-12 form-group">
                                 <label>Name on Card</label>
-                                <input class="form-control" size="4" type="text" value="Luca luca">
+                                <input class="form-control" size="4" type="text">
                             </div>
                         </div>
                         <div class="row">
