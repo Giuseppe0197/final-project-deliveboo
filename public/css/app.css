@@ -12447,6 +12447,56 @@ main#main-checkout .container-totalPrice span {
   border-color: #00ccbc;
 }
 
+@media screen and (max-width: 768px) {
+  main#main-checkout {
+    background-size: 768px;
+  }
+
+  main#main-checkout .content-container h1 {
+    padding: 5px 0;
+  }
+
+  main#main-checkout .container-cart {
+    position: relative;
+    top: 30px;
+  }
+
+  main#main-checkout .container-quantity {
+    width: 15%;
+  }
+
+  main#main-checkout .container-price {
+    width: 15%;
+    text-align: right;
+    color: #2e3333;
+  }
+
+  main#main-checkout .container-info-dish-cart {
+    width: 70%;
+    text-align: center;
+  }
+
+  main#main-checkout .container-info-dish-cart .container-description {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main#main-checkout {
+    background-size: 576px;
+  }
+
+  main#main-checkout .content-container h1 {
+    padding: 5px 0;
+    font-size: 33px;
+  }
+
+  main#main-checkout .container-cart {
+    width: 100%;
+  }
+}
+
 /* css pagina ordini */
 
 .advertisement {

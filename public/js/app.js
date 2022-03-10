@@ -3169,6 +3169,7 @@ __webpack_require__.r(__webpack_exports__);
   //uso il watch perche sfrutta la reattività di Vue
   watch: {
     checkbox: function checkbox(newVal, oldVal) {
+      this.searchRestaurant = '';
       console.log(newVal, oldVal);
       this.findByResataurantCategoryId(newVal);
     }
@@ -54457,6 +54458,7 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./components/ChartsComponent.vue": "./resources/js/components/ChartsComponent.vue",
 	"./components/DishesComponent.vue": "./resources/js/components/DishesComponent.vue",
 	"./components/EditComponent.vue": "./resources/js/components/EditComponent.vue",
 	"./components/MenuComponent.vue": "./resources/js/components/MenuComponent.vue",
@@ -54553,6 +54555,38 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/ChartsComponent.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/ChartsComponent.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/ChartsComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -55042,8 +55076,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> df70272a4454de557aea583212d5183634e08f77
 
 
 /***/ })

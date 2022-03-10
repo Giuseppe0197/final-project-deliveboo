@@ -101,4 +101,8 @@ class RestaurantController extends Controller
 
         return json_encode($dish);
     }
+
+    public function charts() {
+        return view('pages.charts');
+    }
 }

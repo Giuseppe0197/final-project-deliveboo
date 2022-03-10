@@ -78,6 +78,10 @@ Route::get('/order/statistics/{id}', 'ClientController@orderStats') -> name('ord
 
 Route::get('/order/statistics/page/{id}', 'ClientController@getOrders') -> name('order.statistics.page');
 
+/* pagina per la visualizzazione dei grafici */
+
+Route::get('/charts/stats', 'RestaurantController@charts') ->name('charts');
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
