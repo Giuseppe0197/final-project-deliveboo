@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use App\Order;
 use App\Category;
 use App\Dish;
 use App\User;
-use App\Client;
-use App\Order;
 
 use Illuminate\Http\Request;
 
@@ -40,15 +40,42 @@ class ClientController extends Controller
         return view('pages.checkout', compact('cart', 'totalPrice'));
     }
     
-    public function orderStats() {
+    public function orderStats($id) {
 
-        return view('pages.orderStatitics');
+        $restaurant = User::findOrfail($id);
+
+        return view('pages.orderStatitics', compact('restaurant'));
     }
 
-    public function getOrders() {
 
-        $orders = Order::all();
+    public function getOrders($id) {
+        
+        // DA COMPLETARE (STAMPARE SOLO L'ORDINE E NON TUTTI I PIATTI DELL'ORDINE)
+        // $test = Order::findOrFail($x[$i]->id);
+        
+        $dishes = Dish::all()->where('user_id', $id);
+        $orders = [];
 
-        return json_encode($orders);
+        // Ciclo all'interno di dishes
+        foreach ($dishes as $value) {
+            
+            // Prendiamo i valori dalla tabella ponte
+            $orders []= $value->orders()->wherePivot('dish_id', '=', $value->id)->get();
+
+            foreach ($orders as $x) {
+                
+                // Ciclo all'interno di ogni singolo ordine
+                for ($i=0; $i < count($x); $i++) { 
+    
+                    // Aggiungiamo all'interno dell'array contenente il tutto, anche le informazioni del cliente associato.
+                    $client = Client::findOrFail($x[$i]->client_id);
+                    $x[$i]->info_client = $client;
+                    
+                }
+                
+            }
+        }
+
+        return json_encode($orders); 
     }
 }

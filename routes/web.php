@@ -74,9 +74,9 @@ Route::post('/view/cart/', 'DishController@getCart')->name('view.cart');
 
 /* pagina per visualizzazione ordini */
 
-Route::get('/order/statistics', 'ClientController@orderStats') -> name('order.statistics');
+Route::get('/order/statistics/{id}', 'ClientController@orderStats') -> name('order.statistics');
 
-Route::get('/order/statistics/page', 'ClientController@getOrders') -> name('order.statistics.page');
+Route::get('/order/statistics/page/{id}', 'ClientController@getOrders') -> name('order.statistics.page');
 
 // Auth::routes();
 
