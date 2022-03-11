@@ -54,22 +54,22 @@
             <div class="plates-add-container row gx-5 text-center">
                 <div class="col-md-3 col-sm-6">
                     <img class="img-home-restaurants" src="/storage/images/mc.png">
-                    <h2>McDonalds'</h2>
+                    <span>McDonalds'</span>
                 </div>
 
                 <div class="plates-add col-md-3 col-sm-6 text-center">
                     <img class="img-home-restaurants" src="/storage/images/kfc.jpg">
-                    <h2>KFC</h2>
+                    <span>KFC</span>
                 </div>
 
                 <div class="plates-add col-md-3 col-sm-6 text-center">
                     <img class="img-home-restaurants" src="/storage/images/burgerking.png">
-                    <h2>Burger King</h2>
+                    <span>Burger King</span>
                 </div>
 
                 <div class="plates-add col-md-3 col-sm-6 text-center">
                     <img class="img-home-restaurants" src="/storage/images/sushi.png">
-                    <h2>Sushi House</h2>
+                    <span>Sushi House</span>
                 </div>
 
             </div>
@@ -77,22 +77,22 @@
             <div class="plates-add-container row gx-5 text-center">
                 <div class="plates-add col-md-3 col-sm-6">
                     <img class="img-home-restaurants" src="/storage/images/bakery.png">
-                    <h2>Bakery</h2>
+                    <span>Bakery</span>
                 </div>
 
                 <div class="plates-add col-md-3 col-sm-6 text-center">
                     <img class="img-home-restaurants" src="/storage/images/thai.png">
-                    <h2>Thai</h2>
+                    <span>Thai</span>
                 </div>
 
                 <div class="plates-add col-md-3 col-sm-6 text-center">
                     <img class="img-home-restaurants" src="/storage/images/messicano.png">
-                    <h2>Messicano</h2>
+                    <span>Messicano</span>
                 </div>
 
                 <div class="plates-add col-md-3 col-sm-6 text-center">
                     <img class="img-home-restaurants" src="/storage/images/piadineria.png">
-                    <h2>Piadineria</h2>
+                    <span>Piadineria</span>
                 </div>
 
             </div>
@@ -118,7 +118,7 @@
 
                 <div class="col-md-6 col-sm-12 app-download text-center">
 
-                    <img class="deliveroo-image" src="/storage/images/dliveroo-home-image.jpg" alt="">
+                    <img class="deliveroo-image" src="/storage/images/app-image.png" alt="">
 
                 </div>
 
@@ -138,7 +138,7 @@
 
                 <div class="work col-md-4 text-center">
 
-                    <img src="/storage/images/work-1.jpg" alt="">
+                    <img src="/storage/images/riders.jpg" alt="">
 
                     <h2>Diventa un Rider!</h2>
 
@@ -150,7 +150,7 @@
 
                 <div class="work col-md-4 text-center">
 
-                    <img src="/storage/images/work-3.jpg" alt="">
+                    <img src="/storage/images/lavora-con-noi.jpg" alt="">
 
                     <h2>Lavora con noi!</h2>
 

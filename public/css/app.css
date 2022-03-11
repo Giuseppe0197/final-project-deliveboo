@@ -12797,11 +12797,13 @@ main.content-container .container-dish .card .card-title {
   margin-top: 40px;
 }
 
-.favourite-plates .container-restaurants-homepage .plates-add-container h2 {
+.favourite-plates .container-restaurants-homepage .plates-add-container span {
+  display: block;
+  font-size: 30px;
   margin: 20px 0;
 }
 
-.favourite-plates .container-restaurants-homepage .plates-add-container h2:hover {
+.favourite-plates .container-restaurants-homepage .plates-add-container span:hover {
   color: #00ccbc;
   cursor: pointer;
 }
@@ -12817,8 +12819,10 @@ main.content-container .container-dish .card .card-title {
 }
 
 .deliveroo-image {
-  width: 70%;
-  border-radius: 20px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .app-download {
@@ -12847,7 +12851,8 @@ main.content-container .container-dish .card .card-title {
 }
 
 .work-with-us h2 {
-  font-size: 40px;
+  margin-top: 5px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -12857,6 +12862,10 @@ main.content-container .container-dish .card .card-title {
 
 .work-with-us .work img {
   width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 10px;
 }
 
 .work-with-us .work p {
@@ -13076,11 +13085,13 @@ main.content-container .container-dish .card .card-title {
   margin-top: 40px;
 }
 
-.favourite-plates .container-restaurants-homepage .plates-add-container h2 {
+.favourite-plates .container-restaurants-homepage .plates-add-container span {
+  display: block;
+  font-size: 30px;
   margin: 20px 0;
 }
 
-.favourite-plates .container-restaurants-homepage .plates-add-container h2:hover {
+.favourite-plates .container-restaurants-homepage .plates-add-container span:hover {
   color: #00ccbc;
   cursor: pointer;
 }
@@ -13096,8 +13107,10 @@ main.content-container .container-dish .card .card-title {
 }
 
 .deliveroo-image {
-  width: 70%;
-  border-radius: 20px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .app-download {
@@ -13126,7 +13139,8 @@ main.content-container .container-dish .card .card-title {
 }
 
 .work-with-us h2 {
-  font-size: 40px;
+  margin-top: 5px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -13136,6 +13150,10 @@ main.content-container .container-dish .card .card-title {
 
 .work-with-us .work img {
   width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 10px;
 }
 
 .work-with-us .work p {
