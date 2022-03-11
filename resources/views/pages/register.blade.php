@@ -63,7 +63,7 @@
                     </form>
                 </div>
                 
-                <div class="login-form text-center">
+                <div class="login-form text-center px-2">
                         {{-- FORM LOGIN --}}
                     <form action="{{route('login')}}" method="post">
     
