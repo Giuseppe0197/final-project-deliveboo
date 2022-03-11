@@ -21,8 +21,8 @@ div.container-home {
 }
 
 // HEADER --------------------------------------------------
-@import 'partials/header';
-// header { 
+@import "partials/header";
+// header {
 //     width: 100%;
 //     display: flex;
 //     background-color: #f8fafc;
@@ -47,7 +47,7 @@ div.container-home {
 //         background-color: #05b7a8;
 //     }
 //     .exit-btn {
-//         color: #fff;     
+//         color: #fff;
 //     }
 //     .exit-btn:hover {
 //         color: black;
@@ -79,7 +79,7 @@ div.container-home {
 //                 padding-left: 4px;
 //             }
 //         }
-//     } 
+//     }
 // }
 // edit page
 
@@ -129,34 +129,34 @@ footer {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
-    
+
                 a {
                     color: white;
-    
+
                     &:hover {
                         color: #00ccbc;
                         text-decoration: none;
                     }
                 }
-    
+
                 .register-btn {
                     color: #fff;
                     background: #00ccbc;
                     padding: 14px 24px;
                     border-radius: 4%;
                     margin-top: 20px;
-    
+
                     &:hover {
                         color: #fff;
                         background-color: #05b7a8;
                     }
                 }
-    
+
                 .subscribe {
                     margin-top: 20px;
                 }
             }
-            
+
             #app-store {
                 width: 200px;
             }
@@ -180,13 +180,12 @@ footer {
                 }
             }
         }
-        
+
         p {
             color: #434848;
         }
     }
 }
-
 
 // Page -> DishList
 div.container-dish {
@@ -383,7 +382,6 @@ div.container-dish {
 .container-register {
     width: 100%;
     background-color: #fff;
-    
 }
 
 .auth-page {
@@ -425,12 +423,11 @@ div.container-dish {
 }
 @media screen and (max-width: 990px) {
     .auth-page {
-        justify-content: center;        
+        justify-content: center;
     }
     .register-btn {
         margin-top: 10px;
     }
-
 }
 // login
 .login-form {
@@ -959,45 +956,8 @@ main.content-container {
     width: 30%;
 }
 
-/* css contenitore ristiranti trovati */
+@import "partials/homepage";
 
-.container-restaurants {
-    width: 70%;
-    margin: 0 auto;
+@import "partials/checkout";
 
-    .restaurant-found {
-        width: calc(100% / 3);
-        border-bottom: 1px solid #00ccbc;
-        border-radius: 10px;
-        margin-right: 10px;
-        margin-bottom: 15px;
-
-        .card-body {
-            width: 100%;
-            padding: 0;
-
-            img {
-                object-fit: cover;
-                border-radius: 10px;
-            }
-        }
-
-        .button-show-restaurant {
-            background-color: #00ccbc;
-            border-radius: 10px;
-            border: none;
-            color: white;
-            font-size: 15px;
-            font-weight: bold;
-            width: 50%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-    }
-}
-
-@import 'partials/homepage';
-
-@import 'partials/checkout';
-
-@import 'partials/orderstats';
+@import "partials/orderstats";
