@@ -51,7 +51,14 @@ header {
         color: #fff;     
     }
 
-    .exit-btn:hover {
+    .btn-return-restaurant {
+        color: #fff;
+        background: #00ccbc;
+        border-radius: 4%;
+        margin-right: 10px;
+    }
+
+    .exit-btn:hover, .btn-return-restaurant:hover {
         color: black;
         background-color: #fff;
         border: solid 1px black;
@@ -85,6 +92,7 @@ header {
                 padding-left: 4px;
             }
         }
+
     } 
 }
 

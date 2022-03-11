@@ -39,8 +39,53 @@ main#main-checkout {
                 box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
                 padding: 40px;
 
-                #dropin-container {
-                    width: 100%;
+                .client-info {
+                    margin-bottom: 50px;
+                }
+
+                .pay-card {
+                    border: 1px solid gray;
+                    border-radius: 5px;
+                    padding-bottom: 10px;
+                    margin: 30px 0;
+
+                    .head-card {
+                        padding: 0 10px;
+                        border-bottom: 1px solid gray;
+
+                        .left {
+                            float: left;
+
+                            span {
+                                font-size: 25px;
+                                margin-right: 5px;
+                            }
+                        }
+
+                        .right {
+                            float: right;
+                            padding-top: 10px;
+
+                            img {
+                                width: 30px;
+                                height: 15px;
+                            }
+
+                            #mastercard {
+                                width: 25px;
+                            }
+                        }
+                    }
+
+                    .head-card::after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+
+                    .form-group, input{
+                        margin-bottom: 0;
+                    }
                 }
 
                 .ms-button {
@@ -171,7 +216,7 @@ main#main-checkout {
                 padding: 5px 0;
             }
         }
-    
+     
         .container-cart {
             position: relative;
             top: 30px;
@@ -197,6 +242,10 @@ main#main-checkout {
             }
         }
     }
+
+    main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left span {
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 576px){
@@ -210,11 +259,33 @@ main#main-checkout {
                 padding: 5px 0;
                 font-size: 33px;
             }
+
+            .container-cart {
+                width: 100%;
+            }
         }
     
-        .container-cart {
-            width: 100%;
+    }
+
+    main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left {
+        font-size: 10px;;
+
+        span {
+            font-size: 20px;
         }
+    }
     
+
+    main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right {
+        padding-top: 7px;
+
+        img {
+            width: 25px;
+            height: 10px;
+        }
+
+        #mastercard {
+            width: 20px;
+        }
     }
 }
