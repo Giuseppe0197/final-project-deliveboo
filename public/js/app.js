@@ -3191,7 +3191,6 @@ __webpack_require__.r(__webpack_exports__);
   //uso il watch perche sfrutta la reattività di Vue
   watch: {
     checkbox: function checkbox(newVal, oldVal) {
-      this.searchRestaurant = '';
       console.log(newVal, oldVal);
       this.findByResataurantCategoryId(newVal);
     }
