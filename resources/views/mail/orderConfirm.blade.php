@@ -11,15 +11,16 @@
    </head>
 	
    <body>
-       <h1>Ottima Scelta, {{ $client -> name }}</h1>
+       <h1>Ottima Scelta, {{ $data["name"] }}</h1>
        <hr>
        <h3>Dettagli ordine</h3>
-       <strong>{{ $client -> name }} {{ $client -> lastname}}</strong>
-       <p>{{ $client -> phone}}</p>
+       <strong>{{ $data["name"] }} {{ $data["lastname"]}}</strong>
+       <p>{{ $data["phone"]}}</p>
        <hr>
-       
 
-       <h1>Ecco la tua ricevuta <br> Numero dell'ordine: {{ $client -> id }}</h1><br><br>
+       <div>
+          numero ordine: {{ $orderNumber }}
+       </div>
       <table width = "100%">
          
          <tr>
@@ -28,7 +29,7 @@
                 
                   <tr>
                      <td>Prezzo Totale</td>
-                     <td>{{ $client -> prize }}</td>
+                     <td>{{ $data["total_price"] }} &euro;</td>
                   </tr>
                  
                </table>

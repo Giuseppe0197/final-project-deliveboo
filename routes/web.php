@@ -60,8 +60,8 @@ Route::get('/api/dish/toggle/availability/{id}', 'RestaurantController@dishToggl
     -> name('api.dish.availability.toggle');
 
 // ROTTA PAGAMENTO 
-Route::get('/payment/process', 'PaymentsController@process')
-    -> name('payment.process');
+Route::get('stripe', 'StripeController@stripe');
+Route::post('payment', 'StripeController@payStripe')->name('payment');
 
 
 Route::post('store/client/info' , 'ClientController@storeClientInfo')
@@ -74,7 +74,13 @@ Route::post('/view/cart/', 'DishController@getCart')->name('view.cart');
 
 /* pagina per visualizzazione ordini */
 
-Route::get('/order/statistics', 'ClientController@orderStats') -> name('order.statistics');
+Route::get('/order/statistics/{id}', 'ClientController@orderStats') -> name('order.statistics');
+
+Route::get('/order/statistics/page/{id}', 'ClientController@getOrders') -> name('order.statistics.page');
+
+/* pagina per la visualizzazione dei grafici */
+
+Route::get('/charts/stats', 'RestaurantController@charts') ->name('charts');
 
 // Auth::routes();
 

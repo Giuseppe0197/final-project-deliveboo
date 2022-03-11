@@ -2,7 +2,7 @@
     <div class="container py-3">
         {{-- footer nav  --}}
         <div class="nav-footer row g-5 justify-content-around">
-            <div class=" col-md-6 p-2 col-lg-3">
+            <div class="col-md-6 p-2 col-lg-3">
                 <div class="footer-card">
                     <h5>Scopri Deliveroo</h5>
                     <ul>
@@ -18,11 +18,9 @@
                         <li><a href="">Diventa nostro partner</a></li>
                     </ul>
                 </div>
-
-
             </div>
     
-            <div class=" col-md-6 p-2  col-lg-3">
+            <div class="col-md-6 p-2  col-lg-3">
                 <div class="footer-card">
                     <h5>Note legali</h5>
                     <ul>
@@ -34,7 +32,7 @@
                 
             </div>
     
-            <div class=" col-md-6 p-2  col-lg-3">
+            <div class="col-md-6 p-2  col-lg-3">
                 <div class="footer-card">
                     <h5>Aiuto</h5>
                     <ul>
@@ -47,7 +45,7 @@
                 
             </div>
     
-            <div class=" col-md-6 p-2 col-lg-3">
+            <div class="col-md-6 p-2 col-lg-3">
                 <div class="footer-card">
                     @auth
                         <h5>Porta Deliveroo con te</h5>

@@ -25,6 +25,23 @@
         </div>
     </div>
 
+    @if(session()->has('error'))
+        <div class="alert alert-danger alert-payment-danger">
+            {{ session()->get('error') }}
+            <a class="btn btn-danger" href="{{ route('home') }}">OK</a>
+        </div>
+    @endif
+    
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-payment-success">
+            {{ session()->get('success') }}
+            <span>
+                Ti abbiamo inviato una mail con il riepilogo del tuo ordine!
+            </span>
+            <a class="btn btn-success" href="{{ route('home') }}">OK</a>
+        </div>
+    @endif
+
     <search-component></search-component>
 
     <div class="favourite-plates">
