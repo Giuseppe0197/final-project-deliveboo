@@ -108,6 +108,8 @@ export default {
   //uso il watch perche sfrutta la reattività di Vue
   watch: {
     checkbox(newVal, oldVal) {
+        this.searchRestaurant = '';
+
       console.log(newVal, oldVal);
       this.findByResataurantCategoryId(newVal);
     },
