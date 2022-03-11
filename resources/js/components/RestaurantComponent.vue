@@ -190,6 +190,7 @@ export default {
 .profile-container {
   display: flex;
   justify-content: left;
+  flex-wrap: wrap;
   width: 70%;
   margin-left: 15%;
 }
@@ -200,7 +201,7 @@ export default {
     font-size: 35px;
   }
   img {
-    width: 500px;
+    width: 65%;
     -moz-box-shadow: 0 0 3px rgb(182, 179, 179);
     -webkit-box-shadow: 0 0 3px rgb(182, 179, 179);
     box-shadow: 0 0 14px rgb(10, 9, 9);
@@ -217,7 +218,6 @@ export default {
 }
 
 .manage-restaurant {
-  margin-left: 100px;
   margin-top: 62px;
 
   button {

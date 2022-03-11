@@ -1,49 +1,34 @@
 @extends('layouts.main-layout')
 @section('content')
+<main id="edit-dish">
+    <section id="container-form" class="container">
 
-    <section id="container-form" class="container py-4">
-        <div class="content-wrapper">
-            <div class="img-container"></div>
-
-            <h1>Modifica piatto</h1>
-
-            <form 
-                action="{{ route('dish.update', $dish -> id )}}" 
-                method="POST" 
-                enctype="multipart/form-data"
-                class="form">
+        <div class="content-wrapper row">
             
-                @method("POST")
-                @csrf
+            <div class="col">
 
-                <div class="row mb-3">
-                    <label for="name" class="col-sm-2 col-form-label offset-2">Nome</label>
+                <h1>Modifica piatto</h1>
 
-                    <div class="form-input">
-                        <input type="text" name="name" class="form-control" placeholder="nome" value="{{ $dish -> name }}">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="description" class="col-sm-2 col-form-label offset-2">Descrizione</label>
-
-                    <div class="form-input">
-                        {{-- <input type="text" name="description" class="form-control" placeholder="descrizione" value="{{ $dish -> description }}"> --}}
-                        <textarea name="description" class="form-control" rows="6">{{ $dish -> description }}</textarea>
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="price" class="col-sm-2 col-form-label offset-2">Prezzo</label>
-
-                    <div class="form-input">
-                        <input type="text" name="price" class="form-control" placeholder="prezzo" value="{{ $dish -> price }}" step=".01">
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="type" class="col-sm-2 col-form-label offset-2">Categoria</label>
-
+                <form 
+                    action="{{ route('dish.update', $dish -> id )}}" 
+                    method="POST" 
+                    enctype="multipart/form-data"
+                    class="form px-3">
+                
+                    @method("POST")
+                    @csrf
+        
+                    
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" class="form-control" placeholder="nome" value="{{ $dish -> name }}">
+                    
+                    <label for="description">Descrizione</label>
+                    <textarea name="description" class="form-control" rows="6">{{ $dish -> description }}</textarea>
+                    
+                    <label for="price">Prezzo</label>
+                    <input type="text" name="price" class="form-control" placeholder="prezzo" value="{{ $dish -> price }}" step=".01">
+                    
+                    <label for="type">Categoria</label>
                     <div class="form-input">
                         <select name="type" class="form-control">
                             <option value="{{ $dish -> type }}" selected disabled hidden>{{ $dish -> type }}</option>
@@ -62,21 +47,21 @@
                             <option value="Bibite">Bibite</option>
                         </select>
                     </div>
-                </div>
-            
-                <div class="row mb-3">
-                    <label for="image" class="col-sm-2 col-form-label offset-2">Immagine</label>
-
-                    <div class="form-input">
-                        <input type="file" name="image">
+    
+                    <label for="image" class="mr-2">Immagine</label>
+                    <input type="file" name="image">
+    
+                    <div class="button">
+                        <input class="btn" type="submit" value="MODIFICA">
                     </div>
-                </div>
-
-                <div class="button">
-                    <input type="submit" class="update-btn" value="UPDATE">
-                </div>
-            </form>
+                </form>
+            </div>
+    
+            <div class="img col d-none d-md-block">
+                <img src="/storage/images/{{ $dish -> image }}" alt="no-img">
+            </div>
         </div>
     </section>
+</main>
 
 @endsection
