@@ -87,3 +87,34 @@ header {
         }
     } 
 }
+
+@media all and (max-width: 1200px) {
+    
+    header {
+
+        .navbar-brand {
+            width: 18%;
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    header {
+
+        .navbar-brand {
+            width: 22%;
+        }
+    }
+    
+}
+
+@media all and (max-width: 576px) {
+    
+    header {
+
+        .navbar-brand {
+            width: 30%;
+        }
+    }
+}

@@ -17,18 +17,24 @@
           :src="'/storage/images/' + restaurants.image"
           alt=""
         />
-        <p class="mt-4">Indirizzo: {{ restaurants.address }}</p>
-        <p>Email: {{ restaurants.email }}</p>
-        <p>Telefono: {{ restaurants.restaurant_phone }}</p>
       </div>
 
       <div class="manage-restaurant">
-        <strong>Nome:</strong>
-        <p>{{ restaurants.owner_name }}</p>
-        <br />
-        <strong>Partita IVA</strong>
-        <p>{{ restaurants.p_iva }}</p>
-        <br />
+        <p><strong>Nome titolare:</strong>
+          {{ restaurants.owner_name }}
+        </p>
+        <p><strong>Partita IVA:</strong>
+          {{ restaurants.p_iva }}
+        </p>
+        <p class="mt-4">
+          <strong>Indirizzo:</strong> {{ restaurants.address }}
+        </p>
+        <p>
+          <strong>Email:</strong> {{ restaurants.email }}
+        </p>
+        <p>
+          <strong>Telefono:</strong> {{ restaurants.restaurant_phone }}
+        </p>
         <div>
           <button class="register-button" @click="getDishes(user_id)">
             Lista piatti
@@ -41,7 +47,7 @@
 
     <div class="restaurant-info">
       <hr class="line-profile" />
-      <h1>Visualizza le tue statistiche</h1>
+      <h1>Visualizza i tuoi ordini</h1>
 
       <button class="drop-down-btn" @click.prevent="getOrders(user_id)">
         <p>Statistiche del tuo ristorante.</p>
@@ -196,20 +202,21 @@ export default {
 }
 
 .restaurant-profile {
+  width: 35%;
+
   h1 {
     margin-bottom: 25px;
-    font-size: 35px;
+    font-size: 32px;
+    font-weight: 600;
   }
+
   img {
-    width: 65%;
+    width: 270px;
     -moz-box-shadow: 0 0 3px rgb(182, 179, 179);
     -webkit-box-shadow: 0 0 3px rgb(182, 179, 179);
     box-shadow: 0 0 14px rgb(10, 9, 9);
   }
 
-  p {
-    font-size: 17px;
-  }
 }
 
 .line-profile {
@@ -223,6 +230,16 @@ export default {
   button {
     border-style: none;
   }
+
+  p {
+    font-size: 17px;
+  }
+}
+
+.register-button {
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #000;
 }
 
 // sezione info bottoni
@@ -282,20 +299,58 @@ export default {
   position: relative;
   height: 500px;
 
+  div:nth-child(2) {
+
+    padding: 0 12px;
+  }
+
   &:hover {
     box-shadow: 0 5px 5px 0 #cdcdcd, 0 5px 5px 0 #cdcdcd;
   }
 
   h3 {
     margin: 15px 0;
+    font-size: 24px;
   }
 
   p {
     font-size: 17px;
+    color: #3e3e3e;
   }
 
   img {
-    width: 280px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
 }
+
+@media all and (max-width: 1200px) {
+
+  .restaurant-profile {
+
+    h1 {
+      font-size: 28px;
+    }
+
+    img {
+      width: 90%;
+    }
+
+  }
+
+}
+
+@media all and (max-width: 733px) {
+
+  .restaurant-profile {
+
+    img {
+      width: 190px;
+    }
+
+  }
+    
+}
+
 </style>

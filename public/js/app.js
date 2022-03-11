@@ -3124,6 +3124,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7735,7 +7741,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant[data-v-78e2f7b6] {\n  background-color: #fbfbfb;\n}\n.title-profile[data-v-78e2f7b6] {\n  padding-top: 75px;\n  width: 70%;\n  margin-left: 15%;\n}\n.profile-container[data-v-78e2f7b6] {\n  display: flex;\n  justify-content: left;\n  flex-wrap: wrap;\n  width: 70%;\n  margin-left: 15%;\n}\n.restaurant-profile h1[data-v-78e2f7b6] {\n  margin-bottom: 25px;\n  font-size: 35px;\n}\n.restaurant-profile img[data-v-78e2f7b6] {\n  width: 65%;\n  box-shadow: 0 0 14px #0a0909;\n}\n.restaurant-profile p[data-v-78e2f7b6] {\n  font-size: 17px;\n}\n.line-profile[data-v-78e2f7b6] {\n  width: 100%;\n  margin: 50px 0;\n}\n.manage-restaurant[data-v-78e2f7b6] {\n  margin-top: 62px;\n}\n.manage-restaurant button[data-v-78e2f7b6] {\n  border-style: none;\n}\n.restaurant-info[data-v-78e2f7b6] {\n  width: 70%;\n  margin-left: 15%;\n  text-align: center;\n}\n.restaurant-info h1[data-v-78e2f7b6] {\n  margin-bottom: 70px;\n}\n.drop-down-btn[data-v-78e2f7b6] {\n  width: 70%;\n  background-color: #fff;\n  border: #cdcdcd 1px solid;\n  background-color: #ffffff;\n  cursor: pointer;\n  padding: 20px 20px;\n  margin-bottom: 150px;\n}\n.drop-down-btn[data-v-78e2f7b6]:hover {\n  box-shadow: 0 5px 5px 0 #cdcdcd, 0 5px 5px 0 #cdcdcd;\n}\n.drop-down-btn p[data-v-78e2f7b6] {\n  text-align: center;\n  cursor: pointer;\n  padding-top: 5px;\n  font-size: 18px;\n}\n.card-service[data-v-78e2f7b6] {\n  width: 70%;\n  margin-left: 15%;\n  text-align: center;\n  margin-top: 150px;\n  margin: 0 auto 40px auto;\n  grid-gap: 1rem;\n}\n.cards-restaurant[data-v-78e2f7b6] {\n  width: 280px;\n  display: inline-block;\n  text-decoration: none;\n  color: inherit;\n  margin: 24px 10px 0 10px;\n  background-color: #fff;\n  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);\n  border-radius: 3px;\n  overflow: hidden;\n  position: relative;\n  height: 500px;\n}\n.cards-restaurant[data-v-78e2f7b6]:hover {\n  box-shadow: 0 5px 5px 0 #cdcdcd, 0 5px 5px 0 #cdcdcd;\n}\n.cards-restaurant h3[data-v-78e2f7b6] {\n  margin: 15px 0;\n}\n.cards-restaurant p[data-v-78e2f7b6] {\n  font-size: 17px;\n}\n.cards-restaurant img[data-v-78e2f7b6] {\n  width: 280px;\n}", ""]);
+exports.push([module.i, ".restaurant[data-v-78e2f7b6] {\n  background-color: #fbfbfb;\n}\n.title-profile[data-v-78e2f7b6] {\n  padding-top: 75px;\n  width: 70%;\n  margin-left: 15%;\n}\n.profile-container[data-v-78e2f7b6] {\n  display: flex;\n  justify-content: left;\n  flex-wrap: wrap;\n  width: 70%;\n  margin-left: 15%;\n}\n.restaurant-profile[data-v-78e2f7b6] {\n  width: 35%;\n}\n.restaurant-profile h1[data-v-78e2f7b6] {\n  margin-bottom: 25px;\n  font-size: 32px;\n  font-weight: 600;\n}\n.restaurant-profile img[data-v-78e2f7b6] {\n  width: 270px;\n  box-shadow: 0 0 14px #0a0909;\n}\n.line-profile[data-v-78e2f7b6] {\n  width: 100%;\n  margin: 50px 0;\n}\n.manage-restaurant[data-v-78e2f7b6] {\n  margin-top: 62px;\n}\n.manage-restaurant button[data-v-78e2f7b6] {\n  border-style: none;\n}\n.manage-restaurant p[data-v-78e2f7b6] {\n  font-size: 17px;\n}\n.register-button[data-v-78e2f7b6] {\n  font-size: 15px;\n  font-weight: 600;\n  text-shadow: 1px 1px 1px #000;\n}\n.restaurant-info[data-v-78e2f7b6] {\n  width: 70%;\n  margin-left: 15%;\n  text-align: center;\n}\n.restaurant-info h1[data-v-78e2f7b6] {\n  margin-bottom: 70px;\n}\n.drop-down-btn[data-v-78e2f7b6] {\n  width: 70%;\n  background-color: #fff;\n  border: #cdcdcd 1px solid;\n  background-color: #ffffff;\n  cursor: pointer;\n  padding: 20px 20px;\n  margin-bottom: 150px;\n}\n.drop-down-btn[data-v-78e2f7b6]:hover {\n  box-shadow: 0 5px 5px 0 #cdcdcd, 0 5px 5px 0 #cdcdcd;\n}\n.drop-down-btn p[data-v-78e2f7b6] {\n  text-align: center;\n  cursor: pointer;\n  padding-top: 5px;\n  font-size: 18px;\n}\n.card-service[data-v-78e2f7b6] {\n  width: 70%;\n  margin-left: 15%;\n  text-align: center;\n  margin-top: 150px;\n  margin: 0 auto 40px auto;\n  grid-gap: 1rem;\n}\n.cards-restaurant[data-v-78e2f7b6] {\n  width: 280px;\n  display: inline-block;\n  text-decoration: none;\n  color: inherit;\n  margin: 24px 10px 0 10px;\n  background-color: #fff;\n  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);\n  border-radius: 3px;\n  overflow: hidden;\n  position: relative;\n  height: 500px;\n}\n.cards-restaurant div[data-v-78e2f7b6]:nth-child(2) {\n  padding: 0 12px;\n}\n.cards-restaurant[data-v-78e2f7b6]:hover {\n  box-shadow: 0 5px 5px 0 #cdcdcd, 0 5px 5px 0 #cdcdcd;\n}\n.cards-restaurant h3[data-v-78e2f7b6] {\n  margin: 15px 0;\n  font-size: 24px;\n}\n.cards-restaurant p[data-v-78e2f7b6] {\n  font-size: 17px;\n  color: #3e3e3e;\n}\n.cards-restaurant img[data-v-78e2f7b6] {\n  width: 100%;\n  height: 200px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media all and (max-width: 1200px) {\n.restaurant-profile h1[data-v-78e2f7b6] {\n    font-size: 28px;\n}\n.restaurant-profile img[data-v-78e2f7b6] {\n    width: 90%;\n}\n}\n@media all and (max-width: 733px) {\n.restaurant-profile img[data-v-78e2f7b6] {\n    width: 190px;\n}\n}", ""]);
 
 // exports
 
@@ -42168,30 +42174,35 @@ var render = function () {
           staticClass: "restaurant-image",
           attrs: { src: "/storage/images/" + _vm.restaurants.image, alt: "" },
         }),
-        _vm._v(" "),
-        _c("p", { staticClass: "mt-4" }, [
-          _vm._v("Indirizzo: " + _vm._s(_vm.restaurants.address)),
-        ]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Email: " + _vm._s(_vm.restaurants.email))]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v("Telefono: " + _vm._s(_vm.restaurants.restaurant_phone)),
-        ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "manage-restaurant" }, [
-        _c("strong", [_vm._v("Nome:")]),
+        _c("p", [
+          _c("strong", [_vm._v("Nome titolare:")]),
+          _vm._v(
+            "\n        " + _vm._s(_vm.restaurants.owner_name) + "\n      "
+          ),
+        ]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.owner_name))]),
+        _c("p", [
+          _c("strong", [_vm._v("Partita IVA:")]),
+          _vm._v("\n        " + _vm._s(_vm.restaurants.p_iva) + "\n      "),
+        ]),
         _vm._v(" "),
-        _c("br"),
+        _c("p", { staticClass: "mt-4" }, [
+          _c("strong", [_vm._v("Indirizzo:")]),
+          _vm._v(" " + _vm._s(_vm.restaurants.address) + "\n      "),
+        ]),
         _vm._v(" "),
-        _c("strong", [_vm._v("Partita IVA")]),
+        _c("p", [
+          _c("strong", [_vm._v("Email:")]),
+          _vm._v(" " + _vm._s(_vm.restaurants.email) + "\n      "),
+        ]),
         _vm._v(" "),
-        _c("p", [_vm._v(_vm._s(_vm.restaurants.p_iva))]),
-        _vm._v(" "),
-        _c("br"),
+        _c("p", [
+          _c("strong", [_vm._v("Telefono:")]),
+          _vm._v(" " + _vm._s(_vm.restaurants.restaurant_phone) + "\n      "),
+        ]),
         _vm._v(" "),
         _c("div", [
           _c(
@@ -42213,7 +42224,7 @@ var render = function () {
     _c("div", { staticClass: "restaurant-info" }, [
       _c("hr", { staticClass: "line-profile" }),
       _vm._v(" "),
-      _c("h1", [_vm._v("Visualizza le tue statistiche")]),
+      _c("h1", [_vm._v("Visualizza i tuoi ordini")]),
       _vm._v(" "),
       _c(
         "button",
@@ -55439,8 +55450,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

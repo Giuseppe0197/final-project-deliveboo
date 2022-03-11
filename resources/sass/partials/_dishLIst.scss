@@ -106,6 +106,8 @@ main.content-container {
             flex-wrap: wrap;
             justify-content: center;
             text-align: center;
+            top: 10px;
+            padding-bottom: 8px;
 
             h1 {
                 width: 100%;
@@ -116,7 +118,6 @@ main.content-container {
                 justify-content: center;
 
                 button {
-                    width: 50%;
                     margin-top: 15px;
                 }
                 
@@ -155,7 +156,6 @@ main.content-container {
         .buttons {
         
             button {
-                width: 100%;
                 margin-top: 15px;
             }
         }
