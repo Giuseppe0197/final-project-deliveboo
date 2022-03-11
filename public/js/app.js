@@ -2906,6 +2906,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2937,7 +2940,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _context.next = 3;
                 return axios.get("/order/statistics/page/" + id).then(function (r) {
-                  _this.orderDishes = r.data;
+                  return _this.orderDishes = r.data;
                 })["catch"](function (e) {
                   return console.error(e);
                 });
@@ -7713,7 +7716,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 520px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}", ""]);
+exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}", ""]);
 
 // exports
 
@@ -41837,7 +41840,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "advertisement" }, [
-      _c("h1", { staticClass: "text-center pt-5 pb-4" }, [
+      _c("h1", { staticClass: "text-center pb-4" }, [
         _vm._v("Ecco gli ordini effettuati presso il tuo ristorante"),
       ]),
       _vm._v(" "),
@@ -41887,7 +41890,7 @@ var render = function () {
                     _c("td", [_vm._v(_vm._s(order.date))]),
                     _vm._v(" "),
                     _c("td", [
-                      _c("div", [
+                      _c("div", { staticClass: "ms-container-info-client" }, [
                         _c("span", { staticClass: "d-block" }, [
                           _vm._v(
                             "\r\n                                        Nome: "
@@ -41903,6 +41906,15 @@ var render = function () {
                           ),
                           _c("span", { staticClass: "text-muted" }, [
                             _vm._v(" " + _vm._s(order.lastname) + " "),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "d-block" }, [
+                          _vm._v(
+                            "\r\n                                        Indirizzo: "
+                          ),
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v(" " + _vm._s(order.address) + " "),
                           ]),
                         ]),
                         _vm._v(" "),

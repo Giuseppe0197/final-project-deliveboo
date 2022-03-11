@@ -3,7 +3,7 @@
 
     <div class="advertisement">
 
-        <h1 class="text-center pt-5 pb-4">Ecco gli ordini effettuati presso il tuo ristorante</h1>
+        <h1 class="text-center pb-4">Ecco gli ordini effettuati presso il tuo ristorante</h1>
 
         <div class="container">
             
@@ -35,12 +35,15 @@
                             <td>{{ order.date }}</td>
                             <td>
                                 <!-- Info client -->
-                                <div>
+                                <div class="ms-container-info-client">
                                     <span class="d-block">
                                         Nome: <span class="text-muted"> {{ order.name }} </span>
                                     </span>
                                     <span class="d-block">
                                         Cognome: <span class="text-muted"> {{ order.lastname }} </span>
+                                    </span>
+                                    <span class="d-block">
+                                        Indirizzo: <span class="text-muted"> {{ order.address }} </span>
                                     </span>
                                     <span class="d-block">
                                         Email: <span class="text-muted"> {{ order.email }} </span>
@@ -157,9 +160,7 @@
 
                 // Chiamata axios per ritornare tutte le info dei piatti di ogni singolo ordine
                 await axios.get(`/order/statistics/page/` + id)
-                    .then((r) => {
-                        this.orderDishes = r.data
-                    })
+                    .then((r) => this.orderDishes = r.data)
                     .catch((e) => console.error(e));
 
                 this.scrollToEnd()
@@ -178,7 +179,7 @@
 <style scoped lang="scss">
 
 .container-table {
-    max-height: 520px;
+    max-height: 615px;
     overflow: auto;
     border: 1px solid #dee2e6;
     margin-bottom: 100px;
@@ -214,6 +215,18 @@
     .container-dishes-order {
         border-bottom: 3px solid #00ccbc;
         border-top: 3px solid #00ccbc;
+    }
+
+    tr.container-dishes-order:hover {
+        background-color: transparent;
+    }
+
+    .ms-container-info-client {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        text-align: left;
+        margin-left: 50px;
     }
 }
 
