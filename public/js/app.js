@@ -2845,21 +2845,81 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      orders: [],
-      msgEmpty: 'Nessun ordine effettuato nel tuo ristorante!'
+      selectedOrder: -1,
+      orderDishes: [],
+      ordersRestaurant: []
     };
   },
   props: {
-    restaurant_id: String
+    restaurant_id: String,
+    orders: Array
   },
   mounted: function mounted() {
-    this.getDishes();
+    this.ordersRestaurant = this.orders;
+    console.log(this.ordersRestaurant);
   },
   methods: {
-    getDishes: function getDishes() {
+    // Funzione per ritornare le informazioni di ogni singolo ordine
+    getDishes: function getDishes(id) {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -2867,20 +2927,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios.get("/order/statistics/page/" + _this.restaurant_id).then(function (r) {
-                  return console.log(r.data);
+                // Assegno l'id dell'ordine alla variale -> selectedOrder (in modo che posso visualizzare ogni singolo ordine)
+                _this.selectedOrder = _this.selectedOrder == id ? -1 : id; // Chiamata axios per ritornare tutte le info dei piatti di ogni singolo ordine
+
+                _context.next = 3;
+                return axios.get("/order/statistics/page/" + id).then(function (r) {
+                  _this.orderDishes = r.data;
                 })["catch"](function (e) {
                   return console.error(e);
                 });
 
-              case 2:
+              case 3:
+                _this.scrollToEnd();
+
+              case 4:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
       }))();
+    },
+    // Autoscroll container dishes order
+    scrollToEnd: function scrollToEnd() {
+      var containerdishes = this.$el.querySelector(".container-dishes-order");
+      containerdishes.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest"
+      });
     }
   }
 });
@@ -7610,7 +7685,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 290px;\n  overflow: auto;\n  margin-bottom: 50px;\n}", ""]);
+exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 520px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}", ""]);
 
 // exports
 
@@ -41677,36 +41752,155 @@ var render = function () {
             [
               _vm._m(0),
               _vm._v(" "),
-              _vm._l(_vm.orders, function (order, i) {
-                return _c(
-                  "tbody",
-                  { key: i },
-                  _vm._l(order, function (dish, j) {
-                    return _c("tr", { key: j }, [
-                      _c("th", { attrs: { scope: "row" } }, [
-                        _vm._v(_vm._s(dish.total_price)),
+              _vm._l(_vm.ordersRestaurant, function (order, i) {
+                return _c("tbody", { key: i }, [
+                  _c("tr", [
+                    _c("td", [_vm._v(_vm._s(order.id))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(order.total_price) + " €")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      order.payment_status
+                        ? _c(
+                            "p",
+                            {
+                              staticClass:
+                                "d-inline-block text-success font-weight-bold",
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                                    ✔\r\n                                "
+                              ),
+                            ]
+                          )
+                        : _c(
+                            "p",
+                            {
+                              staticClass:
+                                "d-inline-block text-danger font-weight-bold",
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                                    ❌\r\n                                "
+                              ),
+                            ]
+                          ),
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(order.date))]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("div", [
+                        _c("span", { staticClass: "d-block" }, [
+                          _vm._v(
+                            "\r\n                                        Nome: "
+                          ),
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v(" " + _vm._s(order.name) + " "),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "d-block" }, [
+                          _vm._v(
+                            "\r\n                                        Cognome: "
+                          ),
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v(" " + _vm._s(order.lastname) + " "),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "d-block" }, [
+                          _vm._v(
+                            "\r\n                                        Email: "
+                          ),
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v(" " + _vm._s(order.email) + " "),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "d-block" }, [
+                          _vm._v(
+                            "\r\n                                        Telefono: "
+                          ),
+                          _c("span", { staticClass: "text-muted" }, [
+                            _vm._v(" " + _vm._s(order.phone) + " "),
+                          ]),
+                        ]),
                       ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(dish.payment_status))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(dish.date))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(dish.info_client.name))]),
-                    ])
-                  }),
-                  0
-                )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-dishes",
+                          on: {
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return _vm.getDishes(order.id)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\r\n                                    Visualizza dettaglio ordine\r\n                                "
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _vm.selectedOrder == order.id
+                    ? _c("tr", { staticClass: "container-dishes-order" }, [
+                        _c(
+                          "td",
+                          { staticClass: "p-0", attrs: { colspan: "12" } },
+                          [
+                            _c(
+                              "table",
+                              { staticClass: "table table-hover ms-table" },
+                              [
+                                _vm._m(1, true),
+                                _vm._v(" "),
+                                _c(
+                                  "tbody",
+                                  _vm._l(_vm.orderDishes, function (dish, j) {
+                                    return _c("tr", { key: "B" + j }, [
+                                      _c("td", [_vm._v(_vm._s(dish.name))]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(_vm._s(dish.description)),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [_vm._v(_vm._s(dish.type))]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _vm._v(_vm._s(dish.dish_quantity)),
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", [_vm._v(_vm._s(dish.price))]),
+                                    ])
+                                  }),
+                                  0
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ])
+                    : _vm._e(),
+                ])
               }),
             ],
             2
           ),
         ]),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(2),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
-        _vm._m(2),
+        _vm._m(3),
       ]),
     ]),
   ])
@@ -41718,13 +41912,35 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Numero ordine")]),
+        _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Prezzo totale")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Stato ordine")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Data")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Cliente")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Info Cliente")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Dettagli ordine")]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Nome")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Descrizione")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Tipo")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Quantità")]),
+        _vm._v(" "),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Prezzo")]),
       ]),
     ])
   },
@@ -55076,13 +55292,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> df70272a4454de557aea583212d5183634e08f77
 
 
 /***/ })

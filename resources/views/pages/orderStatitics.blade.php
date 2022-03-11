@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <order-component restaurant_id = {{Auth::user() -> id}} ></order-component>
+    <order-component restaurant_id = {{Auth::user() -> id}} :orders ="{{ json_encode($orders) }}" ></order-component>
 
 @endsection
