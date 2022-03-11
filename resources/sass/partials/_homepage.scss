@@ -16,7 +16,7 @@
     }
 
     span.title-jumbo {
-        font-family: stratos,sans-serif;
+        font-family: stratos, sans-serif;
         font-size: 40px;
         font-weight: bolder;
         color: #440063;
@@ -55,13 +55,13 @@
             bottom: 20px;
 
             span {
-                font-family: stratos,sans-serif;
+                font-family: stratos, sans-serif;
                 display: block;
                 -webkit-transform: rotate(-3deg);
-                transform: rotate(-3deg);    
+                transform: rotate(-3deg);
                 font-size: 28px;
                 color: #fff;
-                font-weight: 700;        
+                font-weight: 700;
             }
         }
     }
@@ -81,9 +81,80 @@
     z-index: 2;
 }
 
-.favourite-plates{
-    margin-top: 30px;
-    background-color: #FFEAE4;
+/* jumbotron responsive 1200px */
+
+@media screen and (max-width: 1200px){
+    .jumbotron-deliveboo {
+    
+        div.container-hashtag {
+            bottom: 20px;
+            width: 100%;
+            left: -10%;
+        }
+    }
+}
+
+/* jumbotron responsive 768px */
+
+@media screen and (max-width: 768px){
+    .jumbotron-deliveboo {
+    
+        img {
+            width: 100%;
+        }
+    
+        span.title-jumbo {
+            font-size: 30px;
+            margin-top: 70px;
+            margin-left: -20px;
+        }
+    
+        div.container-hashtag {
+            bottom: -50px;
+            width: 80%;
+            left: -25%;
+            margin-left: 0;
+    
+            & > div {
+                width: 400px;
+                padding: 32px;
+                bottom: 38px;
+    
+                span {
+                    padding-top: -10px;
+                    font-size: 20px;     
+                }
+            }
+        }
+    }
+}
+
+/* jumbotron responsive 576px */
+
+@media screen and (max-width: 576px){
+    .jumbotron-deliveboo {
+    
+        img {
+            width: 90%;
+        }
+    
+        span.title-jumbo {
+            margin-top: 20px;
+            font-size: 32px;
+        }
+    
+        div.container-hashtag {
+            display: none;
+
+        }
+    }
+}
+
+/* sezione principale homepage */
+
+.favourite-plates {
+    padding-top: 30px;
+    background-color: #ffeae4;
 
     .title-home-section {
         text-align: center;
@@ -128,7 +199,8 @@
 .app-download {
     margin: 30px auto;
 
-    .android, .apple {
+    .android,
+    .apple {
         width: 50%;
         background-color: white;
         border: none;
@@ -153,7 +225,7 @@
     }
     .work {
         padding-bottom: 20px;
-    
+
         img {
             width: 100%;
         }
@@ -178,14 +250,11 @@
 /* media query per responsive smartphone */
 
 @media screen and (max-width: 576px) {
+    .favourite-plates {
+        padding-top: 30px;
 
-    .favourite-plates{
-        margin-top: 30px;
-    
         .container-restaurants-homepage {
-    
             .plates-add-container {
-    
                 .img-home-restaurants {
                     width: 70%;
                     border-radius: 10px;
@@ -193,43 +262,40 @@
             }
         }
     }
-    
+
     .deliveroo-image {
         width: 60%;
     }
-    
+
     .app-download {
-    
-        .android, .apple {
+        .android,
+        .apple {
             width: 40%;
             font-size: 13px;
-    
+
             img {
                 max-width: 15%;
             }
         }
     }
-    
+
     .work-with-us {
-    
         h2 {
             font-size: 30px;
         }
         .work {
-        
             img {
                 width: 80%;
             }
-    
+
             p {
                 font-size: 18px;
                 text-align: center;
             }
-    
+
             .work-button {
                 font-size: 25px;
             }
         }
     }
-
 }

@@ -3,7 +3,7 @@
 <main id="main-checkout">
     <div class="container">
         
-        @if ($errors->any())
+    @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -11,7 +11,7 @@
                 @endforeach
             </ul>
         </div>
-        @endif
+    @endif
 
         <div class="content-container container">
         <section id="checkout">
@@ -49,15 +49,15 @@
                                 <input autocomplete="off" class="form-control" placeholder="ex. 311" size="3" type="text" name="cvv" value="222">
                             </div>
                             <div class="col-lg-4 form-group">
-                                <label>Expiration</label>
+                                <label>Month</label>
                                 <input class="form-control" placeholder="MM" size="2" type="text" name="expiry_month" value="03">
                             </div>
                             <div class="col-lg-4 form-group">
-                                <label> </label>
+                                <label>Year</label>
                                 <input class="form-control" placeholder="YYYY" size="4" type="text" name="expiry_year" value="2023">
                             </div>
                         </div>
-                        <div class="row d-none">
+                        <div class="row d-none"> <!-- Display none -->
                             <div class="col-lg-12 form-group">
                                 <label>Total Price</label>
                                 <input class="form-control" size="2" type="number" name="total_price" value="{{ $totalPrice }}">
@@ -73,7 +73,7 @@
 
                 {{-- AGGIUNGERE PULSANTE CHE TI RIPORTA INDIETRO, vediamo se si può --}}
                 {{-- Riepilogo carrello --}}
-                <div class="container-cart col-md-5">
+                <div class="container-cart col-md-5 col-sm-12">
 
                     <h3 id="title-shopping-cart-checkout">Carrello</h3>
                     @foreach ($cart as $product)  

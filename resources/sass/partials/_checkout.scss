@@ -13,11 +13,8 @@ main#main-checkout {
         }
 
         .form-container {
-            // display: flex;
-            // flex-wrap: wrap;
     
             .client-info {
-                // width: 45%;
     
                 #payment-form {
                     padding: 40px;
@@ -36,7 +33,6 @@ main#main-checkout {
             }
     
             .payment-card {
-                // width: 55%;
                 background-color: white;
                 border-radius: 4px;
                 border: 1px solid rgba(0, 0, 0, 0.04);
@@ -83,11 +79,6 @@ main#main-checkout {
                 border-color: #00ccbc;
                 box-shadow: 0px 0px 0px 1px #00ccbc;
             }
-
-            // input:focus, .braintree-form__hosted-field:focus{
-            //     border-color: $lightblue;
-            //     box-shadow: 0px 0px 0px 1px $lightblue;
-            // }
         }
 
         
@@ -167,4 +158,63 @@ main#main-checkout {
 // Braintree input form
 .braintree-sheet__content--form .braintree-form__field-group .braintree-form__field .braintree-form__hosted-field:hover {
     border-color: #00ccbc;
+}
+
+@media screen and (max-width: 768px){
+
+    main#main-checkout {
+        background-size: 768px;
+    
+        .content-container {
+    
+            h1 {
+                padding: 5px 0;
+            }
+        }
+    
+        .container-cart {
+            position: relative;
+            top: 30px;
+        }
+    
+        .container-quantity {
+            width: 15%;
+        }
+    
+        .container-price {
+            width: 15%;
+            text-align: right;
+            color: #2e3333;
+        }
+    
+        .container-info-dish-cart {
+            width: 70%;
+            text-align: center;
+        
+            .container-description {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px){
+
+    main#main-checkout {
+        background-size: 576px;
+    
+        .content-container {
+    
+            h1 {
+                padding: 5px 0;
+                font-size: 33px;
+            }
+        }
+    
+        .container-cart {
+            width: 100%;
+        }
+    
+    }
 }
