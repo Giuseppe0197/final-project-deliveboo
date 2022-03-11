@@ -12003,6 +12003,7 @@ footer .social-channels p {
 .restaurant-info-cont .info-restaurant {
   display: flex;
   flex-wrap: wrap;
+  padding: 20px 0;
   border-top: 1px solid #e2e5e5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
@@ -12157,7 +12158,7 @@ div.container-dishes-shopping-cart {
   max-height: 552px;
   position: -webkit-sticky;
   position: sticky;
-  top: 10px;
+  top: 90px;
   overflow: auto;
   z-index: 3;
   padding: 32px 25px 0;
