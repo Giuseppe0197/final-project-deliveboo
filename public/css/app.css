@@ -11056,7 +11056,15 @@ header .exit-btn {
   color: #fff;
 }
 
-header .exit-btn:hover {
+header .btn-return-restaurant {
+  color: #fff;
+  background: #00ccbc;
+  border-radius: 4%;
+  margin-right: 10px;
+}
+
+header .exit-btn:hover,
+header .btn-return-restaurant:hover {
   color: black;
   background-color: #fff;
   border: solid 1px black;
@@ -11142,7 +11150,15 @@ header .exit-btn {
   color: #fff;
 }
 
-header .exit-btn:hover {
+header .btn-return-restaurant {
+  color: #fff;
+  background: #00ccbc;
+  border-radius: 4%;
+  margin-right: 10px;
+}
+
+header .exit-btn:hover,
+header .btn-return-restaurant:hover {
   color: black;
   background-color: #fff;
   border: solid 1px black;
@@ -13070,8 +13086,54 @@ main#main-checkout .content-container .form-container .payment-card {
   padding: 40px;
 }
 
-main#main-checkout .content-container .form-container .payment-card #dropin-container {
-  width: 100%;
+main#main-checkout .content-container .form-container .payment-card .client-info {
+  margin-bottom: 50px;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  margin: 30px 0;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card {
+  padding: 0 10px;
+  border-bottom: 1px solid gray;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left {
+  float: left;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left span {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right {
+  float: right;
+  padding-top: 10px;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right img {
+  width: 30px;
+  height: 15px;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right #mastercard {
+  width: 25px;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .head-card::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+main#main-checkout .content-container .form-container .payment-card .pay-card .form-group,
+main#main-checkout .content-container .form-container .payment-card .pay-card input {
+  margin-bottom: 0;
 }
 
 main#main-checkout .content-container .form-container .payment-card .ms-button {
@@ -13218,6 +13280,10 @@ main#main-checkout .container-totalPrice span {
     max-width: 100%;
     text-align: center;
   }
+
+  main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left span {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -13230,8 +13296,29 @@ main#main-checkout .container-totalPrice span {
     font-size: 33px;
   }
 
-  main#main-checkout .container-cart {
+  main#main-checkout .content-container .container-cart {
     width: 100%;
+  }
+
+  main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left {
+    font-size: 10px;
+  }
+
+  main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left span {
+    font-size: 20px;
+  }
+
+  main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right {
+    padding-top: 7px;
+  }
+
+  main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right img {
+    width: 25px;
+    height: 10px;
+  }
+
+  main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right #mastercard {
+    width: 20px;
   }
 }
 
