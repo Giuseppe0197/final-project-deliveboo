@@ -6,6 +6,9 @@
       </h1>
 
       <div class="container">
+        <div v-if="ordersRestaurant.length == 0" class="container-order-empty">
+          <span> Nessun ordine effettuato nel tuo ristorante! </span>
+        </div>
         <div class="container-table">
           <table class="table table-hover ms-table">
             <thead>
@@ -72,19 +75,6 @@
               >
                 <td class="p-0" colspan="12">
                   <table class="table table-hover ms-table">
-
-        <h1 class="text-center pb-4">Ecco gli ordini effettuati presso il tuo ristorante</h1>
-
-        <div class="container">
-
-            <div v-if="ordersRestaurant.length == 0" class="container-order-empty">
-                <span>
-                    Nessun ordine effettuato nel tuo ristorante!
-                </span>
-            </div>
-            
-            <div v-else class="container-table">
-                <table class="table table-hover ms-table">
                     <thead>
                       <tr>
                         <th scope="col">Nome</th>
@@ -109,47 +99,12 @@
               </tr>
             </tbody>
           </table>
-        
-            </div>
+        </div>
 
-            <div class="text-center mb-5">
-                <button class="btn-charts" @click="showCharts(restaurant_id)">Visualizza i tuoi grafici</button>
-            </div>
-
-            <div class="row">
-                <div class="visibility-ad col-md-6 col-sm-12 text-sm-center text-md-left my-2">
-
-                    <h2>Vuoi aumentare la tua visibilit&agrave;?</h2>
-                    <p>
-                        Guarda Le nostre tariffe di sponsorizzazione: i nostri partner aumentano del 100% la propria visibilit&agrave; con un semplice click!
-                    </p>
-                    <button class="sponsor-button">Offerte!</button>
-                </div>
-
-                <div class="col-md-6 col-sm-12 image-ad text-md-right text-sm-center my-2">
-                    <img src="/storage/images/visibilita.jpg" alt="visibility">
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="row my-2">
-
-                <div class="interview-image col-md-6 col-sm-12 text-md-left text-sm-center my-2">
-                    <img src="/storage/images/interview-2.jpg" alt="interview">
-                </div>
-
-                <div class="interview-read col-md-6 col-sm-12 text-md-right text-sm-center my-2">
-
-                    <h2>
-                        Guarda le interviste dei nostri partner!
-                    </h2>
-                    <button class="sponsor-button my-2">Interviste</button>
-                    <p class="my-2">
-                        Clicca sull'immagine per vedere il video di un nostro dipendente che ti spiegher&agrave; come attivare l'abbonamento e aumentare la tua visibilit&agrave;
-                    </p>
-                </div>
-            </div>
+        <div class="text-center mb-5">
+          <button class="btn-charts" @click="showCharts(restaurant_id)">
+            Visualizza i tuoi grafici
+          </button>
         </div>
 
         <div class="row">
@@ -178,7 +133,7 @@
               my-2
             "
           >
-            <img src="/storage/images/visibility.png" alt="" />
+            <img src="/storage/images/visibilita.jpg" alt="visibility" />
           </div>
         </div>
 
@@ -193,7 +148,7 @@
               my-2
             "
           >
-            <img src="/storage/images/interview-2.jpg" alt="" />
+            <img src="/storage/images/interview-2.jpg" alt="interview" />
           </div>
 
           <div
@@ -214,8 +169,65 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div
+          class="
+            visibility-ad
+            col-md-6 col-sm-12
+            text-sm-center text-md-left
+            my-2
+          "
+        >
+          <h2>Vuoi aumentare la tua visibilit&agrave;?</h2>
+          <p>
+            Guarda Le nostre tariffe di sponsorizzazione: i nostri partner
+            aumentano del 100% la propria visibilit&agrave; con un semplice
+            click!
+          </p>
+          <button class="sponsor-button">Offerte!</button>
+        </div>
+
+        <div
+          class="col-md-6 col-sm-12 image-ad text-md-right text-sm-center my-2"
+        >
+          <img src="/storage/images/visibility.png" alt="" />
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row my-2">
+        <div
+          class="
+            interview-image
+            col-md-6 col-sm-12
+            text-md-left text-sm-center
+            my-2
+          "
+        >
+          <img src="/storage/images/interview-2.jpg" alt="" />
+        </div>
+
+        <div
+          class="
+            interview-read
+            col-md-6 col-sm-12
+            text-md-right text-sm-center
+            my-2
+          "
+        >
+          <h2>Guarda le interviste dei nostri partner!</h2>
+          <button class="sponsor-button my-2">Interviste</button>
+          <p class="my-2">
+            Clicca sull'immagine per vedere il video di un nostro dipendente che
+            ti spiegher&agrave; come attivare l'abbonamento e aumentare la tua
+            visibilit&agrave;
+          </p>
+        </div>
+      </div>
     </div>
-  
+  </div>
 </template>
 
 <script>
