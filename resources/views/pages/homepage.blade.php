@@ -42,7 +42,8 @@
         </div>
     @endif
 
-    <search-component></search-component>
+    <search-component :restaurants_default = "{{ json_encode($restaurantDef) }}"
+    ></search-component>
 
     <div class="favourite-plates">
 
