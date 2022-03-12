@@ -3269,6 +3269,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3278,6 +3301,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       checkbox: [],
       categories: []
     };
+  },
+  props: {
+    restaurants_default: Array
   },
   mounted: function mounted() {
     var _this = this;
@@ -3291,7 +3317,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   //uso il watch perche sfrutta la reattività di Vue
   watch: {
     checkbox: function checkbox(newVal, oldVal) {
-      this.searchRestaurant = '';
+      this.searchRestaurant = "";
       console.log(newVal, oldVal);
       this.findByResataurantCategoryId(newVal);
     }
@@ -7793,7 +7819,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".background-search[data-v-89b0c3cc] {\n  background-color: #fbfbfb;\n}\n.container[data-v-89b0c3cc] {\n  padding: 40px 0px;\n}\n.grey-text[data-v-89b0c3cc] {\n  color: #585c5c;\n  font-size: 15px;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n  background-color: white;\n  padding: 20px 0 20px 30px;\n  border-radius: 10px;\n  margin-right: 125px;\n  height: 670px;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.search-bar-checkbox input[data-v-89b0c3cc] {\n  border: 1px solid #bac3c3;\n  background-color: #fff;\n  font-size: 16px;\n  padding: 9px 10px;\n  border-radius: 3px;\n  max-height: 40px;\n  margin: 0 20px 10px 0;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n  width: 80%;\n}\n.title-searchbar[data-v-89b0c3cc] {\n  text-align: center;\n  padding-top: 45px;\n}\n.search-button[data-v-89b0c3cc] {\n  color: #fff;\n  background: #00ccbc;\n  padding: 14px 24px;\n  border-radius: 4%;\n  border-style: none;\n  margin-bottom: 15px;\n}\n.search-button[data-v-89b0c3cc]:hover {\n  color: #fff;\n  background-color: #05b7a8;\n}\n.checkboxes-container[data-v-89b0c3cc] {\n  font-size: 17px;\n  flex-direction: column;\n}\n.checkboxes-container input[data-v-89b0c3cc] {\n  margin-top: 8px;\n  margin-right: 10px;\n}\n\n/* css contenitore ristiranti trovati */\n.container-restaurants[data-v-89b0c3cc] {\n  width: 70%;\n  margin: 0 auto;\n}\n.container-restaurants .restaurant-found[data-v-89b0c3cc] {\n  background-color: white;\n  border-radius: 5px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  cursor: pointer;\n  box-shadow: 0 0 15px #d7d7d7;\n  width: 288px;\n}\n.container-restaurants .restaurant-found .card-body[data-v-89b0c3cc] {\n  width: 100%;\n  padding: 0;\n}\n.container-restaurants .restaurant-found .card-body img[data-v-89b0c3cc] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n}\n.container-restaurants .restaurant-found .button-show-restaurant[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n  border-radius: 10px;\n  border: none;\n  color: white;\n  font-size: 15px;\n  font-weight: bold;\n  width: 50%;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.container-restaurants .card-title[data-v-89b0c3cc] {\n  padding: 12px 0 10px 12px;\n}\n.container-restaurants .card-text[data-v-89b0c3cc] {\n  padding-left: 15px;\n}\n.container-text-card[data-v-89b0c3cc] {\n  padding-bottom: 30px;\n  line-height: 16px;\n}\n@media only screen and (max-width: 770px) {\n.search-bar-checkbox[data-v-89b0c3cc] {\n    width: 80%;\n    margin-left: 10%;\n    height: 370px;\n    margin-bottom: 50px;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n    width: 40%;\n}\n.search-bar-checkbox .category-check[data-v-89b0c3cc] {\n    margin: 0px 5px 0 10px;\n}\n.search-bar-checkbox .checkboxes-container[data-v-89b0c3cc] {\n    flex-direction: row;\n    width: 90%;\n    margin-left: 5%;\n}\n.restaurant-search .container[data-v-89b0c3cc] {\n    flex-direction: column;\n}\n.search-button[data-v-89b0c3cc] {\n    height: 40px;\n    padding: 9px 24px;\n}\n.restaurant-found[data-v-89b0c3cc] {\n    margin-left: 8%;\n}\n}", ""]);
+exports.push([module.i, ".background-search[data-v-89b0c3cc] {\n  background-color: #fbfbfb;\n}\n.container-cards[data-v-89b0c3cc] {\n  max-width: 90%;\n  margin-left: 5%;\n  padding: 40px 0px;\n}\n.grey-text[data-v-89b0c3cc] {\n  color: #585c5c;\n  font-size: 15px;\n}\n.restaurant-found[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.card-img-top[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n  background-color: white;\n  padding: 20px 0 20px 30px;\n  border-radius: 10px;\n  margin-right: 60px;\n  height: 670px;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.search-bar-checkbox input[data-v-89b0c3cc] {\n  border: 1px solid #bac3c3;\n  background-color: #fff;\n  font-size: 16px;\n  padding: 9px 10px;\n  border-radius: 3px;\n  max-height: 40px;\n  margin: 0 20px 10px 0;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n  width: 80%;\n}\n.title-searchbar[data-v-89b0c3cc] {\n  text-align: center;\n  padding-top: 45px;\n}\n.search-button[data-v-89b0c3cc] {\n  color: #fff;\n  background: #00ccbc;\n  padding: 14px 24px;\n  border-radius: 4%;\n  border-style: none;\n  margin-bottom: 15px;\n}\n.search-button[data-v-89b0c3cc]:hover {\n  color: #fff;\n  background-color: #05b7a8;\n}\n.checkboxes-container[data-v-89b0c3cc] {\n  font-size: 17px;\n  flex-direction: column;\n}\n.checkboxes-container input[data-v-89b0c3cc] {\n  margin-top: 8px;\n  margin-right: 10px;\n}\n\n/* css contenitore ristiranti trovati */\n.container-restaurants .restaurant-found[data-v-89b0c3cc] {\n  background-color: white;\n  border-radius: 5px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  cursor: pointer;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.container-restaurants .restaurant-found .card-body[data-v-89b0c3cc] {\n  width: 80%;\n  padding: 0;\n}\n.container-restaurants .restaurant-found .card-body img[data-v-89b0c3cc] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  height: 160px;\n}\n.container-restaurants .restaurant-found .button-show-restaurant[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n  border-radius: 10px;\n  border: none;\n  color: white;\n  font-size: 15px;\n  font-weight: bold;\n  width: 50%;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.container-restaurants .card-title[data-v-89b0c3cc] {\n  padding: 12px 0 10px 12px;\n}\n.container-restaurants .card-text[data-v-89b0c3cc] {\n  padding-left: 15px;\n}\n.container-text-card[data-v-89b0c3cc] {\n  padding-bottom: 30px;\n  line-height: 16px;\n}\n@media only screen and (max-width: 1160px) {\n.search-bar-checkbox[data-v-89b0c3cc] {\n    width: 100%;\n    margin-right: 21%;\n    height: 370px;\n    margin-bottom: 50px;\n}\n.search-bar-checkbox .row[data-v-89b0c3cc] {\n    margin-left: 5%;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n    width: 40%;\n}\n.search-bar-checkbox .category-check[data-v-89b0c3cc] {\n    margin: 0px 5px 0 10px;\n}\n.search-bar-checkbox .checkboxes-container[data-v-89b0c3cc] {\n    flex-direction: row;\n    width: 90%;\n    margin-left: 5%;\n}\n.restaurant-search .container[data-v-89b0c3cc] {\n    flex-direction: column;\n}\n.search-button[data-v-89b0c3cc] {\n    height: 40px;\n    padding: 9px 24px;\n}\n}\n@media only screen and (max-width: 766px) {\n.restaurant-found[data-v-89b0c3cc] {\n    width: 16rem;\n    margin-left: 50px;\n}\n.card-img-top[data-v-89b0c3cc] {\n    width: 16rem;\n}\n}", ""]);
 
 // exports
 
@@ -42440,7 +42466,7 @@ var render = function () {
         _vm._v("Cerca i tuoi ristoranti preferiti!"),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "d-flex container" }, [
+      _c("div", { staticClass: "d-flex container container-cards" }, [
         _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
           _c("div", { staticClass: "row" }, [
             _c("input", {
@@ -42545,9 +42571,76 @@ var render = function () {
         _c("div", { staticClass: "container-restaurants container-fluid" }, [
           _c("div", { staticClass: "row" }, [
             _vm.restaurants.length === 0
-              ? _c("div", { staticClass: "text-center col-md-6 col-sm-12" }, [
-                  _c("span", [_vm._v(" CIAO SONO VUOTO ")]),
-                ])
+              ? _c(
+                  "div",
+                  { staticClass: "d-flex flex-wrap" },
+                  _vm._l(_vm.restaurants_default, function (rest, j) {
+                    return _c(
+                      "div",
+                      {
+                        key: "A" + j,
+                        staticClass: "restaurant-found restaurant-card",
+                      },
+                      [
+                        _c("div", { staticClass: "card-body text-start" }, [
+                          _c(
+                            "a",
+                            {
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.showMenu(rest.id)
+                                },
+                              },
+                            },
+                            [
+                              _c("div", { staticClass: "container-image" }, [
+                                _c("img", {
+                                  staticClass: "card-img-top",
+                                  attrs: {
+                                    src: "/storage/images/" + rest.image,
+                                    alt: "",
+                                  },
+                                }),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "container-text-card" },
+                                [
+                                  _c("h5", { staticClass: "card-title my-1" }, [
+                                    _c("strong", [
+                                      _vm._v(
+                                        " " + _vm._s(rest.restaurant_name)
+                                      ),
+                                    ]),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "card-text my-1" }, [
+                                    _vm._v(
+                                      "\n                      " +
+                                        _vm._s(rest.restaurant_phone) +
+                                        "\n                    "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "card-text my-1" }, [
+                                    _vm._v(_vm._s(rest.email)),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "card-text my-1" }, [
+                                    _vm._v(_vm._s(rest.address)),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]
+                    )
+                  }),
+                  0
+                )
               : _c(
                   "div",
                   { staticClass: "d-flex flex-wrap" },
@@ -55485,8 +55578,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

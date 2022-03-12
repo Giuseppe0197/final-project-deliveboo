@@ -2,7 +2,7 @@
   <div class="restaurant-search">
     <div class="background-search">
       <h1 class="title-searchbar">Cerca i tuoi ristoranti preferiti!</h1>
-      <div class="d-flex container">
+      <div class="d-flex container container-cards">
         <!-- container per la ricerca tramite barra e checkbox -->
 
         <div class="search-bar-checkbox container-fluid">
@@ -41,16 +41,39 @@
 
         <div class="container-restaurants container-fluid">
           <div class="row">
-            <div
-              class="text-center col-md-6 col-sm-12"
-              v-if="restaurants.length === 0"
-            >
+            <!-- ristoranti in primo piano -->
 
-            <span> CIAO SONO VUOTO </span>
-              <!-- ---------------------------------------------------------------------------------------------------- -->
-              <!-- ristoranti in primo piano -->
-              <!-- ----------------------------------------------------------------- -->
+            <div class="d-flex flex-wrap" v-if="restaurants.length === 0">
+              <div
+                v-for="(rest, j) in restaurants_default"
+                :key="'A' + j"
+                class="restaurant-found restaurant-card"
+              >
+                <!-- card ristoranti primo piano -->
+                <div class="card-body text-start">
+                  <a @click.prevent="showMenu(rest.id)">
+                    <div class="container-image">
+                      <img
+                        class="card-img-top"
+                        :src="'/storage/images/' + rest.image"
+                        alt=""
+                      />
+                    </div>
+                    <div class="container-text-card">
+                      <h5 class="card-title my-1">
+                        <strong> {{ rest.restaurant_name }}</strong>
+                      </h5>
+                      <p class="card-text my-1">
+                        {{ rest.restaurant_phone }}
+                      </p>
+                      <p class="card-text my-1">{{ rest.email }}</p>
+                      <p class="card-text my-1">{{ rest.address }}</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
+
             <!-- card ristoranti -->
             <div v-else class="d-flex flex-wrap">
               <div
@@ -100,8 +123,11 @@ export default {
     };
   },
 
+  props: {
+    restaurants_default: Array,
+  },
+
   mounted() {
-    
     axios
       .get("/find/categories")
       .then((r) => (this.categories = r.data))
@@ -111,8 +137,7 @@ export default {
   //uso il watch perche sfrutta la reattività di Vue
   watch: {
     checkbox(newVal, oldVal) {
-
-      this.searchRestaurant = '';
+      this.searchRestaurant = "";
 
       console.log(newVal, oldVal);
 
@@ -121,25 +146,24 @@ export default {
   },
 
   methods: {
-
     // Ricerca con la searchbar
     async search() {
-
-      await axios .get(`/find/restaurant_by_search/` + this.searchRestaurant)
-          .then((r) => this.restaurants = r.data)
-          .catch((e) => console.error(e));
+      await axios
+        .get(`/find/restaurant_by_search/` + this.searchRestaurant)
+        .then((r) => (this.restaurants = r.data))
+        .catch((e) => console.error(e));
     },
 
     // Ricerca con le checkbox
     async findByResataurantCategoryId() {
-
       if (this.checkbox.length == 0) {
         this.checkbox = [0];
       }
 
-      await axios .get(`/find/restaurant_by_cat/` + this.checkbox)
-          .then((r) => this.restaurants = r.data)
-          .catch((e) => console.error(e));
+      await axios
+        .get(`/find/restaurant_by_cat/` + this.checkbox)
+        .then((r) => (this.restaurants = r.data))
+        .catch((e) => console.error(e));
     },
 
     showMenu(id) {
@@ -153,7 +177,9 @@ export default {
   background-color: #fbfbfb;
 }
 
-.container {
+.container-cards {
+  max-width: 90%;
+  margin-left: 5%;
   padding: 40px 0px;
 }
 
@@ -162,11 +188,19 @@ export default {
   font-size: 15px;
 }
 
+.restaurant-found {
+  width: 18rem;
+}
+
+.card-img-top {
+  width: 18rem;
+}
+
 .search-bar-checkbox {
   background-color: white;
   padding: 20px 0 20px 30px;
   border-radius: 10px;
-  margin-right: 125px;
+  margin-right: 60px;
   height: 670px;
   -moz-box-shadow: 0 0 15px #d7d7d7;
   -webkit-box-shadow: 0 0 15px #d7d7d7;
@@ -218,9 +252,6 @@ export default {
 /* css contenitore ristiranti trovati */
 
 .container-restaurants {
-  width: 70%;
-  margin: 0 auto;
-
   .restaurant-found {
     background-color: white;
     border-radius: 5px;
@@ -230,15 +261,15 @@ export default {
     -moz-box-shadow: 0 0 15px #d7d7d7;
     -webkit-box-shadow: 0 0 15px #d7d7d7;
     box-shadow: 0 0 15px #d7d7d7;
-    width: 288px;
 
     .card-body {
-      width: 100%;
+      width: 80%;
       padding: 0;
 
       img {
         object-fit: cover;
         border-radius: 5px;
+        height: 160px;
       }
     }
 
@@ -270,12 +301,19 @@ export default {
 }
 
 // media query
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 1160px) {
+  // .container-cards {
+  // }
+
   .search-bar-checkbox {
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
+    margin-right: 21%;
     height: 370px;
     margin-bottom: 50px;
+
+    .row {
+      margin-left: 5%;
+    }
 
     .searchbar {
       width: 40%;
@@ -302,10 +340,16 @@ export default {
     height: 40px;
     padding: 9px 24px;
   }
+}
 
-  // media query card ristorante
+@media only screen and (max-width: 766px) {
   .restaurant-found {
-    margin-left: 8%;
+    width: 16rem;
+    margin-left: 50px;
+  }
+
+  .card-img-top {
+    width: 16rem;
   }
 }
 </style>
