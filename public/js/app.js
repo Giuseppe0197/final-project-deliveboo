@@ -42462,128 +42462,218 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant-search" }, [
-    _c("div", { staticClass: "background-search" }, [
-      _c("div", { staticClass: "d-flex container container-cards" }, [
-        _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.searchRestaurant,
-                  expression: "searchRestaurant",
+  return _c(
+    "div",
+    { staticClass: "restaurant-search", attrs: { id: "restaurants" } },
+    [
+      _c("div", { staticClass: "background-search" }, [
+        _c("div", { staticClass: "d-flex container container-cards" }, [
+          _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchRestaurant,
+                    expression: "searchRestaurant",
+                  },
+                ],
+                staticClass: "searchbar",
+                attrs: { type: "search", placeholder: "Ricerca ristorante" },
+                domProps: { value: _vm.searchRestaurant },
+                on: {
+                  keyup: function ($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.search.apply(null, arguments)
+                  },
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchRestaurant = $event.target.value
+                  },
                 },
-              ],
-              staticClass: "searchbar",
-              attrs: { type: "search", placeholder: "Ricerca ristorante" },
-              domProps: { value: _vm.searchRestaurant },
-              on: {
-                keyup: function ($event) {
-                  if (
-                    !$event.type.indexOf("key") &&
-                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                  ) {
-                    return null
-                  }
-                  return _vm.search.apply(null, arguments)
-                },
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.searchRestaurant = $event.target.value
-                },
-              },
-            }),
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "search-button", on: { click: _vm.search } },
+                [_vm._v("Cerca")]
+              ),
+            ]),
             _vm._v(" "),
             _c(
-              "button",
-              { staticClass: "search-button", on: { click: _vm.search } },
-              [_vm._v("Cerca")]
+              "div",
+              { staticClass: "checkboxes-container row d-flex" },
+              [
+                _c("span", { staticClass: "grey-text mb-2" }, [
+                  _vm._v("Filtra per categorie"),
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.categories, function (category) {
+                  return _c(
+                    "div",
+                    { key: category.id, staticClass: "checkboxesSearch" },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.checkbox,
+                            expression: "checkbox",
+                          },
+                        ],
+                        staticClass: "category-check",
+                        attrs: { type: "checkbox" },
+                        domProps: {
+                          value: category.id,
+                          checked: Array.isArray(_vm.checkbox)
+                            ? _vm._i(_vm.checkbox, category.id) > -1
+                            : _vm.checkbox,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.checkbox,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = category.id,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.checkbox = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.checkbox = $$c
+                            }
+                          },
+                        },
+                      }),
+                      _vm._v(_vm._s(category.name) + "\n          "),
+                    ]
+                  )
+                }),
+              ],
+              2
             ),
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "checkboxes-container row d-flex" },
-            [
-              _c("span", { staticClass: "grey-text mb-2" }, [
-                _vm._v("Filtra per categorie"),
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.categories, function (category) {
-                return _c(
-                  "div",
-                  { key: category.id, staticClass: "checkboxesSearch" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.checkbox,
-                          expression: "checkbox",
-                        },
-                      ],
-                      staticClass: "category-check",
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        value: category.id,
-                        checked: Array.isArray(_vm.checkbox)
-                          ? _vm._i(_vm.checkbox, category.id) > -1
-                          : _vm.checkbox,
-                      },
-                      on: {
-                        change: function ($event) {
-                          var $$a = _vm.checkbox,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = category.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.checkbox = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.checkbox = $$c
-                          }
-                        },
-                      },
-                    }),
-                    _vm._v(_vm._s(category.name) + "\n          "),
-                  ]
-                )
-              }),
-            ],
-            2
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container-restaurants container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _vm.restaurants.length === 0
-              ? _c(
-                  "div",
-                  { staticClass: "d-flex flex-wrap justify-content-center" },
-                  [
-                    _c(
-                      "h2",
-                      { staticClass: "container-title-restaurant-default" },
-                      [_vm._v("Ristoranti nella top 10")]
-                    ),
-                    _vm._v(" "),
-                    _vm._l(_vm.restaurants_default, function (rest, j) {
+          _c("div", { staticClass: "container-restaurants container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm.restaurants.length === 0
+                ? _c(
+                    "div",
+                    { staticClass: "d-flex flex-wrap justify-content-center" },
+                    [
+                      _c(
+                        "h2",
+                        { staticClass: "container-title-restaurant-default" },
+                        [_vm._v("Ristoranti nella top 10")]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.restaurants_default, function (rest, j) {
+                        return _c(
+                          "div",
+                          {
+                            key: "A" + j,
+                            staticClass: "restaurant-found restaurant-card",
+                          },
+                          [
+                            _c("div", { staticClass: "card-body text-start" }, [
+                              _c(
+                                "a",
+                                {
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.showMenu(rest.id)
+                                    },
+                                  },
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "container-image" },
+                                    [
+                                      _c("img", {
+                                        staticClass: "card-img-top",
+                                        attrs: {
+                                          src: "/storage/images/" + rest.image,
+                                          alt: "",
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "container-text-card" },
+                                    [
+                                      _c(
+                                        "h5",
+                                        { staticClass: "card-title my-1" },
+                                        [
+                                          _c("strong", [
+                                            _vm._v(
+                                              " " + _vm._s(rest.restaurant_name)
+                                            ),
+                                          ]),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text my-1" },
+                                        [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(rest.restaurant_phone) +
+                                              "\n                    "
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text my-1" },
+                                        [_vm._v(_vm._s(rest.email))]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text my-1" },
+                                        [_vm._v(_vm._s(rest.address))]
+                                      ),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                            ]),
+                          ]
+                        )
+                      }),
+                    ],
+                    2
+                  )
+                : _c(
+                    "div",
+                    { staticClass: "d-flex flex-wrap justify-content-center" },
+                    _vm._l(_vm.restaurants, function (restaurant, i) {
                       return _c(
                         "div",
                         {
-                          key: "A" + j,
+                          key: i,
                           staticClass: "restaurant-found restaurant-card",
                         },
                         [
@@ -42593,8 +42683,7 @@ var render = function () {
                               {
                                 on: {
                                   click: function ($event) {
-                                    $event.preventDefault()
-                                    return _vm.showMenu(rest.id)
+                                    return _vm.showMenu(restaurant.id)
                                   },
                                 },
                               },
@@ -42603,7 +42692,8 @@ var render = function () {
                                   _c("img", {
                                     staticClass: "card-img-top",
                                     attrs: {
-                                      src: "/storage/images/" + rest.image,
+                                      src:
+                                        "/storage/images/" + restaurant.image,
                                       alt: "",
                                     },
                                   }),
@@ -42619,7 +42709,8 @@ var render = function () {
                                       [
                                         _c("strong", [
                                           _vm._v(
-                                            " " + _vm._s(rest.restaurant_name)
+                                            " " +
+                                              _vm._s(restaurant.restaurant_name)
                                           ),
                                         ]),
                                       ]
@@ -42628,17 +42719,17 @@ var render = function () {
                                     _c("p", { staticClass: "card-text my-1" }, [
                                       _vm._v(
                                         "\n                      " +
-                                          _vm._s(rest.restaurant_phone) +
+                                          _vm._s(restaurant.restaurant_phone) +
                                           "\n                    "
                                       ),
                                     ]),
                                     _vm._v(" "),
                                     _c("p", { staticClass: "card-text my-1" }, [
-                                      _vm._v(_vm._s(rest.email)),
+                                      _vm._v(_vm._s(restaurant.email)),
                                     ]),
                                     _vm._v(" "),
                                     _c("p", { staticClass: "card-text my-1" }, [
-                                      _vm._v(_vm._s(rest.address)),
+                                      _vm._v(_vm._s(restaurant.address)),
                                     ]),
                                   ]
                                 ),
@@ -42648,83 +42739,14 @@ var render = function () {
                         ]
                       )
                     }),
-                  ],
-                  2
-                )
-              : _c(
-                  "div",
-                  { staticClass: "d-flex flex-wrap justify-content-center" },
-                  _vm._l(_vm.restaurants, function (restaurant, i) {
-                    return _c(
-                      "div",
-                      {
-                        key: i,
-                        staticClass: "restaurant-found restaurant-card",
-                      },
-                      [
-                        _c("div", { staticClass: "card-body text-start" }, [
-                          _c(
-                            "a",
-                            {
-                              on: {
-                                click: function ($event) {
-                                  return _vm.showMenu(restaurant.id)
-                                },
-                              },
-                            },
-                            [
-                              _c("div", { staticClass: "container-image" }, [
-                                _c("img", {
-                                  staticClass: "card-img-top",
-                                  attrs: {
-                                    src: "/storage/images/" + restaurant.image,
-                                    alt: "",
-                                  },
-                                }),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "container-text-card" },
-                                [
-                                  _c("h5", { staticClass: "card-title my-1" }, [
-                                    _c("strong", [
-                                      _vm._v(
-                                        " " + _vm._s(restaurant.restaurant_name)
-                                      ),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "card-text my-1" }, [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(restaurant.restaurant_phone) +
-                                        "\n                    "
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "card-text my-1" }, [
-                                    _vm._v(_vm._s(restaurant.email)),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "card-text my-1" }, [
-                                    _vm._v(_vm._s(restaurant.address)),
-                                  ]),
-                                ]
-                              ),
-                            ]
-                          ),
-                        ]),
-                      ]
-                    )
-                  }),
-                  0
-                ),
+                    0
+                  ),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

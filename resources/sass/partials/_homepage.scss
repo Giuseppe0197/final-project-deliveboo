@@ -238,21 +238,53 @@
 
 .work-with-us {
     background-color: white;
+    padding: 50px 0 80px;
+
+    h3 {
+        font-size: 36px;
+        font-family: stratos,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,微软雅黑体,Hiragino Sans GB,冬青黑体,sans-serif;
+        margin: 0 0 35px;
+        font-weight: 600;
+        text-align: left;
+        color: #2e3333;;
+    }
 
     h2 {
-        margin: 10px 0 5px;
-        font-size: 26px;
+        margin: 30px 0 10px;
+        font-size: 32px;
         font-weight: bold;
+        font-family: stratos,Helvetica Neue,Helvetica,Arial,Microsoft YaHei,微软雅黑体,Hiragino Sans GB,冬青黑体,sans-serif;
+        color: #fff;
     }
-    .work {
-        padding-bottom: 20px;
 
-        img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            margin: 20px 0 3px;
+    .work {
+        padding: 0 0 50px 0;
+
+        .container-info-work {
+            padding: 0 30px;
+            text-align: left;
         }
+
+        .ms-container-img-work {
+            position: relative;
+            overflow: hidden;
+
+            .img-def {
+                width: 100%;
+                height: 260px;
+                object-fit: cover;
+            }
+    
+            .img-polygon {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 20;
+                overflow: hidden;
+            }
+        }
+
 
         p {
             display: -webkit-box;
@@ -263,6 +295,7 @@
             font-size: 15px;
             padding: 2px 0;
             margin-bottom: 10px;
+            color: #fff;
             text-align: left;
         }
 
@@ -270,78 +303,116 @@
             border: none;
             background-color: #00ccbc;
             color: white;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
-            border-radius: 3px;
-            padding: 8px 25px;
+            border-radius: 4px;
+            padding: 12px 24px;
+        }
+    }
+
+    .work-1 {
+        background-color: #ff483b;
+    }
+
+    .work-2 {
+        background-color: #ff8100;
+    }
+
+    .work-3 {
+        background-color: #bac3c3;
+    }
+}
+
+// Mediaquery tablet
+@media screen and (max-width: 992px) {
+
+    .work-with-us {
+    
+        h3 {
+            font-size: 34px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    
+        .work-3 {
+            padding: 0 0 26px 0;
+        }
+    }
+}
+
+// mediaquery tablet
+@media screen and (max-width: 768px) {
+
+    .work-with-us {
+    
+        h3 {
+            font-size: 32px;
+        }
+    
+        .work {
+            padding: 0 0 30px 0;
+    
+            .ms-container-img-work {
+
+                .img-def {
+                    height: 350px;
+                }
+        
+                .img-polygon {
+                    display: none;
+                }
+            }
+    
+    
+            p {
+                display: block;
+            }
+        }
+    
+        .work-2 {
+            margin: 20px 0;
         }
     }
 }
 
 /* media query per responsive smartphone */
-
 @media screen and (max-width: 576px) {
-    .favourite-plates {
-
-        .title-home-section {
-            padding: 0;
-
-            h2 {
-                font-size: 26px;
-                max-width: 80%;
-                margin: 0 auto 20px;
-            }
-        }
-
-        .container-restaurants-homepage {
-
-            .plates-add-container {
-
-                & > div {
-                    max-width: 80%;
-                    margin: 0 auto;
-                }
-
-                .img-home-restaurants {
-                    width: 100%;
-                }
-            }
-        }
-    }
-
-    .deliveroo-image {
-        width: 60%;
-    }
-
-    .app-download {
-        .android,
-        .apple {
-            width: 40%;
-            font-size: 13px;
-
-            img {
-                max-width: 15%;
-            }
-        }
-    }
-
+    
     .work-with-us {
+
         h2 {
-            font-size: 30px;
+            font-size: 28px;
         }
+    
+        h3 {
+            font-size: 33px;
+        }
+    
         .work {
-            img {
-                width: 80%;
-            }
+            padding: 0 0 30px 0;
+    
+            .ms-container-img-work {
 
+                .img-def {
+                    height: 350px;
+                }
+        
+                .img-polygon {
+                    display: none;
+                }
+            }
+    
+    
             p {
-                font-size: 18px;
-                text-align: center;
+                display: block;
+                font-size: 17px;
             }
+        }
 
-            .work-button {
-                font-size: 25px;
-            }
+        .work-2 {
+            margin: 40px 0;
         }
     }
 }

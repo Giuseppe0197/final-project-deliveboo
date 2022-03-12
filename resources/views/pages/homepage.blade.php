@@ -109,61 +109,84 @@
                     <img class="deliveroo-image" src="/storage/images/app-image.png" alt="image app">
 
                 </div>
-
             </div>
-
         </div>
 
     </div>
 
     <div class="work-with-us">
 
-        <div class="container text-center pt-4 pb-4">
+        <div class="container text-center">
 
-            <h2>Lavora Con Noi</h2>
+            <h3>Lavora Con Deliveboo</h3>
 
             <div class="row">
 
-                <div class="work col-md-4 text-center">
+                <div class="col-md-4">
+                    <div class="work work-1">
+                        <div class="ms-container-img-work">
+                            <img class="img-def" src="/storage/images/riders.jpg" alt="riders">
 
-                    <img src="/storage/images/riders.jpg" alt="">
+                            <div>
+                                <img class="img-polygon" src="/storage/images/svgexport-6.svg" alt="polygon">
+                            </div>
+                        </div>
 
-                    <h2>Diventa un Rider</h2>
 
-                    <p>Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.</p>
-
-                    <button class="work-button">Inizia</button>
-
+                        <div class="container-info-work">
+                            <h2>Rider</h2>
+                            <p>
+                                Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.
+                            </p>
+                            <button class="work-button">Unisciti a noi</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="work col-md-4 text-center">
+                <div class="col-md-4">
+                    <div class="work work-2">
+                        <div class="ms-container-img-work">
+                            <img class="img-def" src="/storage/images/ciambella.jpg" alt="ristoranti">
 
-                    <img src="/storage/images/lavora-con-noi.jpg" alt="">
+                            <div>
+                                <img class="img-polygon" src="/storage/images/svgexport-7.svg" alt="polygon2">
+                            </div>
+                        </div>
 
-                    <h2>Lavora con noi</h2>
 
-                    <p>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</p>
-
-                    <button class="work-button">Inizia</button>
-
+                        <div class="container-info-work">
+                            <h2>Ristoranti</h2>
+                            <p>
+                                Diventa partner di Deliveroo e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.
+                            </p>
+                            <a href="#restaurants" class="btn work-button">Scopri di pi&ugrave;</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="work col-md-4 text-center">
+                <div class="col-md-4">
+                    <div class="work work-3">
 
-                    <img src="/storage/images/665422_1646231926.jpg" alt="">
+                        <div class="ms-container-img-work">
+                            <img class="img-def" src="/storage/images/lavora-img-3.jpg" alt="lavora con noi">
 
-                    <h2>Ristoranti</h2>
+                            <div>
+                                <img class="img-polygon" src="/storage/images/svgexport-8.svg" alt="polygon3">
+                            </div>
+                        </div>
 
-                    <p>Diventa partner di Deliveroo e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</p>
 
-                    <button class="work-button">Inizia</button>
-
+                        <div class="container-info-work">
+                            <h2>Lavora con noi</h2>
+                            <p>
+                                La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.
+                            </p>
+                            <a href="{{route('register.form')}}" class="btn work-button">Diventa nostro partner</a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 @endsection
