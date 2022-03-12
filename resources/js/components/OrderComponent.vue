@@ -94,6 +94,10 @@
                 </table>
             </div>
 
+            <div class="text-center mb-5">
+                <button class="btn-charts" @click="showCharts(restaurant_id)">Visualizza i tuoi grafici</button>
+            </div>
+
             <div class="row">
                 <div class="visibility-ad col-md-6 col-sm-12 text-sm-center text-md-left my-2">
 
@@ -178,6 +182,10 @@
 
                 containerdishes.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
             },
+
+            showCharts(id) {
+                window.location.href = `/charts/stats/${id}`;
+            }
         },
 }
 </script>
@@ -248,6 +256,15 @@
         font-weight: 600;
         font-size: 20px;
     }
+}
+
+.btn-charts {
+    max-width: 65%;
+    background-color: #00ccbc;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: 0;
+    color: #fff;
 }
 
 @media all and (max-width:992px) {
