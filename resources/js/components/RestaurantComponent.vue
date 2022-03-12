@@ -211,7 +211,9 @@ export default {
   }
 
   img {
-    width: 270px;
+    width: 80%;
+    min-width: 80%;
+    max-width: 80%;
     -moz-box-shadow: 0 0 3px rgb(182, 179, 179);
     -webkit-box-shadow: 0 0 3px rgb(182, 179, 179);
     box-shadow: 0 0 14px rgb(10, 9, 9);
