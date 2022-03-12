@@ -19163,6 +19163,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -24042,7 +24045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}\n@media all and (max-width: 992px) {\n.container-table[data-v-082b38fa] {\n    max-height: 615px;\n    overflow: auto;\n    border: 1px solid #dee2e6;\n    margin-bottom: 100px;\n    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n    max-width: 65%;\n    background-color: #00ccbc;\n    border: 0;\n    color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n    font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n    padding: 0.75rem;\n    vertical-align: top;\n    border-top: 1px solid #dee2e6;\n    text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n    border-bottom: 3px solid #00ccbc;\n    border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n    background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n    display: flex;\n    flex-direction: column;\n    max-width: 100%;\n    text-align: left;\n    margin-left: 50px;\n}\n}", ""]);
+exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}\n.btn-charts[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  font-size: 20px;\n  padding: 5px 10px;\n  border: 0;\n  color: #fff;\n}\n@media all and (max-width: 992px) {\n.container-table[data-v-082b38fa] {\n    max-height: 615px;\n    overflow: auto;\n    border: 1px solid #dee2e6;\n    margin-bottom: 100px;\n    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n    max-width: 65%;\n    background-color: #00ccbc;\n    border: 0;\n    color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n    font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n    padding: 0.75rem;\n    vertical-align: top;\n    border-top: 1px solid #dee2e6;\n    text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n    border-bottom: 3px solid #00ccbc;\n    border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n    background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n    display: flex;\n    flex-direction: column;\n    max-width: 100%;\n    text-align: left;\n    margin-left: 50px;\n}\n}", ""]);
 
 // exports
 
@@ -79935,18 +79938,20 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-danger",
-            on: {
-              click: function ($event) {
-                return _vm.showCharts(_vm.restaurant_id)
+        _c("div", { staticClass: "text-center mb-5" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn-charts",
+              on: {
+                click: function ($event) {
+                  return _vm.showCharts(_vm.restaurant_id)
+                },
               },
             },
-          },
-          [_vm._v("Visualizza i tuoi grafici")]
-        ),
+            [_vm._v("Visualizza i tuoi grafici")]
+          ),
+        ]),
         _vm._v(" "),
         _vm._m(2),
         _vm._v(" "),

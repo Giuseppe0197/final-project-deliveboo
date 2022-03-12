@@ -87,8 +87,11 @@
                     </tbody>
                 </table>
             </div>
-            
-            <button class="btn btn-danger" @click="showCharts(restaurant_id)">Visualizza i tuoi grafici</button>
+
+            <div class="text-center mb-5">
+                <button class="btn-charts" @click="showCharts(restaurant_id)">Visualizza i tuoi grafici</button>
+            </div>
+
             <div class="row">
                 <div class="visibility-ad col-md-6 col-sm-12 text-sm-center text-md-left my-2">
 
@@ -233,6 +236,15 @@
         text-align: left;
         margin-left: 50px;
     }
+}
+
+.btn-charts {
+    max-width: 65%;
+    background-color: #00ccbc;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: 0;
+    color: #fff;
 }
 
 @media all and (max-width:992px) {
