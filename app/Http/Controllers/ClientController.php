@@ -63,15 +63,6 @@ class ClientController extends Controller
 
     public function getOrders($id) {
 
-        // SELECT dishes.name, dishes.price, dishes.description, dishes.type, dish_order.dish_quantity FROM users
-        //     JOIN dishes
-        //         ON dishes.user_id = users.id
-        //     JOIN dish_order
-        //         ON dish_order.dish_id = dishes.id
-        //     JOIN orders
-        //         ON orders.id = dish_order.order_id
-        //     WHERE orders.id = 84
-
         $dishes = DB::table('users')
             ->join('dishes', 'users.id', '=', 'dishes.user_id')
             ->join('dish_order', 'dish_order.dish_id', '=', 'dishes.id')

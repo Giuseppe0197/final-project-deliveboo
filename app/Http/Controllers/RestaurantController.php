@@ -6,7 +6,7 @@ use App\Category;
 use App\User;
 use App\Restaurant;
 use App\Dish;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -102,7 +102,20 @@ class RestaurantController extends Controller
         return json_encode($dish);
     }
 
-    public function charts() {
-        return view('pages.charts');
+    public function charts($id) {
+        $restaurant = User::findOrfail($id);
+
+        $orders = DB::table('users')
+            ->join('dishes', 'users.id', '=', 'dishes.user_id')
+            ->join('dish_order', 'dish_order.dish_id', '=', 'dishes.id')
+            ->join('orders', 'dish_order.order_id', '=', 'orders.id')
+            ->join('clients', 'orders.client_id', '=', 'clients.id')
+            ->where('users.id', '=', $id)
+            ->groupBy('orders.id')
+            ->orderByDesc('orders.date')
+            ->select('orders.id', 'total_price', 'payment_status', 'date', 'clients.name', 'clients.lastname', 'clients.address', 'clients.email', 'clients.phone')
+            ->get();
+
+        return view('pages.charts', compact('restaurant', 'orders'));
     }
 }
