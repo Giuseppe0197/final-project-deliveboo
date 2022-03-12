@@ -17,7 +17,7 @@
                     @method("POST")
                     @csrf
 
-                    <input type="text" name="name" class="form-control" placeholder="Inserisci nome del pietto">
+                    <input type="text" name="name" class="form-control" placeholder="Inserisci nome del piatto">
                     
                     <textarea name="description" class="form-control" rows="6" placeholder="Descrizione piatto..."></textarea>
                     
