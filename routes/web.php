@@ -80,7 +80,7 @@ Route::get('/order/statistics/page/{id}', 'ClientController@getOrders') -> name(
 
 /* pagina per la visualizzazione dei grafici */
 
-Route::get('/charts/stats', 'RestaurantController@charts') ->name('charts');
+Route::get('/charts/stats/{id}', 'RestaurantController@charts') ->name('charts');
 
 // Auth::routes();
 
