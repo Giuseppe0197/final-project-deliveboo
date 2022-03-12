@@ -45,8 +45,8 @@ Route::get('/find/categories', 'RestaurantController@getCategories') -> name('fi
 // Route::get('/find/categories', 'RestaurantController@getCategoriesId') -> name('find.categories');
 
 
-Route::get('/find/restaurant', 'RestaurantController@findRestaurant') -> name('find.restaurant');
-Route::get('/find/restaurant_by_cat', 'RestaurantController@findRestaurantByCategoriesId') -> name('find.restaurant.bycat');
+Route::get('/find/restaurant_by_search/{id}', 'RestaurantController@findRestaurant') -> name('find.restaurant');
+Route::get('/find/restaurant_by_cat/{id}', 'RestaurantController@findRestaurantByCategoriesId') -> name('find.restaurant.bycat');
 
 // rotta per la visualizzazione del ristorante per il client 
 Route::get('/show/restaurant/{id}', 'ClientController@showRestaurant') -> name('show.restaurant');

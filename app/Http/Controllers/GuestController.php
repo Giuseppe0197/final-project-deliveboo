@@ -9,8 +9,11 @@ use App\User;
 
 class GuestController extends Controller
 {
-    public function home() {
+    public function home()
+    {
 
-        return view('pages.homepage');
+        $restaurantDef = User::inRandomOrder()->limit(10)->get();
+
+        return view('pages.homepage', compact('restaurantDef'));
     }
 }

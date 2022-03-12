@@ -3171,6 +3171,41 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3271,6 +3306,9 @@ __webpack_require__.r(__webpack_exports__);
       categories: []
     };
   },
+  props: {
+    restaurants_default: Array
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -3283,40 +3321,63 @@ __webpack_require__.r(__webpack_exports__);
   //uso il watch perche sfrutta la reattività di Vue
   watch: {
     checkbox: function checkbox(newVal, oldVal) {
-      this.searchRestaurant = '';
+      this.searchRestaurant = "";
       console.log(newVal, oldVal);
       this.findByResataurantCategoryId(newVal);
     }
   },
   methods: {
+    // Ricerca con la searchbar
     search: function search() {
-      this.findByResataurantCategoryId();
-    },
-    findByResataurantCategoryId: function findByResataurantCategoryId() {
       var _this2 = this;
 
-      var queryParam = "/find/restaurant_by_cat";
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios.get("/find/restaurant_by_search/" + _this2.searchRestaurant).then(function (r) {
+                  return _this2.restaurants = r.data;
+                })["catch"](function (e) {
+                  return console.error(e);
+                });
 
-      if (this.checkbox.length > 0 && this.searchRestaurant.length > 0) {
-        queryParam += "?ids=" + "".concat(this.checkbox, "&q=") + this.searchRestaurant;
-      } else if (this.checkbox.length == 0 && this.searchRestaurant.length == 0) {} else if (this.checkbox.length > 0) {
-        queryParam += "?ids=" + "".concat(this.checkbox);
-      } else {
-        queryParam += "?q=" + this.searchRestaurant;
-      }
-
-      axios.get(queryParam).then(function (r) {
-        _this2.restaurants = r.data.data;
-        console.log(_this2.restaurants);
-
-        for (var i = 0; i < _this2.restaurants.length; i++) {
-          if (_this2.restaurants[i].user_id) {
-            _this2.restaurants[i].id = _this2.restaurants[i].user_id;
+              case 2:
+              case "end":
+                return _context.stop();
+            }
           }
-        }
-      })["catch"](function (e) {
-        return console.error(e);
-      });
+        }, _callee);
+      }))();
+    },
+    // Ricerca con le checkbox
+    findByResataurantCategoryId: function findByResataurantCategoryId() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (_this3.checkbox.length == 0) {
+                  _this3.checkbox = [0];
+                }
+
+                _context2.next = 3;
+                return axios.get("/find/restaurant_by_cat/" + _this3.checkbox).then(function (r) {
+                  return _this3.restaurants = r.data;
+                })["catch"](function (e) {
+                  return console.error(e);
+                });
+
+              case 3:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     },
     showMenu: function showMenu(id) {
       window.location.href = "/show/restaurant/".concat(id);
@@ -7724,7 +7785,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}", ""]);
+exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}\n@media all and (max-width: 992px) {\n.container-table[data-v-082b38fa] {\n    max-height: 615px;\n    overflow: auto;\n    border: 1px solid #dee2e6;\n    margin-bottom: 100px;\n    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n    max-width: 65%;\n    background-color: #00ccbc;\n    border: 0;\n    color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n    font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n    padding: 0.75rem;\n    vertical-align: top;\n    border-top: 1px solid #dee2e6;\n    text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n    border-bottom: 3px solid #00ccbc;\n    border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n    background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n    display: flex;\n    flex-direction: column;\n    max-width: 100%;\n    text-align: left;\n    margin-left: 50px;\n}\n}", ""]);
 
 // exports
 
@@ -7762,7 +7823,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".background-search[data-v-89b0c3cc] {\n  background-color: #fbfbfb;\n}\n.container[data-v-89b0c3cc] {\n  padding: 40px 0px;\n}\n.grey-text[data-v-89b0c3cc] {\n  color: #585c5c;\n  font-size: 15px;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n  background-color: white;\n  padding: 20px 0 20px 30px;\n  border-radius: 10px;\n  margin-right: 125px;\n  height: 670px;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.search-bar-checkbox input[data-v-89b0c3cc] {\n  border: 1px solid #bac3c3;\n  background-color: #fff;\n  font-size: 16px;\n  padding: 9px 10px;\n  border-radius: 3px;\n  max-height: 40px;\n  margin: 0 20px 10px 0;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n  width: 80%;\n}\n.title-searchbar[data-v-89b0c3cc] {\n  text-align: center;\n  padding-top: 45px;\n}\n.search-button[data-v-89b0c3cc] {\n  color: #fff;\n  background: #00ccbc;\n  padding: 14px 24px;\n  border-radius: 4%;\n  border-style: none;\n  margin-bottom: 15px;\n}\n.search-button[data-v-89b0c3cc]:hover {\n  color: #fff;\n  background-color: #05b7a8;\n}\n.checkboxes-container[data-v-89b0c3cc] {\n  font-size: 17px;\n  flex-direction: column;\n}\n.checkboxes-container input[data-v-89b0c3cc] {\n  margin-top: 8px;\n  margin-right: 10px;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {\n  display: block;\n  position: relative;\n  padding-left: 25px;\n  margin-bottom: 10px;\n  cursor: pointer;\n  font-size: 19px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  /* Create the checkmark/indicator (hidden when not checked) */\n  /* Show the checkmark when checked */\n  /* Style the checkmark/indicator */\n}\n.checkboxes-container .checkboxesSearch input[data-v-89b0c3cc] {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {\n  position: absolute;\n  top: 9px;\n  left: 0;\n  height: 15px;\n  width: 15px;\n  border: 2px solid #bac3c3;\n  border-radius: 50%;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc]:after {\n  display: block;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]::after {\n  left: 4px;\n  top: -1px;\n  width: 5px;\n  height: 10px;\n  border: solid white;\n  border-width: 0 3px 3px 0;\n  transform: rotate(45deg);\n}\n.checkboxes-container .checkboxesSearch:hover .checkmark[data-v-89b0c3cc] {\n  border: 1px solid #00ccbc;\n}\n\n/* css contenitore ristiranti trovati */\n.container-restaurants[data-v-89b0c3cc] {\n  width: 70%;\n  margin: 0 auto;\n}\n.container-restaurants .restaurant-found[data-v-89b0c3cc] {\n  background-color: white;\n  border-radius: 5px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  cursor: pointer;\n  box-shadow: 0 0 15px #d7d7d7;\n  width: 288px;\n}\n.container-restaurants .restaurant-found .card-body[data-v-89b0c3cc] {\n  width: 100%;\n  padding: 0;\n}\n.container-restaurants .restaurant-found .card-body img[data-v-89b0c3cc] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n}\n.container-restaurants .restaurant-found .button-show-restaurant[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n  border-radius: 10px;\n  border: none;\n  color: white;\n  font-size: 15px;\n  font-weight: bold;\n  width: 50%;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.container-restaurants .card-title[data-v-89b0c3cc] {\n  padding: 12px 0 10px 12px;\n}\n.container-restaurants .card-text[data-v-89b0c3cc] {\n  padding-left: 15px;\n}\n.container-text-card[data-v-89b0c3cc] {\n  padding-bottom: 30px;\n  line-height: 16px;\n}\n@media only screen and (max-width: 770px) {\n.search-bar-checkbox[data-v-89b0c3cc] {\n    width: 80%;\n    margin-left: 10%;\n    height: 370px;\n    margin-bottom: 50px;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n    width: 40%;\n}\n.search-bar-checkbox .category-check[data-v-89b0c3cc] {\n    margin: 0px 5px 0 10px;\n}\n.search-bar-checkbox .checkboxes-container[data-v-89b0c3cc] {\n    flex-direction: row;\n    width: 90%;\n    margin-left: 5%;\n}\n.restaurant-search .container[data-v-89b0c3cc] {\n    flex-direction: column;\n}\n.search-button[data-v-89b0c3cc] {\n    height: 40px;\n    padding: 9px 24px;\n}\n.restaurant-found[data-v-89b0c3cc] {\n    margin-left: 8%;\n}\n}", ""]);
+exports.push([module.i, ".background-search[data-v-89b0c3cc] {\n  background-color: #fbfbfb;\n}\n.container-cards[data-v-89b0c3cc] {\n  max-width: 90%;\n  margin-left: 5%;\n  padding: 40px 0px;\n}\n.grey-text[data-v-89b0c3cc] {\n  color: #585c5c;\n  font-size: 15px;\n}\n.restaurant-found[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.card-img-top[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n  background-color: white;\n  padding: 20px 0 20px 30px;\n  border-radius: 10px;\n  margin-right: 60px;\n  height: 670px;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.search-bar-checkbox input[data-v-89b0c3cc] {\n  border: 1px solid #bac3c3;\n  background-color: #fff;\n  font-size: 16px;\n  padding: 9px 10px;\n  border-radius: 3px;\n  max-height: 40px;\n  margin: 0 20px 10px 0;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n  width: 80%;\n}\n.title-searchbar[data-v-89b0c3cc] {\n  text-align: center;\n  padding-top: 45px;\n}\n.search-button[data-v-89b0c3cc] {\n  color: #fff;\n  background: #00ccbc;\n  padding: 14px 24px;\n  border-radius: 4%;\n  border-style: none;\n  margin-bottom: 15px;\n}\n.search-button[data-v-89b0c3cc]:hover {\n  color: #fff;\n  background-color: #05b7a8;\n}\n.checkboxes-container[data-v-89b0c3cc] {\n  font-size: 17px;\n  flex-direction: column;\n}\n.checkboxes-container input[data-v-89b0c3cc] {\n  margin-top: 8px;\n  margin-right: 10px;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {\n  display: block;\n  position: relative;\n  padding-left: 25px;\n  margin-bottom: 10px;\n  cursor: pointer;\n  font-size: 19px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  /* Create the checkmark/indicator (hidden when not checked) */\n  /* Show the checkmark when checked */\n  /* Style the checkmark/indicator */\n}\n.checkboxes-container .checkboxesSearch input[data-v-89b0c3cc] {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {\n  position: absolute;\n  top: 9px;\n  left: 0;\n  height: 15px;\n  width: 15px;\n  border: 2px solid #bac3c3;\n  border-radius: 50%;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc]:after {\n  display: block;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]::after {\n  left: 4px;\n  top: -1px;\n  width: 5px;\n  height: 10px;\n  border: solid white;\n  border-width: 0 3px 3px 0;\n  transform: rotate(45deg);\n}\n.checkboxes-container .checkboxesSearch:hover .checkmark[data-v-89b0c3cc] {\n  border: 1px solid #00ccbc;\n}\n\n/* css contenitore ristiranti trovati */\n.container-restaurants .restaurant-found[data-v-89b0c3cc] {\n  background-color: white;\n  border-radius: 5px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  cursor: pointer;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.container-restaurants .restaurant-found .card-body[data-v-89b0c3cc] {\n  width: 80%;\n  padding: 0;\n}\n.container-restaurants .restaurant-found .card-body img[data-v-89b0c3cc] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  height: 160px;\n}\n.container-restaurants .restaurant-found .button-show-restaurant[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n  border-radius: 10px;\n  border: none;\n  color: white;\n  font-size: 15px;\n  font-weight: bold;\n  width: 50%;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.container-restaurants .card-title[data-v-89b0c3cc] {\n  padding: 12px 0 10px 12px;\n}\n.container-restaurants .card-text[data-v-89b0c3cc] {\n  padding-left: 15px;\n}\n.container-restaurants .container-title-restaurant-default[data-v-89b0c3cc] {\n  width: 100% !important;\n  font-weight: 700;\n  color: #1c1c1c;\n  padding-bottom: 15px;\n  font-size: 30px;\n  text-align: center;\n}\n.container-text-card[data-v-89b0c3cc] {\n  padding-bottom: 30px;\n  line-height: 16px;\n}\n@media only screen and (max-width: 1160px) {\n.search-bar-checkbox[data-v-89b0c3cc] {\n    width: 100%;\n    margin-right: 21%;\n    height: 370px;\n    margin-bottom: 50px;\n}\n.search-bar-checkbox .row[data-v-89b0c3cc] {\n    margin-left: 5%;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n    width: 40%;\n}\n.search-bar-checkbox .category-check[data-v-89b0c3cc] {\n    margin: 0px 5px 0 10px;\n}\n.search-bar-checkbox .checkboxes-container[data-v-89b0c3cc] {\n    flex-direction: row;\n    width: 90%;\n    margin-left: 5%;\n}\n.restaurant-search .container[data-v-89b0c3cc] {\n    flex-direction: column;\n}\n.search-button[data-v-89b0c3cc] {\n    height: 40px;\n    padding: 9px 24px;\n}\n}\n@media only screen and (max-width: 766px) {\n.restaurant-found[data-v-89b0c3cc] {\n    width: 16rem;\n    margin-left: 50px;\n}\n.card-img-top[data-v-89b0c3cc] {\n    width: 16rem;\n}\n}", ""]);
 
 // exports
 
@@ -42403,196 +42464,295 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "restaurant-search" }, [
-    _c("div", { staticClass: "background-search" }, [
-      _c("h1", { staticClass: "title-searchbar" }, [
-        _vm._v("Cerca i tuoi ristoranti preferiti!"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "d-flex container" }, [
-        _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.searchRestaurant,
-                  expression: "searchRestaurant",
+  return _c(
+    "div",
+    { staticClass: "restaurant-search", attrs: { id: "restaurants" } },
+    [
+      _c("div", { staticClass: "background-search" }, [
+        _c("div", { staticClass: "d-flex container container-cards" }, [
+          _c("div", { staticClass: "search-bar-checkbox container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchRestaurant,
+                    expression: "searchRestaurant",
+                  },
+                ],
+                staticClass: "searchbar",
+                attrs: { type: "search", placeholder: "Ricerca ristorante" },
+                domProps: { value: _vm.searchRestaurant },
+                on: {
+                  keyup: function ($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.search.apply(null, arguments)
+                  },
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchRestaurant = $event.target.value
+                  },
                 },
-              ],
-              staticClass: "searchbar",
-              attrs: { type: "search", placeholder: "Ricerca ristorante" },
-              domProps: { value: _vm.searchRestaurant },
-              on: {
-                keyup: function ($event) {
-                  if (
-                    !$event.type.indexOf("key") &&
-                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                  ) {
-                    return null
-                  }
-                  return _vm.search.apply(null, arguments)
-                },
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.searchRestaurant = $event.target.value
-                },
-              },
-            }),
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "search-button", on: { click: _vm.search } },
+                [_vm._v("Cerca")]
+              ),
+            ]),
             _vm._v(" "),
             _c(
-              "button",
-              { staticClass: "search-button", on: { click: _vm.search } },
-              [_vm._v("Cerca")]
+              "div",
+              { staticClass: "checkboxes-container row d-flex" },
+              [
+                _c("span", { staticClass: "grey-text mb-2" }, [
+                  _vm._v("Filtra per categorie"),
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.categories, function (category) {
+                  return _c(
+                    "label",
+                    { key: category.id, staticClass: "checkboxesSearch mb-0" },
+                    [
+                      _vm._v(
+                        _vm._s(category.name) + "\n            \n            "
+                      ),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.checkbox,
+                            expression: "checkbox",
+                          },
+                        ],
+                        staticClass: "category-check",
+                        attrs: { type: "checkbox" },
+                        domProps: {
+                          value: category.id,
+                          checked: Array.isArray(_vm.checkbox)
+                            ? _vm._i(_vm.checkbox, category.id) > -1
+                            : _vm.checkbox,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.checkbox,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = category.id,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.checkbox = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.checkbox = $$c
+                            }
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "checkmark" }),
+                    ]
+                  )
+                }),
+              ],
+              2
             ),
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "checkboxes-container row d-flex" },
-            [
-              _c("span", { staticClass: "grey-text mb-2" }, [
-                _vm._v("Filtra per categorie"),
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.categories, function (category) {
-                return _c(
-                  "label",
-                  { key: category.id, staticClass: "checkboxesSearch mb-0" },
-                  [
-                    _vm._v(
-                      _vm._s(category.name) + "\n            \n            "
-                    ),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.checkbox,
-                          expression: "checkbox",
-                        },
-                      ],
-                      staticClass: "category-check",
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        value: category.id,
-                        checked: Array.isArray(_vm.checkbox)
-                          ? _vm._i(_vm.checkbox, category.id) > -1
-                          : _vm.checkbox,
-                      },
-                      on: {
-                        change: function ($event) {
-                          var $$a = _vm.checkbox,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = category.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.checkbox = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.checkbox = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.checkbox = $$c
-                          }
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "checkmark" }),
-                  ]
-                )
-              }),
-            ],
-            2
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container-restaurants container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _vm.restaurants.length === 0
-              ? _c("div", { staticClass: "text-center col-md-6 col-sm-12" })
-              : _c(
-                  "div",
-                  { staticClass: "d-flex flex-wrap" },
-                  _vm._l(_vm.restaurants, function (restaurant, i) {
-                    return _c(
-                      "div",
-                      {
-                        key: i,
-                        staticClass: "restaurant-found restaurant-card",
-                      },
-                      [
-                        _c("div", { staticClass: "card-body text-start" }, [
-                          _c(
-                            "a",
-                            {
-                              on: {
-                                click: function ($event) {
-                                  return _vm.showMenu(restaurant.id)
-                                },
-                              },
-                            },
-                            [
-                              _c("div", { staticClass: "container-image" }, [
-                                _c("img", {
-                                  staticClass: "card-img-top",
-                                  attrs: {
-                                    src: "/storage/images/" + restaurant.image,
-                                    alt: "",
-                                  },
-                                }),
-                              ]),
-                              _vm._v(" "),
+          _c("div", { staticClass: "container-restaurants container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm.restaurants.length === 0
+                ? _c(
+                    "div",
+                    { staticClass: "d-flex flex-wrap justify-content-center" },
+                    [
+                      _c(
+                        "h2",
+                        { staticClass: "container-title-restaurant-default" },
+                        [_vm._v("Ristoranti nella top 10")]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.restaurants_default, function (rest, j) {
+                        return _c(
+                          "div",
+                          {
+                            key: "A" + j,
+                            staticClass: "restaurant-found restaurant-card",
+                          },
+                          [
+                            _c("div", { staticClass: "card-body text-start" }, [
                               _c(
-                                "div",
-                                { staticClass: "container-text-card" },
+                                "a",
+                                {
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.showMenu(rest.id)
+                                    },
+                                  },
+                                },
                                 [
-                                  _c("h5", { staticClass: "card-title my-1" }, [
-                                    _c("strong", [
-                                      _vm._v(
-                                        " " + _vm._s(restaurant.restaurant_name)
+                                  _c(
+                                    "div",
+                                    { staticClass: "container-image" },
+                                    [
+                                      _c("img", {
+                                        staticClass: "card-img-top",
+                                        attrs: {
+                                          src: "/storage/images/" + rest.image,
+                                          alt: "",
+                                        },
+                                      }),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "container-text-card" },
+                                    [
+                                      _c(
+                                        "h5",
+                                        { staticClass: "card-title my-1" },
+                                        [
+                                          _c("strong", [
+                                            _vm._v(
+                                              " " + _vm._s(rest.restaurant_name)
+                                            ),
+                                          ]),
+                                        ]
                                       ),
-                                    ]),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "card-text my-1" }, [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(restaurant.restaurant_phone) +
-                                        "\n                    "
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "card-text my-1" }, [
-                                    _vm._v(_vm._s(restaurant.email)),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("p", { staticClass: "card-text my-1" }, [
-                                    _vm._v(_vm._s(restaurant.address)),
-                                  ]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text my-1" },
+                                        [
+                                          _vm._v(
+                                            "\n                      " +
+                                              _vm._s(rest.restaurant_phone) +
+                                              "\n                    "
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text my-1" },
+                                        [_vm._v(_vm._s(rest.email))]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        { staticClass: "card-text my-1" },
+                                        [_vm._v(_vm._s(rest.address))]
+                                      ),
+                                    ]
+                                  ),
                                 ]
                               ),
-                            ]
-                          ),
-                        ]),
-                      ]
-                    )
-                  }),
-                  0
-                ),
+                            ]),
+                          ]
+                        )
+                      }),
+                    ],
+                    2
+                  )
+                : _c(
+                    "div",
+                    { staticClass: "d-flex flex-wrap justify-content-center" },
+                    _vm._l(_vm.restaurants, function (restaurant, i) {
+                      return _c(
+                        "div",
+                        {
+                          key: i,
+                          staticClass: "restaurant-found restaurant-card",
+                        },
+                        [
+                          _c("div", { staticClass: "card-body text-start" }, [
+                            _c(
+                              "a",
+                              {
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.showMenu(restaurant.id)
+                                  },
+                                },
+                              },
+                              [
+                                _c("div", { staticClass: "container-image" }, [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "/storage/images/" + restaurant.image,
+                                      alt: "",
+                                    },
+                                  }),
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "container-text-card" },
+                                  [
+                                    _c(
+                                      "h5",
+                                      { staticClass: "card-title my-1" },
+                                      [
+                                        _c("strong", [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(restaurant.restaurant_name)
+                                          ),
+                                        ]),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text my-1" }, [
+                                      _vm._v(
+                                        "\n                      " +
+                                          _vm._s(restaurant.restaurant_phone) +
+                                          "\n                    "
+                                      ),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text my-1" }, [
+                                      _vm._v(_vm._s(restaurant.email)),
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "card-text my-1" }, [
+                                      _vm._v(_vm._s(restaurant.address)),
+                                    ]),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

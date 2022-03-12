@@ -12344,11 +12344,6 @@ div.container-dishes-shopping-cart {
 
 /* css contenitore ristiranti trovati */
 
-.container-restaurants {
-  width: 70%;
-  margin: 0 auto;
-}
-
 .container-restaurants .restaurant-found {
   width: 33.3333333333%;
   border-radius: 10px;
@@ -12750,24 +12745,54 @@ main.content-container .container-dish .card .card-title {
 
 .work-with-us {
   background-color: white;
+  padding: 50px 0 80px;
+}
+
+.work-with-us h3 {
+  font-size: 36px;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  margin: 0 0 35px;
+  font-weight: 600;
+  text-align: left;
+  color: #2e3333;
 }
 
 .work-with-us h2 {
-  margin: 10px 0 5px;
-  font-size: 26px;
+  margin: 30px 0 10px;
+  font-size: 32px;
   font-weight: bold;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  color: #fff;
 }
 
 .work-with-us .work {
-  padding-bottom: 20px;
+  padding: 0 0 50px 0;
 }
 
-.work-with-us .work img {
+.work-with-us .work .container-info-work {
+  padding: 0 30px;
+  text-align: left;
+}
+
+.work-with-us .work .ms-container-img-work {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-with-us .work .ms-container-img-work .img-def {
   width: 100%;
-  height: 250px;
+  height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 20px 0 3px;
+}
+
+.work-with-us .work .ms-container-img-work .img-polygon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
 }
 
 .work-with-us .work p {
@@ -12779,6 +12804,7 @@ main.content-container .container-dish .card .card-title {
   font-size: 15px;
   padding: 2px 0;
   margin-bottom: 10px;
+  color: #fff;
   text-align: left;
 }
 
@@ -12786,64 +12812,94 @@ main.content-container .container-dish .card .card-title {
   border: none;
   background-color: #00ccbc;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 3px;
-  padding: 8px 25px;
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+.work-with-us .work-1 {
+  background-color: #ff483b;
+}
+
+.work-with-us .work-2 {
+  background-color: #ff8100;
+}
+
+.work-with-us .work-3 {
+  background-color: #bac3c3;
+}
+
+@media screen and (max-width: 992px) {
+  .work-with-us h3 {
+    font-size: 34px;
+  }
+
+  .work-with-us h2 {
+    font-size: 20px;
+  }
+
+  .work-with-us .work-3 {
+    padding: 0 0 26px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work-with-us h3 {
+    font-size: 32px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
+  }
+
+  .work-with-us .work p {
+    display: block;
+  }
+
+  .work-with-us .work-2 {
+    margin: 20px 0;
+  }
 }
 
 /* media query per responsive smartphone */
 
 @media screen and (max-width: 576px) {
-  .favourite-plates .title-home-section {
-    padding: 0;
-  }
-
-  .favourite-plates .title-home-section h2 {
-    font-size: 26px;
-    max-width: 80%;
-    margin: 0 auto 20px;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container > div {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
-    width: 100%;
-  }
-
-  .deliveroo-image {
-    width: 60%;
-  }
-
-  .app-download .android,
-  .app-download .apple {
-    width: 40%;
-    font-size: 13px;
-  }
-
-  .app-download .android img,
-  .app-download .apple img {
-    max-width: 15%;
-  }
-
   .work-with-us h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .work-with-us .work img {
-    width: 80%;
+  .work-with-us h3 {
+    font-size: 33px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
   }
 
   .work-with-us .work p {
-    font-size: 18px;
-    text-align: center;
+    display: block;
+    font-size: 17px;
   }
 
-  .work-with-us .work .work-button {
-    font-size: 25px;
+  .work-with-us .work-2 {
+    margin: 40px 0;
   }
 }
 
@@ -13069,24 +13125,54 @@ main.content-container .container-dish .card .card-title {
 
 .work-with-us {
   background-color: white;
+  padding: 50px 0 80px;
+}
+
+.work-with-us h3 {
+  font-size: 36px;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  margin: 0 0 35px;
+  font-weight: 600;
+  text-align: left;
+  color: #2e3333;
 }
 
 .work-with-us h2 {
-  margin: 10px 0 5px;
-  font-size: 26px;
+  margin: 30px 0 10px;
+  font-size: 32px;
   font-weight: bold;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  color: #fff;
 }
 
 .work-with-us .work {
-  padding-bottom: 20px;
+  padding: 0 0 50px 0;
 }
 
-.work-with-us .work img {
+.work-with-us .work .container-info-work {
+  padding: 0 30px;
+  text-align: left;
+}
+
+.work-with-us .work .ms-container-img-work {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-with-us .work .ms-container-img-work .img-def {
   width: 100%;
-  height: 250px;
+  height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 20px 0 3px;
+}
+
+.work-with-us .work .ms-container-img-work .img-polygon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
 }
 
 .work-with-us .work p {
@@ -13098,6 +13184,7 @@ main.content-container .container-dish .card .card-title {
   font-size: 15px;
   padding: 2px 0;
   margin-bottom: 10px;
+  color: #fff;
   text-align: left;
 }
 
@@ -13105,64 +13192,94 @@ main.content-container .container-dish .card .card-title {
   border: none;
   background-color: #00ccbc;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 3px;
-  padding: 8px 25px;
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+.work-with-us .work-1 {
+  background-color: #ff483b;
+}
+
+.work-with-us .work-2 {
+  background-color: #ff8100;
+}
+
+.work-with-us .work-3 {
+  background-color: #bac3c3;
+}
+
+@media screen and (max-width: 992px) {
+  .work-with-us h3 {
+    font-size: 34px;
+  }
+
+  .work-with-us h2 {
+    font-size: 20px;
+  }
+
+  .work-with-us .work-3 {
+    padding: 0 0 26px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work-with-us h3 {
+    font-size: 32px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
+  }
+
+  .work-with-us .work p {
+    display: block;
+  }
+
+  .work-with-us .work-2 {
+    margin: 20px 0;
+  }
 }
 
 /* media query per responsive smartphone */
 
 @media screen and (max-width: 576px) {
-  .favourite-plates .title-home-section {
-    padding: 0;
-  }
-
-  .favourite-plates .title-home-section h2 {
-    font-size: 26px;
-    max-width: 80%;
-    margin: 0 auto 20px;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container > div {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
-    width: 100%;
-  }
-
-  .deliveroo-image {
-    width: 60%;
-  }
-
-  .app-download .android,
-  .app-download .apple {
-    width: 40%;
-    font-size: 13px;
-  }
-
-  .app-download .android img,
-  .app-download .apple img {
-    max-width: 15%;
-  }
-
   .work-with-us h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .work-with-us .work img {
-    width: 80%;
+  .work-with-us h3 {
+    font-size: 33px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
   }
 
   .work-with-us .work p {
-    font-size: 18px;
-    text-align: center;
+    display: block;
+    font-size: 17px;
   }
 
-  .work-with-us .work .work-button {
-    font-size: 25px;
+  .work-with-us .work-2 {
+    margin: 40px 0;
   }
 }
 
@@ -13214,12 +13331,18 @@ main#main-checkout .content-container .form-container .payment-card .pay-card {
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding: 0 10px;
   border-bottom: 1px solid gray;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left {
-  float: left;
+  display: flex;
+  align-items: center;
+  width: 50%;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left span {
@@ -13228,13 +13351,15 @@ main#main-checkout .content-container .form-container .payment-card .pay-card .h
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right {
-  float: right;
-  padding-top: 10px;
+  width: 45%;
+  text-align: right;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right img {
   width: 30px;
   height: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right #mastercard {
