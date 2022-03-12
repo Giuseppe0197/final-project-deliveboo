@@ -48,9 +48,6 @@
                         </select>
                     </div>
     
-                    <label for="image" class="mr-2">Immagine</label>
-                    <input type="file" name="image">
-    
                     <div class="button">
                         <input class="btn" type="submit" value="MODIFICA">
                     </div>

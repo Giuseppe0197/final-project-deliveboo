@@ -2080,39 +2080,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditComponent.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditComponent.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MenuComponent.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MenuComponent.vue?vue&type=script&lang=js& ***!
@@ -2779,6 +2746,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7785,7 +7758,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}\n@media all and (max-width: 992px) {\n.container-table[data-v-082b38fa] {\n    max-height: 615px;\n    overflow: auto;\n    border: 1px solid #dee2e6;\n    margin-bottom: 100px;\n    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n    max-width: 65%;\n    background-color: #00ccbc;\n    border: 0;\n    color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n    font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n    padding: 0.75rem;\n    vertical-align: top;\n    border-top: 1px solid #dee2e6;\n    text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n    border-bottom: 3px solid #00ccbc;\n    border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n    background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n    display: flex;\n    flex-direction: column;\n    max-width: 100%;\n    text-align: left;\n    margin-left: 50px;\n}\n}", ""]);
+exports.push([module.i, ".container-table[data-v-082b38fa] {\n  max-height: 615px;\n  overflow: auto;\n  border: 1px solid #dee2e6;\n  margin-bottom: 100px;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar {\n  width: 7px;\n}\n.container-table[data-v-082b38fa]::-webkit-scrollbar-thumb {\n  border-radius: 6px;\n  background-color: #00ccbc;\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n  max-width: 65%;\n  background-color: #00ccbc;\n  border: 0;\n  color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n  font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n  padding: 0.75rem;\n  vertical-align: top;\n  border-top: 1px solid #dee2e6;\n  text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n  border-bottom: 3px solid #00ccbc;\n  border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n  background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n  display: flex;\n  flex-direction: column;\n  max-width: 100%;\n  text-align: left;\n  margin-left: 50px;\n}\n.container-order-empty[data-v-082b38fa] {\n  text-align: center;\n  margin: 20px 0 50px;\n}\n.container-order-empty span[data-v-082b38fa] {\n  background: #00ccbc;\n  padding: 15px 30px;\n  color: #fff;\n  font-weight: 600;\n  font-size: 20px;\n}\n@media all and (max-width: 992px) {\n.container-table[data-v-082b38fa] {\n    max-height: 615px;\n    overflow: auto;\n    border: 1px solid #dee2e6;\n    margin-bottom: 100px;\n    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.container-table button.btn-dishes[data-v-082b38fa] {\n    max-width: 65%;\n    background-color: #00ccbc;\n    border: 0;\n    color: #fff;\n}\n.container-table .table-td[data-v-082b38fa] {\n    font-size: 15px;\n}\n.container-table .table th[data-v-082b38fa], .container-table .table td[data-v-082b38fa] {\n    padding: 0.75rem;\n    vertical-align: top;\n    border-top: 1px solid #dee2e6;\n    text-align: center;\n}\n.container-table .container-dishes-order[data-v-082b38fa] {\n    border-bottom: 3px solid #00ccbc;\n    border-top: 3px solid #00ccbc;\n}\n.container-table tr.container-dishes-order[data-v-082b38fa]:hover {\n    background-color: transparent;\n}\n.container-table .ms-container-info-client[data-v-082b38fa] {\n    display: flex;\n    flex-direction: column;\n    max-width: 100%;\n    text-align: left;\n    margin-left: 50px;\n}\n}", ""]);
 
 // exports
 
@@ -7823,7 +7796,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".background-search[data-v-89b0c3cc] {\n  background-color: #fbfbfb;\n}\n.container-cards[data-v-89b0c3cc] {\n  max-width: 90%;\n  margin-left: 5%;\n  padding: 40px 0px;\n}\n.grey-text[data-v-89b0c3cc] {\n  color: #585c5c;\n  font-size: 15px;\n}\n.restaurant-found[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.card-img-top[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n  background-color: white;\n  padding: 20px 0 20px 30px;\n  border-radius: 10px;\n  margin-right: 60px;\n  height: 670px;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.search-bar-checkbox input[data-v-89b0c3cc] {\n  border: 1px solid #bac3c3;\n  background-color: #fff;\n  font-size: 16px;\n  padding: 9px 10px;\n  border-radius: 3px;\n  max-height: 40px;\n  margin: 0 20px 10px 0;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n  width: 80%;\n}\n.title-searchbar[data-v-89b0c3cc] {\n  text-align: center;\n  padding-top: 45px;\n}\n.search-button[data-v-89b0c3cc] {\n  color: #fff;\n  background: #00ccbc;\n  padding: 14px 24px;\n  border-radius: 4%;\n  border-style: none;\n  margin-bottom: 15px;\n}\n.search-button[data-v-89b0c3cc]:hover {\n  color: #fff;\n  background-color: #05b7a8;\n}\n.checkboxes-container[data-v-89b0c3cc] {\n  font-size: 17px;\n  flex-direction: column;\n}\n.checkboxes-container input[data-v-89b0c3cc] {\n  margin-top: 8px;\n  margin-right: 10px;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {\n  display: block;\n  position: relative;\n  padding-left: 25px;\n  margin-bottom: 10px;\n  cursor: pointer;\n  font-size: 19px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  /* Create the checkmark/indicator (hidden when not checked) */\n  /* Show the checkmark when checked */\n  /* Style the checkmark/indicator */\n}\n.checkboxes-container .checkboxesSearch input[data-v-89b0c3cc] {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {\n  position: absolute;\n  top: 9px;\n  left: 0;\n  height: 15px;\n  width: 15px;\n  border: 2px solid #bac3c3;\n  border-radius: 50%;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc]:after {\n  display: block;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]::after {\n  left: 4px;\n  top: -1px;\n  width: 5px;\n  height: 10px;\n  border: solid white;\n  border-width: 0 3px 3px 0;\n  transform: rotate(45deg);\n}\n.checkboxes-container .checkboxesSearch:hover .checkmark[data-v-89b0c3cc] {\n  border: 1px solid #00ccbc;\n}\n\n/* css contenitore ristiranti trovati */\n.container-restaurants .restaurant-found[data-v-89b0c3cc] {\n  background-color: white;\n  border-radius: 5px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  cursor: pointer;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.container-restaurants .restaurant-found .card-body[data-v-89b0c3cc] {\n  width: 80%;\n  padding: 0;\n}\n.container-restaurants .restaurant-found .card-body img[data-v-89b0c3cc] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  height: 160px;\n}\n.container-restaurants .restaurant-found .button-show-restaurant[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n  border-radius: 10px;\n  border: none;\n  color: white;\n  font-size: 15px;\n  font-weight: bold;\n  width: 50%;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.container-restaurants .card-title[data-v-89b0c3cc] {\n  padding: 12px 0 10px 12px;\n}\n.container-restaurants .card-text[data-v-89b0c3cc] {\n  padding-left: 15px;\n}\n.container-restaurants .container-title-restaurant-default[data-v-89b0c3cc] {\n  width: 100% !important;\n  font-weight: 700;\n  color: #1c1c1c;\n  padding-bottom: 15px;\n  font-size: 30px;\n  text-align: center;\n}\n.container-text-card[data-v-89b0c3cc] {\n  padding-bottom: 30px;\n  line-height: 16px;\n}\n@media only screen and (max-width: 1160px) {\n.search-bar-checkbox[data-v-89b0c3cc] {\n    width: 100%;\n    margin-right: 21%;\n    height: 370px;\n    margin-bottom: 50px;\n}\n.search-bar-checkbox .row[data-v-89b0c3cc] {\n    margin-left: 5%;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n    width: 40%;\n}\n.search-bar-checkbox .category-check[data-v-89b0c3cc] {\n    margin: 0px 5px 0 10px;\n}\n.search-bar-checkbox .checkboxes-container[data-v-89b0c3cc] {\n    flex-direction: row;\n    width: 90%;\n    margin-left: 5%;\n}\n.restaurant-search .container[data-v-89b0c3cc] {\n    flex-direction: column;\n}\n.search-button[data-v-89b0c3cc] {\n    height: 40px;\n    padding: 9px 24px;\n}\n}\n@media only screen and (max-width: 766px) {\n.restaurant-found[data-v-89b0c3cc] {\n    width: 16rem;\n    margin-left: 50px;\n}\n.card-img-top[data-v-89b0c3cc] {\n    width: 16rem;\n}\n}", ""]);
+exports.push([module.i, ".background-search[data-v-89b0c3cc] {\n  background-color: #fbfbfb;\n}\n.container-cards[data-v-89b0c3cc] {\n  max-width: 90%;\n  margin-left: 5%;\n  padding: 40px 0px;\n}\n.grey-text[data-v-89b0c3cc] {\n  color: #585c5c;\n  font-size: 15px;\n}\n.restaurant-found[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.card-img-top[data-v-89b0c3cc] {\n  width: 18rem;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n  background-color: white;\n  padding: 20px 0 20px 30px;\n  border-radius: 10px;\n  margin-right: 60px;\n  height: 670px;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.search-bar-checkbox input[data-v-89b0c3cc] {\n  border: 1px solid #bac3c3;\n  background-color: #fff;\n  font-size: 16px;\n  padding: 9px 10px;\n  border-radius: 3px;\n  max-height: 40px;\n  margin: 0 20px 10px 0;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n  width: 80%;\n}\n.title-searchbar[data-v-89b0c3cc] {\n  text-align: center;\n  padding-top: 45px;\n}\n.search-button[data-v-89b0c3cc] {\n  color: #fff;\n  background: #00ccbc;\n  padding: 14px 24px;\n  border-radius: 4%;\n  border-style: none;\n  margin-bottom: 15px;\n}\n.search-button[data-v-89b0c3cc]:hover {\n  color: #fff;\n  background-color: #05b7a8;\n}\n.checkboxes-container[data-v-89b0c3cc] {\n  font-size: 17px;\n  flex-direction: column;\n}\n.checkboxes-container input[data-v-89b0c3cc] {\n  margin-top: 8px;\n  margin-right: 10px;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {\n  display: block;\n  position: relative;\n  padding-left: 25px;\n  margin-bottom: 6px;\n  cursor: pointer;\n  font-size: 18px;\n  color: #212529;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  /* Create the checkmark/indicator (hidden when not checked) */\n  /* Show the checkmark when checked */\n  /* Style the checkmark/indicator */\n}\n.checkboxes-container .checkboxesSearch input[data-v-89b0c3cc] {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {\n  position: absolute;\n  top: 7px;\n  left: 0;\n  height: 15px;\n  width: 15px;\n  border: 2px solid #bac3c3;\n  border-radius: 50%;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]:after {\n  content: \"\";\n  position: absolute;\n  display: none;\n}\n.checkboxes-container .checkboxesSearch input:checked ~ .checkmark[data-v-89b0c3cc]:after {\n  display: block;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc]::after {\n  left: 4px;\n  top: -1px;\n  width: 5px;\n  height: 10px;\n  border: solid white;\n  border-width: 0 3px 3px 0;\n  transform: rotate(45deg);\n}\n.checkboxes-container .checkboxesSearch:hover .checkmark[data-v-89b0c3cc] {\n  border: 1px solid #00ccbc;\n}\n\n/* css contenitore ristiranti trovati */\n.container-restaurants .restaurant-found[data-v-89b0c3cc] {\n  background-color: white;\n  border-radius: 5px;\n  margin-right: 15px;\n  margin-bottom: 15px;\n  cursor: pointer;\n  box-shadow: 0 0 15px #d7d7d7;\n}\n.container-restaurants .restaurant-found .card-body[data-v-89b0c3cc] {\n  width: 80%;\n  padding: 0;\n}\n.container-restaurants .restaurant-found .card-body img[data-v-89b0c3cc] {\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  height: 160px;\n}\n.container-restaurants .restaurant-found .button-show-restaurant[data-v-89b0c3cc] {\n  background-color: #00ccbc;\n  border-radius: 10px;\n  border: none;\n  color: white;\n  font-size: 15px;\n  font-weight: bold;\n  width: 50%;\n  padding: 5px;\n  margin-bottom: 10px;\n}\n.container-restaurants .restaurant-found[data-v-89b0c3cc]:hover {\n  overflow: hidden;\n  transform: scale(1.02);\n  box-shadow: 0 0 20px #d7d7d7;\n}\n.container-restaurants .card-title[data-v-89b0c3cc] {\n  padding: 12px 0 10px 12px;\n}\n.container-restaurants .card-text[data-v-89b0c3cc] {\n  padding-left: 15px;\n}\n.container-restaurants .container-title-restaurant-default[data-v-89b0c3cc] {\n  width: 100% !important;\n  font-weight: 700;\n  color: #1c1c1c;\n  padding-bottom: 15px;\n  font-size: 30px;\n  text-align: center;\n}\n.container-text-card[data-v-89b0c3cc] {\n  padding-bottom: 30px;\n  line-height: 16px;\n}\n@media only screen and (max-width: 1160px) {\n.search-bar-checkbox[data-v-89b0c3cc] {\n    width: 100%;\n    margin-right: 21%;\n    height: 370px;\n    margin-bottom: 50px;\n}\n.search-bar-checkbox .row[data-v-89b0c3cc] {\n    margin-left: 5%;\n}\n.search-bar-checkbox .searchbar[data-v-89b0c3cc] {\n    width: 40%;\n}\n.search-bar-checkbox .category-check[data-v-89b0c3cc] {\n    margin: 0px 5px 0 10px;\n}\n.search-bar-checkbox .checkboxes-container[data-v-89b0c3cc] {\n    flex-direction: row;\n    width: 90%;\n    margin-left: 5%;\n}\n.restaurant-search .container[data-v-89b0c3cc] {\n    flex-direction: column;\n}\n.search-button[data-v-89b0c3cc] {\n    height: 40px;\n    padding: 9px 24px;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {\n    display: flex;\n    margin: 0 10px 0 0;\n    width: 18%;\n    font-size: 16px;\n}\n.search-bar-checkbox[data-v-89b0c3cc] {\n    height: 215px;\n}\n.grey-text[data-v-89b0c3cc] {\n    width: 100%;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc][data-v-89b0c3cc] {\n    top: 5px;\n}\n}\n@media only screen and (max-width: 768px) {\n.restaurant-found[data-v-89b0c3cc] {\n    width: 16rem;\n    margin-left: 50px;\n}\n.card-img-top[data-v-89b0c3cc] {\n    width: 16rem;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc][data-v-89b0c3cc] {\n    display: flex;\n    margin: 0 10px 0 0;\n    width: 28%;\n    font-size: 16px;\n}\n.search-bar-checkbox[data-v-89b0c3cc][data-v-89b0c3cc] {\n    height: 260px;\n}\n.grey-text[data-v-89b0c3cc][data-v-89b0c3cc] {\n    width: 100%;\n}\n}\n@media screen and (max-width: 576px) {\n.restaurant-found[data-v-89b0c3cc] {\n    width: 16rem;\n    margin-left: 50px;\n}\n.card-img-top[data-v-89b0c3cc] {\n    width: 16rem;\n}\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc][data-v-89b0c3cc] {\n    display: flex;\n    margin: 0 10px 0 0;\n    width: 29%;\n    font-size: 16px;\n}\n.search-bar-checkbox[data-v-89b0c3cc][data-v-89b0c3cc] {\n    height: 260px;\n}\n.grey-text[data-v-89b0c3cc][data-v-89b0c3cc] {\n    width: 100%;\n}\n.checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc][data-v-89b0c3cc] {\n    top: 4px;\n}\n}\n@media screen and (max-width: 490px) {\n.checkboxes-container .checkboxesSearch[data-v-89b0c3cc][data-v-89b0c3cc] {\n    width: 44%;\n}\n.search-bar-checkbox[data-v-89b0c3cc][data-v-89b0c3cc] {\n    height: 300px;\n}\n}", ""]);
 
 // exports
 
@@ -40688,53 +40661,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditComponent.vue?vue&type=template&id=ad065790&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditComponent.vue?vue&type=template&id=ad065790& ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component"),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              ),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/MenuComponent.vue?vue&type=template&id=98f701fa&scoped=true&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/MenuComponent.vue?vue&type=template&id=98f701fa&scoped=true& ***!
@@ -41914,165 +41840,188 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "container-table" }, [
-          _c(
-            "table",
-            { staticClass: "table table-hover ms-table" },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._l(_vm.ordersRestaurant, function (order, i) {
-                return _c("tbody", { key: i }, [
-                  _c("tr", [
-                    _c("td", [_vm._v(_vm._s(order.id))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(order.total_price) + " €")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      order.payment_status
-                        ? _c(
-                            "p",
+        _vm.ordersRestaurant.length == 0
+          ? _c("div", { staticClass: "container-order-empty" }, [
+              _c("span", [
+                _vm._v(
+                  "\r\n                    Nessun ordine effettuato nel tuo ristorante!\r\n                "
+                ),
+              ]),
+            ])
+          : _c("div", { staticClass: "container-table" }, [
+              _c(
+                "table",
+                { staticClass: "table table-hover ms-table" },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm._l(_vm.ordersRestaurant, function (order, i) {
+                    return _c("tbody", { key: i }, [
+                      _c("tr", [
+                        _c("td", [_vm._v(_vm._s(order.id))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(order.total_price) + " €")]),
+                        _vm._v(" "),
+                        _c("td", [
+                          order.payment_status
+                            ? _c(
+                                "p",
+                                {
+                                  staticClass:
+                                    "d-inline-block text-success font-weight-bold",
+                                },
+                                [
+                                  _vm._v(
+                                    "\r\n                                    ✔\r\n                                "
+                                  ),
+                                ]
+                              )
+                            : _c(
+                                "p",
+                                {
+                                  staticClass:
+                                    "d-inline-block text-danger font-weight-bold",
+                                },
+                                [
+                                  _vm._v(
+                                    "\r\n                                    ❌\r\n                                "
+                                  ),
+                                ]
+                              ),
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(order.date))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "div",
+                            { staticClass: "ms-container-info-client" },
+                            [
+                              _c("span", { staticClass: "d-block" }, [
+                                _vm._v(
+                                  "\r\n                                        Nome: "
+                                ),
+                                _c("span", { staticClass: "text-muted" }, [
+                                  _vm._v(" " + _vm._s(order.name) + " "),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "d-block" }, [
+                                _vm._v(
+                                  "\r\n                                        Cognome: "
+                                ),
+                                _c("span", { staticClass: "text-muted" }, [
+                                  _vm._v(" " + _vm._s(order.lastname) + " "),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "d-block" }, [
+                                _vm._v(
+                                  "\r\n                                        Indirizzo: "
+                                ),
+                                _c("span", { staticClass: "text-muted" }, [
+                                  _vm._v(" " + _vm._s(order.address) + " "),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "d-block" }, [
+                                _vm._v(
+                                  "\r\n                                        Email: "
+                                ),
+                                _c("span", { staticClass: "text-muted" }, [
+                                  _vm._v(" " + _vm._s(order.email) + " "),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "d-block" }, [
+                                _vm._v(
+                                  "\r\n                                        Telefono: "
+                                ),
+                                _c("span", { staticClass: "text-muted" }, [
+                                  _vm._v(" " + _vm._s(order.phone) + " "),
+                                ]),
+                              ]),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "button",
                             {
-                              staticClass:
-                                "d-inline-block text-success font-weight-bold",
+                              staticClass: "btn btn-dishes",
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.getDishes(order.id)
+                                },
+                              },
                             },
                             [
                               _vm._v(
-                                "\r\n                                    ✔\r\n                                "
-                              ),
-                            ]
-                          )
-                        : _c(
-                            "p",
-                            {
-                              staticClass:
-                                "d-inline-block text-danger font-weight-bold",
-                            },
-                            [
-                              _vm._v(
-                                "\r\n                                    ❌\r\n                                "
+                                "\r\n                                    Visualizza dettaglio ordine\r\n                                "
                               ),
                             ]
                           ),
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(order.date))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c("div", { staticClass: "ms-container-info-client" }, [
-                        _c("span", { staticClass: "d-block" }, [
-                          _vm._v(
-                            "\r\n                                        Nome: "
-                          ),
-                          _c("span", { staticClass: "text-muted" }, [
-                            _vm._v(" " + _vm._s(order.name) + " "),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "d-block" }, [
-                          _vm._v(
-                            "\r\n                                        Cognome: "
-                          ),
-                          _c("span", { staticClass: "text-muted" }, [
-                            _vm._v(" " + _vm._s(order.lastname) + " "),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "d-block" }, [
-                          _vm._v(
-                            "\r\n                                        Indirizzo: "
-                          ),
-                          _c("span", { staticClass: "text-muted" }, [
-                            _vm._v(" " + _vm._s(order.address) + " "),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "d-block" }, [
-                          _vm._v(
-                            "\r\n                                        Email: "
-                          ),
-                          _c("span", { staticClass: "text-muted" }, [
-                            _vm._v(" " + _vm._s(order.email) + " "),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "d-block" }, [
-                          _vm._v(
-                            "\r\n                                        Telefono: "
-                          ),
-                          _c("span", { staticClass: "text-muted" }, [
-                            _vm._v(" " + _vm._s(order.phone) + " "),
-                          ]),
                         ]),
                       ]),
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-dishes",
-                          on: {
-                            click: function ($event) {
-                              $event.preventDefault()
-                              return _vm.getDishes(order.id)
-                            },
-                          },
-                        },
-                        [
-                          _vm._v(
-                            "\r\n                                    Visualizza dettaglio ordine\r\n                                "
-                          ),
-                        ]
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _vm.selectedOrder == order.id
-                    ? _c("tr", { staticClass: "container-dishes-order" }, [
-                        _c(
-                          "td",
-                          { staticClass: "p-0", attrs: { colspan: "12" } },
-                          [
+                      _vm._v(" "),
+                      _vm.selectedOrder == order.id
+                        ? _c("tr", { staticClass: "container-dishes-order" }, [
                             _c(
-                              "table",
-                              { staticClass: "table table-hover ms-table" },
+                              "td",
+                              { staticClass: "p-0", attrs: { colspan: "12" } },
                               [
-                                _vm._m(1, true),
-                                _vm._v(" "),
                                 _c(
-                                  "tbody",
-                                  _vm._l(_vm.orderDishes, function (dish, j) {
-                                    return _c("tr", { key: "B" + j }, [
-                                      _c("td", [_vm._v(_vm._s(dish.name))]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _vm._v(_vm._s(dish.description)),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v(_vm._s(dish.type))]),
-                                      _vm._v(" "),
-                                      _c("td", [
-                                        _vm._v(_vm._s(dish.dish_quantity)),
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", [_vm._v(_vm._s(dish.price))]),
-                                    ])
-                                  }),
-                                  0
+                                  "table",
+                                  { staticClass: "table table-hover ms-table" },
+                                  [
+                                    _vm._m(1, true),
+                                    _vm._v(" "),
+                                    _c(
+                                      "tbody",
+                                      _vm._l(
+                                        _vm.orderDishes,
+                                        function (dish, j) {
+                                          return _c("tr", { key: "B" + j }, [
+                                            _c("td", [
+                                              _vm._v(_vm._s(dish.name)),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("td", [
+                                              _vm._v(_vm._s(dish.description)),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("td", [
+                                              _vm._v(_vm._s(dish.type)),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("td", [
+                                              _vm._v(
+                                                _vm._s(dish.dish_quantity)
+                                              ),
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("td", [
+                                              _vm._v(_vm._s(dish.price)),
+                                            ]),
+                                          ])
+                                        }
+                                      ),
+                                      0
+                                    ),
+                                  ]
                                 ),
                               ]
                             ),
-                          ]
-                        ),
-                      ])
-                    : _vm._e(),
-                ])
-              }),
-            ],
-            2
-          ),
-        ]),
+                          ])
+                        : _vm._e(),
+                    ])
+                  }),
+                ],
+                2
+              ),
+            ]),
         _vm._v(" "),
         _vm._m(2),
         _vm._v(" "),
@@ -42154,7 +42103,7 @@ var staticRenderFns = [
         },
         [
           _c("img", {
-            attrs: { src: "/storage/images/visibility.png", alt: "" },
+            attrs: { src: "/storage/images/visibilita.jpg", alt: "visibility" },
           }),
         ]
       ),
@@ -42173,7 +42122,7 @@ var staticRenderFns = [
         },
         [
           _c("img", {
-            attrs: { src: "/storage/images/interview-2.jpg", alt: "" },
+            attrs: { src: "/storage/images/interview-2.jpg", alt: "interview" },
           }),
         ]
       ),
@@ -42521,7 +42470,7 @@ var render = function () {
                 _vm._l(_vm.categories, function (category) {
                   return _c(
                     "label",
-                    { key: category.id, staticClass: "checkboxesSearch mb-0" },
+                    { key: category.id, staticClass: "checkboxesSearch" },
                     [
                       _vm._v(
                         _vm._s(category.name) + "\n            \n            "
@@ -54982,7 +54931,6 @@ module.exports = function(module) {
 var map = {
 	"./components/ChartsComponent.vue": "./resources/js/components/ChartsComponent.vue",
 	"./components/DishesComponent.vue": "./resources/js/components/DishesComponent.vue",
-	"./components/EditComponent.vue": "./resources/js/components/EditComponent.vue",
 	"./components/MenuComponent.vue": "./resources/js/components/MenuComponent.vue",
 	"./components/OrderComponent.vue": "./resources/js/components/OrderComponent.vue",
 	"./components/RestaurantComponent.vue": "./resources/js/components/RestaurantComponent.vue",
@@ -55176,75 +55124,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DishesComponent_vue_vue_type_template_id_04f0dbfa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DishesComponent_vue_vue_type_template_id_04f0dbfa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/EditComponent.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/EditComponent.vue ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _EditComponent_vue_vue_type_template_id_ad065790___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditComponent.vue?vue&type=template&id=ad065790& */ "./resources/js/components/EditComponent.vue?vue&type=template&id=ad065790&");
-/* harmony import */ var _EditComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/EditComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _EditComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _EditComponent_vue_vue_type_template_id_ad065790___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _EditComponent_vue_vue_type_template_id_ad065790___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/EditComponent.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/EditComponent.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/EditComponent.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./EditComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/EditComponent.vue?vue&type=template&id=ad065790&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/EditComponent.vue?vue&type=template&id=ad065790& ***!
-  \**********************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComponent_vue_vue_type_template_id_ad065790___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EditComponent.vue?vue&type=template&id=ad065790& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditComponent.vue?vue&type=template&id=ad065790&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComponent_vue_vue_type_template_id_ad065790___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditComponent_vue_vue_type_template_id_ad065790___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -55616,8 +55495,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

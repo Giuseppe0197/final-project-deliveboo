@@ -36,13 +36,16 @@
     }
 
     .img {
-        height: 600px;
+        height: 550px;
+        min-height: 550px;
         -webkit-clip-path: polygon(0 25%, 88% 0, 100% 104%, 9% 80%);
         clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 81%);
 
         img {
             width: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
+            filter: drop-shadow(2px 4px 6px black);
         }
     }
 }
@@ -93,7 +96,7 @@
     }
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 1230px) {
     #add-dish #container-form .button input,
     #edit-dish #container-form .button input {
         background: $opalgreen;

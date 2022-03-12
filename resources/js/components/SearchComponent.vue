@@ -25,7 +25,7 @@
             <label 
               v-for="category in categories"
               :key="category.id"
-              class="checkboxesSearch mb-0"
+              class="checkboxesSearch"
             >{{ category.name }}
               
               <input
@@ -256,9 +256,10 @@ export default {
     display: block;
     position: relative;
     padding-left: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     cursor: pointer;
-    font-size: 19px;
+    font-size: 18px;
+    color: #212529;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -273,7 +274,7 @@ export default {
     // creo una checkbox personalizzata 
     .checkmark {
       position: absolute;
-      top: 9px;
+      top: 7px;
       left: 0;
       height: 15px;
       width: 15px;
@@ -353,6 +354,12 @@ export default {
       padding: 5px;
       margin-bottom: 10px;
     }
+
+    &:hover {
+      overflow: hidden;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #d7d7d7;
+    }
   }
 
   .card-title {
@@ -419,9 +426,30 @@ export default {
     height: 40px;
     padding: 9px 24px;
   }
+
+  .checkboxes-container .checkboxesSearch {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 18%;
+    font-size: 16px;
+  }
+
+  .search-bar-checkbox {
+    height: 215px;
+  }
+
+  .grey-text {
+    width: 100%;
+  }
+
+  .checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {
+    top: 5px;
+  }
+
 }
 
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 768px) {
+
   .restaurant-found {
     width: 16rem;
     margin-left: 50px;
@@ -430,5 +458,63 @@ export default {
   .card-img-top {
     width: 16rem;
   }
+
+  .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 28%;
+    font-size: 16px;
+  }
+
+  .search-bar-checkbox[data-v-89b0c3cc] {
+    height: 260px;
+  }
+
+  .grey-text[data-v-89b0c3cc] {
+    width: 100%;
+  }
 }
+
+@media screen and (max-width: 576px) {
+
+  .restaurant-found {
+    width: 16rem;
+    margin-left: 50px;
+  }
+
+  .card-img-top {
+    width: 16rem;
+  }
+
+  .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 29%;
+    font-size: 16px;
+  }
+
+  .search-bar-checkbox[data-v-89b0c3cc] {
+    height: 260px;
+  }
+
+  .grey-text[data-v-89b0c3cc] {
+    width: 100%;
+  }
+
+  .checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {
+    top: 4px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+
+  .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
+    width: 44%;
+  }
+
+  .search-bar-checkbox[data-v-89b0c3cc] {
+    height: 300px;
+  }
+}
+
 </style>

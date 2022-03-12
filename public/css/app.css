@@ -11054,13 +11054,14 @@ header .register-btn:hover {
 
 header .exit-btn {
   color: #fff;
+  margin: 0 0 2px 0;
 }
 
 header .btn-return-restaurant {
   color: #fff;
   background: #00ccbc;
   border-radius: 4%;
-  margin-right: 10px;
+  margin: 0 10px 2px 0;
 }
 
 header .exit-btn:hover,
@@ -11166,13 +11167,14 @@ header .register-btn:hover {
 
 header .exit-btn {
   color: #fff;
+  margin: 0 0 2px 0;
 }
 
 header .btn-return-restaurant {
   color: #fff;
   background: #00ccbc;
   border-radius: 4%;
-  margin-right: 10px;
+  margin: 0 10px 2px 0;
 }
 
 header .exit-btn:hover,
@@ -11381,7 +11383,8 @@ footer .social-channels p {
 
 #add-dish .img,
 #edit-dish .img {
-  height: 600px;
+  height: 550px;
+  min-height: 550px;
   -webkit-clip-path: polygon(0 25%, 88% 0, 100% 104%, 9% 80%);
   clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 81%);
 }
@@ -11389,8 +11392,10 @@ footer .social-channels p {
 #add-dish .img img,
 #edit-dish .img img {
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #add-dish .availability {
@@ -11442,7 +11447,7 @@ footer .social-channels p {
   padding: 0 4px;
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 1230px) {
   #add-dish #container-form .button input,
   #edit-dish #container-form .button input {
     background: #006d68;
@@ -12251,7 +12256,7 @@ div.container-dishes-shopping-cart {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 46%;
   min-height: 132px;
   margin: 0 20px 15px 0;
   background-color: #fff;
@@ -12290,7 +12295,7 @@ div.container-dishes-shopping-cart {
   line-height: 22px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1200px) {
   #restaurant-menu .dishes {
     padding: 0 20px;
   }
@@ -12436,7 +12441,7 @@ main.content-container .container-dish .card {
 
 main.content-container .container-dish .card img {
   max-width: 100%;
-  height: 150px;
+  height: 185px;
 }
 
 main.content-container .container-dish .card .card-title {
@@ -13587,6 +13592,7 @@ main#main-checkout .container-totalPrice span {
 .advertisement .image-ad img,
 .advertisement .interview-image img {
   width: 80%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .advertisement .interview-read img {

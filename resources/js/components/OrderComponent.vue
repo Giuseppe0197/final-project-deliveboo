@@ -6,8 +6,14 @@
         <h1 class="text-center pb-4">Ecco gli ordini effettuati presso il tuo ristorante</h1>
 
         <div class="container">
+
+            <div v-if="ordersRestaurant.length == 0" class="container-order-empty">
+                <span>
+                    Nessun ordine effettuato nel tuo ristorante!
+                </span>
+            </div>
             
-            <div class="container-table">
+            <div v-else class="container-table">
                 <table class="table table-hover ms-table">
                     <thead>
                         <tr>
@@ -99,7 +105,7 @@
                 </div>
 
                 <div class="col-md-6 col-sm-12 image-ad text-md-right text-sm-center my-2">
-                    <img src="/storage/images/visibility.png" alt="">
+                    <img src="/storage/images/visibilita.jpg" alt="visibility">
                 </div>
             </div>
 
@@ -108,7 +114,7 @@
             <div class="row my-2">
 
                 <div class="interview-image col-md-6 col-sm-12 text-md-left text-sm-center my-2">
-                    <img src="/storage/images/interview-2.jpg" alt="">
+                    <img src="/storage/images/interview-2.jpg" alt="interview">
                 </div>
 
                 <div class="interview-read col-md-6 col-sm-12 text-md-right text-sm-center my-2">
@@ -227,6 +233,20 @@
         max-width: 100%;
         text-align: left;
         margin-left: 50px;
+    }
+
+}
+
+.container-order-empty {
+    text-align: center;
+    margin: 20px 0 50px;
+
+    span {
+        background: #00ccbc;
+        padding: 15px 30px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 20px;
     }
 }
 
