@@ -50,11 +50,17 @@ main#main-checkout {
                     margin: 30px 0;
 
                     .head-card {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
                         padding: 0 10px;
                         border-bottom: 1px solid gray;
 
                         .left {
-                            float: left;
+                            display: flex;
+                            align-items: center;
+                            width: 50%;
 
                             span {
                                 font-size: 25px;
@@ -63,12 +69,13 @@ main#main-checkout {
                         }
 
                         .right {
-                            float: right;
-                            padding-top: 10px;
+                            width: 45%;
+                            text-align: right;
 
                             img {
                                 width: 30px;
                                 height: 15px;
+                                object-fit: contain;
                             }
 
                             #mastercard {

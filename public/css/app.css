@@ -13209,12 +13209,18 @@ main#main-checkout .content-container .form-container .payment-card .pay-card {
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   padding: 0 10px;
   border-bottom: 1px solid gray;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left {
-  float: left;
+  display: flex;
+  align-items: center;
+  width: 50%;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .left span {
@@ -13223,13 +13229,15 @@ main#main-checkout .content-container .form-container .payment-card .pay-card .h
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right {
-  float: right;
-  padding-top: 10px;
+  width: 45%;
+  text-align: right;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right img {
   width: 30px;
   height: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 main#main-checkout .content-container .form-container .payment-card .pay-card .head-card .right #mastercard {
