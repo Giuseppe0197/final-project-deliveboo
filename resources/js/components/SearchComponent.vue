@@ -23,18 +23,20 @@
 
           <div class="checkboxes-container row d-flex">
             <span class="grey-text mb-2">Filtra per categorie</span>
-            <div
+            <label 
               v-for="category in categories"
               :key="category.id"
-              class="checkboxesSearch"
-            >
+              class="checkboxesSearch mb-0"
+            >{{ category.name }}
+              
               <input
                 class="category-check"
                 type="checkbox"
                 :value="category.id"
                 v-model="checkbox"
-              />{{ category.name }}
-            </div>
+              />
+              <span class="checkmark"></span>
+            </label >
           </div>
         </div>
         <!--container ristoranti trovati tramite nome -->
@@ -221,6 +223,71 @@ export default {
   input {
     margin-top: 8px;
     margin-right: 10px;
+  }
+
+  .checkboxesSearch {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 19px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // nascono la checkbox di default
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    // creo una checkbox personalizzata 
+    .checkmark {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      // background-color: #eee;
+      border: 2px solid #bac3c3;
+      border-radius: 50%;
+    }
+    // quando la checkbox è selezionata cambio background 
+    input:checked ~ .checkmark {
+      background-color: #00ccbc;
+    }
+  
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+  
+    /* Style the checkmark/indicator */
+    .checkmark::after {
+      left: 4px;
+      top: -1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  // on hover aggiungo colore background 
+  .checkboxesSearch:hover .checkmark {
+    border: 1px solid #00ccbc;
   }
 }
 
