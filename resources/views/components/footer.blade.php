@@ -4,7 +4,7 @@
         <div class="nav-footer row g-5 justify-content-around">
             <div class="col-md-6 p-2 col-lg-3">
                 <div class="footer-card">
-                    <h5>Scopri Deliveroo</h5>
+                    <h5>Scopri Deliveboo</h5>
                     <ul>
                         <li><a href="">Investitori</a></li>
                         <li><a href="">Chi siamo</a></li>
@@ -48,7 +48,7 @@
             <div class="col-md-6 p-2 col-lg-3">
                 <div class="footer-card">
                     @auth
-                        <h5>Porta Deliveroo con te</h5>
+                        <h5>Porta Deliveboo con te</h5>
                         <img id="app-store" src="/storage/images/app-store-badges-it.svg" alt="">
 
                     @else

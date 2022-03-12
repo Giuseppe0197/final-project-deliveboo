@@ -25,42 +25,58 @@
                         @method("POST")
                         @csrf
         
-                        <input type="text" name="name" placeholder="Nome" required>
-                        <input type="text" name="lastname" placeholder="Cognome" required>
-                        <input type="text" name="address" placeholder="es. Via Veneto 22, Milano" required>
-                        <input type="email" name="email" placeholder="Indirizzo email" required>
-                        <input type="text" name="phone" placeholder="Cellulare (0039...)" required>
+                        <div class="client-info">
+                            <input type="text" name="name" placeholder="Nome" required>
+                            <input type="text" name="lastname" placeholder="Cognome" required>
+                            <input type="text" name="address" placeholder="es. Via Veneto 22, Milano" required>
+                            <input type="email" name="email" placeholder="Indirizzo email" required>
+                            <input type="text" name="phone" placeholder="Cellulare (0039...)" required>
+                        </div>
 
-                        <div class="row">
-                            <div class="col-lg-12 form-group">
-                                <label>Name on Card</label>
-                                <input class="form-control" size="4" type="text">
+                        <div class="pay-card">
+                            <div class="head-card">
+                                <div class="left">
+                                    <span>&#128179;</span> Pay with card
+                                </div>
+
+                                <div class="right">
+                                    <img id="mastercard" src="/storage/images/mastercard.png" alt="mastercard">
+                                    <img src="/storage/images/paypal.png" alt="paypal">
+                                    <img src="/storage/images/visa.png" alt="visa">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 form-group">
-                                <label>Card Number</label>
-                                <input autocomplete="off" class="form-control" size="20" type="text" name="card_no" value="4111 1111 1111 1111">
+
+                            <div class="row px-3 py-1">
+                                <div class="col-lg-12 form-group">
+                                    <label>Name on Card</label>
+                                    <input class="form-control" size="4" type="text">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 form-group">
-                                <label>CVC</label>
-                                <input autocomplete="off" class="form-control" placeholder="ex. 311" size="3" type="text" name="cvv" value="222">
+                            <div class="row px-3 py-1">
+                                <div class="col-lg-12 form-group">
+                                    <label>Card Number</label>
+                                    <input autocomplete="off" class="form-control" size="20" type="text" name="card_no" value="4111 1111 1111 1111">
+                                </div>
                             </div>
-                            <div class="col-lg-4 form-group">
-                                <label>Month</label>
-                                <input class="form-control" placeholder="MM" size="2" type="text" name="expiry_month" value="03">
+                            <div class="row px-3 py-1">
+                                <div class="col-lg-4 form-group">
+                                    <label>CVC</label>
+                                    <input autocomplete="off" class="form-control" placeholder="ex. 311" size="3" type="text" name="cvv">
+                                </div>
+                                <div class="col-lg-4 form-group">
+                                    <label>Month</label>
+                                    <input class="form-control" placeholder="MM" size="2" type="text" name="expiry_month">
+                                </div>
+                                <div class="col-lg-4 form-group">
+                                    <label>Year</label>
+                                    <input class="form-control" placeholder="YYYY" size="4" type="text" name="expiry_year">
+                                </div>
                             </div>
-                            <div class="col-lg-4 form-group">
-                                <label>Year</label>
-                                <input class="form-control" placeholder="YYYY" size="4" type="text" name="expiry_year" value="2023">
-                            </div>
-                        </div>
-                        <div class="row d-none"> <!-- Display none -->
-                            <div class="col-lg-12 form-group">
-                                <label>Total Price</label>
-                                <input class="form-control" size="2" type="number" name="total_price" value="{{ $totalPrice }}">
+                            <div class="row d-none"> <!-- Display none -->
+                                <div class="col-lg-12 form-group">
+                                    <label>Total Price</label>
+                                    <input class="form-control" size="2" type="number" name="total_price" value="{{ $totalPrice }}">
+                                </div>
                             </div>
                         </div>
                         <div class="row">

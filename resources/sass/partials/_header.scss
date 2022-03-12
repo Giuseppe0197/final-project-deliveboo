@@ -51,7 +51,14 @@ header {
         color: #fff;     
     }
 
-    .exit-btn:hover {
+    .btn-return-restaurant {
+        color: #fff;
+        background: #00ccbc;
+        border-radius: 4%;
+        margin-right: 10px;
+    }
+
+    .exit-btn:hover, .btn-return-restaurant:hover {
         color: black;
         background-color: #fff;
         border: solid 1px black;
@@ -85,5 +92,37 @@ header {
                 padding-left: 4px;
             }
         }
+
     } 
+}
+
+@media all and (max-width: 1200px) {
+    
+    header {
+
+        .navbar-brand {
+            width: 18%;
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    header {
+
+        .navbar-brand {
+            width: 22%;
+        }
+    }
+    
+}
+
+@media all and (max-width: 576px) {
+    
+    header {
+
+        .navbar-brand {
+            width: 30%;
+        }
+    }
 }

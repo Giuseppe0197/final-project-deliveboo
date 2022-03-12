@@ -235,5 +235,52 @@
     }
 }
 
+@media all and (max-width:992px) {
+
+    .container-table {
+        max-height: 615px;
+        overflow: auto;
+        border: 1px solid #dee2e6;
+        margin-bottom: 100px;
+        box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
+
+
+        button.btn-dishes {
+            max-width: 65%;
+            background-color: #00ccbc;
+            border: 0;
+            color: #fff;
+        }
+
+        .table-td {
+            font-size: 15px;
+        }
+
+        .table th, .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+            text-align: center;
+        }
+
+        .container-dishes-order {
+            border-bottom: 3px solid #00ccbc;
+            border-top: 3px solid #00ccbc;
+        }
+
+        tr.container-dishes-order:hover {
+            background-color: transparent;
+        }
+
+        .ms-container-info-client {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            text-align: left;
+            margin-left: 50px;
+        }
+    }
+}
+
 
 </style>
