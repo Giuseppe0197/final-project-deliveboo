@@ -3167,9 +3167,188 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchComponent.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\resources\\js\\components\\SearchComponent.vue: Unexpected token (140:0)\n\n\u001b[0m \u001b[90m 138 |\u001b[39m   watch\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 139 |\u001b[39m     checkbox(newVal\u001b[33m,\u001b[39m oldVal) {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 140 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 141 |\u001b[39m       \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearchRestaurant \u001b[33m=\u001b[39m \u001b[32m\"\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 142 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 143 |\u001b[39m         \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39msearchRestaurant \u001b[33m=\u001b[39m \u001b[32m''\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:476:17)\n    at Parser.raiseWithData (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:469:17)\n    at Parser.raise (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:430:17)\n    at Parser.unexpected (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:3789:16)\n    at Parser.parseExprAtom (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12622:22)\n    at Parser.parseExprSubscripts (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12149:23)\n    at Parser.parseUpdate (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12129:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12104:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11901:61)\n    at Parser.parseExprOps (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11908:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11878:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11833:21)\n    at Parser.parseExpressionBase (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11769:23)\n    at C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11763:39\n    at Parser.allowInAnd (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13817:16)\n    at Parser.parseExpression (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11763:17)\n    at Parser.parseStatementContent (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14256:23)\n    at Parser.parseStatement (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14113:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14739:25)\n    at Parser.parseBlockBody (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14730:10)\n    at Parser.parseBlock (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:14714:10)\n    at Parser.parseFunctionBody (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13440:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13424:10)\n    at Parser.parseMethod (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13374:10)\n    at Parser.parseObjectMethod (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13250:19)\n    at Parser.parseObjPropValue (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13291:23)\n    at Parser.parsePropertyDefinition (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13208:10)\n    at Parser.parseObjectLike (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:13099:21)\n    at Parser.parseExprAtom (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12498:23)\n    at Parser.parseExprSubscripts (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12149:23)\n    at Parser.parseUpdate (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12129:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:12104:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11901:61)\n    at Parser.parseExprOps (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11908:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11878:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Pier\\Desktop\\General\\coding\\progetto finale\\final-project-deliveboo\\node_modules\\@babel\\parser\\lib\\index.js:11833:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      restaurants: [],
+      restaurantsCat: [],
+      searchRestaurant: "",
+      checkbox: [],
+      categories: []
+    };
+  },
+  props: {
+    restaurants_default: Array
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/find/categories").then(function (r) {
+      return _this.categories = r.data;
+    })["catch"](function (e) {
+      return console.error(e);
+    });
+  },
+  //uso il watch perche sfrutta la reattività di Vue
+  watch: {
+    checkbox: function checkbox(newVal, oldVal) {
+      this.searchRestaurant = "";
+      console.log(newVal, oldVal);
+      this.findByResataurantCategoryId(newVal);
+    }
+  },
+  methods: {
+    search: function search() {
+      this.findByResataurantCategoryId();
+    },
+    findByResataurantCategoryId: function findByResataurantCategoryId() {
+      var _this2 = this;
+
+      var queryParam = "/find/restaurant_by_cat";
+
+      if (this.checkbox.length > 0 && this.searchRestaurant.length > 0) {
+        queryParam += "?ids=" + "".concat(this.checkbox, "&q=") + this.searchRestaurant;
+      } else if (this.checkbox.length == 0 && this.searchRestaurant.length == 0) {} else if (this.checkbox.length > 0) {
+        queryParam += "?ids=" + "".concat(this.checkbox);
+      } else {
+        queryParam += "?q=" + this.searchRestaurant;
+      }
+
+      axios.get(queryParam).then(function (r) {
+        _this2.restaurants = r.data.data;
+        console.log(_this2.restaurants);
+
+        for (var i = 0; i < _this2.restaurants.length; i++) {
+          if (_this2.restaurants[i].user_id) {
+            _this2.restaurants[i].id = _this2.restaurants[i].user_id;
+          }
+        }
+      })["catch"](function (e) {
+        return console.error(e);
+      });
+    },
+    showMenu: function showMenu(id) {
+      window.location.href = "/show/restaurant/".concat(id);
+    }
+  }
+});
 
 /***/ }),
 
