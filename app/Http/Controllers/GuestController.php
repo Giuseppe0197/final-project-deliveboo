@@ -12,7 +12,7 @@ class GuestController extends Controller
     public function home()
     {
 
-        $restaurantDef = User::inRandomOrder()->limit(12)->get();
+        $restaurantDef = User::inRandomOrder()->limit(10)->get();
 
         return view('pages.homepage', compact('restaurantDef'));
     }

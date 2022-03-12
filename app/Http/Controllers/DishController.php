@@ -29,17 +29,16 @@ class DishController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'price' => 'required|numeric|min:0|max:100',
-            'type' => 'required|string',
-            'image' => 'required|image'
+            'type' => 'required|string'
         ]);
 
 
-        $imageFile = $data['image'];
-        $imageName = rand(100000, 999999) . '_' . time() . '.' . $imageFile->getClientOriginalExtension();
+        // $imageFile = $data['image'];
+        // $imageName = rand(100000, 999999) . '_' . time() . '.' . $imageFile->getClientOriginalExtension();
 
-        $imageFile->storeAs('/images/', $imageName, 'public');
+        // $imageFile->storeAs('/images/', $imageName, 'public');
 
-        $data['image'] = $imageName;
+        // $data['image'] = $imageName;
         
         $dish = Dish::findOrFail($id);
         $dish->update($data);

@@ -389,7 +389,7 @@ div.container-dishes-shopping-cart {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 30%;
+        width: 46%;
         min-height: 132px;
         margin: 0 20px 15px 0;
         background-color: #fff;
@@ -430,7 +430,7 @@ div.container-dishes-shopping-cart {
     }
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1200px) {
     #restaurant-menu .dishes {
         padding: 0 20px; 
 

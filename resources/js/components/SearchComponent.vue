@@ -1,7 +1,6 @@
 <template>
-  <div class="restaurant-search">
+  <div id="restaurants" class="restaurant-search">
     <div class="background-search">
-      <h1 class="title-searchbar">Cerca i tuoi ristoranti preferiti!</h1>
       <div class="d-flex container container-cards">
         <!-- container per la ricerca tramite barra e checkbox -->
 
@@ -23,18 +22,20 @@
 
           <div class="checkboxes-container row d-flex">
             <span class="grey-text mb-2">Filtra per categorie</span>
-            <div
+            <label 
               v-for="category in categories"
               :key="category.id"
               class="checkboxesSearch"
-            >
+            >{{ category.name }}
+              
               <input
                 class="category-check"
                 type="checkbox"
                 :value="category.id"
                 v-model="checkbox"
-              />{{ category.name }}
-            </div>
+              />
+              <span class="checkmark"></span>
+            </label >
           </div>
         </div>
         <!--container ristoranti trovati tramite nome -->
@@ -43,7 +44,10 @@
           <div class="row">
             <!-- ristoranti in primo piano -->
 
-            <div class="d-flex flex-wrap" v-if="restaurants.length === 0">
+            <div class="d-flex flex-wrap justify-content-center" v-if="restaurants.length === 0">
+
+              <h2 class="container-title-restaurant-default">Ristoranti nella top 10</h2>
+
               <div
                 v-for="(rest, j) in restaurants_default"
                 :key="'A' + j"
@@ -75,7 +79,7 @@
             </div>
 
             <!-- card ristoranti -->
-            <div v-else class="d-flex flex-wrap">
+            <div v-else class="d-flex flex-wrap justify-content-center">
               <div
                 v-for="(restaurant, i) in restaurants"
                 :key="i"
@@ -247,6 +251,72 @@ export default {
     margin-top: 8px;
     margin-right: 10px;
   }
+
+  .checkboxesSearch {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #212529;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // nascono la checkbox di default
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    // creo una checkbox personalizzata 
+    .checkmark {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      // background-color: #eee;
+      border: 2px solid #bac3c3;
+      border-radius: 50%;
+    }
+    // quando la checkbox è selezionata cambio background 
+    input:checked ~ .checkmark {
+      background-color: #00ccbc;
+    }
+  
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+  
+    /* Style the checkmark/indicator */
+    .checkmark::after {
+      left: 4px;
+      top: -1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+
+  // on hover aggiungo colore background 
+  .checkboxesSearch:hover .checkmark {
+    border: 1px solid #00ccbc;
+  }
 }
 
 /* css contenitore ristiranti trovati */
@@ -284,6 +354,12 @@ export default {
       padding: 5px;
       margin-bottom: 10px;
     }
+
+    &:hover {
+      overflow: hidden;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #d7d7d7;
+    }
   }
 
   .card-title {
@@ -293,6 +369,16 @@ export default {
   .card-text {
     padding-left: 15px;
   }
+
+  .container-title-restaurant-default {
+    width: 100% !important;
+    font-weight: 700;
+    color: #1c1c1c;
+    padding-bottom: 15px;
+    font-size: 30px;
+    text-align: center;
+  }
+
 }
 
 .container-text-card {
@@ -340,9 +426,30 @@ export default {
     height: 40px;
     padding: 9px 24px;
   }
+
+  .checkboxes-container .checkboxesSearch {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 18%;
+    font-size: 16px;
+  }
+
+  .search-bar-checkbox {
+    height: 215px;
+  }
+
+  .grey-text {
+    width: 100%;
+  }
+
+  .checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {
+    top: 5px;
+  }
+
 }
 
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 768px) {
+
   .restaurant-found {
     width: 16rem;
     margin-left: 50px;
@@ -351,5 +458,63 @@ export default {
   .card-img-top {
     width: 16rem;
   }
+
+  .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 28%;
+    font-size: 16px;
+  }
+
+  .search-bar-checkbox[data-v-89b0c3cc] {
+    height: 260px;
+  }
+
+  .grey-text[data-v-89b0c3cc] {
+    width: 100%;
+  }
 }
+
+@media screen and (max-width: 576px) {
+
+  .restaurant-found {
+    width: 16rem;
+    margin-left: 50px;
+  }
+
+  .card-img-top {
+    width: 16rem;
+  }
+
+  .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
+    display: flex;
+    margin: 0 10px 0 0;
+    width: 29%;
+    font-size: 16px;
+  }
+
+  .search-bar-checkbox[data-v-89b0c3cc] {
+    height: 260px;
+  }
+
+  .grey-text[data-v-89b0c3cc] {
+    width: 100%;
+  }
+
+  .checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {
+    top: 4px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+
+  .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
+    width: 44%;
+  }
+
+  .search-bar-checkbox[data-v-89b0c3cc] {
+    height: 300px;
+  }
+}
+
 </style>

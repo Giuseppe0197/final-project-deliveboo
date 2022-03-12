@@ -11054,13 +11054,14 @@ header .register-btn:hover {
 
 header .exit-btn {
   color: #fff;
+  margin: 0 0 2px 0;
 }
 
 header .btn-return-restaurant {
   color: #fff;
   background: #00ccbc;
   border-radius: 4%;
-  margin-right: 10px;
+  margin: 0 10px 2px 0;
 }
 
 header .exit-btn:hover,
@@ -11166,13 +11167,14 @@ header .register-btn:hover {
 
 header .exit-btn {
   color: #fff;
+  margin: 0 0 2px 0;
 }
 
 header .btn-return-restaurant {
   color: #fff;
   background: #00ccbc;
   border-radius: 4%;
-  margin-right: 10px;
+  margin: 0 10px 2px 0;
 }
 
 header .exit-btn:hover,
@@ -11381,7 +11383,8 @@ footer .social-channels p {
 
 #add-dish .img,
 #edit-dish .img {
-  height: 600px;
+  height: 550px;
+  min-height: 550px;
   -webkit-clip-path: polygon(0 25%, 88% 0, 100% 104%, 9% 80%);
   clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 81%);
 }
@@ -11389,8 +11392,10 @@ footer .social-channels p {
 #add-dish .img img,
 #edit-dish .img img {
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 #add-dish .availability {
@@ -11442,7 +11447,7 @@ footer .social-channels p {
   padding: 0 4px;
 }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 1230px) {
   #add-dish #container-form .button input,
   #edit-dish #container-form .button input {
     background: #006d68;
@@ -12251,7 +12256,7 @@ div.container-dishes-shopping-cart {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 46%;
   min-height: 132px;
   margin: 0 20px 15px 0;
   background-color: #fff;
@@ -12290,7 +12295,7 @@ div.container-dishes-shopping-cart {
   line-height: 22px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1200px) {
   #restaurant-menu .dishes {
     padding: 0 20px;
   }
@@ -12436,7 +12441,7 @@ main.content-container .container-dish .card {
 
 main.content-container .container-dish .card img {
   max-width: 100%;
-  height: 150px;
+  height: 185px;
 }
 
 main.content-container .container-dish .card .card-title {
@@ -12745,24 +12750,54 @@ main.content-container .container-dish .card .card-title {
 
 .work-with-us {
   background-color: white;
+  padding: 50px 0 80px;
+}
+
+.work-with-us h3 {
+  font-size: 36px;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  margin: 0 0 35px;
+  font-weight: 600;
+  text-align: left;
+  color: #2e3333;
 }
 
 .work-with-us h2 {
-  margin: 10px 0 5px;
-  font-size: 26px;
+  margin: 30px 0 10px;
+  font-size: 32px;
   font-weight: bold;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  color: #fff;
 }
 
 .work-with-us .work {
-  padding-bottom: 20px;
+  padding: 0 0 50px 0;
 }
 
-.work-with-us .work img {
+.work-with-us .work .container-info-work {
+  padding: 0 30px;
+  text-align: left;
+}
+
+.work-with-us .work .ms-container-img-work {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-with-us .work .ms-container-img-work .img-def {
   width: 100%;
-  height: 250px;
+  height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 20px 0 3px;
+}
+
+.work-with-us .work .ms-container-img-work .img-polygon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
 }
 
 .work-with-us .work p {
@@ -12774,6 +12809,7 @@ main.content-container .container-dish .card .card-title {
   font-size: 15px;
   padding: 2px 0;
   margin-bottom: 10px;
+  color: #fff;
   text-align: left;
 }
 
@@ -12781,64 +12817,94 @@ main.content-container .container-dish .card .card-title {
   border: none;
   background-color: #00ccbc;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 3px;
-  padding: 8px 25px;
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+.work-with-us .work-1 {
+  background-color: #ff483b;
+}
+
+.work-with-us .work-2 {
+  background-color: #ff8100;
+}
+
+.work-with-us .work-3 {
+  background-color: #bac3c3;
+}
+
+@media screen and (max-width: 992px) {
+  .work-with-us h3 {
+    font-size: 34px;
+  }
+
+  .work-with-us h2 {
+    font-size: 20px;
+  }
+
+  .work-with-us .work-3 {
+    padding: 0 0 26px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work-with-us h3 {
+    font-size: 32px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
+  }
+
+  .work-with-us .work p {
+    display: block;
+  }
+
+  .work-with-us .work-2 {
+    margin: 20px 0;
+  }
 }
 
 /* media query per responsive smartphone */
 
 @media screen and (max-width: 576px) {
-  .favourite-plates .title-home-section {
-    padding: 0;
-  }
-
-  .favourite-plates .title-home-section h2 {
-    font-size: 26px;
-    max-width: 80%;
-    margin: 0 auto 20px;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container > div {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
-    width: 100%;
-  }
-
-  .deliveroo-image {
-    width: 60%;
-  }
-
-  .app-download .android,
-  .app-download .apple {
-    width: 40%;
-    font-size: 13px;
-  }
-
-  .app-download .android img,
-  .app-download .apple img {
-    max-width: 15%;
-  }
-
   .work-with-us h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .work-with-us .work img {
-    width: 80%;
+  .work-with-us h3 {
+    font-size: 33px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
   }
 
   .work-with-us .work p {
-    font-size: 18px;
-    text-align: center;
+    display: block;
+    font-size: 17px;
   }
 
-  .work-with-us .work .work-button {
-    font-size: 25px;
+  .work-with-us .work-2 {
+    margin: 40px 0;
   }
 }
 
@@ -13064,24 +13130,54 @@ main.content-container .container-dish .card .card-title {
 
 .work-with-us {
   background-color: white;
+  padding: 50px 0 80px;
+}
+
+.work-with-us h3 {
+  font-size: 36px;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  margin: 0 0 35px;
+  font-weight: 600;
+  text-align: left;
+  color: #2e3333;
 }
 
 .work-with-us h2 {
-  margin: 10px 0 5px;
-  font-size: 26px;
+  margin: 30px 0 10px;
+  font-size: 32px;
   font-weight: bold;
+  font-family: stratos, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, 微软雅黑体, Hiragino Sans GB, 冬青黑体, sans-serif;
+  color: #fff;
 }
 
 .work-with-us .work {
-  padding-bottom: 20px;
+  padding: 0 0 50px 0;
 }
 
-.work-with-us .work img {
+.work-with-us .work .container-info-work {
+  padding: 0 30px;
+  text-align: left;
+}
+
+.work-with-us .work .ms-container-img-work {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-with-us .work .ms-container-img-work .img-def {
   width: 100%;
-  height: 250px;
+  height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 20px 0 3px;
+}
+
+.work-with-us .work .ms-container-img-work .img-polygon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  overflow: hidden;
 }
 
 .work-with-us .work p {
@@ -13093,6 +13189,7 @@ main.content-container .container-dish .card .card-title {
   font-size: 15px;
   padding: 2px 0;
   margin-bottom: 10px;
+  color: #fff;
   text-align: left;
 }
 
@@ -13100,64 +13197,94 @@ main.content-container .container-dish .card .card-title {
   border: none;
   background-color: #00ccbc;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 3px;
-  padding: 8px 25px;
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+.work-with-us .work-1 {
+  background-color: #ff483b;
+}
+
+.work-with-us .work-2 {
+  background-color: #ff8100;
+}
+
+.work-with-us .work-3 {
+  background-color: #bac3c3;
+}
+
+@media screen and (max-width: 992px) {
+  .work-with-us h3 {
+    font-size: 34px;
+  }
+
+  .work-with-us h2 {
+    font-size: 20px;
+  }
+
+  .work-with-us .work-3 {
+    padding: 0 0 26px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .work-with-us h3 {
+    font-size: 32px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
+  }
+
+  .work-with-us .work p {
+    display: block;
+  }
+
+  .work-with-us .work-2 {
+    margin: 20px 0;
+  }
 }
 
 /* media query per responsive smartphone */
 
 @media screen and (max-width: 576px) {
-  .favourite-plates .title-home-section {
-    padding: 0;
-  }
-
-  .favourite-plates .title-home-section h2 {
-    font-size: 26px;
-    max-width: 80%;
-    margin: 0 auto 20px;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container > div {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .favourite-plates .container-restaurants-homepage .plates-add-container .img-home-restaurants {
-    width: 100%;
-  }
-
-  .deliveroo-image {
-    width: 60%;
-  }
-
-  .app-download .android,
-  .app-download .apple {
-    width: 40%;
-    font-size: 13px;
-  }
-
-  .app-download .android img,
-  .app-download .apple img {
-    max-width: 15%;
-  }
-
   .work-with-us h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
-  .work-with-us .work img {
-    width: 80%;
+  .work-with-us h3 {
+    font-size: 33px;
+  }
+
+  .work-with-us .work {
+    padding: 0 0 30px 0;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-def {
+    height: 350px;
+  }
+
+  .work-with-us .work .ms-container-img-work .img-polygon {
+    display: none;
   }
 
   .work-with-us .work p {
-    font-size: 18px;
-    text-align: center;
+    display: block;
+    font-size: 17px;
   }
 
-  .work-with-us .work .work-button {
-    font-size: 25px;
+  .work-with-us .work-2 {
+    margin: 40px 0;
   }
 }
 
@@ -13465,6 +13592,7 @@ main#main-checkout .container-totalPrice span {
 .advertisement .image-ad img,
 .advertisement .interview-image img {
   width: 80%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .advertisement .interview-read img {
