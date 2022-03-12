@@ -81,16 +81,91 @@
     z-index: 2;
 }
 
+/* jumbotron responsive 1200px */
+
+@media screen and (max-width: 1200px){
+    .jumbotron-deliveboo {
+    
+        div.container-hashtag {
+            bottom: 20px;
+            width: 100%;
+            left: -10%;
+        }
+    }
+}
+
+/* jumbotron responsive 1000px */
+
+@media screen and (max-width: 1000px){
+    .jumbotron-deliveboo {
+    
+        img {
+            width: 100%;
+        }
+    
+        span.title-jumbo {
+            font-size: 30px;
+            margin-top: 70px;
+            margin-left: -20px;
+        }
+    
+        div.container-hashtag {
+            bottom: -50px;
+            width: 80%;
+            left: -25%;
+            margin-left: 0;
+    
+            & > div {
+                width: 400px;
+                padding: 32px;
+                bottom: 38px;
+    
+                span {
+                    padding-top: -10px;
+                    font-size: 20px;     
+                }
+            }
+        }
+    }
+}
+
+/* jumbotron responsive 576px */
+
+@media screen and (max-width: 576px){
+    .jumbotron-deliveboo {
+    
+        img {
+            width: 90%;
+        }
+    
+        span.title-jumbo {
+            margin-top: 20px;
+            font-size: 32px;
+        }
+    
+        div.container-hashtag {
+            display: none;
+
+        }
+    }
+}
+
+
+/* sezione principale homepage */
+
 .favourite-plates {
-    padding-top: 30px;
+    padding: 30px 0;
     background-color: #ffeae4;
 
     .title-home-section {
-        text-align: center;
+        text-align: left;
         padding-top: 20px;
+        font-family: stratos, "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", 微软雅黑体, "Hiragino Sans GB", 冬青黑体, sans-serif;
 
         h2 {
-            font-weight: bold;
+            font-size: 40px;
+            font-weight: 600;
+            margin-bottom: 35px;
         }
     }
 
@@ -98,18 +173,30 @@
         margin-top: 40px;
 
         .plates-add-container {
-            h2 {
-                margin: 20px 0;
+
+            .plates-add {
+                margin-bottom: 30px;
+            }
+
+            span {
+                font-family: stratos, "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", 微软雅黑体, "Hiragino Sans GB", 冬青黑体, sans-serif;
+                display: block;
+                font-size: 22px;
+                font-weight: 600;
+                margin: 5px 0;
+                text-align: left;
+                color: rgb(46, 51, 51);;
 
                 &:hover {
-                    color: #00ccbc;
                     cursor: pointer;
                 }
             }
 
             .img-home-restaurants {
+                width: 100%;
                 max-width: 100%;
-                border-radius: 10px;
+                height: 175px;
+                object-fit: cover;
             }
         }
     }
@@ -121,14 +208,18 @@
 }
 
 .deliveroo-image {
-    width: 70%;
-    border-radius: 20px;
+    width: 50%;
+    padding: 6px;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 10px;
+    background-color: white;
 }
 
 .app-download {
     margin: 30px auto;
 
     .android,
+
     .apple {
         width: 50%;
         background-color: white;
@@ -149,7 +240,8 @@
     background-color: white;
 
     h2 {
-        font-size: 40px;
+        margin: 10px 0 5px;
+        font-size: 26px;
         font-weight: bold;
     }
     .work {
@@ -157,21 +249,31 @@
 
         img {
             width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin: 20px 0 3px;
         }
 
         p {
-            font-size: 13px;
-            text-align: justify;
+            display: -webkit-box;
+            max-width: 100%;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 15px;
+            padding: 2px 0;
+            margin-bottom: 10px;
+            text-align: left;
         }
 
         .work-button {
             border: none;
             background-color: #00ccbc;
             color: white;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 10px;
-            padding: 5px 10px;
+            border-radius: 3px;
+            padding: 8px 25px;
         }
     }
 }
@@ -180,13 +282,28 @@
 
 @media screen and (max-width: 576px) {
     .favourite-plates {
-        padding-top: 30px;
+
+        .title-home-section {
+            padding: 0;
+
+            h2 {
+                font-size: 26px;
+                max-width: 80%;
+                margin: 0 auto 20px;
+            }
+        }
 
         .container-restaurants-homepage {
+
             .plates-add-container {
+
+                & > div {
+                    max-width: 80%;
+                    margin: 0 auto;
+                }
+
                 .img-home-restaurants {
-                    width: 70%;
-                    border-radius: 10px;
+                    width: 100%;
                 }
             }
         }

@@ -8,6 +8,7 @@ use App\Category;
 use App\Dish;
 use App\User;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 
@@ -44,38 +45,42 @@ class ClientController extends Controller
 
         $restaurant = User::findOrfail($id);
 
-        return view('pages.orderStatitics', compact('restaurant'));
+        $orders = DB::table('users')
+            ->join('dishes', 'users.id', '=', 'dishes.user_id')
+            ->join('dish_order', 'dish_order.dish_id', '=', 'dishes.id')
+            ->join('orders', 'dish_order.order_id', '=', 'orders.id')
+            ->join('clients', 'orders.client_id', '=', 'clients.id')
+            ->where('users.id', '=', $id)
+            ->groupBy('orders.id')
+            ->orderByDesc('orders.date')
+            ->select('orders.id', 'total_price', 'payment_status', 'date', 'clients.name', 'clients.lastname', 'clients.address', 'clients.email', 'clients.phone')
+            ->get();
+
+
+        return view('pages.orderStatitics', compact('restaurant', 'orders'));
     }
 
 
     public function getOrders($id) {
+
+        // SELECT dishes.name, dishes.price, dishes.description, dishes.type, dish_order.dish_quantity FROM users
+        //     JOIN dishes
+        //         ON dishes.user_id = users.id
+        //     JOIN dish_order
+        //         ON dish_order.dish_id = dishes.id
+        //     JOIN orders
+        //         ON orders.id = dish_order.order_id
+        //     WHERE orders.id = 84
+
+        $dishes = DB::table('users')
+            ->join('dishes', 'users.id', '=', 'dishes.user_id')
+            ->join('dish_order', 'dish_order.dish_id', '=', 'dishes.id')
+            ->join('orders', 'orders.id', '=', 'dish_order.order_id')
+            ->where('orders.id', '=', $id)
+            ->select('dishes.name', 'dishes.price', 'dishes.description', 'dishes.type', 'dish_order.dish_quantity')
+            ->get();
         
-        // DA COMPLETARE (STAMPARE SOLO L'ORDINE E NON TUTTI I PIATTI DELL'ORDINE)
-        // $test = Order::findOrFail($x[$i]->id);
-        
-        $dishes = Dish::all()->where('user_id', $id);
-        $orders = [];
 
-        // Ciclo all'interno di dishes
-        foreach ($dishes as $value) {
-            
-            // Prendiamo i valori dalla tabella ponte
-            $orders []= $value->orders()->wherePivot('dish_id', '=', $value->id)->get();
-
-            foreach ($orders as $x) {
-                
-                // Ciclo all'interno di ogni singolo ordine
-                for ($i=0; $i < count($x); $i++) { 
-    
-                    // Aggiungiamo all'interno dell'array contenente il tutto, anche le informazioni del cliente associato.
-                    $client = Client::findOrFail($x[$i]->client_id);
-                    $x[$i]->info_client = $client;
-                    
-                }
-                
-            }
-        }
-
-        return json_encode($orders); 
+        return json_encode($dishes); 
     }
 }
