@@ -1,7 +1,6 @@
 <template>
   <div class="restaurant-search">
     <div class="background-search">
-      <h1 class="title-searchbar">Cerca i tuoi ristoranti preferiti!</h1>
       <div class="d-flex container container-cards">
         <!-- container per la ricerca tramite barra e checkbox -->
 
@@ -43,7 +42,10 @@
           <div class="row">
             <!-- ristoranti in primo piano -->
 
-            <div class="d-flex flex-wrap" v-if="restaurants.length === 0">
+            <div class="d-flex flex-wrap justify-content-center" v-if="restaurants.length === 0">
+
+              <h2 class="container-title-restaurant-default">Ristoranti nella top 10</h2>
+
               <div
                 v-for="(rest, j) in restaurants_default"
                 :key="'A' + j"
@@ -75,7 +77,7 @@
             </div>
 
             <!-- card ristoranti -->
-            <div v-else class="d-flex flex-wrap">
+            <div v-else class="d-flex flex-wrap justify-content-center">
               <div
                 v-for="(restaurant, i) in restaurants"
                 :key="i"
@@ -293,6 +295,16 @@ export default {
   .card-text {
     padding-left: 15px;
   }
+
+  .container-title-restaurant-default {
+    width: 100% !important;
+    font-weight: 700;
+    color: #1c1c1c;
+    padding-bottom: 15px;
+    font-size: 30px;
+    text-align: center;
+  }
+
 }
 
 .container-text-card {
