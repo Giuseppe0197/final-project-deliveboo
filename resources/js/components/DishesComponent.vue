@@ -85,19 +85,18 @@
     export default {
         data: function () {
             return {
-                dishesArr: {},
+                dishesArr: [],
             }
         },
 
         props: {
-            dishes: Object,
+            dishes: Array,
             restaurant_id: Number
         },
 
         created() {
 
             this.dishesArr = this.dishes;
-            console.log(this.dishesArr);
         },
 
         methods: {
@@ -135,14 +134,11 @@
 
             // Mtodo per disponibilità del piatto 
             toggleDishAvailability(id) {
-                // console.log('dish-availability toggle: ' + id);
 
                 axios.get(`/api/dish/toggle/availability/${id}`)
                      .then(r => {
                          const index = this.getDishIndexById(id);
-                            this.$set(this.dishesArr, index - 10, r.data);  // - 10 perché abbiamo tolto alcuni piatti dal database, quindi gli id non combaciano!
-                            console.log(this.dishesArr);
-                        //  Vue.set(this.dishesArr, index, r.data);
+                            this.$set(this.dishesArr, index, r.data);
                      })
                      .catch(e => console.error(e));
             },
@@ -150,15 +146,11 @@
             // Metodo per recuperare l'indice del singolo piatto
             getDishIndexById(id) {
 
-                for (const dish in this.dishesArr) {
+                var index = this.dishesArr.map(function(e) {
+                    return e.id;
+                }).indexOf(id);
 
-                    const ind = this.dishesArr[dish].id;
-                    if (ind == id) {
-                        return ind;
-                    }
-                    
-                }
-                return -1;
+                return index;
             }
         },
     }

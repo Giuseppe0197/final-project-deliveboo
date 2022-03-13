@@ -18259,16 +18259,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      dishesArr: {}
+      dishesArr: []
     };
   },
   props: {
-    dishes: Object,
+    dishes: Array,
     restaurant_id: Number
   },
   created: function created() {
     this.dishesArr = this.dishes;
-    console.log(this.dishesArr);
   },
   methods: {
     // Metodo per inserire un piatto
@@ -18301,29 +18300,20 @@ __webpack_require__.r(__webpack_exports__);
     toggleDishAvailability: function toggleDishAvailability(id) {
       var _this = this;
 
-      // console.log('dish-availability toggle: ' + id);
       axios.get("/api/dish/toggle/availability/".concat(id)).then(function (r) {
         var index = _this.getDishIndexById(id);
 
-        _this.$set(_this.dishesArr, index - 10, r.data); // - 10 perché abbiamo tolto alcuni piatti dal database, quindi gli id non combaciano!
-
-
-        console.log(_this.dishesArr); //  Vue.set(this.dishesArr, index, r.data);
+        _this.$set(_this.dishesArr, index, r.data);
       })["catch"](function (e) {
         return console.error(e);
       });
     },
     // Metodo per recuperare l'indice del singolo piatto
     getDishIndexById: function getDishIndexById(id) {
-      for (var dish in this.dishesArr) {
-        var ind = this.dishesArr[dish].id;
-
-        if (ind == id) {
-          return ind;
-        }
-      }
-
-      return -1;
+      var index = this.dishesArr.map(function (e) {
+        return e.id;
+      }).indexOf(id);
+      return index;
     }
   }
 });
@@ -93370,8 +93360,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
