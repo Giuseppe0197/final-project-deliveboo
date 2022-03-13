@@ -18102,8 +18102,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var Chart_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! Chart.js */ "./node_modules/Chart.js/dist/Chart.js");
-/* harmony import */ var Chart_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(Chart_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var Chart_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Chart.js */ "./node_modules/Chart.js/dist/Chart.js");
+/* harmony import */ var Chart_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(Chart_js__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -18137,7 +18137,7 @@ __webpack_require__.r(__webpack_exports__);
         // console.log(dt);
 
       });
-      new Chart_js__WEBPACK_IMPORTED_MODULE_1__["Chart"](document.getElementById('myChart').getContext('2d'), {
+      new Chart_js__WEBPACK_IMPORTED_MODULE_0__["Chart"](document.getElementById('myChart').getContext('2d'), {
         type: 'line',
         data: {
           labels: this.dt,
@@ -18999,63 +18999,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -79982,12 +79925,6 @@ var render = function () {
         _vm._v(" "),
         _vm._m(3),
       ]),
-      _vm._v(" "),
-      _vm._m(4),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _vm._m(5),
     ]),
   ])
 }
@@ -80102,84 +80039,6 @@ var staticRenderFns = [
           _c("p", { staticClass: "my-2" }, [
             _vm._v(
               "\n            Clicca sull'immagine per vedere il video di un nostro dipendente\n            che ti spiegherà come attivare l'abbonamento e aumentare la\n            tua visibilità\n          "
-            ),
-          ]),
-        ]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "\n          visibility-ad\n          col-md-6 col-sm-12\n          text-sm-center text-md-left\n          my-2\n        ",
-        },
-        [
-          _c("h2", [_vm._v("Vuoi aumentare la tua visibilità?")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n          Guarda Le nostre tariffe di sponsorizzazione: i nostri partner\n          aumentano del 100% la propria visibilità con un semplice\n          click!\n        "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("button", { staticClass: "sponsor-button" }, [_vm._v("Offerte!")]),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "col-md-6 col-sm-12 image-ad text-md-right text-sm-center my-2",
-        },
-        [
-          _c("img", {
-            attrs: { src: "/storage/images/visibility.png", alt: "" },
-          }),
-        ]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row my-2" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "\n          interview-image\n          col-md-6 col-sm-12\n          text-md-left text-sm-center\n          my-2\n        ",
-        },
-        [
-          _c("img", {
-            attrs: { src: "/storage/images/interview-2.jpg", alt: "" },
-          }),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "\n          interview-read\n          col-md-6 col-sm-12\n          text-md-right text-sm-center\n          my-2\n        ",
-        },
-        [
-          _c("h2", [_vm._v("Guarda le interviste dei nostri partner!")]),
-          _vm._v(" "),
-          _c("button", { staticClass: "sponsor-button my-2" }, [
-            _vm._v("Interviste"),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "my-2" }, [
-            _vm._v(
-              "\n          Clicca sull'immagine per vedere il video di un nostro dipendente che\n          ti spiegherà come attivare l'abbonamento e aumentare la tua\n          visibilità\n        "
             ),
           ]),
         ]
@@ -93565,8 +93424,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Pier\Desktop\General\coding\progetto finale\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
