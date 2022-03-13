@@ -22,12 +22,12 @@
 
           <div class="checkboxes-container row d-flex">
             <span class="grey-text mb-2">Filtra per categorie</span>
-            <label 
+            <label
               v-for="category in categories"
               :key="category.id"
               class="checkboxesSearch"
-            >{{ category.name }}
-              
+              >{{ category.name }}
+
               <input
                 class="category-check"
                 type="checkbox"
@@ -35,7 +35,7 @@
                 v-model="checkbox"
               />
               <span class="checkmark"></span>
-            </label >
+            </label>
           </div>
         </div>
         <!--container ristoranti trovati tramite nome -->
@@ -44,9 +44,13 @@
           <div class="row">
             <!-- ristoranti in primo piano -->
 
-            <div class="d-flex flex-wrap justify-content-center" v-if="restaurants.length === 0">
-
-              <h2 class="container-title-restaurant-default">Ristoranti nella top 10</h2>
+            <div
+              class="d-flex flex-wrap justify-content-center"
+              v-if="restaurants.length === 0"
+            >
+              <h2 class="container-title-restaurant-default">
+                I ristoranti piu' ricercati
+              </h2>
 
               <div
                 v-for="(rest, j) in restaurants_default"
@@ -271,7 +275,7 @@ export default {
       opacity: 0;
       cursor: pointer;
     }
-    // creo una checkbox personalizzata 
+    // creo una checkbox personalizzata
     .checkmark {
       position: absolute;
       top: 7px;
@@ -282,23 +286,23 @@ export default {
       border: 2px solid #bac3c3;
       border-radius: 50%;
     }
-    // quando la checkbox è selezionata cambio background 
+    // quando la checkbox è selezionata cambio background
     input:checked ~ .checkmark {
       background-color: #00ccbc;
     }
-  
+
     /* Create the checkmark/indicator (hidden when not checked) */
     .checkmark:after {
       content: "";
       position: absolute;
       display: none;
     }
-  
+
     /* Show the checkmark when checked */
     input:checked ~ .checkmark:after {
       display: block;
     }
-  
+
     /* Style the checkmark/indicator */
     .checkmark::after {
       left: 4px;
@@ -313,7 +317,7 @@ export default {
     }
   }
 
-  // on hover aggiungo colore background 
+  // on hover aggiungo colore background
   .checkboxesSearch:hover .checkmark {
     border: 1px solid #00ccbc;
   }
@@ -378,7 +382,6 @@ export default {
     font-size: 30px;
     text-align: center;
   }
-
 }
 
 .container-text-card {
@@ -445,11 +448,9 @@ export default {
   .checkboxes-container .checkboxesSearch .checkmark[data-v-89b0c3cc] {
     top: 5px;
   }
-
 }
 
 @media only screen and (max-width: 768px) {
-
   .restaurant-found {
     width: 16rem;
     margin-left: 50px;
@@ -476,7 +477,6 @@ export default {
 }
 
 @media screen and (max-width: 576px) {
-
   .restaurant-found {
     width: 16rem;
     margin-left: 50px;
@@ -507,7 +507,6 @@ export default {
 }
 
 @media screen and (max-width: 490px) {
-
   .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
     width: 44%;
   }
@@ -516,5 +515,4 @@ export default {
     height: 300px;
   }
 }
-
 </style>
