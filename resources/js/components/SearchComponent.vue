@@ -359,6 +359,7 @@ export default {
       overflow: hidden;
       transform: scale(1.02);
       box-shadow: 0 0 20px #d7d7d7;
+      transition: 0.3s ease-in;
     }
   }
 

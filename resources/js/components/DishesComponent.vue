@@ -9,10 +9,6 @@
                 <button class="btn ml-2" @click.prevent="insertDish(restaurant_id)">
                     Aggiungi un piatto
                 </button>
-        
-                <!-- <button class="btn ml-2" @click.prevent="homeRestaurant()">
-                    Ritorna al ristorante
-                </button> -->
 
                 <button class="btn ml-2" @click.prevent="RestaurantMenu(restaurant_id)">
                     Vai al tuo men&ugrave;
@@ -23,12 +19,17 @@
         <div class="container py-4">
 
             <div class="container-dish">
+
+                <div class="p-5" v-if="dishesArr.length == 0">
+                    <h2>
+                        Nessun piatto presente nel tuo ristorante!
+                    </h2>
+                </div>
             
                 <div class="card" v-for="dish in dishesArr" :key="dish.id">
+
                     <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
                     <img :src="showImage(dish.image)" :alt="dish.name">
-
-                    <!-- <img v-else src="https://www.carnisostenibili.it/wp-content/uploads/2014/10/Cibo-spazzatura-alimentazione-spazzatura.jpg" class="card-img-top" alt="image default"> -->
                     
                     <div class="card-body">
                             <!-- Nome piatto -->
@@ -99,14 +100,6 @@
             console.log(this.dishesArr);
         },
 
-        // mounted() {
-        //     console.log(this.dishes);
-
-        //     this.dishesArr = this.dishes;
-
-        //     console.log('DishArr', this.dishesArr);
-        // },
-
         methods: {
             // Metodo per inserire un piatto
             insertDish(id) {
@@ -147,7 +140,7 @@
                 axios.get(`/api/dish/toggle/availability/${id}`)
                      .then(r => {
                          const index = this.getDishIndexById(id);
-                            this.$set(this.dishesArr, index - 1, r.data);
+                            this.$set(this.dishesArr, index - 10, r.data);  // - 10 perché abbiamo tolto alcuni piatti dal database, quindi gli id non combaciano!
                             console.log(this.dishesArr);
                         //  Vue.set(this.dishesArr, index, r.data);
                      })

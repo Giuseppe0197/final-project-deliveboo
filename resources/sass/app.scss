@@ -13,6 +13,16 @@ html {
     scroll-behavior: smooth;
 }
 
+// style scrollbar
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #00ccbc;
+}
+
 // handler error payment
 .alert-payment-success,
 .alert-payment-danger {

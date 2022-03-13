@@ -62,7 +62,7 @@ class DishController extends Controller
         // validazione dati 
         $data = $request->validate([
 
-            'name' => 'required|string|max:60',
+            'name' => 'required|string|max:255',
             'description' => 'required|string:max255',
             'price' => 'required|numeric|min:0|max:100',
             'type' => 'required|string|max:20',

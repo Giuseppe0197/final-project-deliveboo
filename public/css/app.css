@@ -10966,6 +10966,15 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #00ccbc;
+}
+
 .alert-payment-success,
 .alert-payment-danger {
   display: flex;

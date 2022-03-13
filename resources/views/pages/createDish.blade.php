@@ -1,6 +1,21 @@
 @extends('layouts.main-layout')
+@section('link')
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+@endsection
+
 @section('content')
 <main id="add-dish">
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    
     <section id="container-form" class="container">
 
         <div class="content-wrapper row">
@@ -68,7 +83,9 @@
             </div>
 
             <div class="img col d-none d-md-block">
-                <img src="/storage/images/new-dish.jpg" alt="">
+                <img class="mySlides" src="/storage/images/new-dish.jpg" alt="img1">
+                <img class="mySlides" src="/storage/images/edit-2.jpg" alt="img2">
+                <img class="mySlides" src="/storage/images/edt-3.jpg" alt="img3">
             </div>
         </div>
     </section>
