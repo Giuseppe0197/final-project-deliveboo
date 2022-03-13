@@ -20,21 +20,19 @@
       </div>
 
       <div class="manage-restaurant">
-        <p><strong>Nome titolare:</strong>
+        <p>
+          <strong>Nome titolare:</strong>
           {{ restaurants.owner_name }}
         </p>
-        <p><strong>Partita IVA:</strong>
+        <p>
+          <strong>Partita IVA:</strong>
           {{ restaurants.p_iva }}
         </p>
         <p class="mt-4">
           <strong>Indirizzo:</strong> {{ restaurants.address }}
         </p>
-        <p>
-          <strong>Email:</strong> {{ restaurants.email }}
-        </p>
-        <p>
-          <strong>Telefono:</strong> {{ restaurants.restaurant_phone }}
-        </p>
+        <p><strong>Email:</strong> {{ restaurants.email }}</p>
+        <p><strong>Telefono:</strong> {{ restaurants.restaurant_phone }}</p>
         <div>
           <button class="register-button" @click="getDishes(user_id)">
             Lista piatti
@@ -177,7 +175,7 @@ export default {
 
     getOrders(id) {
       window.location.href = `/order/statistics/${id}`;
-    }
+    },
   },
 };
 </script>
@@ -218,7 +216,6 @@ export default {
     -webkit-box-shadow: 0 0 3px rgb(182, 179, 179);
     box-shadow: 0 0 14px rgb(10, 9, 9);
   }
-
 }
 
 .line-profile {
@@ -257,13 +254,14 @@ export default {
 }
 
 .drop-down-btn {
-  width: 70%;
+  width: 40%;
   background-color: #fff;
   border: #cdcdcd 1px solid;
   background-color: #ffffff;
   cursor: pointer;
   padding: 20px 20px;
   margin-bottom: 150px;
+  border-radius: 10px;
 
   &:hover {
     box-shadow: 0 5px 5px 0 #cdcdcd, 0 5px 5px 0 #cdcdcd;
@@ -302,7 +300,6 @@ export default {
   height: 500px;
 
   div:nth-child(2) {
-
     padding: 0 12px;
   }
 
@@ -328,9 +325,7 @@ export default {
 }
 
 @media all and (max-width: 1200px) {
-
   .restaurant-profile {
-
     h1 {
       font-size: 28px;
     }
@@ -338,21 +333,14 @@ export default {
     img {
       width: 90%;
     }
-
   }
-
 }
 
 @media all and (max-width: 733px) {
-
   .restaurant-profile {
-
     img {
       width: 190px;
     }
-
   }
-    
 }
-
 </style>
