@@ -1,0 +1,83 @@
+footer {
+    min-height: 400px;
+    color: white;
+    background-color: #2e3333;
+
+    .nav-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 25px;
+
+        .footer-card {
+            padding: 25px 20px;
+            background-color: #434848;
+            border-radius: 5px;
+            height: 100%;
+            margin-bottom: 10px;
+
+            h5 {
+                font-weight: 600;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                a {
+                    color: white;
+
+                    &:hover {
+                        color: #00ccbc;
+                        text-decoration: none;
+                    }
+                }
+
+                .register-btn {
+                    color: #fff;
+                    background: #00ccbc;
+                    padding: 14px 24px;
+                    border-radius: 4%;
+                    margin-top: 20px;
+
+                    &:hover {
+                        color: #fff;
+                        background-color: #05b7a8;
+                    }
+                }
+
+                .subscribe {
+                    margin-top: 20px;
+                }
+            }
+
+            #app-store {
+                width: 200px;
+            }
+        }
+    }
+
+    .social-channels {
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+            padding-left: 0;
+
+            li {
+                display: inline;
+                margin-right: 10px;
+                cursor: pointer;
+
+                .fb:hover {
+                    color: blue;
+                }
+            }
+        }
+
+        p {
+            color: #434848;
+        }
+    }
+}

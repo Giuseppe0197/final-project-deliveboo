@@ -205,6 +205,7 @@ export default {
 }
 
 .search-bar-checkbox {
+  width: 30%;
   background-color: white;
   padding: 20px 0 20px 30px;
   border-radius: 10px;

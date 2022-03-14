@@ -103,6 +103,20 @@
     }
 }
 
+.img {
+    height: 450px;
+    margin: 10px 0 0 90px;
+    min-height: 440px;
+    -webkit-clip-path: polygon(0 25%, 88% 0, 100% 104%, 9% 80%);
+    clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 81%);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: drop-shadow(2px 4px 6px black);
+    }
+}
 
 // sezione publicitaria partner deliveroo
 .cont-partner {

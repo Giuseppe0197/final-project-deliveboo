@@ -79,7 +79,16 @@
                         </div>
                         
                     </form>
+                    <div class="img col d-none d-lg-block">
+                        <img class="mySlides" src="/storage/images/1tramonto.jpg" alt="img1">
+                        <img class="mySlides" src="/storage/images/2rest.jpg" alt="img2">
+                        <img class="mySlides" src="/storage/images/3rest.jpg" alt="img3">
+                        <img class="mySlides" src="/storage/images/4rest.jpg" alt="img4">
+                        <img class="mySlides" src="/storage/images/5rest.jpg" alt="img5">
+                        <img class="mySlides" src="/storage/images/6rest.jpg" alt="img6">
+                    </div>
                 </div>    
+
             </div>
         </div>
     
