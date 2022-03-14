@@ -21,4 +21,4 @@ Per il pagamento e la gestione delle email ci siamo appoggiati alle piattaforme:
 - **Stripe**.
 - **Mailtrap**.
 
-<img align="right" src="/storage/images/logo-deliveboo-fullcolor.png" width="200" height="200" alt="css-in-readme">
+<img align="right" src="/storage/app/public/images/logo-deliveboo-fullcolor.png" alt="logo-deliveboo">
