@@ -270,7 +270,7 @@ export default {
     -ms-user-select: none;
     user-select: none;
 
-    // nascono la checkbox di default
+    // nascondo la checkbox di default
     input {
       position: absolute;
       opacity: 0;

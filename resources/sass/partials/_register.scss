@@ -29,6 +29,73 @@
                 border-radius: 3px;
                 max-height: 40px;
             }
+
+            // .checkboxesSearch {
+            //     display: block;
+            //     position: relative;
+            //     padding-left: 25px;
+            //     margin-bottom: 6px;
+            //     cursor: pointer;
+            //     font-size: 18px;
+            //     color: #212529;
+            //     -webkit-user-select: none;
+            //     -moz-user-select: none;
+            //     -ms-user-select: none;
+            //     user-select: none;
+            
+            //     // nascondo la checkbox di default
+            //     input {
+            //       position: absolute;
+            //       opacity: 0;
+            //       cursor: pointer;
+            //     }
+            //     // creo una checkbox personalizzata
+            //     .checkmark {
+            //       position: absolute;
+            //       top: 7px;
+            //       left: 0;
+            //       height: 15px;
+            //       width: 15px;
+            //       // background-color: #eee;
+            //       border: 2px solid #bac3c3;
+            //       border-radius: 50%;
+            //     }
+            //     // quando la checkbox è selezionata cambio background
+            //     input:checked ~ .checkmark {
+            //       background-color: #00ccbc;
+            //     }
+            
+            //     /* Create the checkmark/indicator (hidden when not checked) */
+            //     .checkmark:after {
+            //       content: "";
+            //       position: absolute;
+            //       display: none;
+            //     }
+            
+            //     /* Show the checkmark when checked */
+            //     input:checked ~ .checkmark:after {
+            //       display: block;
+            //     }
+            
+            //     /* Style the checkmark/indicator */
+            //     .checkmark::after {
+            //       left: 4px;
+            //       top: -1px;
+            //       width: 5px;
+            //       height: 10px;
+            //       border: solid white;
+            //       border-width: 0 3px 3px 0;
+            //       -webkit-transform: rotate(45deg);
+            //       -ms-transform: rotate(45deg);
+            //       transform: rotate(45deg);
+            //     }
+            // }
+            
+            // // on hover aggiungo colore background
+            // .checkboxesSearch:hover .checkmark {
+            //     border: 1px solid #00ccbc;
+            // }
+            
         }
 
         // login 
@@ -74,6 +141,88 @@
         }
     }
 }
+
+
+.checkboxesSearch {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #212529;
+    width: 32%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    // nascondo la checkbox di default
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 28px;
+    }
+    // creo una checkbox personalizzata
+    .checkmark {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      // background-color: #eee;
+      border: 2px solid #bac3c3;
+      border-radius: 50%;
+    }
+    // quando la checkbox è selezionata cambio background
+    input:checked ~ .checkmark {
+      background-color: #00ccbc;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .checkmark::after {
+      left: 4px;
+      top: -1px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+}
+
+@media all and (max-width: 768px) {
+    .checkboxesSearch {
+        width: 49%;
+    }
+}
+
+// on hover aggiungo colore background
+.checkboxesSearch:hover .checkmark {
+    border: 1px solid #00ccbc;
+}
+
 
 @media screen and (max-width: 990px) {
     .auth-page {

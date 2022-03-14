@@ -12261,6 +12261,81 @@ main#main-checkout .container-totalPrice span {
   }
 }
 
+.checkboxesSearch {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #212529;
+  width: 32%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+
+.checkboxesSearch input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+
+.checkboxesSearch .checkmark {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border: 2px solid #bac3c3;
+  border-radius: 50%;
+}
+
+.checkboxesSearch input:checked ~ .checkmark {
+  background-color: #00ccbc;
+}
+
+.checkboxesSearch .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxesSearch input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxesSearch .checkmark::after {
+  left: 4px;
+  top: -1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+@media all and (max-width: 768px) {
+  .checkboxesSearch {
+    width: 49%;
+  }
+}
+
+.checkboxesSearch:hover .checkmark {
+  border: 1px solid #00ccbc;
+}
+
 @media screen and (max-width: 990px) {
   .auth-page {
     justify-content: center;
