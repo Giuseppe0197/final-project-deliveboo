@@ -18259,15 +18259,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      dishesArr: []
+      dishesArr: {}
     };
   },
   props: {
-    dishes: Array,
+    dishes: Object,
     restaurant_id: Number
   },
   created: function created() {
     this.dishesArr = this.dishes;
+    console.log(this.dishesArr);
   },
   methods: {
     // Metodo per inserire un piatto
@@ -18300,20 +18301,29 @@ __webpack_require__.r(__webpack_exports__);
     toggleDishAvailability: function toggleDishAvailability(id) {
       var _this = this;
 
+      console.log(id);
+      console.log(this.dishesArr);
       axios.get("/api/dish/toggle/availability/".concat(id)).then(function (r) {
         var index = _this.getDishIndexById(id);
 
-        _this.$set(_this.dishesArr, index, r.data);
+        _this.$set(_this.dishesArr, index - 1, r.data);
+
+        console.log(_this.dishesArr);
       })["catch"](function (e) {
         return console.error(e);
       });
     },
     // Metodo per recuperare l'indice del singolo piatto
     getDishIndexById: function getDishIndexById(id) {
-      var index = this.dishesArr.map(function (e) {
-        return e.id;
-      }).indexOf(id);
-      return index;
+      for (var dish in this.dishesArr) {
+        var ind = this.dishesArr[dish].id;
+
+        if (ind == id) {
+          return ind;
+        }
+      }
+
+      return -1;
     }
   }
 });

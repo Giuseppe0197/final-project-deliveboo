@@ -85,18 +85,19 @@
     export default {
         data: function () {
             return {
-                dishesArr: [],
+                dishesArr: {},
             }
         },
 
         props: {
-            dishes: Array,
+            dishes: Object,
             restaurant_id: Number
         },
 
         created() {
 
             this.dishesArr = this.dishes;
+            console.log(this.dishesArr);
         },
 
         methods: {
@@ -135,10 +136,14 @@
             // Mtodo per disponibilità del piatto 
             toggleDishAvailability(id) {
 
+                console.log(id);
+                console.log(this.dishesArr);
+
                 axios.get(`/api/dish/toggle/availability/${id}`)
                      .then(r => {
                          const index = this.getDishIndexById(id);
-                            this.$set(this.dishesArr, index, r.data);
+                            this.$set(this.dishesArr, index - 1, r.data); 
+                            console.log(this.dishesArr);
                      })
                      .catch(e => console.error(e));
             },
@@ -146,11 +151,15 @@
             // Metodo per recuperare l'indice del singolo piatto
             getDishIndexById(id) {
 
-                var index = this.dishesArr.map(function(e) {
-                    return e.id;
-                }).indexOf(id);
+                for (const dish in this.dishesArr) {
 
-                return index;
+                    const ind = this.dishesArr[dish].id;
+                    if (ind == id) {
+                        return ind;
+                    }
+                    
+                }
+                return -1;
             }
         },
     }
