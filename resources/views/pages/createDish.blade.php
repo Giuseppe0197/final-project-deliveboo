@@ -83,11 +83,11 @@
             </div>
 
             <div class="img col d-none d-md-block">
-                <img class="mySlides" src="/storage/images/new-dish.jpg" alt="img1">
-                <img class="mySlides" src="/storage/images/edit-2.jpg" alt="img2">
-                <img class="mySlides" src="/storage/images/edt-3.jpg" alt="img3">
-                <img class="mySlides" src="/storage/images/img4.jpg" alt="img4">
-                <img class="mySlides" src="/storage/images/img5.jpg" alt="img5">
+                <img class="mySlides fade" src="/storage/images/new-dish.jpg" alt="img1">
+                <img class="mySlides fade" src="/storage/images/edit-2.jpg" alt="img2">
+                <img class="mySlides fade" src="/storage/images/edt-3.jpg" alt="img3">
+                <img class="mySlides fade" src="/storage/images/img4.jpg" alt="img4">
+                <img class="mySlides fade" src="/storage/images/img5.jpg" alt="img5">
             </div>
         </div>
     </section>
