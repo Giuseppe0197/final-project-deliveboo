@@ -15,14 +15,16 @@ class OrderConfirm extends Mailable
     public $orderNumber;
 
     public function __construct($datas) {
-    
+
         $this->data = $datas;
         $this->orderNumber = rand(1, 999);
     }
-
+    
     public function build() {
+        
+        $cart = session("cart");
 
         return $this->from('deliveboo@mail.com')
-            ->view('mail.orderConfirm  ');
+            ->view('mail.orderConfirm', compact('cart'));
     }
 }

@@ -94,6 +94,7 @@ class StripeController extends Controller
                 $order->update(); // update tabella ordini
 
                 Mail::to($clientEmail) -> send(new OrderConfirm($datas));
+                Mail::to(Auth::user()->email) -> send(new OrderConfirm($datas));
 
                 return redirect('/')->with('success', 'Pagamento avvenuto con successo!');
  

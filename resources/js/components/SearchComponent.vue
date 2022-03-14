@@ -49,7 +49,7 @@
               v-if="restaurants.length === 0"
             >
               <h2 class="container-title-restaurant-default">
-                I ristoranti piu' ricercati
+                I ristoranti pi&ugrave; ricercati
               </h2>
 
               <div
@@ -205,6 +205,7 @@ export default {
 }
 
 .search-bar-checkbox {
+  width: 30%;
   background-color: white;
   padding: 20px 0 20px 30px;
   border-radius: 10px;
