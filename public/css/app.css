@@ -12659,6 +12659,11 @@ main.content-container .container-dish .card .card-title {
   font-weight: bold;
 }
 
+.card-drink img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 @media screen and (max-width: 1200px) {
   main.content-container .container-dish .card {
     width: calc(33.3333333333% - 30px);

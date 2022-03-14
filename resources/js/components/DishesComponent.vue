@@ -26,7 +26,7 @@
                     </h2>
                 </div>
             
-                <div class="card" v-for="dish in dishesArr" :key="dish.id">
+                <div class="card" :class="dish.type == 'Bibite' ? 'card-drink' : '' " v-for="dish in dishesArr" :key="dish.id">
 
                     <!-- Gestione immagini (Se la lunghezza del testo dell'immagine è uguale a 21, quindi le immagini che andremo ad inserire, allora mette l'immagine che salviamo, altrimenti mette un'immagine di default) -->
                     <img :src="showImage(dish.image)" :alt="dish.name">

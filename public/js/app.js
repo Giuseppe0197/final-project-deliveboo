@@ -78403,111 +78403,123 @@ var render = function () {
             : _vm._e(),
           _vm._v(" "),
           _vm._l(_vm.dishesArr, function (dish) {
-            return _c("div", { key: dish.id, staticClass: "card" }, [
-              _c("img", {
-                attrs: { src: _vm.showImage(dish.image), alt: dish.name },
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("h4", { staticClass: "card-title" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(dish.name) +
-                      "\n                    "
-                  ),
-                ]),
+            return _c(
+              "div",
+              {
+                key: dish.id,
+                staticClass: "card",
+                class: dish.type == "Bibite" ? "card-drink" : "",
+              },
+              [
+                _c("img", {
+                  attrs: { src: _vm.showImage(dish.image), alt: dish.name },
+                }),
                 _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(dish.description) +
-                      "\n                    "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("ul", { staticClass: "list-group list-group-flush" }, [
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c("span", [_vm._v("Prezzo:")]),
-                  _vm._v(
-                    "\n                        €" +
-                      _vm._s(dish.price) +
-                      " \n                    "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c("span", { staticClass: "fw-bold" }, [_vm._v("Tipo:")]),
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(dish.type) +
-                      "\n                    "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "list-group-item" }, [
-                  _c("span", [_vm._v("Disponibilità:")]),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h4", { staticClass: "card-title" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(dish.name) +
+                        "\n                    "
+                    ),
+                  ]),
                   _vm._v(" "),
-                  dish.availability
-                    ? _c(
-                        "p",
-                        {
-                          staticClass:
-                            "d-inline-block text-success font-weight-bold",
-                        },
-                        [_vm._v("✔ Disponibile")]
-                      )
-                    : _c(
-                        "p",
-                        {
-                          staticClass:
-                            "d-inline-block text-danger font-weight-bold",
-                        },
-                        [_vm._v("❌ Non Disponibile")]
-                      ),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(dish.description) +
+                        "\n                    "
+                    ),
+                  ]),
                 ]),
                 _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "container-action-dish list-group-item" },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary",
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.editDish(dish.id)
-                          },
-                        },
-                      },
-                      [_vm._v("MODIFICA")]
+                _c("ul", { staticClass: "list-group list-group-flush" }, [
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c("span", [_vm._v("Prezzo:")]),
+                    _vm._v(
+                      "\n                        €" +
+                        _vm._s(dish.price) +
+                        " \n                    "
                     ),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c("span", { staticClass: "fw-bold" }, [_vm._v("Tipo:")]),
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(dish.type) +
+                        "\n                    "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "list-group-item" }, [
+                    _c("span", [_vm._v("Disponibilità:")]),
                     _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn",
-                        class: dish.availability ? "btn-danger" : "btn-success",
-                        on: {
-                          click: function ($event) {
-                            return _vm.toggleDishAvailability(dish.id)
+                    dish.availability
+                      ? _c(
+                          "p",
+                          {
+                            staticClass:
+                              "d-inline-block text-success font-weight-bold",
+                          },
+                          [_vm._v("✔ Disponibile")]
+                        )
+                      : _c(
+                          "p",
+                          {
+                            staticClass:
+                              "d-inline-block text-danger font-weight-bold",
+                          },
+                          [_vm._v("❌ Non Disponibile")]
+                        ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    { staticClass: "container-action-dish list-group-item" },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          on: {
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return _vm.editDish(dish.id)
+                            },
                           },
                         },
-                      },
-                      [
-                        _vm._v(
-                          " \n                            " +
-                            _vm._s(dish.availability ? "RIMUOVI" : "AGGIUNGI") +
-                            "\n                        "
-                        ),
-                      ]
-                    ),
-                  ]
-                ),
-              ]),
-            ])
+                        [_vm._v("MODIFICA")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn",
+                          class: dish.availability
+                            ? "btn-danger"
+                            : "btn-success",
+                          on: {
+                            click: function ($event) {
+                              return _vm.toggleDishAvailability(dish.id)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            " \n                            " +
+                              _vm._s(
+                                dish.availability ? "RIMUOVI" : "AGGIUNGI"
+                              ) +
+                              "\n                        "
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
+                ]),
+              ]
+            )
           }),
         ],
         2
@@ -93370,8 +93382,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\petre\OneDrive\Documenti\Boolean\Laravel\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Giovanni Lombardo\Desktop\Esercitazioni Boolean\final-project-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
