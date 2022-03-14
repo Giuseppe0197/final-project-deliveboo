@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Client;
 use App\Dish;
+use App\User;
 use App\Mail\OrderConfirm;
 use App\Order;
 use Illuminate\Http\Request;
@@ -21,6 +22,11 @@ class StripeController extends Controller
     public function payStripe(Request $request) {
 
         $cart = session("cart"); // carrello
+
+        // Email ristorante
+        $restaurantId = $cart[0]["user_id"];
+        $restaurant = User::findOrFail($restaurantId);
+        $restaurantEmail = $restaurant["email"];
 
         $datas = $request->all();
 
@@ -94,7 +100,7 @@ class StripeController extends Controller
                 $order->update(); // update tabella ordini
 
                 Mail::to($clientEmail) -> send(new OrderConfirm($datas));
-                Mail::to(Auth::user()->email) -> send(new OrderConfirm($datas));
+                Mail::to($restaurantEmail) -> send(new OrderConfirm($datas));
 
                 return redirect('/')->with('success', 'Pagamento avvenuto con successo!');
  
