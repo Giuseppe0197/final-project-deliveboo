@@ -36,10 +36,13 @@
                         <div class="my-2 checkbox-container w-100">
                             <p class="text-center">Spunta la tipologia del tuo ristorante</p>
                             @foreach ($categories as $category)
-                            <div class="container-checkbox d-inline-block">
-                                <input type="checkbox" name="categories[]" value="{{$category -> id}}">
-                                <span class="mr-1">{{$category-> name }}</span> 
-                            </div>
+                                <label for="category" class="checkboxesSearch"> {{$category-> name }}
+                                    {{-- <div class="container-checkbox d-inline-block"> --}}
+                                        <input type="checkbox" name="categories[]" value="{{$category -> id}}" class="category-check">
+                                        <span class="checkmark"></span>
+                                        {{-- <span class="mr-1">{{$category-> name }}</span>  --}}
+                                    {{-- </div> --}}
+                                </label>
                             @endforeach
                         </div> 
                         
