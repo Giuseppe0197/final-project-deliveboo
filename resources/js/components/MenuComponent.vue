@@ -26,7 +26,7 @@
                             </span>
 
                             <span class="restaurant-p-iva">
-                            Partita Iva: {{ restaurant.p_iva }}
+                                &#128231; {{ restaurant.email }}
                             </span>
                         </div>
                     </div>

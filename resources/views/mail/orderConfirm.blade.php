@@ -11,19 +11,39 @@
    </head>
 	
    <body>
-       <h1>Ottima Scelta, {{ $data["name"] }}</h1>
-       <hr>
-       <h3>Dettagli ordine</h3>
-       <strong>{{ $data["name"] }} {{ $data["lastname"]}}</strong>
-       <p>{{ $data["phone"]}}</p>
+       <h1>Dettagli ordine</h1>
+       <strong>Nome: {{ $data["name"] }} {{ $data["lastname"]}}</strong>
+       <p>Numero di telefono: {{ $data["phone"]}}</p>
        <hr>
 
        <div>
           numero ordine: {{ $orderNumber }}
        </div>
-      <table width = "100%">
-         
-         <tr>
+       <br>
+       <br>
+       <table width = "100%">
+          <tbody>
+            @foreach ($cart as $product)
+               <tr>
+                  <td>
+                     Nome: {{ $product["name"] }}
+                  </td> 
+                  <td>
+                     Quantit&agrave;: {{ $product["quantity"] }}
+                  </td> 
+                  <td>
+                     Prezzo: {{ $product["price"] }}
+                  </td>
+               </tr>
+             @endforeach
+          </tbody>
+       </table>
+       <br>
+       <br>
+       <table width = "100%">
+          
+          
+          <tr>
             <td>
                <table width = "100%">
                 

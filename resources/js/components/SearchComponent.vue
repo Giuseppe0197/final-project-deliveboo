@@ -49,7 +49,7 @@
               v-if="restaurants.length === 0"
             >
               <h2 class="container-title-restaurant-default">
-                I ristoranti piu' ricercati
+                I ristoranti pi&ugrave; ricercati
               </h2>
 
               <div

@@ -78587,8 +78587,8 @@ var render = function () {
               _vm._v(" "),
               _c("span", { staticClass: "restaurant-p-iva" }, [
                 _vm._v(
-                  "\n                        Partita Iva: " +
-                    _vm._s(_vm.restaurant.p_iva) +
+                  "\n                            📧 " +
+                    _vm._s(_vm.restaurant.email) +
                     "\n                        "
                 ),
               ]),
@@ -80388,7 +80388,7 @@ var render = function () {
                         { staticClass: "container-title-restaurant-default" },
                         [
                           _vm._v(
-                            "\n              I ristoranti piu' ricercati\n            "
+                            "\n              I ristoranti più ricercati\n            "
                           ),
                         ]
                       ),
