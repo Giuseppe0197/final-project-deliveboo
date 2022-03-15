@@ -23,7 +23,7 @@
                         @method('post')
                         @csrf
                             
-                        <h2 class="text-center">Diventa subito partner di Deliveroo</h2>
+                        <h2 class="text-center">Diventa subito partner di Deliveboo</h2>
     
                         <div class="d-flex">
                             <input class="mt-2 w-50 mr-2 input-text" type="text" name="restaurant_name" placeholder="Inserisci il nome dell'attività">
