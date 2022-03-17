@@ -196,13 +196,13 @@ export default {
   font-size: 15px;
 }
 
-.restaurant-found {
-  width: 18rem;
-}
+// .restaurant-found {
+//   width: 18rem;
+// }
 
-.card-img-top {
-  width: 18rem;
-}
+// .card-img-top {
+//   width: 18rem;
+// }
 
 .search-bar-checkbox {
   width: 30%;
@@ -328,6 +328,7 @@ export default {
 
 .container-restaurants {
   .restaurant-found {
+    width: 18rem;
     background-color: white;
     border-radius: 5px;
     margin-right: 15px;
@@ -338,7 +339,7 @@ export default {
     box-shadow: 0 0 15px #d7d7d7;
 
     .card-body {
-      width: 80%;
+      width: 100%;
       padding: 0;
 
       img {
@@ -369,11 +370,7 @@ export default {
   }
 
   .card-title {
-    padding: 12px 0 10px 12px;
-  }
-
-  .card-text {
-    padding-left: 15px;
+    padding: 12px 0 10px 0;
   }
 
   .container-title-restaurant-default {
@@ -389,6 +386,7 @@ export default {
 .container-text-card {
   padding-bottom: 30px;
   line-height: 16px;
+  text-align: center;
 }
 
 // media query
@@ -452,14 +450,42 @@ export default {
   }
 }
 
+@media only screen and (min-width: 1161px) and (max-width: 1387px) {
+
+  .container-restaurants {
+  .restaurant-found {
+    width: 48%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+
+  .container-restaurants {
+  .restaurant-found {
+    width: 48%;
+    }
+  }
+}
+
+@media only screen and (max-width: 833px) {
+
+  .container-restaurants {
+  .restaurant-found {
+    width: 47%;
+    }
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .restaurant-found {
-    width: 16rem;
-    margin-left: 50px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .card-img-top {
-    width: 16rem;
+    width: 100%;
   }
 
   .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {
@@ -479,13 +505,14 @@ export default {
 }
 
 @media screen and (max-width: 576px) {
+  .container-restaurants {
   .restaurant-found {
-    width: 16rem;
-    margin-left: 50px;
+    width: 100%;
+    }
   }
 
   .card-img-top {
-    width: 16rem;
+    width: 100%;
   }
 
   .checkboxes-container .checkboxesSearch[data-v-89b0c3cc] {

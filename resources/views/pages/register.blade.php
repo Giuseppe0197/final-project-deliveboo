@@ -61,11 +61,11 @@
                         <input class="mt-2 w-100 input-text" type="password" name="password_confirmation" placeholder="Conferma la password">
     
                         <div class="text-center"> 
-                            <input class="btn mb-5 my-2 register-button" type="submit" value="REGISTER">
+                            <input class="btn mb-5 my-2 register-button" type="submit" value="REGISTRATI">
                         </div>
                     </form>
                 </div>
-                
+
                 <div class="login-form text-center px-2">
                         {{-- FORM LOGIN --}}
                     <form action="{{route('login')}}" method="post">

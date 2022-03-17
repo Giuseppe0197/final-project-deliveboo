@@ -36,7 +36,7 @@
                         <div class="pay-card">
                             <div class="head-card">
                                 <div class="left">
-                                    <span>&#128179;</span> Pay with card
+                                    <span>&#128179;</span> Paga con la carta
                                 </div>
 
                                 <div class="right">
@@ -48,13 +48,13 @@
 
                             <div class="row px-3 py-1">
                                 <div class="col-lg-12 form-group">
-                                    <label>Name on Card</label>
+                                    <label>Nome sulla carta</label>
                                     <input class="form-control" size="4" type="text">
                                 </div>
                             </div>
                             <div class="row px-3 py-1">
                                 <div class="col-lg-12 form-group">
-                                    <label>Card Number</label>
+                                    <label>Numero di carta</label>
                                     <input autocomplete="off" class="form-control" size="20" type="text" name="card_no" value="4111 1111 1111 1111">
                                 </div>
                             </div>
@@ -64,24 +64,24 @@
                                     <input autocomplete="off" class="form-control" placeholder="ex. 311" size="3" type="text" name="cvv">
                                 </div>
                                 <div class="col-lg-4 form-group">
-                                    <label>Month</label>
+                                    <label>Mese</label>
                                     <input class="form-control" placeholder="MM" size="2" type="text" name="expiry_month">
                                 </div>
                                 <div class="col-lg-4 form-group">
-                                    <label>Year</label>
+                                    <label>Anno</label>
                                     <input class="form-control" placeholder="YYYY" size="4" type="text" name="expiry_year">
                                 </div>
                             </div>
                             <div class="row d-none"> <!-- Display none -->
                                 <div class="col-lg-12 form-group">
-                                    <label>Total Price</label>
+                                    <label>Prezzo totale</label>
                                     <input class="form-control" size="2" type="number" name="total_price" value="{{ $totalPrice }}">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 form-group">
-                                <button class="form-control btn btn-success submit-button" type="submit" style="margin-top: 10px;">Paga</button>
+                                <button class="form-control btn btn-success submit-button" type="submit" style="margin-top: 10px;" onClick="this.form.submit(); this.disabled=true;">Paga</button>
                             </div>
                         </div>
                     </form>
@@ -142,6 +142,5 @@
 <script type="application/javascript">
     var cartbtn = document.querySelector('.shopping-cart-header a span');
     cartbtn.innerHTML = ({{ $totalPrice }}).toFixed(2) + ' &euro;';
-
 </script>
 @endsection
