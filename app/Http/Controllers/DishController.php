@@ -7,6 +7,7 @@ use App\Dish;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\DB;
 
 class DishController extends Controller
 {
@@ -100,7 +101,13 @@ class DishController extends Controller
 
         $restaurant = User::findOrFail($id);
 
-        $dishes = Dish::all()->where('user_id', $id);
+        // $dishes = Dish::all()->where('user_id', $id) ;
+        $dishes = DB::table('dishes')
+        ->where('dishes.user_id', '=', $id)
+        ->orderBy('dishes.name', 'asc')
+        ->select('dishes.*')
+        ->get();
+
 
         return view('pages.dishList', compact('dishes', 'restaurant'));
     }
